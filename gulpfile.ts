@@ -10,7 +10,7 @@ import { Navigation } from "mvw-navigation";
 import { SearchIndex } from "mvw-search-index";
 
 let isRelease: boolean = yargs.default("release", false).boolean("release").argv;
-let baseUrl = isRelease ? "http://www.mv-wollbach.de/" : "http://localhost/";
+let baseUrl = isRelease ? "http://www.wollbach.info/" : "http://localhost/";
 let navigation: Navigation;
 let searchIndex: SearchIndex = new SearchIndex();
 let $: any = gulpLoadPlugins();
@@ -18,11 +18,6 @@ let $: any = gulpLoadPlugins();
 const paths: {dest: string} = {
   dest: "./build/",
 };
-
-declare interface IPerson {
-  name: string;
-  familyName: string;
-}
 
 gulp.task("sitemap", () => {
     return gulp.src([paths.dest + "**/*.html", "!**/401.html"], {
@@ -36,29 +31,17 @@ gulp.task("sitemap", () => {
 });
 
 gulp.task("html:writeNavigation", () => {
-  navigation = new Navigation(require("./pages/site-structure.json"));
-  fs.writeFileSync("./pages/siteOverviewList.pug", navigation.writeNavigation("allplain"));
-  fs.writeFileSync("./pages/topnavigation.pug", navigation.writeNavigation("top"));
-  fs.writeFileSync("./pages/footernavigation.pug", navigation.writeNavigation("footer"));
+  navigation = new Navigation(require("./partials/site-structure.json"));
+  fs.writeFileSync("./partials/siteOverviewList.pug", navigation.writeNavigation("allplain"));
+  fs.writeFileSync("./partials/topnavigation.pug", navigation.writeNavigation("top"));
+  fs.writeFileSync("./partials/footernavigation.pug", navigation.writeNavigation("footer"));
 });
 
 gulp.task("html:generatePages", ["html:writeNavigation"], () => {
   const scope = {
-    register: require("./pages/data/register.json"),
-
-    siteTitle: "Musikverein Wollbach 1866 e.V.",
+    siteTitle: "Wollbach",
     baseUrl: baseUrl,
-    numberOfMusicians: 0
   };
-
-  let getNumberOfMusicians = (register: IPerson[]) => {
-    let distinctNames: {[key: string]: boolean} = {};
-    register.map((p) => p.name + " " + p.familyName)
-            .forEach((p) => distinctNames[p] = true);
-    return Object.keys(distinctNames).length;
-  };
-
-  scope.numberOfMusicians = getNumberOfMusicians(scope.register);
 
   var getScope = (file: File) => {
     var filename = path.basename(file.path, path.extname(file.path));
@@ -67,7 +50,6 @@ gulp.task("html:generatePages", ["html:writeNavigation"], () => {
       moment: moment,
       require: require,
 
-      isAmp: false,
       isRelease: isRelease,
       scope: scope,
 
@@ -76,18 +58,7 @@ gulp.task("html:generatePages", ["html:writeNavigation"], () => {
     };
   };
 
-  var hasAmp = (file: File) => ((<any> file).data.isAmp = (<any> file).data.hasAmp);
-
-  gulp.src("./pages/partials/**/*.pug")
-              .pipe($.replace(/^(\s*#+) /gm, "$1# "))
-              .pipe($.rename((path: path.ParsedPath): void => { path.ext = ".html"; }))
-              .pipe($.grayMatter())
-              .pipe($.data(getScope))
-              .pipe($.if(hasAmp, $.pug()))
-              .pipe($.flatten())
-              .pipe($.if(hasAmp, gulp.dest(paths.dest + "amp/")));
-
-  return gulp.src("./pages/partials/**/*.pug")
+  return gulp.src("./partials/pages/**/*.pug")
               .pipe($.replace(/^(\s*#+) /gm, "$1# "))
               .pipe($.rename((path: path.ParsedPath): void => { path.ext = ".html"; }))
               .pipe($.grayMatter())

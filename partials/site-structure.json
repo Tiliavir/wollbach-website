@@ -1,0 +1,108 @@
+[
+  {
+    "referencedFile": "index",
+    "navigation": "none",
+    "title": "Willkommen in Wollbach"
+  },
+  {
+    "children": [
+      {
+        "referencedFile": "1250-jahrfeier",
+        "title": "1250 Jahrfeier"
+      },
+      {
+        "referencedFile": "veranstaltungen",
+        "title": "Veranstaltungen"
+      }
+    ],
+    "title": "Aktuelles"
+  },
+  {
+    "children": [
+      {
+        "referencedFile": "ortsverwaltung",
+        "title": "Ortsverwaltung"
+      },
+      {
+        "referencedFile": "geschichte",
+        "title": "Geschichte"
+      },
+      {
+        "referencedFile": "oeffentliche-einrichtungen",
+        "title": "Jugendorchester"
+      }
+    ],
+    "title": "Unser Dorf"
+  },
+  {
+    "children": [
+      {
+        "referencedFile": "themen-und-wanderwege",
+        "title": "Themen- und Wanderwege"
+      },
+      {
+        "referencedFile": "museen",
+        "title": "Museen"
+      }
+    ],
+    "title": "Kultur und Freizeit"
+  },
+  {
+    "referencedFile": "vereine",
+    "title": "Vereine"
+  },
+  {
+    "referencedFile": "gastronomie",
+    "title": "Gastronomie"
+  },
+  {
+    "referencedFile": "gewerbe",
+    "title": "Gewerbe"
+  },
+  {
+    "referencedFile": "kirche",
+    "title": "Kirche"
+  },
+  {
+    "children": [
+      {
+        "referencedFile": "haftung",
+        "navigation": "none",
+        "title": "Haftungsausschluss"
+      },
+      {
+        "referencedFile": "datenschutz",
+        "navigation": "none",
+        "title": "Datenschutz"
+      },
+      {
+        "referencedFile": "seiten-uebersicht",
+        "navigation": "none",
+        "title": "Seiten-Übersicht"
+      }
+    ],
+    "referencedFile": "impressum",
+    "navigation": "footer",
+    "title": "Impressum"
+  },
+  {
+    "title": "Kontakt",
+    "referencedFile": "kontaktformular",
+    "navigation": "footer"
+  },
+  {
+    "title": "Suche",
+    "referencedFile": "suche",
+    "navigation": "footer"
+  },
+  {
+    "referencedFile": "404",
+    "navigation": "none",
+    "title": "Seite nicht gefunden!"
+  },
+  {
+    "referencedFile": "401",
+    "navigation": "none",
+    "title": "Unautorisierter Zugriff!"
+  }
+]

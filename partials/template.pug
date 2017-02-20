@@ -38,50 +38,56 @@ html(lang="de")
     meta(name="theme-color", content="#4a4a4a")
 
   body(itemscope itemtype="http://schema.org/" + (schemaOrg || "WebPage"))
-    <nav class="navigation" role="navigation">
-        <input type="checkbox" id="navigation-checkbox" class="navigation-checkbox">
-        <div class="navigation-header">
-            <a class="navigation-brand" href="#">
-                <img src="./img/wappen.svg" />
-            </a>
-            <label class="navigation-hamburger" for="navigation-checkbox">
-                <span></span>
-            </label>
-        </div>
+    //-
+        <nav class="navigation" role="navigation">
+            <input type="checkbox" id="navigation-checkbox" class="navigation-checkbox">
+            <div class="navigation-header">
+                <a class="navigation-brand" href="#">
+                    <img src="./img/wappen.svg" />
+                </a>
+                <label class="navigation-hamburger" for="navigation-checkbox">
+                    <span></span>
+                </label>
+            </div>
 
-        <div class="navigation-menu">
-            <ul class="navigation-items">
-                <li class="navigation-sub-menu"><a href="#">Aktuelles</a>
-                    <ul>
-                        <li><a href="#">Veranstaltungen</a></li>
-                    </ul>
-                </li>
-                <li class="navigation-sub-menu"><a href="#">Kultur und Freizeit</a>
-                    <ul>
-                        <li><a href="#">Museen</a></li>
-                        <li><a href="#">Themen- und Wanderwege</a></li>
-                    </ul>
-                </li>
-                <li><a class="active" href="#">Gewerbe</a></li>
-                <li><a href="#">Gastronomie</a></li>
-                <li><a href="#">Vereine</a></li>
-                <li class="navigation-sub-menu"><a href="#">Unser Dorf</a>
-                    <ul>
-                        <li><a href="#">Ortsverwaltung</a></li>
-                        <li><a href="#">Geschichte</a></li>
-                        <li><a href="#">"�ffentliche Einrichtungen"</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Kirche</a></li>
-            </ul>
-        </div>
-    </nav>
+            <div class="navigation-menu">
+                <ul class="navigation-items">
+                    <li class="navigation-sub-menu"><a href="#">Aktuelles</a>
+                        <ul>
+                            <li><a href="#">Veranstaltungen</a></li>
+                        </ul>
+                    </li>
+                    <li class="navigation-sub-menu"><a href="#">Kultur und Freizeit</a>
+                        <ul>
+                            <li><a href="#">Museen</a></li>
+                            <li><a href="#">Themen- und Wanderwege</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="active" href="#">Gewerbe</a></li>
+                    <li><a href="#">Gastronomie</a></li>
+                    <li><a href="#">Vereine</a></li>
+                    <li class="navigation-sub-menu"><a href="#">Unser Dorf</a>
+                        <ul>
+                            <li><a href="#">Ortsverwaltung</a></li>
+                            <li><a href="#">Geschichte</a></li>
+                            <li><a href="#">"�ffentliche Einrichtungen"</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Kirche</a></li>
+                </ul>
+            </div>
+        </nav>
 
     block header
 
     img.brand-print(src="/img/logo_color.png" alt=scope.siteTitle)
 
-    .content
+    .content(itemprop="mainContentOfPage")
+      h1.page-header #{title}
+        if subtitle
+            small= " " + subtitle
+        | !{breadcrumb}
+      block content
 
     .footer
       include ./footernavigation.pug
@@ -89,4 +95,3 @@ html(lang="de")
     script
       include ./scripts/app.js
       block pageScripts
-
