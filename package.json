@@ -1,0 +1,72 @@
+{
+  "name": "wollbach",
+  "version": "17.3.0",
+  "description": "Website for Wollbach",
+  "keywords": [
+    "Wollbach",
+    "Website",
+    "Kandern"
+  ],
+  "author": "Markus Lindenmann <markus.lindenmann@web.de>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://mvw1866.visualstudio.com/DefaultCollection/Website/_git/wollbach-website"
+  },
+  "config": {
+    "pathToProd": "../wollbach-prod/"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^3.3.32",
+    "@types/gulp": "^3.8.32",
+    "@types/gulp-load-plugins": "^0.0.28",
+    "@types/grecaptcha": "^2.0.31",
+    "@types/lunr": "^0.5.28",
+    "@types/marked": "^0.0.28",
+    "@types/node": "^7.0.5",
+    "@types/vinyl": "^2.0.0",
+    "@types/yargs": "^6.6.0",
+    "autoprefixer": "^6.7.2",
+    "copyfiles": "^1.2.0",
+    "node-sass": "^4.5.0",
+    "postcss-cli": "^2.6.0",
+    "sass-lint": "^1.10.2",
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.6"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-data": "^1.2.1",
+    "gulp-sequence": "^0.4.6",
+    "gulp-flatten": "^0.3.1",
+    "gulp-gray-matter": "^3.0.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sitemap": "^4.2.0",
+
+    "jquery": "^3.1.1",
+    "jstransformer-marked": "^1.0.2",
+    "marked": "^0.3.6",
+    "moment": "^2.17.1",
+    "mvw-navigation": "^1.0.4",
+    "pug": "^2.0.0-beta11"
+  },
+  "scripts": {
+    "lint": "sass-lint -c sass-lint.yml -v -q && tslint -c tslint.json \"pages/scripts/**/*.ts\"",
+    "clean": "rimraf ./build/ ./pages/{styles,scripts}/**/*.{css,js}",
+
+    "precompile": "npm run clean && mkdir build",
+    "compile:sass": "node-sass ./pages/styles/ -o ./pages/styles && postcss --use autoprefixer ./pages/styles/**/*.css -r",
+    "compile": "tsc && npm run compile:sass && gulp",
+
+    "precopy": "copyfiles -u 3 ./src/bootstrap/js/bootstrap.min.js %npm_package_config_pathToProd%/js/ && copyfiles -u 3 ./node_modules/jquery/dist/jquery.min.js %npm_package_config_pathToProd%/js/ && copyfiles -u 4 ./node_modules/photoswipe/dist/default-skin/*.{svg,png,gif} %npm_package_config_pathToProd%/",
+    "copy": "copyup ./build/**/* %npm_package_config_pathToProd%/",
+
+    "prerelease": "npm run lint",
+    "release": "npm run compile -- release --release=true && npm run copy"
+  }
+}

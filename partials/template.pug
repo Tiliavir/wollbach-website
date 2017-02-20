@@ -1,0 +1,92 @@
+doctype html
+//- xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"
+html(lang="de")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    title=(referencedFile === "index" ? "" : title + " | ") + scope.siteTitle
+
+    if isRelease
+      base(href=scope.baseUrl)
+    meta(name="author" content=scope.siteTitle)
+    if description
+      meta(name="description" content=description)
+    if keywords
+      meta(name="keywords" content=keywords)
+    meta(property="og:type" content="website")
+    meta(property="og:image" content=scope.baseUrl + "img/logo_color.png")
+    meta(property="og:locale" content="de_DE")
+    meta(property="og:site_name" content=scope.siteTitle)
+
+    if hasAmp
+      link(rel="amphtml" href=`${scope.baseUrl}amp/${referencedFile}.html`)
+
+    link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
+    link(rel="icon", type="image/png", href="/favicon-194x194.png", sizes="194x194")
+    link(rel="icon", type="image/png", href="/favicon-96x96.png", sizes="96x96")
+    link(rel="icon", type="image/png", href="/android-chrome-192x192.png", sizes="192x192")
+    link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
+    link(rel="manifest", href="/manifest.json")
+    link(rel="mask-icon", href="/safari-pinned-tab.svg")
+    meta(name="apple-mobile-web-app-title", content="MV Wollbach")
+    meta(name="application-name", content="MV Wollbach")
+    meta(name="msapplication-TileColor", content="#4a4a4a")
+    meta(name="msapplication-TileImage", content="/mstile-144x144.png")
+    meta(name="theme-color", content="#4a4a4a")
+
+  body(itemscope itemtype="http://schema.org/" + (schemaOrg || "WebPage"))
+    <nav class="navigation" role="navigation">
+        <input type="checkbox" id="navigation-checkbox" class="navigation-checkbox">
+        <div class="navigation-header">
+            <a class="navigation-brand" href="#">
+                <img src="./img/wappen.svg" />
+            </a>
+            <label class="navigation-hamburger" for="navigation-checkbox">
+                <span></span>
+            </label>
+        </div>
+
+        <div class="navigation-menu">
+            <ul class="navigation-items">
+                <li class="navigation-sub-menu"><a href="#">Aktuelles</a>
+                    <ul>
+                        <li><a href="#">Veranstaltungen</a></li>
+                    </ul>
+                </li>
+                <li class="navigation-sub-menu"><a href="#">Kultur und Freizeit</a>
+                    <ul>
+                        <li><a href="#">Museen</a></li>
+                        <li><a href="#">Themen- und Wanderwege</a></li>
+                    </ul>
+                </li>
+                <li><a class="active" href="#">Gewerbe</a></li>
+                <li><a href="#">Gastronomie</a></li>
+                <li><a href="#">Vereine</a></li>
+                <li class="navigation-sub-menu"><a href="#">Unser Dorf</a>
+                    <ul>
+                        <li><a href="#">Ortsverwaltung</a></li>
+                        <li><a href="#">Geschichte</a></li>
+                        <li><a href="#">"�ffentliche Einrichtungen"</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Kirche</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    block header
+
+    img.brand-print(src="/img/logo_color.png" alt=scope.siteTitle)
+
+    .content
+
+    .footer
+      include ./footernavigation.pug
+
+    script
+      include ./scripts/app.js
+      block pageScripts
+
