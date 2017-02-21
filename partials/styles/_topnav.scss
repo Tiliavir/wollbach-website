@@ -173,7 +173,7 @@ $color-active: #fff;
     }
 }
 
-.navigation-sub-menu {
+.dropdown {
     position: relative;
     height: auto;
 
@@ -267,7 +267,7 @@ $color-active: #fff;
         overflow-x: visible;
     }
 
-    .navigation-sub-menu {
+    .dropdown {
         height: $height;
 
         &:hover > ul {
