@@ -9,7 +9,7 @@ $background-color: #EBC904;
 $background-color-hover-and-focus: #1e262a;
 $background-color-active: #14191c;
 
-$color: #ccc;
+$color: #333;
 $color-hover-and-focus: #ddd;
 $color-active: #fff;
 
@@ -41,7 +41,7 @@ $color-active: #fff;
     text-align: left;
 }
 
-.navigation-items {
+.navigation-menu > ul {
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -219,13 +219,7 @@ $color-active: #fff;
         display: none;
     }
 
-    .navigation-current-user {
-        display: inline-block;
-        position: absolute;
-        right: 20px;
-    }
-
-    .navigation-items {
+    .navigation-menu > ul {
         flex-flow: row;
         width: 100%;
 

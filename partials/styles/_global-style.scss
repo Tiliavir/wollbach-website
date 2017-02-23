@@ -29,7 +29,7 @@ h2, h3 {
   width: 80vw;
   max-width: 1100px;
   min-height: 200px;
-  margin: 70px auto 0 auto;
+  margin: -50px auto 0 auto;
 }
 
 .footer {
@@ -38,12 +38,32 @@ h2, h3 {
   height: 40px;
   max-width: 1100px;
   margin: 20px auto;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    display: inline-block;
+    padding: 10px 0;
+    line-height: 40px;
+    height: 40px;
+  }
 }
 
 .brand-print {
-  visibility: hidden;
+  display: none;
 }
 
 @media print {
-  
+  .brand-print {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .navigation,
+  .header {
+    display: none;
+  }
 }

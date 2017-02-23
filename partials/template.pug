@@ -39,6 +39,8 @@ html(lang="de")
     meta(name="theme-color", content="#4a4a4a")
 
   body(itemscope itemtype="http://schema.org/" + (schemaOrg || "WebPage"))
+    .header
+
     nav.navigation
       input#navigation-checkbox.navigation-checkbox(type="checkbox")
       .navigation-header
@@ -48,31 +50,6 @@ html(lang="de")
           span
       .navigation-menu
         include ./topnavigation.pug
-    //-
-        <ul class="navigation-items">
-            <li class="navigation-sub-menu"><a href="#">Aktuelles</a>
-                <ul>
-                    <li><a href="#">Veranstaltungen</a></li>
-                </ul>
-            </li>
-            <li class="navigation-sub-menu"><a href="#">Kultur und Freizeit</a>
-                <ul>
-                    <li><a href="#">Museen</a></li>
-                    <li><a href="#">Themen- und Wanderwege</a></li>
-                </ul>
-            </li>
-            <li><a class="active" href="#">Gewerbe</a></li>
-            <li><a href="#">Gastronomie</a></li>
-            <li><a href="#">Vereine</a></li>
-            <li class="navigation-sub-menu"><a href="#">Unser Dorf</a>
-                <ul>
-                    <li><a href="#">Ortsverwaltung</a></li>
-                    <li><a href="#">Geschichte</a></li>
-                    <li><a href="#">"�ffentliche Einrichtungen"</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Kirche</a></li>
-        </ul>
 
     block header
 
@@ -85,7 +62,7 @@ html(lang="de")
       | !{breadcrumb}
       block content
 
-    .footer
+    nav.footer
       include ./footernavigation.pug
 
     script
