@@ -16,16 +16,13 @@ $color: #333;
 $color-active: #F70203;
 $color-hover-and-focus: lighten($color-active, 20%);
 
-%color-and-font {
+$header-min-height: 200px;
+
+.navigation {
     background-color: transparentize($background-color, 0.3);
     color: $color;
     font-size: 14px;
     font-weight: 700;
-}
-
-.navigation {
-    @extend %color-and-font;
-
     width: 100%;
     position: relative;
     top: -$height;
@@ -39,17 +36,14 @@ $color-hover-and-focus: lighten($color-active, 20%);
 
 .navigation-header {
     display: inline-block;
-    position: absolute;
-    top: -150px;
-    left: 30px;
-    width: 157px;
-    height: 200px;
 }
 
 .navigation-menu {
     overflow-x: hidden;
     min-height: $height;
     text-align: left;
+    position: relative;
+    top: 30px;
 }
 
 .navigation-menu > ul {
@@ -79,15 +73,20 @@ $color-hover-and-focus: lighten($color-active, 20%);
 }
 
 .navigation-brand {
-    position: relative;
     right: 0;
     padding: 0 20px;
     display: inline-block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 157px;
     height: 200px;
 
     img {
         margin-top: 10px;
         height: 140px;
+        max-height: 20vw;
+        min-height: 20px;
     }
 }
 
@@ -153,7 +152,7 @@ $color-hover-and-focus: lighten($color-active, 20%);
 
             .navigation-items {
                 transition: max-height $transition;
-                max-height: calc(80vh - #{$height});
+                max-height: calc(80vh - #{$height + $header-min-height});
                 height: auto;
             }
         }
@@ -194,8 +193,6 @@ $color-hover-and-focus: lighten($color-active, 20%);
         display: block;
         min-width: 100%;
         background-color: $body-bg;
-        box-shadow: 0 5px 10px -2px $black;
-        border-top: 1px solid $color;
     }
 
     & > a {
@@ -212,8 +209,10 @@ $color-hover-and-focus: lighten($color-active, 20%);
     }
 
     & > ul {
-        @extend %color-and-font;
-
+        color: $color;
+        font-size: 14px;
+        font-weight: 700;
+        background-color: none;
         display: block;
         list-style: none;
         padding: 0;
@@ -226,6 +225,12 @@ $color-hover-and-focus: lighten($color-active, 20%);
                 padding: 0;
             }
         }
+    }
+}
+
+@media (max-width: 767px) {
+    .navigation-menu {
+        background-color: transparentize($background-color, 0.1);
     }
 }
 
@@ -271,6 +276,8 @@ $color-hover-and-focus: lighten($color-active, 20%);
     }
 
     .navigation-menu {
+        position: absolute;
+        top: 0;
         width: 100%;
         overflow-x: visible;
         max-width: 1100px;
@@ -289,13 +296,16 @@ $color-hover-and-focus: lighten($color-active, 20%);
 
         & > ul {
             display: none;
+            box-shadow: 0 5px 10px -2px $black;
+            border-top: 1px solid $color;
 
             li {
                 padding: 3px 10px;
-                height: 35px;
 
                 a {
                     white-space: nowrap;
+                    height: 35px;
+                    line-height: 35px;
                 }
             }
         }

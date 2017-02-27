@@ -29,6 +29,7 @@ body {
     background-color: $body-bg;
     color: $text-color;
     line-height: 1.4285;
+    min-height: 100vh;
 }
 
 h1,
@@ -212,6 +213,12 @@ h2, h3 {
   width: 100%;
   margin: 0 auto;
   max-width: 1400px;
+}
+
+@media (orientation:portrait) {
+    .header {
+        max-height: 30vh;
+    }
 }
 
 .content {
