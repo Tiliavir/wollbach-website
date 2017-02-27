@@ -1,24 +1,26 @@
-$height: 60px;
+$body-bg: #fff;
+$black: #000;
+
+$height: 50px;
 $padding: 21px 20px;
 $transition: .6s ease;
 
 $navbar-inverse-color: #ddd;
 $font-size-base: 12px;
 
-$background-color: #44EB04; // #EBC904;
-$background-color-hover-and-focus: #1e262a;
-$background-color-active: #14191c;
+$background-color: $body-bg;
+$background-color-active: #EBC904;
+$background-color-hover-and-focus: lighten($background-color-active, 20%);
 
 $color: #333;
-$color-hover-and-focus: #ddd;
 $color-active: #F70203;
+$color-hover-and-focus: lighten($color-active, 20%);
 
 %color-and-font {
-    background-color: $background-color;
+    background-color: transparentize($background-color, 0.3);
     color: $color;
     font-size: 14px;
     font-weight: 700;
-    opacity: .8;
 }
 
 .navigation {
@@ -28,11 +30,20 @@ $color-active: #F70203;
     position: relative;
     top: -$height;
     z-index: 1000;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: $height;
+    border-bottom: 1px solid $color;
+    box-shadow: 0 -5px 8px 0px transparentize($background-color, 0.3), 0 10px 15px -10px $black;
 }
 
 .navigation-header {
     display: inline-block;
-    height: $height;
+    position: absolute;
+    top: -150px;
+    left: 30px;
+    width: 157px;
+    height: 200px;
 }
 
 .navigation-menu {
@@ -70,12 +81,13 @@ $color-active: #F70203;
 .navigation-brand {
     position: relative;
     right: 0;
-    padding: 5px 20px;
+    padding: 0 20px;
     display: inline-block;
-    height: 50px;
+    height: 200px;
 
     img {
-        height: 50px;
+        margin-top: 10px;
+        height: 140px;
     }
 }
 
@@ -181,6 +193,9 @@ $color-active: #F70203;
         position: relative;
         display: block;
         min-width: 100%;
+        background-color: $body-bg;
+        box-shadow: 0 5px 10px -2px $black;
+        border-top: 1px solid $color;
     }
 
     & > a {
@@ -228,8 +243,9 @@ $color-active: #F70203;
 
             &:hover,
             &:focus {
-                background-color: $background-color-hover-and-focus;
+                background-color: transparentize($background-color-hover-and-focus, .3);
                 color: $color-hover-and-focus;
+                box-shadow: 0 -4px 7px 0 transparentize($background-color-hover-and-focus, .3);
             }
 
             a {
@@ -241,24 +257,24 @@ $color-active: #F70203;
             }
 
             &.active {
-                background-color: $background-color-active;
+                background-color: transparentize($background-color-active, .3);
                 color: $color-active;
+                box-shadow: 0 -4px 7px 0 transparentize($background-color-active, .3);
             }
         }
     }
 
     .navigation-checkbox {
         &:not(:checked) ~.navigation-menu {
-            display: inline-block;
+            display: block;
         }
     }
 
     .navigation-menu {
-        position: absolute;
-        left: 90px;
-        top: 0;
-        width: calc(100% - 90px);
+        width: 100%;
         overflow-x: visible;
+        max-width: 1100px;
+        margin: 0 auto;
     }
 
     .dropdown {
@@ -276,6 +292,7 @@ $color-active: #F70203;
 
             li {
                 padding: 3px 10px;
+                height: 35px;
 
                 a {
                     white-space: nowrap;

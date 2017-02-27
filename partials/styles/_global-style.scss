@@ -3,9 +3,196 @@ $color-yellow: #EBC904;
 $color-light-grey: #f5f5f5;
 $top-nav-height: 60px;
 
+$text-color: #333;
+
+$gray-light: #999;
+
+$font-family: 'Open Sans', Arial, sans-serif;
+$font-size-large: 18px;
+$font-size-base: 14px;
+$font-size-small: 12px;
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+* {
+    &:focus {
+        outline: none;
+    }
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
+    margin: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: $font-family;
+    font-size: $font-size-base;
+    background-color: $body-bg;
+    color: $text-color;
+    line-height: 1.4285;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+svg {
+    &:not(:root) {
+        overflow: hidden;
+    }
+}
+
+button {
+    overflow: visible;
+}
+
+table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300;
+    line-height: 1.1;
+
+    small {
+        font-weight: normal;
+        line-height: 1;
+        color: $gray-light;
+    }
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    small {
+        font-size: 65%;
+    }
+}
+
+h4,
+h5,
+h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    small {
+        font-size: 75%;
+    }
+}
+
+h1 {
+    font-size: 1.33 * $font-size-large;
+}
+
+h2 {
+    font-size: $font-size-large;
+}
+
+h3 {
+    font-size: $font-size-base;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: $font-size-small + 1;
+}
+
+h5 {
+    font-size: $font-size-small;
+}
+
+h6 {
+    font-size: $font-size-small - 1;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    ul,
+    ol {
+        margin-bottom: 0;
+    }
+}
+
+small,
+.small {
+    font-size: 85%;
+}
+
+a {
+    color: $color-red;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: $color-red;
+        text-decoration: underline;
+    }
+}
+
+.breadcrumb {
+    padding: 8px 0;
+    margin-bottom: 20px;
+    list-style: none;
+
+    & > li {
+        display: inline-block;
+
+        &.active {
+            color: $color-red;
+        }
+    }
+
+    & > li + li {
+        &::before {
+            content: '\00a0>';
+            padding: 0 3px;
+        }
+    }
 }
 
 h1 {
@@ -55,10 +242,10 @@ h2, h3 {
 
   a {
     text-decoration: none;
-    color: darken($color-light-grey, 20%);
+    color: darken($color-light-grey, 35%);
 
     &:hover {
-      color: darken($color-light-grey, 40%);
+      color: darken($color-light-grey, 50%);
       text-decoration: none;
     }
   }
@@ -66,16 +253,4 @@ h2, h3 {
 
 .brand-print {
   display: none;
-}
-
-@media print {
-  .brand-print {
-    display: block;
-    margin: 0 auto;
-  }
-
-  .navigation,
-  .header {
-    display: none;
-  }
 }

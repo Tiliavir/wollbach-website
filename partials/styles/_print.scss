@@ -1,6 +1,77 @@
 $breadcrumb-print-color: #000;
 
 @media print {
+    a {
+        text-decoration: underline;
+
+        &:visited {
+            text-decoration: underline;
+        }
+
+        &[href] {
+            &::after {
+                content: ' (' attr(href) ')';
+            }
+        }
+
+        &[href^='#'],
+        &[href^='javascript:'] {
+            &::after {
+                content: '';
+            }
+        }
+    }
+
+    pre,
+    blockquote,
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid $gray-light;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    .flx-global-navigation {
+        display: none;
+    }
+
+    .label {
+        border: 1px solid $text-color;
+    }
+
+  .brand-print {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .navigation,
+  .header {
+    display: none;
+  }
+
   html,
   body {
     background: none;

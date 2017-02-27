@@ -4,12 +4,12 @@ import * as gulp from "gulp";
 import * as moment from "moment";
 import * as marked from "marked"
 import * as path from "path";
-import * as yargs from "yargs";
+//import * as yargs from "yargs";
 import * as gulpLoadPlugins from "gulp-load-plugins";
 import { Navigation } from "mvw-navigation";
 import { SearchIndex } from "mvw-search-index";
 
-let isRelease: boolean = yargs.default("release", false).boolean("release").argv;
+let isRelease: boolean = false; //yargs.default("release", false).boolean("release").argv;
 let baseUrl = isRelease ? "http://www.wollbach.info/" : "http://localhost/";
 let navigation: Navigation;
 let searchIndex: SearchIndex = new SearchIndex();
