@@ -7,3 +7,45 @@ navigation: "top"
 ---
 
 extends ../../template.pug
+
+block content
+  - var appointments = require("./partials/data/veranstaltungen.json");
+  
+  each year in Object.keys(appointments)
+    h2 #{year}
+    table
+      thead
+        tr
+          th Datum
+          th Veranstaltung
+      tbody
+        each appointment in appointments[year]
+          tr(itemscope itemtype="http://schema.org/Event")
+            td
+              +formatTimespan(appointment.starttime, appointment.endtime, true)
+            td
+              span(itemprop="name")
+                | #{appointment.title}
+
+              if appointment.location
+                | &nbsp;(
+                span(itemprop="location" itemscope itemtype="http://schema.org/Place")
+                  if appointment.location.name
+                    span(itemprop="name")
+                      | #{appointment.location.name}
+                  if appointment.location.address
+                    if appointment.location.name
+                      | ,&nbsp;
+                    span(itemprop="address")
+                      | #{appointment.location.address}
+                | )
+
+              if appointment.description
+                div.description(itemprop="description")
+                  != marked(appointment.description)
+
+block pageScripts
+  include ../../scripts/veranstaltungen.js
+
+block pageStyles
+  include ../../styles/veranstaltungen.css

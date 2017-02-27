@@ -1,313 +1,307 @@
 $body-bg: #fff;
 $black: #000;
-
 $height: 50px;
 $padding: 21px 20px;
 $transition: .6s ease;
-
 $navbar-inverse-color: #ddd;
 $font-size-base: 12px;
-
 $background-color: $body-bg;
 $background-color-active: #EBC904;
 $background-color-hover-and-focus: lighten($background-color-active, 20%);
-
 $color: #333;
 $color-active: #F70203;
 $color-hover-and-focus: lighten($color-active, 20%);
-
 $header-min-height: 200px;
 
 .navigation {
-    background-color: transparentize($background-color, 0.3);
-    color: $color;
-    font-size: 14px;
-    font-weight: 700;
-    width: 100%;
-    position: relative;
-    top: -$height;
-    z-index: 1000;
-    max-width: 1400px;
-    margin: 0 auto;
-    height: $height;
-    border-bottom: 1px solid $color;
-    box-shadow: 0 -5px 8px 0px transparentize($background-color, 0.3), 0 10px 15px -10px $black;
+  background-color: transparentize($background-color, 0.3);
+  color: $color;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+  position: relative;
+  top: -$height;
+  z-index: 1000;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: $height;
+  border-bottom: 1px solid $color;
+  box-shadow: 0 -5px 8px 0px transparentize($background-color, 0.3), 0 10px 15px -10px $black;
 }
 
 .navigation-header {
-    display: inline-block;
+  display: inline-block;
 }
 
 .navigation-menu {
-    overflow-x: hidden;
-    min-height: $height;
-    text-align: left;
-    position: relative;
-    top: 30px;
+  overflow-x: hidden;
+  min-height: $height;
+  text-align: left;
+  position: relative;
+  top: 30px;
 }
 
-.navigation-menu > ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-    transition: $transition;
+.navigation-menu>ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  transition: $transition;
 
-    li {
-        height: auto;
+  li {
+    height: auto;
 
-        a {
-            padding: 10px 15px;
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            cursor: pointer;
-        }
-
-        &:hover,
-        &.active {
-            color: $color-active;
-        }
+    a {
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
+
+    &:hover,
+    &.active {
+      color: $color-active;
+    }
+  }
 }
 
 .navigation-brand {
-    right: 0;
-    padding: 0 20px;
-    display: inline-block;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    width: 157px;
-    height: 200px;
+  right: 0;
+  padding: 0 20px;
+  display: inline-block;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 157px;
+  height: 200px;
 
-    img {
-        margin-top: 10px;
-        height: 140px;
-        max-height: 20vw;
-        min-height: 20px;
-    }
+  img {
+    margin-top: 10px;
+    height: 140px;
+    max-height: 20vw;
+    min-height: 20px;
+  }
 }
 
 .navigation-hamburger {
-    %burger-slice-style {
-        height: 2px;
-        width: 22px;
-        transition: transform .4s ease;
-        background: $color;
-        z-index: 1;
+  %burger-slice-style {
+    height: 2px;
+    width: 22px;
+    transition: transform .4s ease;
+    background: $color;
+    z-index: 1;
+  }
+
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  margin: 0;
+  padding: 15px;
+  cursor: pointer;
+
+  span {
+    @extend %burger-slice-style;
+    position: relative;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      @extend %burger-slice-style;
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 0;
     }
 
-    position: absolute;
-    top: 12px;
-    right: 10px;
-    margin: 0;
-    padding: 15px;
-    cursor: pointer;
-
-    span {
-        @extend %burger-slice-style;
-        position: relative;
-        flex: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &::before {
-            @extend %burger-slice-style;
-            content: '';
-            position: absolute;
-            top: -7px;
-            left: 0;
-        }
-
-        &::after {
-            @extend %burger-slice-style;
-            content: '';
-            position: absolute;
-            top: 7px;
-            left: 0;
-        }
+    &::after {
+      @extend %burger-slice-style;
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 0;
     }
+  }
 }
 
 .navigation-checkbox {
+  display: none;
+
+  &:not(:checked)~.navigation-menu {
     display: none;
 
-    &:not(:checked) ~.navigation-menu {
-        display: none;
+    .navigation-items {
+      height: 0;
+      max-height: 0;
+    }
+  }
 
-        .navigation-items {
-            height: 0;
-            max-height: 0;
-        }
+  &:checked {
+    &~.navigation-menu {
+      display: block;
+      max-height: calc(80vh - #{$height});
+      overflow-y: auto;
+
+      .navigation-items {
+        transition: max-height $transition;
+        max-height: calc(80vh - #{$height + $header-min-height});
+        height: auto;
+      }
     }
 
-    &:checked {
-        & ~.navigation-menu {
-            display: block;
-            max-height: calc(80vh - #{$height});
-            overflow-y: auto;
+    &~.navigation-header {
+      .navigation-hamburger {
+        span {
+          transform: rotate(135deg);
 
-            .navigation-items {
-                transition: max-height $transition;
-                max-height: calc(80vh - #{$height + $header-min-height});
-                height: auto;
-            }
+          &::before {
+            top: 0;
+            transform: rotate(90deg);
+          }
+
+          &::after {
+            top: 0;
+            transform: rotate(90deg);
+            opacity: 0;
+          }
         }
 
-        & ~.navigation-header {
-            .navigation-hamburger {
-                span {
-                    transform: rotate(135deg);
-
-                    &::before {
-                        top: 0;
-                        transform: rotate(90deg);
-                    }
-
-                    &::after {
-                        top: 0;
-                        transform: rotate(90deg);
-                        opacity: 0;
-                    }
-                }
-
-                &:hover {
-                    span {
-                        transform: rotate(225deg);
-                    }
-                }
-            }
+        &:hover {
+          span {
+            transform: rotate(225deg);
+          }
         }
+      }
     }
+  }
 }
 
 .dropdown {
+  position: relative;
+  height: auto;
+
+  &:hover>ul {
     position: relative;
-    height: auto;
+    display: block;
+    min-width: 100%;
+    background-color: $body-bg;
+  }
 
-    &:hover > ul {
-        position: relative;
-        display: block;
-        min-width: 100%;
-        background-color: $body-bg;
+  &>a {
+    &::after {
+      $expand-arrow-height: 5px;
+      position: absolute;
+      content: '';
+      right: 10px;
+      top: $height / 2 - $expand-arrow-height + 1px;
+      border: $expand-arrow-height solid transparent;
+      border-bottom: 0 $color;
     }
+  }
 
-    & > a {
-        &::after {
-            $expand-arrow-height: 5px;
+  &>ul {
+    color: $color;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: none;
+    display: block;
+    list-style: none;
+    padding: 0;
 
-            position: absolute;
-            content: '';
-            right: 10px;
-            top: $height / 2 - $expand-arrow-height + 1px;
-            border: $expand-arrow-height solid transparent;
-            border-bottom: 0 $color;
-        }
-    }
+    li {
+      min-width: 100%;
+      padding: 5px 10px 5px 40px;
 
-    & > ul {
-        color: $color;
-        font-size: 14px;
-        font-weight: 700;
-        background-color: none;
-        display: block;
-        list-style: none;
+      a {
         padding: 0;
-
-        li {
-            min-width: 100%;
-            padding: 5px 10px 5px 40px;
-
-            a {
-                padding: 0;
-            }
-        }
+      }
     }
+  }
 }
 
 @media (max-width: 767px) {
-    .navigation-menu {
-        background-color: transparentize($background-color, 0.1);
-    }
+  .navigation-menu {
+    background-color: transparentize($background-color, 0.1);
+  }
 }
 
 @media (min-width: 768px) {
-    .navigation-hamburger {
-        display: none;
-    }
+  .navigation-hamburger {
+    display: none;
+  }
 
-    .navigation-menu > ul {
-        flex-flow: row;
-        width: 100%;
+  .navigation-menu>ul {
+    flex-flow: row;
+    width: 100%;
 
-        & > li {
-            display: inline-block;
+    &>li {
+      display: inline-block;
 
-            &:hover,
-            &:focus {
-                background-color: transparentize($background-color-hover-and-focus, .3);
-                color: $color-hover-and-focus;
-                box-shadow: 0 -4px 7px 0 transparentize($background-color-hover-and-focus, .3);
-            }
+      &:hover,
+      &:focus {
+        background-color: transparentize($background-color-hover-and-focus, .3);
+        color: $color-hover-and-focus;
+        box-shadow: 0 -4px 7px 0 transparentize($background-color-hover-and-focus, .3);
+      }
 
-            a {
-                position: relative;
-                padding: 0 15px;
-                display: block;
-                height: $height;
-                line-height: $height;
-            }
-
-            &.active {
-                background-color: transparentize($background-color-active, .3);
-                color: $color-active;
-                box-shadow: 0 -4px 7px 0 transparentize($background-color-active, .3);
-            }
-        }
-    }
-
-    .navigation-checkbox {
-        &:not(:checked) ~.navigation-menu {
-            display: block;
-        }
-    }
-
-    .navigation-menu {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        overflow-x: visible;
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
-    .dropdown {
+      a {
+        position: relative;
+        padding: 0 15px;
+        display: block;
         height: $height;
+        line-height: $height;
+      }
 
-        &:hover > ul {
-            position: absolute;
-            left: 0;
-            top: $height;
-            padding: 0;
-        }
-
-        & > ul {
-            display: none;
-            box-shadow: 0 5px 10px -2px $black;
-            border-top: 1px solid $color;
-
-            li {
-                padding: 3px 10px;
-
-                a {
-                    white-space: nowrap;
-                    height: 35px;
-                    line-height: 35px;
-                }
-            }
-        }
+      &.active {
+        background-color: transparentize($background-color-active, .3);
+        color: $color-active;
+        box-shadow: 0 -4px 7px 0 transparentize($background-color-active, .3);
+      }
     }
+  }
+
+  .navigation-checkbox {
+    &:not(:checked)~.navigation-menu {
+      display: block;
+    }
+  }
+
+  .navigation-menu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow-x: visible;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .dropdown {
+    height: $height;
+
+    &:hover>ul {
+      position: absolute;
+      left: 0;
+      top: $height;
+      padding: 0;
+    }
+
+    &>ul {
+      display: none;
+      box-shadow: 0 5px 10px -2px $black;
+      border-top: 1px solid $color;
+    
+      li {
+        padding: 3px 10px;
+
+        a {
+          white-space: nowrap;
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+    }
+  }
 }

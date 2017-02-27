@@ -1,369 +1,323 @@
-[
- {
-   "date": "2017-01-05",
-   "name": "Generalversammlung",
-   "organizer": "Feuerwehr-Abt. Wollbach",
-   "location": "Kandertalstübli"
- },
- {
-   "date": "2017-01-06",
-   "name": "Neujahrsempfang",
-   "organizer": "Ortsverwaltung Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "date": "2017-01-14",
-   "name": "Kappenabend ",
-   "organizer": "Füürdeufel Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "date": "2017-01-27",
-   "name": "Jubiläumsausstellung\n- Eröffnung",
-   "organizer": "1250 Jahre Wollbach, Binzen, Eimeldingen, Haltingen, Rümmingen",
-   "location": "Dreiländermuseum\nam Burghof Lörrach"
- },
- {
-   "FIELD1": "Januar",
-   "date": "Fr   27.",
-   "name": "Jahreskonzert I",
-   "organizer": "Musikverein Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Januar",
-   "date": "Sa  28.",
-   "name": "Jahreskonzert II",
-   "organizer": "Musikverein Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Februar",
-   "date": "Sa  04.",
-   "name": "Familienabend",
-   "organizer": "Kirchenchor Wollbach",
-   "location": "Wartburg Wollbach"
- },
- {
-   "FIELD1": "Februar",
-   "date": "Di   07.",
-   "name": "Generalversammlung",
-   "organizer": "Gesangverein Wollbach",
-   "location": "Kandertalstübli"
- },
- {
-   "FIELD1": "Februar",
-   "date": "Mi   08.",
-   "name": "Leitplanung Sitzung",
-   "organizer": "BMA Kandern",
-   "location": "Kandertalstübli"
- },
- {
-   "FIELD1": "Februar",
-   "date": "Do  09.",
-   "name": "Generalversammlung",
-   "organizer": "Musikverein Wollbach",
-   "location": "Kandertalstübli"
- },
- {
-   "FIELD1": "Februar",
-   "date": "Fr   10.",
-   "name": "Generalversammlung",
-   "organizer": "Tennisclub Wollbach",
-   "location": "Alte Krone"
- },
- {
-   "FIELD1": "Februar",
-   "date": "Sa  11.",
-   "name": "Offenes Gerätehaus",
-   "organizer": "Feuerwehr-Abt. Wollbach",
-   "location": "Feuerwehrgerätehaus"
- },
- {
-   "FIELD1": "Februar",
-   "date": "So  12.",
-   "name": "Winterwandertag",
-   "organizer": "Wanderfreunde Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Februar",
-   "date": "Sa  18.",
-   "name": "Hexenball",
-   "organizer": "Kanderner Hexen",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Februar",
-   "date": "Do  23.",
-   "name": "Hemdglunki",
-   "organizer": "Chochlöffel Wollbach",
-   "location": "Alte Krone"
- },
- {
-   "FIELD1": "März",
-   "date": "Fr   03.",
-   "name": "Weltgebetstag",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Wartburg Wollbach"
- },
- {
-   "FIELD1": "März",
-   "date": "So  05.",
-   "name": "Fasnachtsfeuer",
-   "organizer": "Musikverein Wollbach",
-   "location": "Baselblick"
- },
- {
-   "FIELD1": "März",
-   "date": "Sa  11.",
-   "name": "Jugendturnier",
-   "organizer": "Sportverein Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "März",
-   "date": "So  12.",
-   "name": "Jugendturnier",
-   "organizer": "Sportverein Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "März",
-   "date": "So  12.",
-   "name": "Generalversammlung",
-   "organizer": "Frauenverein Wollbach",
-   "location": "Wartburg Wollbach"
- },
- {
-   "FIELD1": "März",
-   "date": "Sa  18.",
-   "name": "Frühlingsfest",
-   "organizer": "Obstbauverein Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "März",
-   "date": "So  26.",
-   "name": "Seniorennachmittag",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Wartburg Wollbach"
- },
- {
-   "FIELD1": "März",
-   "date": "Fr   31.",
-   "name": "Generalversammlung",
-   "organizer": "Sportverein Wollbach",
-   "location": "Sportheim Wollbach"
- },
- {
-   "FIELD1": "April",
-   "date": "So  02.",
-   "name": "Konfirmationsjubiläum",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Ev. Kirche Wollbach"
- },
- {
-   "FIELD1": "April",
-   "date": "So  16.",
-   "name": "Osternacht",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Ev. Kirche Wollbach"
- },
- {
-   "FIELD1": "April",
-   "date": "So  30.",
-   "name": "Tanz in den Mai",
-   "organizer": "Sportverein Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Mai",
-   "date": "Mo  01.",
-   "name": "Schänke am Bach",
-   "organizer": "Feuerwehr-Abt. Wollbach",
-   "location": "Hammerstein"
- },
- {
-   "FIELD1": "Mai",
-   "date": "\"",
-   "name": "Maischänke",
-   "organizer": "Tennisclub Wollbach",
-   "location": "Erichs Schopf"
- },
- {
-   "FIELD1": "Mai",
-   "date": "\"",
-   "name": "Maischänke   ",
-   "organizer": "Chochlöffel Wollbach",
-   "location": "Schmidt's Schüüre"
- },
- {
-   "FIELD1": "Mai",
-   "date": "So  07.",
-   "name": "Konfirmation    ",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Ev. Kirche Wollbach"
- },
- {
-   "FIELD1": "Mai",
-   "date": "So  14.",
-   "name": "Jugendkonzert",
-   "organizer": "Musikverein Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Mai",
-   "date": "Sa  20.",
-   "name": "Festbankett 1250 Jahre",
-   "organizer": "Gemeinde Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Mai",
-   "date": "So  21. ",
-   "name": "Jubiläumsfest",
-   "organizer": "Gemeinde Wollbach",
-   "location": "im Dorf/Kandertalhalle"
- },
- {
-   "FIELD1": "Mai",
-   "date": "Do  25.",
-   "name": "Ufert-Gottesdienst",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Ev. Kirche Wollbach"
- },
- {
-   "FIELD1": "Mai",
-   "date": "Do  25.",
-   "name": "Vatertags-Schänke",
-   "organizer": "Wiigeischter Wollbach",
-   "location": "Erichs Schopf"
- },
- {
-   "FIELD1": "Juni",
-   "date": "So  25.",
-   "name": "Plauschturnier",
-   "organizer": "Tennisclub Wollbach",
-   "location": "Tennisplatz Wollbach"
- },
- {
-   "FIELD1": "Juli",
-   "date": "Sa  01.",
-   "name": "30-jähriges Jubiläum",
-   "organizer": "Jugendfeuerwehr Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Juli",
-   "date": "Fr   07.",
-   "name": "AbiAbschlussfeier",
-   "organizer": "WG Lörrach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Juli",
-   "date": "So  23.",
-   "name": "Gottesdienst + Kirchplatzhock",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Kirchplatz Wollbach"
- },
- {
-   "FIELD1": "August",
-   "date": "So  20.",
-   "name": "Strüblifest",
-   "organizer": "Gesangverein Wollbach",
-   "location": "Schulplatz Wollbach"
- },
- {
-   "FIELD1": "September",
-   "date": "09.-11.",
-   "name": "Budenfest Kandern",
-   "organizer": "div. Vereine",
-   "location": "Blumenplatz Kdn"
- },
- {
-   "FIELD1": "Oktober",
-   "date": "So  01.",
-   "name": "Erntedankfest",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Ev. Kirche Wollbach"
- },
- {
-   "FIELD1": "Oktober",
-   "date": "Sa  14.",
-   "name": "Herbstfest/Sauserexpress",
-   "organizer": "Musikverein Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Oktober",
-   "date": "So  15.",
-   "name": "Herbstfest",
-   "organizer": "Musikverein Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Oktober",
-   "date": "Sa  21.",
-   "name": "Wollbach tanzt",
-   "organizer": "Sportverein Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Oktober",
-   "date": "Di   31.",
-   "name": "500 Jahre Martin Luther",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Ev. Kirche Wollbach"
- },
- {
-   "FIELD1": "November",
-   "date": "So  05.",
-   "name": "Hubertus-Messe",
-   "organizer": "Jagdgesellschaft Graf",
-   "location": "Ev. Kirche Wollbach"
- },
- {
-   "FIELD1": "November",
-   "date": "Sa  18.",
-   "name": "Fasnachtsauftakt",
-   "organizer": "Füürdeufel Wollbach",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "November",
-   "date": "So  19.",
-   "name": "Gedenkfeier Volkstrauertag",
-   "organizer": "Ortsverwaltung Wollbach",
-   "location": "Ehrenmal Wollbach"
- },
- {
-   "FIELD1": "Dezember",
-   "date": "So  03.",
-   "name": "Wartburgfest",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Kandertalhalle"
- },
- {
-   "FIELD1": "Dezember",
-   "date": "So  17.",
-   "name": "Jugendvorspiel",
-   "organizer": "Musikverein Wollbach",
-   "location": "Ev. Kirche Wollbach"
- },
- {
-   "FIELD1": "Dezember",
-   "date": "So  17.",
-   "name": "Seniorennachmittag",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Wartburg Wollbach"
- },
- {
-   "FIELD1": "Dezember",
-   "date": "Sa  24.",
-   "name": "Heiligabend-Krippenspiel",
-   "organizer": "Kirchengemeinde Wollbach-Holzen",
-   "location": "Ev. Kirche Wollbach"
- }
-]
+{
+  "2017": [
+    {
+      "startdate": "2017-01-05",
+      "title": "Generalversammlung",
+      "organizer": "Feuerwehr-Abt. Wollbach",
+      "location": { "name": "Kandertalstübli" }
+    },
+    {
+      "startdate": "2017-01-06",
+      "title": "Neujahrsempfang",
+      "organizer": "Ortsverwaltung Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-01-14",
+      "title": "Kappenabend ",
+      "organizer": "Füürdeufel Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-01-27",
+      "title": "Jubiläumsausstellung - Eröffnung",
+      "organizer": "1250 Jahre Wollbach, Binzen, Eimeldingen, Haltingen, Rümmingen",
+      "location": { "name": "Dreiländermuseum am Burghof", "address": "Lörrach" }
+    },
+    {
+      "startdate": "2017-01-27",
+      "title": "Jahreskonzert I",
+      "organizer": "Musikverein Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-01-28",
+      "title": "Jahreskonzert II",
+      "organizer": "Musikverein Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-02-04",
+      "title": "Familienabend",
+      "organizer": "Kirchenchor Wollbach",
+      "location": { "name": "Wartburg Wollbach" }
+    },
+    {
+      "startdate": "2017-02-07",
+      "title": "Generalversammlung",
+      "organizer": "Gesangverein Wollbach",
+      "location": { "name": "Kandertalstübli" }
+    },
+    {
+      "startdate": "2017-02-08",
+      "title": "Leitplanung Sitzung",
+      "organizer": "BMA Kandern",
+      "location": { "name": "Kandertalstübli" }
+    },
+    {
+      "startdate": "2017-02-09",
+      "title": "Generalversammlung",
+      "organizer": "Musikverein Wollbach",
+      "location": { "name": "Kandertalstübli" }
+    },
+    {
+      "startdate": "2017-02-10",
+      "title": "Generalversammlung",
+      "organizer": "Tennisclub Wollbach",
+      "location": { "name": "Alte Krone" }
+    },
+    {
+      "startdate": "2017-02-11",
+      "title": "Offenes Gerätehaus",
+      "organizer": "Feuerwehr-Abt. Wollbach",
+      "location": { "name": "Feuerwehrgerätehaus" }
+    },
+    {
+      "startdate": "2017-02-12",
+      "title": "Winterwandertag",
+      "organizer": "Wanderfreunde Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-02-18",
+      "title": "Hexenball",
+      "organizer": "Kanderner Hexen",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-02-23",
+      "title": "Hemdglunki",
+      "organizer": "Chochlöffel Wollbach",
+      "location": { "name": "Alte Krone" }
+    },
+    {
+      "startdate": "2017-03-03",
+      "title": "Weltgebetstag",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Wartburg Wollbach" }
+    },
+    {
+      "startdate": "2017-03-05",
+      "title": "Fasnachtsfeuer",
+      "organizer": "Musikverein Wollbach",
+      "location": { "name": "Baselblick" }
+    },
+    {
+      "startdate": "2017-03-11",
+      "title": "Jugendturnier",
+      "organizer": "Sportverein Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-03-12",
+      "title": "Jugendturnier",
+      "organizer": "Sportverein Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-03-12",
+      "title": "Generalversammlung",
+      "organizer": "Frauenverein Wollbach",
+      "location": { "name": "Wartburg Wollbach" }
+    },
+    {
+      "startdate": "2017-03-18",
+      "title": "Frühlingsfest",
+      "organizer": "Obstbauverein Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-03-26",
+      "title": "Seniorennachmittag",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Wartburg Wollbach" }
+    },
+    {
+      "startdate": "2017-03-31",
+      "title": "Generalversammlung",
+      "organizer": "Sportverein Wollbach",
+      "location": { "name": "Sportheim Wollbach" }
+    },
+    {
+      "startdate": "2017-04-02",
+      "title": "Konfirmationsjubiläum",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Ev. Kirche Wollbach" }
+    },
+    {
+      "startdate": "2017-04-16",
+      "title": "Osternacht",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Ev. Kirche Wollbach" }
+    },
+    {
+      "startdate": "2017-04-30",
+      "title": "Tanz in den Mai",
+      "organizer": "Sportverein Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-05-01",
+      "title": "Schänke am Bach",
+      "organizer": "Feuerwehr-Abt. Wollbach",
+      "location": { "name": "Hammerstein" }
+    },
+    {
+      "startdate": "2017-05-01",
+      "title": "Maischänke",
+      "organizer": "Tennisclub Wollbach",
+      "location": { "name": "Erichs Schopf" }
+    },
+    {
+      "startdate": "2017-05-01",
+      "title": "Maischänke   ",
+      "organizer": "Chochläffel Wollbach",
+      "location": { "name": "Schmidt's Schüüre" }
+    },
+    {
+      "startdate": "2017-05-07",
+      "title": "Konfirmation",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Ev. Kirche Wollbach" }
+    },
+    {
+      "startdate": "2017-05-14",
+      "title": "Jugendkonzert",
+      "organizer": "Musikverein Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-05-20",
+      "title": "Festbankett 1250 Jahre",
+      "organizer": "Gemeinde Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-05-21",
+      "title": "Jubiläumsfest",
+      "organizer": "Gemeinde Wollbach",
+      "location": { "name": "im Dorf/Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-05-25",
+      "title": "Ufert-Gottesdienst",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Ev. Kirche Wollbach" }
+    },
+    {
+      "startdate": "2017-05-25",
+      "title": "Vatertags-Schänke",
+      "organizer": "Wiigeischter Wollbach",
+      "location": { "name": "Erichs Schopf" }
+    },
+    {
+      "startdate": "2017-06-25",
+      "title": "Plauschturnier",
+      "organizer": "Tennisclub Wollbach",
+      "location": { "name": "Tennisplatz Wollbach" }
+    },
+    {
+      "startdate": "2017-07-01",
+      "title": "30-jähriges Jubiläum",
+      "organizer": "Jugendfeuerwehr Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-07-07",
+      "title": "AbiAbschlussfeier",
+      "organizer": "WG Lörrach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-07-23",
+      "title": "Gottesdienst + Kirchplatzhock",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Kirchplatz Wollbach" }
+    },
+    {
+      "startdate": "2017-08-20",
+      "title": "Strüblifest",
+      "organizer": "Gesangverein Wollbach",
+      "location": { "name": "Schulplatz Wollbach" }
+    },
+    {
+      "startdate": "2017-09-09",
+      "enddate": "2017-09-11",
+      "title": "Budenfest Kandern",
+      "organizer": "div. Vereine",
+      "location": { "name": "Blumenplatz", "address": "Kandern" }
+    },
+    {
+      "startdate": "2017-10-01",
+      "title": "Erntedankfest",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Ev. Kirche Wollbach" }
+    },
+    {
+      "startdate": "2017-10-14",
+      "title": "Herbstfest/Sauserexpress",
+      "organizer": "Musikverein Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-10-15",
+      "title": "Herbstfest",
+      "organizer": "Musikverein Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-10-21",
+      "title": "Wollbach tanzt",
+      "organizer": "Sportverein Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-10-31",
+      "title": "500 Jahre Martin Luther",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Ev. Kirche Wollbach" }
+    },
+    {
+      "startdate": "2017-11-05",
+      "title": "Hubertus-Messe",
+      "organizer": "Jagdgesellschaft Graf",
+      "location": { "name": "Ev. Kirche Wollbach" }
+    },
+    {
+      "startdate": "2017-11-18",
+      "title": "Fasnachtsauftakt",
+      "organizer": "Füürdeufel Wollbach",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-11-19",
+      "title": "Gedenkfeier Volkstrauertag",
+      "organizer": "Ortsverwaltung Wollbach",
+      "location": { "name": "Ehrenmal Wollbach" }
+    },
+    {
+      "startdate": "2017-12-03",
+      "title": "Wartburgfest",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Kandertalhalle" }
+    },
+    {
+      "startdate": "2017-12-17",
+      "title": "Jugendvorspiel",
+      "organizer": "Musikverein Wollbach",
+      "location": { "name": "Ev. Kirche Wollbach" }
+    },
+    {
+      "startdate": "2017-12-17",
+      "title": "Seniorennachmittag",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Wartburg Wollbach" }
+    },
+    {
+      "startdate": "2017-12-24",
+      "title": "Heiligabend-Krippenspiel",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": { "name": "Ev. Kirche Wollbach" }
+    }
+  ]
+}

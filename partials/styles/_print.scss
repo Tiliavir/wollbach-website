@@ -1,66 +1,66 @@
 $breadcrumb-print-color: #000;
 
 @media print {
-    a {
-        text-decoration: underline;
+  a {
+    text-decoration: underline;
 
-        &:visited {
-            text-decoration: underline;
-        }
-
-        &[href] {
-            &::after {
-                content: ' (' attr(href) ')';
-            }
-        }
-
-        &[href^='#'],
-        &[href^='javascript:'] {
-            &::after {
-                content: '';
-            }
-        }
+    &:visited {
+      text-decoration: underline;
     }
 
-    pre,
-    blockquote,
-    tr,
-    img {
-        page-break-inside: avoid;
+    &[href] {
+      &::after {
+        content: ' (' attr(href) ')';
+      }
     }
 
-    pre,
-    blockquote {
-        border: 1px solid $gray-light;
+    &[href^='#'],
+    &[href^='javascript:'] {
+      &::after {
+        content: '';
+      }
     }
+  }
 
-    thead {
-        display: table-header-group;
-    }
+  pre,
+  blockquote,
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-    img {
-        max-width: 100%;
-    }
+  pre,
+  blockquote {
+    border: 1px solid $gray-light;
+  }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  thead {
+    display: table-header-group;
+  }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  img {
+    max-width: 100%;
+  }
 
-    .flx-global-navigation {
-        display: none;
-    }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-    .label {
-        border: 1px solid $text-color;
-    }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  .flx-global-navigation {
+    display: none;
+  }
+
+  .label {
+    border: 1px solid $text-color;
+  }
 
   .brand-print {
     display: block;

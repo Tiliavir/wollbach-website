@@ -2,34 +2,30 @@ $color-red: #F70203;
 $color-yellow: #EBC904;
 $color-light-grey: #f5f5f5;
 $top-nav-height: 60px;
-
 $text-color: #333;
-
 $gray-light: #999;
-
 $font-family: 'Open Sans', Arial, sans-serif;
 $font-size-large: 18px;
 $font-size-base: 14px;
 $font-size-small: 12px;
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-
 * {
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 body {
-    margin: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    font-family: $font-family;
-    font-size: $font-size-base;
-    background-color: $body-bg;
-    color: $text-color;
-    line-height: 1.4285;
-    min-height: 100vh;
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  background-color: $body-bg;
+  color: $text-color;
+  line-height: 1.4285;
+  min-height: 100vh;
 }
 
 h1,
@@ -42,43 +38,43 @@ input,
 button,
 select,
 textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 img {
-    border: 0;
-    vertical-align: middle;
+  border: 0;
+  vertical-align: middle;
 }
 
 .img-circle {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 svg {
-    &:not(:root) {
-        overflow: hidden;
-    }
+  &:not(:root) {
+    overflow: hidden;
+  }
 }
 
 button {
-    overflow: visible;
+  overflow: visible;
 }
 
 table {
-    background-color: transparent;
-    border-collapse: collapse;
-    border-spacing: 0;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 td,
 th {
-    padding: 0;
+  padding: 0;
 }
 
 h1,
@@ -87,120 +83,120 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 300;
-    line-height: 1.1;
+  font-weight: 300;
+  line-height: 1.1;
 
-    small {
-        font-weight: normal;
-        line-height: 1;
-        color: $gray-light;
-    }
+  small {
+    font-weight: normal;
+    line-height: 1;
+    color: $gray-light;
+  }
 }
 
 h1,
 h2,
 h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 
-    small {
-        font-size: 65%;
-    }
+  small {
+    font-size: 65%;
+  }
 }
 
 h4,
 h5,
 h6 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
-    small {
-        font-size: 75%;
-    }
+  small {
+    font-size: 75%;
+  }
 }
 
 h1 {
-    font-size: 1.33 * $font-size-large;
+  font-size: 1.33 * $font-size-large;
 }
 
 h2 {
-    font-size: $font-size-large;
+  font-size: $font-size-large;
 }
 
 h3 {
-    font-size: $font-size-base;
-    font-weight: 500;
+  font-size: $font-size-base;
+  font-weight: 500;
 }
 
 h4 {
-    font-size: $font-size-small + 1;
+  font-size: $font-size-small + 1;
 }
 
 h5 {
-    font-size: $font-size-small;
+  font-size: $font-size-small;
 }
 
 h6 {
-    font-size: $font-size-small - 1;
+  font-size: $font-size-small - 1;
 }
 
 p {
-    margin: 0 0 10px;
+  margin: 0 0 10px;
 }
 
 ul,
 ol {
-    margin-top: 0;
-    margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
 
-    ul,
-    ol {
-        margin-bottom: 0;
-    }
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
 }
 
 small,
 .small {
-    font-size: 85%;
+  font-size: 85%;
 }
 
 a {
-    color: $color-red;
-    text-decoration: none;
+  color: $color-red;
+  text-decoration: none;
 
-    &:hover,
-    &:focus {
-        color: $color-red;
-        text-decoration: underline;
-    }
+  &:hover,
+  &:focus {
+    color: $color-red;
+    text-decoration: underline;
+  }
 }
 
 .breadcrumb {
-    padding: 8px 0;
-    margin-bottom: 20px;
-    list-style: none;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  list-style: none;
 
-    & > li {
-        display: inline-block;
+  &>li {
+    display: inline-block;
 
-        &.active {
-            color: $color-red;
-        }
+    &.active {
+      color: $color-red;
     }
-
-    & > li + li {
-        &::before {
-            content: '\00a0>';
-            padding: 0 3px;
-        }
+  }
+  &>li+li {
+    &::before {
+      content: '\00a0>';
+      padding: 0 3px;
     }
+  }
 }
 
 h1 {
   color: $color-red;
 }
 
-h2, h3 {
+h2,
+h3 {
   color: $color-yellow;
 }
 
@@ -216,9 +212,9 @@ h2, h3 {
 }
 
 @media (orientation:portrait) {
-    .header {
-        max-height: 30vh;
-    }
+  .header {
+    max-height: 30vh;
+  }
 }
 
 .content {
