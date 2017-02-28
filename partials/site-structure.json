@@ -86,11 +86,6 @@
     "title": "Impressum"
   },
   {
-    "title": "Kontakt",
-    "referencedFile": "kontaktformular",
-    "navigation": "footer"
-  },
-  {
     "title": "Suche",
     "referencedFile": "suche",
     "navigation": "footer"

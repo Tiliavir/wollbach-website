@@ -7,3 +7,24 @@ navigation: "top"
 ---
 
 extends ../template.pug
+
+mixin verein(name, url)
+  .verein(itemscope itemtype="http://schema.org/LocalBusiness")
+    if (url)
+      a(href=url itemprop="url" target="_blank")
+        h2.title(itemprop="name")= name
+    else
+      h2.title(itemprop="name")= name
+
+block content
+  +verein("Chochlöffel")
+  +verein("Feuerwehr Abteilung Wollbach", "http://www.feuerwehr-kandern.de")
+  +verein("Frauenverein")
+  +verein("Füürdeufel")
+  +verein("Kirchenchor")
+  +verein("Männer Gesangverein")
+  +verein("Musikverein Wollbach 1866 e.V.", "http://www.mv-wollbach.de")
+  +verein("Sportverein Wollbach")
+  +verein("Schützenverein Wollbach")
+  +verein("Tennisclub Wollbach", "http://www.tc-wollbach.de")
+  +verein("Wollbacher Wanderfreunde")

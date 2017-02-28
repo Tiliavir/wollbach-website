@@ -1,0 +1,12 @@
+@import 'global-variables';
+
+.restaurant {
+  .title {
+    color: $text-color;
+    font-weight: 400;
+  }
+}
+
+.hidden {
+  display: none;
+}

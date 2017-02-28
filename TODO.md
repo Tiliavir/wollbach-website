@@ -1,0 +1,5 @@
+- image post processing
+  - one format
+  - no metadate
+  - correct size
+  - add fueller for impressum

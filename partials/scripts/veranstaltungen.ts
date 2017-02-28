@@ -7,6 +7,7 @@ module KW.Appointments {
 
   export function initialize(): void {
     const cutOffDate = addDays(new Date(), -3);
+    let hasPassedItems: boolean = false;
 
     $("meta[itemprop=\"startDate\"]").each((i, e) => {
       let $e = $(e);
@@ -14,9 +15,15 @@ module KW.Appointments {
       $e = $endDateString.length === 1 ? $endDateString : $e;
       let endDate = new Date($e.attr("content"));
       if (endDate < cutOffDate) {
-        $e.closest("tr").css("display", "none");
+        $e.closest("tr").addClass("passed").addClass("collapsed");
+        hasPassedItems = true;
       }
     });
+
+    if (hasPassedItems) {
+      let $showMore: JQuery = $(".appointments tbody").prepend($("<tr><td colspan='2' class='show-passed'>vergangene Termine</td></tr>"));
+      $showMore.click((e: Event) => $(".passed").toggleClass("collapsed"));
+    }
   }
 }
 

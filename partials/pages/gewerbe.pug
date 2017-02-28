@@ -1,9 +1,36 @@
 ---
 title: "Gewerbe"
 description: ""
-keywords: "Gewerbe, Wirtschaft"
+keywords: "Gewerbe, Wirtschaft, Unternehmen"
 
 navigation: "top"
 ---
 
 extends ../template.pug
+
+mixin gewerbe(name, street, town, url)
+  .gewerbe(itemscope itemtype="http://schema.org/LocalBusiness")
+    if (url)
+      a(href=url itemprop="url" target="_blank")
+        h2.title(itemprop="name")= name
+    else
+      h2.title(itemprop="name")= name
+    .address(itemprop="address" itemscope itemtype="http://schema.org/PostalAddress")
+      span(itemprop="streetAddress")= street
+      span(itemprop="addressLocality")= town
+      span.hidden(itemprop="addressRegion") Germany
+      span.hidden(itemprop="postalCode") 79400
+
+block content
+  +gewerbe("Autohaus Krug", "Basler Straße 1", "Wollbach", "http://www.krug.mazda-autohaus.de")
+  +gewerbe("bmt-solutions", "Auf dem Buck 4/1", "Wollbach", "http://www.bmt-solutions.de")
+  +gewerbe("Hofladen Pfaffenkeller / Senf- und Marmeladen Manufaktur Pfaffenkeller", "Rathausstraße 9", "Wollbach", "http://www.pfaffenkeller.de")
+  +gewerbe("IT - Dienstleistung & Handel", "Zielrebenweg 30/1", "Wollbach", "http://www.it-dh.de")
+  +gewerbe("Malergeschäft Becker", "Zielrebenweg 22", "Wollbach", "http://www.meistermaler-becker.de")
+  +gewerbe("Markgrafik - Büro für Werbung und Gestaltung", "Niedere Hofrütte 3", "Wollbach", "www.markgrafik.de")
+  +gewerbe("Schreinerei Geling", "Röttler Weg 4/1", "Wollbach", "http://www.schreinerei-geling.de")
+  +gewerbe("TipTop", "Nebenauerstraße 21", "Wollbach", "www.tiptop-naturfriseur.de")
+  +gewerbe("eventMax - Licht, Ton und Zelt Vermietung", "Scheideckstraße 1", "Nebenau", "http://www.event-max.com")
+  +gewerbe("Autohaus Hess", "Kandertalstraße 4", "Hammerstein", "www.kandertalgarage.de")
+  +gewerbe("SE-Consulting", "Im Dörfle 11", "Hammerstein", "http://www.se-consulting.de")
+  +gewerbe("Bauelemente Schäfer", "Lindenstraße 5", "Egisholz", "http://www.schaefer-bauelemente.de")

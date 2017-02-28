@@ -7,3 +7,25 @@ navigation: "top"
 ---
 
 extends ../../template.pug
+
+mixin einrichtung(name, url)
+  .einrichtung(itemscope itemtype="http://schema.org/LocalBusiness")
+    if (url)
+      a(href=url itemprop="url" target="_blank")
+        h2.title(itemprop="name")= name
+    else
+      h2.title(itemprop="name")= name
+
+block content
+  +einrichtung("Rathaus")
+  +einrichtung("Schule")
+  +einrichtung("Baselblick")
+  +einrichtung("Kindergarten „Schatzkischte“")
+  +einrichtung("Feuerwehr")
+  +einrichtung("Kandertalhalle")
+  +einrichtung("Kandertalbahn")
+
+//-
+  +einrichtung("Bahnhof")
+  +einrichtung("Forsthof")
+  +einrichtung("Pfarrhaus")

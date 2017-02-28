@@ -5,6 +5,14 @@
   font-style: italic;
 }
 
+.show-passed {
+  font-size: $font-size-small;
+  font-style: italic;
+  color: $gray-light;
+  padding: 0;
+  cursor: pointer;
+}
+
 table {
   border: 1px solid $gray-border-color;
   width: 100%;
@@ -16,6 +24,14 @@ table {
   tr {
     border: 1px solid $gray-light-border-color;
     padding: 5px;
+
+    &.passed {
+      color: $text-color-inactive;
+    }
+
+    &.collapsed {
+      display: none;
+    }
   }
 
   th,
