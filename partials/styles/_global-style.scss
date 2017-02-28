@@ -1,15 +1,6 @@
-$color-red: #F70203;
-$color-yellow: #EBC904;
-$color-light-grey: #f5f5f5;
-$top-nav-height: 60px;
-$text-color: #333;
-$gray-light: #999;
-$font-family: 'Open Sans', Arial, sans-serif;
-$font-size-large: 18px;
-$font-size-base: 14px;
-$font-size-small: 12px;
+@import 'global-variables';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 * {
   &:focus {
     outline: none;
@@ -50,10 +41,6 @@ figure {
 img {
   border: 0;
   vertical-align: middle;
-}
-
-.img-circle {
-  border-radius: 50%;
 }
 
 svg {
@@ -117,6 +104,7 @@ h6 {
 
 h1 {
   font-size: 1.33 * $font-size-large;
+  color: $color-red;
 }
 
 h2 {
@@ -171,89 +159,22 @@ a {
   }
 }
 
-.breadcrumb {
-  padding: 8px 0;
-  margin-bottom: 20px;
-  list-style: none;
-
-  &>li {
-    display: inline-block;
-
-    &.active {
-      color: $color-red;
-    }
-  }
-  &>li+li {
-    &::before {
-      content: '\00a0>';
-      padding: 0 3px;
-    }
-  }
-}
-
-h1 {
-  color: $color-red;
-}
-
 h2,
 h3 {
   color: $color-yellow;
 }
 
-.header {
-  background: url('../img/top.jpg') no-repeat center center;
-  background-size: cover;
-  height: 500px;
-  max-height: 50vh;
-  min-height: 200px;
-  width: 100%;
+.img-responsive {
+  display: block;
+  height: auto;
+  max-height: calc(75vh - #{$top-nav-height + $header-min-height});
+  max-width: 100%;
+}
+
+.img-center {
   margin: 0 auto;
-  max-width: 1400px;
 }
 
-@media (orientation:portrait) {
-  .header {
-    max-height: 30vh;
-  }
-}
-
-.content {
-  width: 80vw;
-  max-width: 1100px;
-  min-height: 200px;
-  margin: -50px auto 0 auto;
-}
-
-.footer {
-  background-color: $color-light-grey;
-  width: 80vw;
-  height: 40px;
-  max-width: 1100px;
-  margin: 20px auto;
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  li {
-    display: inline-block;
-    padding: 0 10px;
-    line-height: 40px;
-    height: 40px;
-  }
-
-  a {
-    text-decoration: none;
-    color: darken($color-light-grey, 35%);
-
-    &:hover {
-      color: darken($color-light-grey, 50%);
-      text-decoration: none;
-    }
-  }
-}
-
-.brand-print {
-  display: none;
+.img-circle {
+  border-radius: 50%;
 }

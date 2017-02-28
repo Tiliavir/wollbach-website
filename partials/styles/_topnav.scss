@@ -1,32 +1,27 @@
-$body-bg: #fff;
-$black: #000;
-$height: 50px;
+@import 'global-variables';
+
 $padding: 21px 20px;
 $transition: .6s ease;
-$navbar-inverse-color: #ddd;
-$font-size-base: 12px;
 $background-color: $body-bg;
-$background-color-active: #EBC904;
+$background-color-active: $color-yellow;
 $background-color-hover-and-focus: lighten($background-color-active, 20%);
-$color: #333;
-$color-active: #F70203;
-$color-hover-and-focus: lighten($color-active, 20%);
-$header-min-height: 200px;
+$color-active: $color-red;
+$color-hover-and-focus: lighten($color-active, 10%);
 
 .navigation {
-  background-color: transparentize($background-color, 0.3);
-  color: $color;
-  font-size: 14px;
+  background-color: transparentize($background-color, .3);
+  color: $text-color;
+  font-size: $font-size-base;
   font-weight: 700;
   width: 100%;
   position: relative;
-  top: -$height;
+  top: -$top-nav-height;
   z-index: 1000;
   max-width: 1400px;
   margin: 0 auto;
-  height: $height;
-  border-bottom: 1px solid $color;
-  box-shadow: 0 -5px 8px 0px transparentize($background-color, 0.3), 0 10px 15px -10px $black;
+  height: $top-nav-height;
+  border-bottom: 1px solid $text-color;
+  box-shadow: 0 -5px 8px 0 transparentize($background-color, .3), 0 10px 15px -10px $black;
 }
 
 .navigation-header {
@@ -35,7 +30,7 @@ $header-min-height: 200px;
 
 .navigation-menu {
   overflow-x: hidden;
-  min-height: $height;
+  min-height: $top-nav-height;
   text-align: left;
   position: relative;
   top: 30px;
@@ -86,20 +81,20 @@ $header-min-height: 200px;
 }
 
 .navigation-hamburger {
-  %burger-slice-style {
-    height: 2px;
-    width: 22px;
-    transition: transform .4s ease;
-    background: $color;
-    z-index: 1;
-  }
-
   position: absolute;
   top: 12px;
   right: 10px;
   margin: 0;
   padding: 15px;
   cursor: pointer;
+
+  %burger-slice-style {
+    height: 2px;
+    width: 22px;
+    transition: transform .4s ease;
+    background: $text-color;
+    z-index: 1;
+  }
 
   span {
     @extend %burger-slice-style;
@@ -142,12 +137,12 @@ $header-min-height: 200px;
   &:checked {
     &~.navigation-menu {
       display: block;
-      max-height: calc(80vh - #{$height});
+      max-height: calc(80vh - #{$top-nav-height});
       overflow-y: auto;
 
       .navigation-items {
         transition: max-height $transition;
-        max-height: calc(80vh - #{$height + $header-min-height});
+        max-height: calc(80vh - #{$top-nav-height + $header-min-height});
         height: auto;
       }
     }
@@ -196,15 +191,15 @@ $header-min-height: 200px;
       position: absolute;
       content: '';
       right: 10px;
-      top: $height / 2 - $expand-arrow-height + 1px;
+      top: $top-nav-height / 2 - $expand-arrow-height + 1px;
       border: $expand-arrow-height solid transparent;
-      border-bottom: 0 $color;
+      border-bottom: 0 $text-color;
     }
   }
 
   &>ul {
-    color: $color;
-    font-size: 14px;
+    color: $text-color;
+    font-size: $font-size-base;
     font-weight: 700;
     background-color: none;
     display: block;
@@ -224,7 +219,7 @@ $header-min-height: 200px;
 
 @media (max-width: 767px) {
   .navigation-menu {
-    background-color: transparentize($background-color, 0.1);
+    background-color: transparentize($background-color, .1);
   }
 }
 
@@ -251,8 +246,8 @@ $header-min-height: 200px;
         position: relative;
         padding: 0 15px;
         display: block;
-        height: $height;
-        line-height: $height;
+        height: $top-nav-height;
+        line-height: $top-nav-height;
       }
 
       &.active {
@@ -279,20 +274,20 @@ $header-min-height: 200px;
   }
 
   .dropdown {
-    height: $height;
+    height: $top-nav-height;
 
     &:hover>ul {
       position: absolute;
       left: 0;
-      top: $height;
+      top: $top-nav-height;
       padding: 0;
     }
 
     &>ul {
       display: none;
       box-shadow: 0 5px 10px -2px $black;
-      border-top: 1px solid $color;
-    
+      border-top: 1px solid $text-color;
+
       li {
         padding: 3px 10px;
 

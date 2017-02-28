@@ -4,13 +4,11 @@
     @media (max-width: $upper - 1) {
       @content
     }
-  }
-  @else if $upper <= 0 {
+  } @else if $upper <= 0 {
     @media (min-width: $lower) {
       @content
     }
-  }
-  @else {
+  } @else {
     @media (min-width: $lower) and (max-width: $upper - 1) {
       @content
     }

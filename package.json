@@ -13,6 +13,12 @@
     "type": "git",
     "url": "https://mvw1866.visualstudio.com/DefaultCollection/Website/_git/wollbach-website"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR",
+    "ie 7 -10"
+  ],
   "config": {
     "pathToProd": "../wollbach-prod/"
   },
@@ -65,10 +71,11 @@
     "compile:sass": "node-sass ./partials/styles/ -o ./partials/styles && postcss --use autoprefixer ./partials/styles/**/*.css -r",
     "compile": "tsc && npm run compile:sass && gulp",
 
-    "precopy": "copyfiles -u 2 ./root/_*/* %npm_package_config_pathToProd%/ && copyfiles -u 3 ./node_modules/jquery/dist/jquery.min.js %npm_package_config_pathToProd%/js/",
-    "copy": "copyup ./build/**/* %npm_package_config_pathToProd%/",
+    "copy:root": "copyfiles -u 2 ./root/_*/* %npm_package_config_pathToProd%/ && copyfiles -u 1 -a ./root/[!_]* %npm_package_config_pathToProd%/ && copyfiles -u 1 ./root/[!_]*/**/* %npm_package_config_pathToProd%/",
+    "copy:lib": "copyfiles -u 3 ./node_modules/jquery/dist/jquery.min.js %npm_package_config_pathToProd%/js/",
+    "copy": "npm run copy:lib && npm run copy:root && copyup ./build/**/* %npm_package_config_pathToProd%/",
 
     "prerelease": "npm run lint",
-    "release": "npm run compile -- --release=true && npm run copy"
+    "release": "npm run compile -- release --release=true && npm run copy"
   }
 }

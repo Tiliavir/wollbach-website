@@ -1,0 +1,52 @@
+.header {
+  background: url('../img/top.jpg') no-repeat center center;
+  background-size: cover;
+  max-height: 50vh;
+  min-height: $header-min-height;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+@media (orientation: portrait) {
+  .header {
+    max-height: 30vh;
+  }
+}
+
+.content {
+  width: 80vw;
+  max-width: 1100px;
+  min-height: 200px;
+  margin: -$top-nav-height auto 0;
+}
+
+.footer {
+  background-color: $color-light-grey;
+  width: 80vw;
+  height: 40px;
+  max-width: 1100px;
+  margin: 20px auto;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 40px;
+    height: 40px;
+  }
+
+  a {
+    text-decoration: none;
+    color: darken($color-light-grey, 35%);
+
+    &:hover {
+      color: darken($color-light-grey, 50%);
+      text-decoration: none;
+    }
+  }
+}
