@@ -71,8 +71,9 @@
     "compile": "tsc && npm run compile:sass && gulp",
     "compile:sass": "node-sass ./partials/styles/ -o ./partials/styles && postcss --use autoprefixer ./partials/styles/**/*.css -r",
 
+    "copy:lib": "copyfiles -u 3 ./node_modules/jquery/dist/jquery.min.js %npm_package_config_pathToProd%/js/",
     "copy:root": "copyfiles -u 2 ./root/_*/* %npm_package_config_pathToProd%/ && copyfiles -u 1 -a ./root/[!_]* %npm_package_config_pathToProd%/ && copyfiles -u 1 ./root/[!_]*/**/* %npm_package_config_pathToProd%/",
-    "copy": "npm run copy:root && copyup ./build/**/* %npm_package_config_pathToProd%/",
+    "copy": "npm run copy:lib && npm run copy:root && copyup ./build/**/* %npm_package_config_pathToProd%/",
 
     "prerelease": "npm run lint",
     "release": "npm run compile -- release --release=true && npm run copy",
