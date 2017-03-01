@@ -21,7 +21,8 @@ module KW.Appointments {
     });
 
     if (hasPassedItems) {
-      let $showMore: JQuery = $(".appointments tbody").prepend($("<tr><td colspan='2' class='show-passed'>vergangene Termine</td></tr>"));
+      let row = "<tr><td colspan='2' class='show-passed'>vergangene Termine</td></tr>";
+      let $showMore: JQuery = $(".appointments tbody").prepend($(row));
       $showMore.click((e: Event) => $(".passed").toggleClass("collapsed"));
     }
   }
