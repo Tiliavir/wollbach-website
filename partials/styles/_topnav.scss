@@ -1,7 +1,6 @@
 @import 'global-variables';
 
 $padding: 21px 20px;
-$transition: .6s ease;
 $background-color: $body-bg;
 $background-color-active: $color-yellow;
 $background-color-hover-and-focus: lighten($background-color-active, 20%);
@@ -17,10 +16,9 @@ $color-hover-and-focus: lighten($color-active, 10%);
   position: relative;
   top: -$top-nav-height;
   z-index: 1000;
-  max-width: 1400px;
+  max-width: $header-max-width;
   margin: 0 auto;
   height: $top-nav-height;
-  border-bottom: 1px solid $text-color;
   box-shadow: 0 -5px 8px 0 transparentize($background-color, .3), 0 10px 15px -10px $black;
 }
 
@@ -30,10 +28,10 @@ $color-hover-and-focus: lighten($color-active, 10%);
 
 .navigation-menu {
   overflow-x: hidden;
-  min-height: $top-nav-height;
   text-align: left;
   position: relative;
   top: 30px;
+  height: $top-nav-height;
 }
 
 .navigation-menu>ul {
@@ -42,7 +40,6 @@ $color-hover-and-focus: lighten($color-active, 10%);
   list-style: none;
   padding-left: 0;
   margin: 0;
-  transition: $transition;
 
   li {
     height: auto;
@@ -62,146 +59,18 @@ $color-hover-and-focus: lighten($color-active, 10%);
   }
 }
 
-.navigation-brand {
-  right: 0;
-  padding: 0 20px;
-  display: inline-block;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  width: 157px;
-  height: 200px;
-
-  img {
-    margin-top: 10px;
-    height: 140px;
-    max-height: 20vw;
-    min-height: 20px;
-  }
-}
-
-.navigation-hamburger {
-  position: absolute;
-  top: 12px;
-  right: 10px;
-  margin: 0;
-  padding: 15px;
-  cursor: pointer;
-
-  %burger-slice-style {
-    height: 2px;
-    width: 22px;
-    transition: transform .4s ease;
-    background: $text-color;
-    z-index: 1;
-  }
-
-  span {
-    @extend %burger-slice-style;
-    position: relative;
-    flex: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &::before {
-      @extend %burger-slice-style;
-      content: '';
-      position: absolute;
-      top: -7px;
-      left: 0;
-    }
-
-    &::after {
-      @extend %burger-slice-style;
-      content: '';
-      position: absolute;
-      top: 7px;
-      left: 0;
-    }
-  }
-}
-
 .navigation-checkbox {
   display: none;
-
-  &:not(:checked)~.navigation-menu {
-    display: none;
-
-    .navigation-items {
-      height: 0;
-      max-height: 0;
-    }
-  }
-
-  &:checked {
-    &~.navigation-menu {
-      display: block;
-      max-height: calc(80vh - #{$top-nav-height});
-      overflow-y: auto;
-
-      .navigation-items {
-        transition: max-height $transition;
-        max-height: calc(80vh - #{$top-nav-height + $header-min-height});
-        height: auto;
-      }
-    }
-
-    &~.navigation-header {
-      .navigation-hamburger {
-        span {
-          transform: rotate(135deg);
-
-          &::before {
-            top: 0;
-            transform: rotate(90deg);
-          }
-
-          &::after {
-            top: 0;
-            transform: rotate(90deg);
-            opacity: 0;
-          }
-        }
-
-        &:hover {
-          span {
-            transform: rotate(225deg);
-          }
-        }
-      }
-    }
-  }
 }
 
 .dropdown {
   position: relative;
   height: auto;
 
-  &:hover>ul {
-    position: relative;
-    display: block;
-    min-width: 100%;
-    background-color: $body-bg;
-  }
-
-  &>a {
-    &::after {
-      $expand-arrow-height: 5px;
-      position: absolute;
-      content: '';
-      right: 10px;
-      top: $top-nav-height / 2 - $expand-arrow-height + 1px;
-      border: $expand-arrow-height solid transparent;
-      border-bottom: 0 $text-color;
-    }
-  }
-
   &>ul {
     color: $text-color;
     font-size: $font-size-base;
     font-weight: 700;
-    background-color: none;
     display: block;
     list-style: none;
     padding: 0;
@@ -220,6 +89,101 @@ $color-hover-and-focus: lighten($color-active, 10%);
 @media (max-width: 767px) {
   .navigation-menu {
     background-color: transparentize($background-color, .1);
+    box-shadow: 0 5px 10px -2px $black;
+  }
+
+  .dropdown {
+    &:hover>ul {
+      position: relative;
+      display: block;
+      min-width: 100%;
+    }
+  }
+
+  .navigation-checkbox {
+    &:not(:checked)~.navigation-menu {
+      max-height: 0;
+      min-height: 0;
+      overflow-y: hidden;
+    }
+
+    &:checked {
+      &~.navigation-menu {
+        max-height: 2000px;
+        height: initial;
+        overflow-y: hidden;
+        transition: max-height .8s ease;
+      }
+
+      &~.navigation-header {
+        .navigation-hamburger {
+          span {
+            background-color: transparent;
+
+            &::before,
+            &::after {
+              top: 0;
+            }
+
+            &::before {
+              transform: rotate(225deg);
+            }
+
+            &::after {
+              transform: rotate(-225deg);
+            }
+          }
+
+          &:hover {
+            span {
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navigation-hamburger {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    margin: 0;
+    padding: 15px;
+    cursor: pointer;
+
+    %burger-slice-style {
+      height: 2px;
+      width: 22px;
+      transition: transform .4s ease;
+      background: $text-color;
+      z-index: 1;
+    }
+
+    span {
+      @extend %burger-slice-style;
+      position: relative;
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        @extend %burger-slice-style;
+        content: '';
+        position: absolute;
+        top: -7px;
+        left: 0;
+      }
+
+      &::after {
+        @extend %burger-slice-style;
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 0;
+      }
+    }
   }
 }
 
@@ -265,6 +229,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
   }
 
   .navigation-menu {
+    min-height: $top-nav-height;
     position: absolute;
     top: 0;
     width: 100%;
@@ -278,15 +243,28 @@ $color-hover-and-focus: lighten($color-active, 10%);
 
     &:hover>ul {
       position: absolute;
+      display: block;
       left: 0;
       top: $top-nav-height;
       padding: 0;
+      background-color: $body-bg;
+    }
+
+    &>a {
+      &::after {
+        $expand-arrow-height: 3px;
+        position: absolute;
+        content: '';
+        right: 4px;
+        top: $top-nav-height / 2 - $expand-arrow-height + 1px;
+        border: $expand-arrow-height solid transparent;
+        border-top: $expand-arrow-height solid $text-color;
+      }
     }
 
     &>ul {
       display: none;
       box-shadow: 0 5px 10px -2px $black;
-      border-top: 1px solid $text-color;
 
       li {
         padding: 3px 10px;

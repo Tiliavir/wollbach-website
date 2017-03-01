@@ -1,0 +1,14 @@
+.img-responsive {
+  display: block;
+  height: auto;
+  max-height: calc(75vh - #{$top-nav-height + $header-min-height});
+  max-width: 100%;
+}
+
+.img-center {
+  margin: 0 auto;
+}
+
+.img-circle {
+  border-radius: 50%;
+}

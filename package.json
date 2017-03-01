@@ -32,6 +32,7 @@
     "@types/node": "^7.0.5",
     "@types/vinyl": "^2.0.0",
     "@types/yargs": "^6.6.0",
+
     "autoprefixer": "^6.7.2",
     "copyfiles": "^1.2.0",
     "node-sass": "^4.5.0",
@@ -47,7 +48,6 @@
     "gulp-flatten": "^0.3.1",
     "gulp-gray-matter": "^3.0.1",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-if": "^2.0.2",
     "gulp-load-plugins": "^1.5.0",
     "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",

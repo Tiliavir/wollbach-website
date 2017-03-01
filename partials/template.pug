@@ -43,12 +43,13 @@ html(lang="de")
 
   body(itemscope itemtype="http://schema.org/" + (schemaOrg || "WebPage"))
     .header
+      .cover
+        a.navigation-brand(href="/")
+          img(src="/img/wappen.png")
 
     nav.navigation
       input#navigation-checkbox.navigation-checkbox(type="checkbox")
       .navigation-header
-        a.navigation-brand(href="/")
-          img(src="/img/wappen.svg")
         label.navigation-hamburger(for="navigation-checkbox")
           span
       .navigation-menu
@@ -56,10 +57,10 @@ html(lang="de")
 
     block header
 
-    img.print-only(src="/img/wappen.svg" alt=scope.siteTitle)
+    img.print-only(src="/img/wappen.png" alt=scope.siteTitle)
 
     .content(itemprop="mainContentOfPage")
-      h1.page-header #{title}
+      h1.page-title #{title}
         if subtitle
             small= " " + subtitle
       | !{breadcrumb}

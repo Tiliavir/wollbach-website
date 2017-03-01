@@ -21,16 +21,38 @@ mixin gewerbe(name, street, town, url)
       span.hidden(itemprop="addressRegion") Germany
       span.hidden(itemprop="postalCode") 79400
 
+block pageStyles
+  include ../styles/gewerbe.css
+
 block content
   +gewerbe("Autohaus Krug", "Basler Straße 1", "Wollbach", "http://www.krug.mazda-autohaus.de")
   +gewerbe("bmt-solutions", "Auf dem Buck 4/1", "Wollbach", "http://www.bmt-solutions.de")
+  +gewerbe("G. Heidenreich - Garten- und Landschaftsbau", "Nebenauerstr. 5", "Wollbach", "http://galabau-heidenreich.de")
   +gewerbe("Hofladen Pfaffenkeller / Senf- und Marmeladen Manufaktur Pfaffenkeller", "Rathausstraße 9", "Wollbach", "http://www.pfaffenkeller.de")
-  +gewerbe("IT - Dienstleistung & Handel", "Zielrebenweg 30/1", "Wollbach", "http://www.it-dh.de")
+  +gewerbe("Elektro Ernst", "Im Maiacker 10", "Wollbach", "http://www.elektro-ernst.com/")
+  +gewerbe("IT - Dienstleistung & Handel Bartsch und Wussow", "Zielrebenweg 30/1", "Wollbach", "http://www.it-dh.de")
   +gewerbe("Malergeschäft Becker", "Zielrebenweg 22", "Wollbach", "http://www.meistermaler-becker.de")
-  +gewerbe("Markgrafik - Büro für Werbung und Gestaltung", "Niedere Hofrütte 3", "Wollbach", "www.markgrafik.de")
+  +gewerbe("Markgrafik - Büro für Werbung und Gestaltung", "Niedere Hofrütte 3", "Wollbach", "http://www.markgrafik.de")
   +gewerbe("Schreinerei Geling", "Röttler Weg 4/1", "Wollbach", "http://www.schreinerei-geling.de")
-  +gewerbe("TipTop", "Nebenauerstraße 21", "Wollbach", "www.tiptop-naturfriseur.de")
+  +gewerbe("TipTop", "Nebenauerstraße 21", "Wollbach", "http://www.tiptop-naturfriseur.de")
   +gewerbe("eventMax - Licht, Ton und Zelt Vermietung", "Scheideckstraße 1", "Nebenau", "http://www.event-max.com")
-  +gewerbe("Autohaus Hess", "Kandertalstraße 4", "Hammerstein", "www.kandertalgarage.de")
+  +gewerbe("Autohaus Hess", "Kandertalstraße 4", "Hammerstein", "http://www.kandertalgarage.de")
   +gewerbe("SE-Consulting", "Im Dörfle 11", "Hammerstein", "http://www.se-consulting.de")
   +gewerbe("Bauelemente Schäfer", "Lindenstraße 5", "Egisholz", "http://www.schaefer-bauelemente.de")
+
+  h1 Abklären
+  +gewerbe("EVS Thomas Wussow")
+  +gewerbe("Schreinerei Enders")
+  +gewerbe("Eleonore Krämer - Keramikwerkstatt")
+  +gewerbe("Nadines Friseursalon")
+  +gewerbe("Elektro Winter")
+  +gewerbe("Antiquitäten Graf")
+  +gewerbe("Mechthild Frey - Heilpädagogisches Reiten", "Egerten")
+  +gewerbe("Scudajewic Maler")
+  +gewerbe("Prick Baugeschäft", "Nebenau")
+  +gewerbe("Prick Naturschallakustik", "Nebenau")
+  +gewerbe("CCK", "http://cck-events.com/")
+  +gewerbe("Gerwig Blumenirgendwas")
+  +gewerbe("Probst Hofladen")
+  +gewerbe("Fischer Hofladen")
+  +gewerbe("Tonart")

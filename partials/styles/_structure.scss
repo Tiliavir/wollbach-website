@@ -1,12 +1,12 @@
+@import 'mixins/breakpoint';
+@import 'global-variables';
+
 .header {
-  background: url('../img/top.jpg') no-repeat center center;
-  background-size: cover;
   height: 37.5vh;
-  max-height: 37.5vh;
-  min-height: $header-min-height;
+  max-height: 600px;
+  min-height: 200px;
   width: 100%;
-  margin: 0 auto;
-  max-width: 1400px;
+  background-color: darken($color-red, 10%);
 }
 
 @media (orientation: portrait) {
@@ -15,11 +15,58 @@
   }
 }
 
+.cover {
+  margin: 0 auto;
+  background: url('/img/top.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  max-width: $header-max-width;
+  height: 100%;
+  position: relative;
+}
+
+.navigation-brand {
+  right: 0;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 157px;
+  height: 200px;
+
+  img {
+    height: 140px;
+    max-height: 20vh;
+    min-height: 30px;
+  }
+
+  @media (orientation: portrait) {
+    img {
+      height: initial;
+      max-height: initial;
+      min-height: initial;
+      max-width: 15vw;
+      min-width: 30px;
+    }
+  }
+}
+
 .content {
   width: 80vw;
-  max-width: 1100px;
+  max-width: $content-max-width;
   min-height: 200px;
   margin: -$top-nav-height auto 0;
+}
+
+@include breakpoint(0, 767px) {
+  .content {
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+.page-title {
+  margin-top: 40px;
 }
 
 .footer {

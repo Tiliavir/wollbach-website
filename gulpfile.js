@@ -75,5 +75,5 @@ gulp.task("html:minify", function () {
 gulp.task("search:index", function () {
     fs.writeFileSync(paths.dest + "index.json", JSON.stringify(searchIndex.getResult()));
 });
-gulp.task("default", $.sequence("html:generatePages"));
+gulp.task("default", ["html:generatePages"]);
 gulp.task("release", $.sequence("html:generatePages", "sitemap", "html:minify", "search:index"));

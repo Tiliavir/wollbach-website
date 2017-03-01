@@ -1,12 +1,15 @@
 ---
 title: "Vereine"
 description: ""
-keywords: "Vereine, Vereinsarbeit, Musik, Sport, Engagement"
+keywords: "Vereine, Vereinsarbeit, Musik, Gesang, Sport, Engagement, Fastnacht"
 
 navigation: "top"
 ---
 
 extends ../template.pug
+
+block pageStyles
+  include ../styles/vereine.css
 
 mixin verein(name, url)
   .verein(itemscope itemtype="http://schema.org/LocalBusiness")
@@ -17,14 +20,19 @@ mixin verein(name, url)
       h2.title(itemprop="name")= name
 
 block content
-  +verein("Chochlöffel")
+  +verein("DRK Ortsverein Wollbach")
   +verein("Feuerwehr Abteilung Wollbach", "http://www.feuerwehr-kandern.de")
   +verein("Frauenverein")
   +verein("Füürdeufel")
   +verein("Kirchenchor")
-  +verein("Männer Gesangverein")
+  +verein("Männergesangverein")
   +verein("Musikverein Wollbach 1866 e.V.", "http://www.mv-wollbach.de")
   +verein("Sportverein Wollbach")
   +verein("Schützenverein Wollbach")
   +verein("Tennisclub Wollbach", "http://www.tc-wollbach.de")
+  +verein("Wiigeischter")
+  +verein("Wollbacher Chochlöffel e.V.", "http://www.wollbacher-chochloeffel.de/")
   +verein("Wollbacher Wanderfreunde")
+
+  h1 Abkären
+  +verein("Kinder- und Jugendtreff Wollbach / 'Asbach Chäller Wollbach'")
