@@ -15,7 +15,15 @@ module MVW.Search {
       for (let item in result) {
         if (result.hasOwnProperty(item)) {
           let ref = result[item].ref;
-          let i = `<li><div><a href="${ref}.html">${store[ref].title}</a><div><span>${store[ref].description}</span></li>`;
+          let i = `
+          <li>
+            <div>
+              <a href="${ref}.html">
+                ${store[ref].title}
+              </a>
+            </div>
+            <span>${store[ref].description}</span>
+          </li>`;
           resultContainer.append(i);
         }
       }
