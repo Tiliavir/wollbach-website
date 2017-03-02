@@ -13,11 +13,11 @@ block pageStyles
 
 mixin verein(name, url)
   .verein(itemscope itemtype="http://schema.org/LocalBusiness")
-    if (url)
-      a(href=url itemprop="url" target="_blank")
-        h2.title(itemprop="name")= name
-    else
-      h2.title(itemprop="name")= name
+    h2.title(itemprop="name")
+      if (url)
+        a(href=url itemprop="url" target="_blank")= name
+      else
+        | #{name}
 
 block content
   +verein("DRK Ortsverein Wollbach")

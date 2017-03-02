@@ -6,6 +6,8 @@
 
 veranstaltungskalender => osc col
 
-Suche
-breite von links in vereine, gastro, ... + styling
-img +=alt
+styling: vereine, gastro,...
+
+update search index
+
+sort gastro & gewerbe

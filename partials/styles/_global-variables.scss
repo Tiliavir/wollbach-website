@@ -2,14 +2,16 @@
 $color-red: #f70203;
 $color-yellow: #ebc904;
 $color-light-grey: #f5f5f5;
-$text-color: #333;
+$gray-base: #333;
 $gray-light: #999;
+$gray-lighter: #ddd;
 $body-bg: #fff;
 $black: #000;
 
-$text-color-inactive: #ddd;
+$text-color: $gray-base;
+$text-color-inactive: $gray-lighter;
 $gray-border-color: #ccc;
-$gray-light-border-color: #ddd;
+$gray-light-border-color: $gray-lighter;
 
 // fonts
 $font-family: 'Open Sans', Arial, sans-serif;

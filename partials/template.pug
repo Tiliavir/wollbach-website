@@ -24,28 +24,18 @@ html(lang="de")
     meta(property="og:locale" content="de_DE")
     meta(property="og:site_name" content=scope.siteTitle)
 
-    style
-      include ./styles/app.css
-      block pageStyles
-
-    link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
-    link(rel="icon", type="image/png", href="/favicon-194x194.png", sizes="194x194")
-    link(rel="icon", type="image/png", href="/favicon-96x96.png", sizes="96x96")
-    link(rel="icon", type="image/png", href="/android-chrome-192x192.png", sizes="192x192")
-    link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
-    link(rel="manifest", href="/manifest.json")
-    link(rel="mask-icon", href="/safari-pinned-tab.svg")
-    meta(name="apple-mobile-web-app-title", content="Wollbach")
-    meta(name="application-name", content="Wollbach")
-    meta(name="msapplication-TileColor", content="#4a4a4a")
-    meta(name="msapplication-TileImage", content="/mstile-144x144.png")
-    meta(name="theme-color", content="#4a4a4a")
+    link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")
+    link(rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32")
+    link(rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16")
+    link(rel="manifest" href="/manifest.json")
+    link(rel="mask-icon" href="/safari-pinned-tab.svg" color="#f71a1a")
+    meta(name="theme-color" content="#ffffff")
 
   body(itemscope itemtype="http://schema.org/" + (schemaOrg || "WebPage"))
     .header
       .cover
         a.navigation-brand(href="/")
-          img(src="/img/wappen.png")
+          img(src="/img/wappen.png" alt="Wollbach")
 
     nav.navigation
       input#navigation-checkbox.navigation-checkbox(type="checkbox")
@@ -69,7 +59,12 @@ html(lang="de")
     nav.footer
       include ./footernavigation.pug
 
+    style
+      include ./styles/app.css
+      block pageStyles
+
     script(src="/js/jquery.min.js")
     script
       include ./scripts/app.js
+    script
       block pageScripts

@@ -1,7 +1,8 @@
 @import 'global-variables';
 
 .verein {
-  .title {
+  .title,
+  .title > a {
     color: $text-color;
     font-weight: 400;
   }

@@ -1,7 +1,8 @@
 @import 'global-variables';
 
 .restaurant {
-  .title {
+  .title,
+  .title > a {
     color: $text-color;
     font-weight: 400;
   }

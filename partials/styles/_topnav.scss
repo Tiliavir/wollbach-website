@@ -8,7 +8,7 @@ $color-active: $color-red;
 $color-hover-and-focus: lighten($color-active, 10%);
 
 .navigation {
-  background-color: transparentize($background-color, .3);
+  background-color: transparentize($background-color, .5);
   color: $text-color;
   font-size: $font-size-base;
   font-weight: 700;
@@ -16,10 +16,8 @@ $color-hover-and-focus: lighten($color-active, 10%);
   position: relative;
   top: -$top-nav-height;
   z-index: 1000;
-  max-width: $header-max-width;
   margin: 0 auto;
   height: $top-nav-height;
-  box-shadow: 0 -5px 8px 0 transparentize($background-color, .3), 0 10px 15px -10px $black;
 }
 
 .navigation-header {
@@ -32,9 +30,10 @@ $color-hover-and-focus: lighten($color-active, 10%);
   position: relative;
   top: 30px;
   height: $top-nav-height;
+  box-shadow: 0 10px 15px -10px $black;
 }
 
-.navigation-menu>ul {
+.navigation-menu > ul {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -67,7 +66,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
   position: relative;
   height: auto;
 
-  &>ul {
+  & > ul {
     color: $text-color;
     font-size: $font-size-base;
     font-weight: 700;
@@ -93,7 +92,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
   }
 
   .dropdown {
-    &:hover>ul {
+    &:hover > ul {
       position: relative;
       display: block;
       min-width: 100%;
@@ -101,21 +100,21 @@ $color-hover-and-focus: lighten($color-active, 10%);
   }
 
   .navigation-checkbox {
-    &:not(:checked)~.navigation-menu {
+    &:not(:checked) ~ .navigation-menu {
       max-height: 0;
       min-height: 0;
       overflow-y: hidden;
     }
 
     &:checked {
-      &~.navigation-menu {
+      & ~ .navigation-menu {
         max-height: 2000px;
         height: initial;
         overflow-y: hidden;
         transition: max-height .8s ease;
       }
 
-      &~.navigation-header {
+      & ~ .navigation-header {
         .navigation-hamburger {
           span {
             background-color: transparent;
@@ -136,7 +135,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
 
           &:hover {
             span {
-              transform: rotate(45deg);
+              transform: rotate(90deg);
             }
           }
         }
@@ -188,15 +187,15 @@ $color-hover-and-focus: lighten($color-active, 10%);
 }
 
 @media (min-width: 768px) {
-  .navigation-hamburger {
+  .navigation-header {
     display: none;
   }
 
-  .navigation-menu>ul {
+  .navigation-menu > ul {
     flex-flow: row;
     width: 100%;
 
-    &>li {
+    & > li {
       display: inline-block;
 
       &:hover,
@@ -230,18 +229,18 @@ $color-hover-and-focus: lighten($color-active, 10%);
 
   .navigation-menu {
     min-height: $top-nav-height;
-    position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
     overflow-x: visible;
-    max-width: 1100px;
+    max-width: $header-max-width;
     margin: 0 auto;
   }
 
   .dropdown {
     height: $top-nav-height;
 
-    &:hover>ul {
+    &:hover > ul {
       position: absolute;
       display: block;
       left: 0;
@@ -250,7 +249,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
       background-color: $body-bg;
     }
 
-    &>a {
+    & > a {
       &::after {
         $expand-arrow-height: 3px;
         position: absolute;
@@ -262,7 +261,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
       }
     }
 
-    &>ul {
+    & > ul {
       display: none;
       box-shadow: 0 5px 10px -2px $black;
 

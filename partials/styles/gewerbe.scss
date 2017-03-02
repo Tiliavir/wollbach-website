@@ -1,7 +1,8 @@
 @import 'global-variables';
 
 .gewerbe {
-  .title {
+  .title,
+  .title > a {
     color: $text-color;
     font-weight: 400;
   }
