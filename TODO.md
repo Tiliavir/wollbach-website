@@ -8,6 +8,6 @@ veranstaltungskalender => osc col
 
 styling: vereine, gastro,...
 
-update search index
-
 sort gastro & gewerbe
+
+clean search

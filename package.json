@@ -57,7 +57,7 @@
     "marked": "^0.3.6",
     "moment": "^2.17.1",
     "mvw-navigation": "^2.0.0",
-    "mvw-search-index": "^1.0.6",
+    "mvw-search-index": "^1.0.7",
     "pug": "^2.0.0-beta11"
   },
   "scripts": {

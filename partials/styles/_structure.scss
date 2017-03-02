@@ -29,13 +29,17 @@ $footer-border-gray: #e7e7e7;
 }
 
 .navigation-brand {
-  right: 0;
   display: inline-block;
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 157px;
-  height: 200px;
+  height: 140px;
+  max-height: 20vh;
+  min-height: 30px;
+
+  &:hover {
+    border-bottom: 0;
+  }
 
   img {
     height: 140px;
@@ -44,6 +48,12 @@ $footer-border-gray: #e7e7e7;
   }
 
   @media (orientation: portrait) {
+    height: initial;
+    max-height: initial;
+    min-height: initial;
+    max-width: 15vw;
+    min-width: 30px;
+
     img {
       height: initial;
       max-height: initial;
