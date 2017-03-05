@@ -7,3 +7,12 @@
     font-weight: 400;
   }
 }
+
+.address {
+  span:not(:first-of-type) {
+    &::before {
+      content: ', ';
+      display: inline;
+    }
+  }
+}
