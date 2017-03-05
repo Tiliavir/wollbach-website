@@ -50,7 +50,8 @@ $color-hover-and-focus: lighten($color-active, 10%);
       color: inherit;
       cursor: pointer;
 
-      &:hover {
+      &:hover,
+      &:focus {
         border: 0;
       }
     }
