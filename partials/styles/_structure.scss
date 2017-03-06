@@ -64,12 +64,16 @@ $footer-border-gray: #e7e7e7;
   }
 }
 
-%content-width-behavior,
-.content {
+%content-width-behavior {
   width: 80vw;
   max-width: $content-max-width;
+  margin: 0 auto;
+}
+
+.content {
+  @extend %content-width-behavior;
   min-height: 200px;
-  margin: -$top-nav-height auto 0;
+  margin-top: -$top-nav-height;
 }
 
 @include breakpoint(0, 767px) {
