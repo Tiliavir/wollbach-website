@@ -55,11 +55,6 @@ $color-hover-and-focus: lighten($color-active, 10%);
         border: 0;
       }
     }
-
-    &:hover,
-    &.active {
-      color: $color-active;
-    }
   }
 }
 
@@ -74,7 +69,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
   & > ul {
     color: $text-color;
     font-size: $font-size-base;
-    font-weight: 700;
+    font-weight: 400;
     display: block;
     list-style: none;
     padding: 0;
@@ -98,6 +93,13 @@ $color-hover-and-focus: lighten($color-active, 10%);
       position: relative;
       display: block;
       min-width: 100%;
+    }
+
+    li {
+      &:hover,
+      &.active {
+        color: $color-red;
+      }
     }
   }
 
@@ -279,6 +281,10 @@ $color-hover-and-focus: lighten($color-active, 10%);
           &:hover {
             color: $color-red;
           }
+        }
+
+        &.active {
+          color: $color-red;
         }
       }
     }
