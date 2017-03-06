@@ -1,13 +1,5 @@
 @import 'global-variables';
 
-.verein {
-  .title,
-  .title > a {
-    color: $text-color;
-    font-weight: 400;
-  }
-}
-
 .address {
   span:not(:first-of-type) {
     &::before {

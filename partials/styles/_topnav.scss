@@ -2,9 +2,9 @@
 
 $padding: 21px 20px;
 $background-color: $body-bg;
-$background-color-active: $color-yellow;
+$background-color-active: transparentize(#141e28, .3);
 $background-color-hover-and-focus: lighten($background-color-active, 20%);
-$color-active: $color-red;
+$color-active: #ebc904;
 $color-hover-and-focus: lighten($color-active, 10%);
 
 .navigation {
@@ -274,6 +274,11 @@ $color-hover-and-focus: lighten($color-active, 10%);
           padding: 3px 20px;
           height: 35px;
           line-height: 35px;
+          font-weight: 400;
+
+          &:hover {
+            color: $color-red;
+          }
         }
       }
     }
