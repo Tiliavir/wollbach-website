@@ -5,7 +5,7 @@ module KW.Appointments {
     return result;
   }
 
-  export function initialize(): void {
+  export function init(): void {
     const cutOffDate = addDays(new Date(), -3);
     let hasPassedItems: boolean = false;
 
@@ -28,4 +28,4 @@ module KW.Appointments {
   }
 }
 
-$(() => { KW.Appointments.initialize(); });
+$(() => { KW.Appointments.init(); });

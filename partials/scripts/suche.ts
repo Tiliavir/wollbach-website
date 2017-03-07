@@ -1,4 +1,4 @@
-module MVW.Search {
+module KW.Search {
   let index: any;
   let store: any;
 
@@ -47,7 +47,7 @@ module MVW.Search {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
 
-  export function initialize(): void {
+  export function init(): void {
     $.getJSON("/index.json", data => {
       index = lunr.Index.load(data.index);
       store = data.store;
@@ -63,4 +63,4 @@ module MVW.Search {
   }
 }
 
-$(() => MVW.Search.initialize());
+$(() => KW.Search.init());

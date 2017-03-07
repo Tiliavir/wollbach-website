@@ -2,7 +2,8 @@
 
 $padding: 21px 20px;
 $background-color: $body-bg;
-$background-color-active: transparentize(#141e28, .3);
+$active-bg-no-transparency: #141e28;
+$background-color-active: transparentize($active-bg-no-transparency, .3);
 $background-color-hover-and-focus: lighten($background-color-active, 20%);
 $color-active: #ebc904;
 $color-hover-and-focus: lighten($color-active, 10%);
@@ -76,7 +77,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
 
     li {
       a {
-        padding: 5px 10px 5px 30px
+        padding: 5px 10px 5px 30px;
       }
     }
   }

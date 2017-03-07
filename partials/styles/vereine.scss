@@ -1,10 +1,12 @@
 @import 'global-variables';
 
 .address {
-  span:not(:first-of-type) {
-    &::before {
-      content: ', ';
-      display: inline;
+  span {
+    &:not(:first-of-type) {
+      &::before {
+        content: ', ';
+        display: inline;
+      }
     }
   }
 }
