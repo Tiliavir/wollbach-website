@@ -6,8 +6,8 @@
 
 veranstaltungskalender => osc col
 
-styling: vereine, gastro,...
-
 sort gastro & gewerbe
 
 clean search
+
+fix base url in gulp file
