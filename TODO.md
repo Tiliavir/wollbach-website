@@ -10,6 +10,7 @@
 - Breadcrumb: Start => Startseite
 - browserlist IE 7/8 weg
 - links mit external zeichen
+- Ortspläne?
 
 18.4 => 18.6qkm
 
