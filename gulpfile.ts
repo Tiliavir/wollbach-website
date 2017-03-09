@@ -31,7 +31,12 @@ gulp.task("sitemap", () => {
 });
 
 gulp.task("html:writeNavigation", () => {
-  navigation = new Navigation(require("./partials/site-structure.json"));
+  navigation = new Navigation(require("./partials/site-structure.json"),
+                              "html",
+                              {
+                                referencedFile: "index.html",
+                                title: "Startseite"
+                              });
   fs.writeFileSync("./partials/siteOverviewList.pug", navigation.writeNavigation("allplain"));
   fs.writeFileSync("./partials/topnavigation.pug", navigation.writeNavigation("top"));
   fs.writeFileSync("./partials/footernavigation.pug", navigation.writeNavigation("footer"));
