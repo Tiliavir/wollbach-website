@@ -17,12 +17,16 @@ block content
       thead
         tr
           th Datum
+          th Veranstalter
           th Veranstaltung
       tbody
         each appointment in appointments[year]
           tr(itemscope itemtype="http://schema.org/Event")
             td
               +formatTimespan(appointment.starttime, appointment.endtime, true)
+            td(itemprop="organizer")
+              span(itemscope itemtype="http://schema.org/Organization" itemprop="name")
+                | #{appointment.organizer}
             td
               span(itemprop="name")
                 | #{appointment.title}
