@@ -27,7 +27,10 @@ gulp.task("sitemap", function () {
         .pipe(gulp.dest(paths.dest));
 });
 gulp.task("html:writeNavigation", function () {
-    navigation = new mvw_navigation_1.Navigation(require("./partials/site-structure.json"));
+    navigation = new mvw_navigation_1.Navigation(require("./partials/site-structure.json"), "html", {
+        referencedFile: "index.html",
+        title: "Startseite"
+    });
     fs.writeFileSync("./partials/siteOverviewList.pug", navigation.writeNavigation("allplain"));
     fs.writeFileSync("./partials/topnavigation.pug", navigation.writeNavigation("top"));
     fs.writeFileSync("./partials/footernavigation.pug", navigation.writeNavigation("footer"));
