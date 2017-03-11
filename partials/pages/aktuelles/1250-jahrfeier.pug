@@ -8,8 +8,11 @@ navigation: "top"
 
 extends ../../template.pug
 
+block pageStyles
+  include ../../styles/1250.css
+
 block content
-  +image("/img/1250.png", "1250 Jahre Wollbach")
+  +image("/img/1250.png", "1250 Jahre Wollbach").logo-1250
 
   :marked
     # Festwochenende

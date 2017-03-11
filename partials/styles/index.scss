@@ -1,3 +1,22 @@
+@import 'mixins/breakpoint';
+
 .navigation-brand {
   display: none;
+}
+
+.wappen {
+  float: left;
+  margin: 6px 20px 5px;
+}
+
+.max-suetterlin {
+  max-width: 200px;
+}
+
+@include breakpoint(0, 767px) {
+  .max-suetterlin {
+    width: 100%;
+    max-width: initial;
+    max-height: initial;
+  }
 }
