@@ -170,9 +170,15 @@
     },
     {
       "starttime": "2017-05-01",
-      "title": "Maischänke   ",
+      "title": "Maischänke",
       "organizer": "Chochläffel Wollbach",
       "location": { "name": "Schmidt's Schüüre", "address": "Wollbach" }
+    },
+    {
+      "starttime": "2017-05-05",
+      "title": "Generalversammlung",
+      "organizer": "Wanderfreunde",
+      "location": { "address": "Wollbach" }
     },
     {
       "starttime": "2017-05-07",

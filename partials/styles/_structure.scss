@@ -77,8 +77,9 @@ $footer-border-gray: #e7e7e7;
 }
 
 @include breakpoint(0, 767px) {
+  .footer ul,
   .content {
-    width: 100%;
+    width: initial;
     padding: 0 5px;
   }
 }

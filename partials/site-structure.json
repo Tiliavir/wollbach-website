@@ -28,6 +28,10 @@
         "title": "Geschichte"
       },
       {
+        "referencedFile": "nebenorte",
+        "title": "Nebenorte"
+      },
+      {
         "referencedFile": "oeffentliche-einrichtungen",
         "title": "Öffentliche Einrichtungen"
       }
