@@ -1,5 +1,4 @@
 - image post processing
-  - one format
   - no metadata
   - correct size
 
@@ -8,7 +7,6 @@ Mobile:
 - hamburger outline?!
 
 - links mit external zeichen
-- Descriptions
 
 Kalendar:
 - veranstaltungskalender => osc col
