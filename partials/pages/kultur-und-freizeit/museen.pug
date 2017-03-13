@@ -22,6 +22,9 @@ mixin museum(name, street, town, url)
       span.hidden(itemprop="postalCode") 79400
     block
 
+block pageStyles
+  include ../../styles/museen.css
+
 block content
   +museum("Kirchturm-Museum", "Rathausstr. 18", "Wollbach")
     :marked
@@ -29,7 +32,7 @@ block content
 
   +museum("Kreiterhof Museum", "Wollbacherstraße 1", "Egerten", "http://www.kreiterhof.de/museum.html")
     :marked
-      Eröffnet am 3. Oktober 2009 stellt sas Kreiterhof Museum vornehmlich
+      Das am 3. Oktober 2009 eröffnete Kreiterhof Museum stellt vornehmlich
       landwirtschaftliche Maschinen und Geräte aller Art sowie historische
       Gegenstände des Alltagslebens aus.
 
