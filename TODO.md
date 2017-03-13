@@ -1,12 +1,13 @@
-- image post processing
+- links mit external zeichen
+- groups should not navigate
+
+image post processing
   - no metadata
   - correct size
 
 Mobile:
 - clean search button style
 - hamburger outline?!
-
-- links mit external zeichen
 
 Kalendar:
 - veranstaltungskalender => osc col
