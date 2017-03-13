@@ -34,7 +34,7 @@ gulp.task("html:writeNavigation", () => {
   navigation = new Navigation(require("./partials/site-structure.json"),
                               "html",
                               {
-                                referencedFile: "index.html",
+                                referencedFile: "index",
                                 title: "Startseite"
                               });
   fs.writeFileSync("./partials/siteOverviewList.pug", navigation.writeNavigation("allplain"));

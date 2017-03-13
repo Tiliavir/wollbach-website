@@ -8,8 +8,31 @@ navigation: "top"
 
 extends ../../template.pug
 
+mixin museum(name, street, town, url)
+  .museum(itemscope itemtype="http://schema.org/LocalBusiness")
+    if (url)
+      a(href=url itemprop="url" target="_blank")
+        h2.title(itemprop="name")= name
+    else
+      h2.title(itemprop="name")= name
+    .address(itemprop="address" itemscope itemtype="http://schema.org/PostalAddress")
+      span(itemprop="streetAddress")= street
+      span(itemprop="addressLocality")= town
+      span.hidden(itemprop="addressRegion") Germany
+      span.hidden(itemprop="postalCode") 79400
+    block
+
 block content
-  :marked
-    - Der Kirchturm beherbergt ein Turm-Museum.
-    - Im Ortsteil Egerten befindet sich das Max Böhlen-Museum.
-    - Am 3. Oktober 2009 wurde das "Kreiterhofmuseum" eröffnet.
+  +museum("Kirchturm-Museum", "Rathausstr. 18", "Wollbach")
+    :marked
+       
+
+  +museum("Kreiterhof Museum", "Wollbacherstraße 1", "Egerten", "http://www.kreiterhof.de/museum.html")
+    :marked
+      Eröffnet am 3. Oktober 2009 stellt sas Kreiterhof Museum vornehmlich
+      landwirtschaftliche Maschinen und Geräte aller Art sowie historische
+      Gegenstände des Alltagslebens aus.
+
+  +museum("Max Böhlen Museum", "Wollbacherstrasse 26", "Egerten", "http://www.max-boehlen-museum.de/")
+    :marked
+      Museum des Schweizer Malers Max Böhlen.

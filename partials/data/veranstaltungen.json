@@ -26,13 +26,8 @@
     },
     {
       "starttime": "2017-01-27",
-      "title": "Jahreskonzert I",
-      "organizer": "Musikverein Wollbach",
-      "location": { "name": "Kandertalhalle", "address": "Wollbach" }
-    },
-    {
-      "starttime": "2017-01-28",
-      "title": "Jahreskonzert II",
+      "endtime": "2017-01-28",
+      "title": "Jahreskonzert",
       "organizer": "Musikverein Wollbach",
       "location": { "name": "Kandertalhalle", "address": "Wollbach" }
     },
@@ -104,12 +99,7 @@
     },
     {
       "starttime": "2017-03-11",
-      "title": "Jugendturnier",
-      "organizer": "Sportverein Wollbach",
-      "location": { "name": "Kandertalhalle", "address": "Wollbach" }
-    },
-    {
-      "starttime": "2017-03-12",
+      "endtime": "2017-03-12",
       "title": "Jugendturnier",
       "organizer": "Sportverein Wollbach",
       "location": { "name": "Kandertalhalle", "address": "Wollbach" }
@@ -230,7 +220,7 @@
     },
     {
       "starttime": "2017-07-07",
-      "title": "AbiAbschlussfeier",
+      "title": "Abi Abschlussfeier",
       "organizer": "WG Lörrach",
       "location": { "name": "Kandertalhalle", "address": "Wollbach" }
     },
@@ -261,13 +251,8 @@
     },
     {
       "starttime": "2017-10-14",
-      "title": "Herbstfest/Sauserexpress",
-      "organizer": "Musikverein Wollbach",
-      "location": { "name": "Kandertalhalle", "address": "Wollbach" }
-    },
-    {
-      "starttime": "2017-10-15",
-      "title": "Herbstfest",
+      "endtime": "2017-10-15",
+      "title": "Sauserexpress / Herbstfest",
       "organizer": "Musikverein Wollbach",
       "location": { "name": "Kandertalhalle", "address": "Wollbach" }
     },

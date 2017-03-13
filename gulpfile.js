@@ -29,7 +29,7 @@ gulp.task("sitemap", function () {
 });
 gulp.task("html:writeNavigation", function () {
     navigation = new mvw_navigation_1.Navigation(require("./partials/site-structure.json"), "html", {
-        referencedFile: "index.html",
+        referencedFile: "index",
         title: "Startseite"
     });
     fs.writeFileSync("./partials/siteOverviewList.pug", navigation.writeNavigation("allplain"));
