@@ -11,7 +11,7 @@ $(() => {
   });
 });
 
-function viewFullImage(url: string, alt: string) {
-  let $preview = $(`<div class="overlay"><img class="full-view" src="${url}" alt="${alt}" /></div>`);
+function viewFullImage(url: string, alt: string): void {
+  let $preview: JQuery = $(`<div class="overlay"><img class="full-view" src="${url}" alt="${alt}" /></div>`);
   $("body").append($preview);
 };
