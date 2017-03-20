@@ -12,3 +12,11 @@
 .img-circle {
   border-radius: 50%;
 }
+
+.full-view {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%) translateY(-50%);
+    z-index: 200;
+}

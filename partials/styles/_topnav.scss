@@ -215,6 +215,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
         display: block;
         height: $top-nav-height;
         line-height: $top-nav-height;
+        font-variant: small-caps;
       }
 
       &.active {

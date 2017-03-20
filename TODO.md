@@ -1,9 +1,10 @@
 - links mit external zeichen
-- groups should not navigate to #
 
 image post processing
 - no metadata
 - correct size
+
+Fix enlarge image logic in app.ts
 
 Mobile:
 - clean search button style in Chrome for Android
@@ -11,6 +12,8 @@ Mobile:
 
 Wanderwege
 - Stilbruch Kreiter vs rest
+- Westweg
+- Pilgerfudi
 
 Kalendar:
 - veranstaltungskalender => osc col
@@ -31,6 +34,10 @@ Verein
 
 Nebenorte
 - Scheiss Seite => wo sollen die Karten hin? Sonst mehr Prosa
+=> UnserDorf oder so
 
 Kirche
 += Wartburg
+
+Verein Gastro Gewerbe
+-          Kacheln

@@ -8,6 +8,9 @@ navigation: "top"
 
 extends ../template.pug
 
+block pageStyles
+  include ../styles/kirche.css
+
 block content
   :marked
     Eine Kirche in Wollbach wird erstmals 1275 urkundlich erwähnt. Ihre Patrone
@@ -31,4 +34,4 @@ block content
     "Pfaffenkeller" geführt wird, diente ab 1618 für einige Zeit als
     Pfarrhaus.
 
-  +image("/img/kirche.jpg", "Kirche Wollbach")
+  +image-css("/img/kirche.jpg", "Kirche Wollbach")

@@ -17,9 +17,12 @@ mixin einrichtung(name, url)
       h2.title(itemprop="name")= name
     block
 
+block pageStyles
+  include ../../styles/oeffentliche-einrichtungen.css
+
 block content
   +einrichtung("Rathaus und Kindergarten „Schatzkischte“")
-    +image("/img/rathaus.jpg", "Rathaus")
+    +image-css("/img/rathaus.jpg", "Rathaus")
     :marked
       Das Wollbacher Schul- und Rathaus wurde 1847 erbaut und beherbergte früher
       auch Lehrerwohnung, Luftschutzkeller, Ortsarrest und ein Totenwagen-Depot.
@@ -32,7 +35,7 @@ block content
       Ortsverwaltung.
 
   +einrichtung("Schule")
-    +image("/img/schule.jpg", "Schule")
+    +image-css("/img/schule.jpg", "Schule")
     :marked
       Das in den Jahren 1963 bis 1965 errichtete neue Schulhaus wurde am 31. Juli 1965
       eingeweiht und bis zur Gemeindereform als Nachbarschaftsschule geführt.
@@ -44,7 +47,7 @@ block content
       auf zwei Klassenräume zur Wiedereinführung der Grundschule in Wollbach.
 
   +einrichtung("Baselblick")
-    +image("/img/baselblick.jpg", "Baselblick")
+    +image-css("/img/baselblick.jpg", "Baselblick")
     :marked
       Die Baselblick-Hütte oberhalb des Rebbergs wurde in den 1950er-Jahren im
       Rahmen der damaligen Rebenumlegung als Ersatz für das zuvor dort
@@ -56,10 +59,10 @@ block content
       für Grillfeste von Familien, Vereinen und sonstigen Gruppen genutzt.
 
   +einrichtung("Feuerwehr Abteilung Wollbach", "http://www.feuerwehr-kandern.de")
-    +image("/img/feuerwehr.jpg", "Feuerwehr Abteilung Wollbach")
+    +image-css("/img/feuerwehr.jpg", "Feuerwehr Abteilung Wollbach")
 
   +einrichtung("Kandertalhalle")
-    +image("/img/halle.jpg", "Halle")
+    +image-css("/img/halle.jpg", "Halle")
     :marked
       Die Kandertalhalle wurde 1977 als neues Sport- und Veranstaltungs-Zentrum
       des Dorfes eingeweiht. Zugleich wurde auch das "Kandertalstüble" als
@@ -68,7 +71,7 @@ block content
       für Gruppenarbeit, Vereinsproben und kleinere Feiern.
 
   +einrichtung("Kandertalbahn")
-    +image("/img/bahnhof.jpg", "Bahnhof")
+    +image-css("/img/bahnhof.jpg", "Bahnhof")
     :marked
       Der Wollbacher Bahnhof, an dem im Sommer die historische Eisenbahn auf der
       Kandertalstrecke von Haltingen nach Kandern hält, und rechts im Bild die
