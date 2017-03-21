@@ -171,13 +171,14 @@ a {
 }
 
 .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    background-color: $black;
-    overflow-x: hidden;
-    transition: 0.5s;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  background-color: transparentize($black, .6);
+  overflow-x: hidden;
+  transition: .5s;
+  cursor: pointer;
 }

@@ -13,5 +13,6 @@ $(() => {
 
 function viewFullImage(url: string, alt: string): void {
   let $preview: JQuery = $(`<div class="overlay"><img class="full-view" src="${url}" alt="${alt}" /></div>`);
+  $preview.click((e) => $(e.target).closest(".overlay").remove());
   $("body").append($preview);
 };
