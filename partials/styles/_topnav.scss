@@ -19,6 +19,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
   z-index: 1000;
   margin: 0 auto;
   height: $top-nav-height;
+  user-select: none;
 }
 
 .navigation-header {
