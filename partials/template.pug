@@ -37,7 +37,7 @@ html(lang="de")
     meta(name="theme-color" content="#ffffff")
 
   body(itemscope itemtype="http://schema.org/" + (schemaOrg || "WebPage"))
-    .header
+    header.header
       .cover
         a.navigation-brand(href="/")
           img(src="/img/wappen.png" alt="Wollbach")
@@ -49,8 +49,6 @@ html(lang="de")
           span
       .navigation-menu
         include ./topnavigation.pug
-
-    block header
 
     img.print-only(src="/img/wappen.png" alt=scope.siteTitle)
 
