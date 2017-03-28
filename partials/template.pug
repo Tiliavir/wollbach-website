@@ -54,15 +54,16 @@ html(lang="de")
 
     img.print-only(src="/img/wappen.png" alt=scope.siteTitle)
 
-    .content(itemprop="mainContentOfPage")
+    main.content(itemprop="mainContentOfPage")
       h1.page-title #{title}
         if subtitle
             small= " " + subtitle
       | !{breadcrumb}
       block content
 
-    nav.footer
-      include ./footernavigation.pug
+    footer.footer
+      nav
+        include ./footernavigation.pug
 
     script(src="/js/jquery.min.js")
     script
