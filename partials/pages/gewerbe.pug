@@ -8,7 +8,7 @@ navigation: "top"
 
 extends ../template.pug
 
-mixin gewerbe(name, street, town, url)
+mixin gewerbe(name, owner, street, town, telephone, fax, mail, url)
   .gewerbe(itemscope itemtype="http://schema.org/LocalBusiness")
     if (url)
       h2.title(itemprop="name")
@@ -26,34 +26,51 @@ block pageStyles
   include ../styles/gewerbe.css
 
 block content
-  +gewerbe("Autohaus Krug", "Basler Straße 1", "Wollbach", "http://www.krug.mazda-autohaus.de")
-  +gewerbe("bmt-solutions", "Auf dem Buck 4/1", "Wollbach", "http://www.bmt-solutions.de")
-  +gewerbe("G. Heidenreich - Garten- und Landschaftsbau", "Nebenauerstr. 5", "Wollbach", "http://galabau-heidenreich.de")
+  # Einzelhandel
+  +gewerbe("Hofgut Rüttehof", "Karlfrieder Fischer", "Rüttehof 1", "Egisholz", "07626 8885", "07626 970649", "info@ruettehof.de", "http://www.ruettehof.de")
+  +gewerbe("Antiquitäten Graf", "Karlfrieder Graf", "Basler Str. 16", "Wollbach", "07626 7404", "07626 6160", "graf-kandern@onlinehome.de", null)
+  +gewerbe("Familie Probst", "Brigitte und Gerhard Probst", "Rathausstrasse 1", "Wollbach", "07626 7398", "07626 973895", "probst.wollbach@web.de", "http://www.direktvermarkter-landkreis-lörrach.de/anbieter/probst-gerhard.html")
+
+  # Handwerk
+  +gewerbe("Holzbau Bernhard Benz GmbH", "Bernhard Benz", "Im Dörfli 25", "Hammerstein", "07626 971641", "07626 971643", "info@benz-holzbau.de", "http://www.benz-holzbau.de")
+  +gewerbe("Schreinerei Enders", "Andreas Enders", "Baslerstr. 7", "Wollbach", "07626 7542", "07626 60454", "info@schreinerei-enders.de", "http://www.schreinerei-enders.de")
+  +gewerbe("Elektro Ernst", "Ralf Ernst", "Im Maiacker 10", "Wollbach", "07626 1030", "07626 970439", "info@elektro-ernst.com", "http://www.elektro-ernst.com/")
+  +gewerbe("Schreinerei Geling", "Alfons Geling", "Röttler Weg 4/1", "Wollbach", "07626 972064", "07635 826553", "max.geling@gmx.de", "http://www.schreinerei-geling.de")
+  +gewerbe("Gartenbau Heidenreich", "Gernot Heidenreich", "Nebenauerstr. 5", "Wollbach", "07626 6502", "07626 974753", "info@galabau-heidenreich.de", "http://www.galabau-heidenreich.de")
+  +gewerbe("Autohaus Hess Kandertal-Garage e.K.", "Christian Hess", "Kandertalstraße 4", "Hammerstein", "07626 7018", "07626 7028", "info@kandertalgarage.de", "http://www.kandertalgarage.de")
+  +gewerbe("Schreinerei Jenne - Schreinerei + Montagen", "Norbert Jenne", "Hauptstr. 59", "Kandern", "07626 6891", "07626 977888", "info@schreinerei-jenne.de", "http://schreinerei-jenne.de")
+  +gewerbe("Autohaus Krug", "Bernd Krug", "Basler Straße 1", "Wollbach", "07626 914150", "07626 9141516", "krug@mazda-autohaus.de", "http://www.autohauskrug.de")
+  +gewerbe("Anton Neumeier Hofmühle", "Anton Neumeier", "Maugenharderstr. 10", "Wollbach", "07626 286", "07626 1317", null, null)
+  +gewerbe("Gebrüder Penning GdbR Bauservice", "Ingo und Christian Penning", "Hofrütteweg 18", "Wollbach", "0173 7161124; 0152 29556862", null, "gebr.penning@gmx.de", null)
+  +gewerbe("SE-Consulting GmbH", "Dipl. Ing. Matthias und Clemens Sodeik", "Im Dörfle 11", "Hammerstein", "07626 6844", "07626 970544", "info@sw-consulting.de", "http://www.se-consulting.de")
+
+  # EDV Dienstleistung
+  +gewerbe("BMT-Solutions", "Benno Teschke", "Auf dem Buck 4/1", "Wollbach", "07626 977213", "07626 977214", "info@bmt-solutions.de", "http://www.bmt-solutions.de")
+
+  # Dienstleistungen allgemein
+  +gewerbe("Spirituelle Begleitung in Lebensfragen & Energiearbeit", "Andrea Hartmann", "Scheideckstr. 17", "Nebenau", "07626 2999686", null, "info@spirit-ofmymind.de", "http://www.spirit-ofmymind.de")
+  +gewerbe("Kern Managementsysteme", "Markus Kern", "Rebstallweg 1", "Hammerstein", "07626 971634", "07626 971636", "m.kern@kern-ms.de", "http://www.kern-ms.de")
+  +gewerbe("Naturheilpraxis Kleinod", "Karin Heck, Manfred Läpple", "Wollbacherstr. 1", "Egerten", "07626 9744970", "07626 9744700", "karin.uma@web.de", "http://www.naturheilpraxis-kleinod.de")
+  +gewerbe("Rechtsanwältin", "Kirsten Lang", "Scheideckstr. 9", "Nebenau", "07626 970353", "07626 970354", "kirsten.u.kurt.lang@t-online.de", null)
+  +gewerbe("eventMAX Zeltlogistik", "Max und Nico Lang", "Scheideckstraße 1", "Nebenau", "07626 2670126", null, "info@event-max.com", "http://www.event-max.com")
+  +gewerbe("Naturschallakustik", "Rita Prick", "Scheideckstr. 7/1", "Nebenau", "0176 17684003", null, "naturschallakustik@googlemail.com", null)
+  +gewerbe("Chinesische Körpermassagen", "Ingrid Rogalla", "Zielrebenweg 21", "Wollbach", "07626 970972", null, "i.rogalla@chinmassagen.de", "http://www.chinmassagen.de")
+  +gewerbe("Forstarbeiten Michael Schleith", "Michael Schleith", "Heubergstr. 15", "Egerten", "0152 54754600", null, "bamrung80@gmx.de", "http://www.forstarbeiten-schleith.de")
+
+  # Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten
+  +gewerbe("Heilpädagogische Praxis", "Mechthild Frey", "Am Neuweg 15", "Egerten", "07626 972569", "07626 972571", "mechthild.frey@gmx.net", "http://mechthildfrey-heilpaedagogischesreiten.de")
+  +gewerbe("Craniopraxis", "Martina Knippschild", "Wollbacherstr. 7/1", "Egerten", "07626 2670107", null, "kahlom@web.de", "http://www.craniopraxis.vbweb.de")
+  +gewerbe("Keramikwerkstatt", "Eleonore Krämer", "Nebenauerstr. 42", "Wollbach", "07626  977021", null, null null)
+
+//-
   +gewerbe("Hofladen Pfaffenkeller / Senf- und Marmeladen Manufaktur Pfaffenkeller", "Rathausstraße 9", "Wollbach", "http://www.pfaffenkeller.de")
-  +gewerbe("Elektro Ernst", "Im Maiacker 10", "Wollbach", "http://www.elektro-ernst.com/")
   +gewerbe("IT - Dienstleistung & Handel Bartsch und Wussow", "Zielrebenweg 30/1", "Wollbach", "http://www.it-dh.de")
   +gewerbe("Malergeschäft Becker", "Zielrebenweg 22", "Wollbach", "http://www.meistermaler-becker.de")
   +gewerbe("Markgrafik - Büro für Werbung und Gestaltung", "Niedere Hofrütte 3", "Wollbach", "http://www.markgrafik.de")
-  +gewerbe("Schreinerei Geling", "Röttler Weg 4/1", "Wollbach", "http://www.schreinerei-geling.de")
   +gewerbe("TipTop", "Nebenauerstraße 21", "Wollbach", "http://www.tiptop-naturfriseur.de")
-  +gewerbe("eventMax - Licht, Ton und Zelt Vermietung", "Scheideckstraße 1", "Nebenau", "http://www.event-max.com")
-  +gewerbe("Autohaus Hess", "Kandertalstraße 4", "Hammerstein", "http://www.kandertalgarage.de")
-  +gewerbe("SE-Consulting", "Im Dörfle 11", "Hammerstein", "http://www.se-consulting.de")
   +gewerbe("Bauelemente Schäfer", "Lindenstraße 5", "Egisholz", "http://www.schaefer-bauelemente.de")
   +gewerbe("Malerbetrieb Cudajewicz", "Egerten Str. 22", "Wollbach")
   +gewerbe("Mitbringsel", "Röttlerweg 1a", "Wollbach", "http://www.mitbringsel-wollbach.de/")
-  +gewerbe("Mechthild Frey - Heilpädagogisches Reiten", "Am Neuweg 15", "Egerten", "http://mechthildfrey-heilpaedagogischesreiten.de")
-  +gewerbe("Hofgut Rüttehof", "Rüttehof 1", "Egisholz", "http://www.ruettehof.de")
   +gewerbe("Friseursalon Nadine -Ihre Friseurmeisterin-", "Nebenauerstr. 26", "Wollbach")
-  +gewerbe("Schreinerei Enders", "Baslerstr. 7", "Wollbach", "http://www.schreinerei-enders.de")
   +gewerbe("EVS Thomas Wussow", "Zielrebenweg 30/1", "Wollbach", "http://www.evsnet.de")
-  +gewerbe("Antiquitäten Graf", "Basler Str. 16", "Wollbach")
   +gewerbe("CcK Event Management GbR", "Am Neuweg 2", "Wollbach", "http://cck-events.com/")
-  +gewerbe("Probst Hofladen", "Rathausstrasse 1", "Wollbach")
-
-//-
-  +gewerbe("Eleonore Krämer - Keramikwerkstatt")
-  +gewerbe("Prick Baugeschäft", "Nebenau")
-  +gewerbe("Prick Naturschallakustik", "Nebenau")
-  +gewerbe("Fischer Hofladen")
-  +gewerbe("Tonart")

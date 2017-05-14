@@ -8,7 +8,7 @@ navigation: "top"
 
 extends ../template.pug
 
-mixin restaurant(name, street, town, url)
+mixin restaurant(name, owner, street, town, telephone, fax, mail, url)
   .restaurant(itemscope itemtype="http://schema.org/Restaurant")
     h2.title(itemprop="name")
       if (url)
@@ -27,65 +27,96 @@ block pageStyles
 
 block content
   +restaurant("Gasthaus „Alte Krone”",
+              "Stefan Sick",
               "Nebenauer Straße 23",
               "Wollbach",
+              "07626 315",
+              null,
+              "info@altekrone-wollbach.de",
               "http://www.altekrone-wollbach.de/")
   :marked
     Das Gasthaus Krone (heute "Alte Krone") wird seit 1865 als weithin bekannte
     Dorfgaststätte betrieben.
 
-  +restaurant("Gasthaus „Bruckmühle”",
-              "Bruckmühle 1",
-              "Wollbach",
-              "http://gasthof-bruckmuehle-wollbach.de")
-  :marked
-    Die Bruckmühle ist urkundlich erstmals 1365 belegt. Als Getreidemühle wurde
-    sie bis 1970 betrieben. Seit 1996 befindet sich im ehemaligen Mühlentrakt
-    eine idyllische Gaststätte.
+  //-
+    +restaurant("Gasthaus „Bruckmühle”",
+                "Bruckmühle 1",
+                "Wollbach",
+                "http://gasthof-bruckmuehle-wollbach.de")
+    :marked
+      Die Bruckmühle ist urkundlich erstmals 1365 belegt. Als Getreidemühle wurde
+      sie bis 1970 betrieben. Seit 1996 befindet sich im ehemaligen Mühlentrakt
+      eine idyllische Gaststätte.
 
-  +restaurant("Gasthaus „Zur Blume”",
-              "Basler Straße 8",
-              "Wollbach",
-              "http://blumewollbach.de/")
-  :marked
-    Das Gasthaus Blume stand ursprünglich an der heutigen Oberen Dorfstraße.
-    Anno 1868 wurde an der damals neuen Basler Straße (heute alte Basler
-    Straße) der Neubau errichtet.
+  //-
+    +restaurant("Gasthaus „Zur Blume”",
+                "Basler Straße 8",
+                "Wollbach",
+                "http://blumewollbach.de/")
+    :marked
+      Das Gasthaus Blume stand ursprünglich an der heutigen Oberen Dorfstraße.
+      Anno 1868 wurde an der damals neuen Basler Straße (heute alte Basler
+      Straße) der Neubau errichtet.
 
-  +restaurant("„Sportgaststätte” SV Wollbach",
-              "Maugenharder Straße 11",
-              "Wollbach")
+  //-
+    +restaurant("„Sportgaststätte” SV Wollbach",
+                "Maugenharder Straße 11",
+                "Wollbach")
 
   +restaurant("Landgasthaus „Krone”",
+              "Thomas Jakobi",
               "Siedlerhöfe 1",
-              "Wollbach")
+              "Hammerstein",
+              "07626 7175",
+              null,
+              null,
+              null)
 
-  +restaurant("Hotel Restaurant „Pfaffenkeller”",
-              "Rathausstraße 9",
-              "Wollbach",
-              "http://www.pfaffenkeller.de")
+  //-
+    +restaurant("Hotel Restaurant „Pfaffenkeller”",
+                  "Rathausstraße 9",
+                  "Wollbach",
+                  "http://www.pfaffenkeller.de")
 
   +restaurant("Rüttehofstube",
+              "Karlfrieder Fischer",
               "Rüttehof 1",
               "Egisholz",
+              "07626 8885",
+              "07626 970649",
+              "info@ruettehof.de"
               "http://www.ruettehofstube.de")
 
+  //- "http://www.hirschen-egerten.de"
   +restaurant("Gasthaus zum Hirschen",
+              "Max Geitlinger",
               "Am Neuweg 2",
-               "Egerten",
-              "http://www.hirschen-egerten.de")
+              "Egerten",
+              "07626 386",
+              null,
+              "info@hirschen-egerten.de",
+              "max-wein.de")
 
   +restaurant("Restaurant „Jägerhaus”",
+              "Jolanda Wermuth",
               "Wollbacher Straße 28",
               "Egerten",
+              "07626 8715",
+              null,
+              "info@restaurant-jaegerhaus.de"
               "http://www.restaurant-jaegerhaus.de/")
 
-  +restaurant("Kreiterhof Weinschenke",
-              "Wollbacher Straße 1",
-              "Egerten",
-              "http://www.kreiterhof.de")
+  //-
+    +restaurant("Kreiterhof Weinschenke",
+                  "Wollbacher Straße 1",
+                  "Egerten",
+                  "http://www.kreiterhof.de")
 
   +restaurant("Landgasthaus „Bahnhöfli”",
+              "P. + M. Golda",
               "Holzener Straße 5",
               "Hammerstein",
-              "www.bahnhoefli.de")
+              "07626 441",
+              null,
+              "info@bahnhöfli.de",
+              "http://www.bahnhoefli.de")
