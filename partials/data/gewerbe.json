@@ -1,0 +1,411 @@
+[
+  {
+    "name": "Antiquitäten Graf",
+    "owners": [
+      "Karlfrieder Graf"
+    ],
+    "street": "Basler Str. 16",
+    "town": "Wollbach",
+    "telephone": "07626 7404",
+    "fax": "07626 6160",
+    "email": "graf-kandern@onlinehome.de",
+    "website": null,
+    "categories": [
+      "Einzelhandel"
+    ]
+  },
+  {
+    "name": "Familie Probst",
+    "owners": [
+      "Brigitte und Gerhard Probst"
+    ],
+    "street": "Rathausstrasse 1",
+    "town": "Wollbach",
+    "telephone": "07626 7398",
+    "fax": "07626 973895",
+    "email": "probst.wollbach@web.de",
+    "website": "http://www.direktvermarkter-landkreis-lörrach.de/anbieter/probst-gerhard.html",
+    "categories": [
+      "Einzelhandel"
+    ]
+  },
+  {
+    "name": "Hofgut Rüttehof",
+    "owners": [
+      "Karlfrieder Fischer"
+    ],
+    "street": "Rüttehof 1",
+    "town": "Egisholz",
+    "telephone": "07626 8885",
+    "fax": "07626 970649",
+    "email": "info@ruettehof.de",
+    "website": "http://www.ruettehof.de",
+    "categories": [
+      "Einzelhandel"
+    ]
+  },
+  {
+    "name": "Anton Neumeier Hofmühle",
+    "owners": [
+      "Anton Neumeier"
+    ],
+    "street": "Maugenharderstr. 10",
+    "town": "Wollbach",
+    "telephone": "07626 286",
+    "fax": "07626 1317",
+    "email": null,
+    "website": null,
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "Autohaus Hess Kandertal-Garage e.K.",
+    "owners": [
+      "Christian Hess"
+    ],
+    "street": "Kandertalstraße 4",
+    "town": "Hammerstein",
+    "telephone": "07626 7018",
+    "fax": "07626 7028",
+    "email": "info@kandertalgarage.de",
+    "website": "http://www.kandertalgarage.de",
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "Autohaus Krug",
+    "owners": [
+      "Bernd Krug"
+    ],
+    "street": "Basler Straße 1",
+    "town": "Wollbach",
+    "telephone": "07626 914150",
+    "fax": "07626 9141516",
+    "email": "krug@mazda-autohaus.de",
+    "website": "http://www.autohauskrug.de",
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "Elektro Ernst",
+    "owners": [
+      "Ralf Ernst"
+    ],
+    "street": "Im Maiacker 10",
+    "town": "Wollbach",
+    "telephone": "07626 1030",
+    "fax": "07626 970439",
+    "email": "info@elektro-ernst.com",
+    "website": "http://www.elektro-ernst.com/",
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "Gartenbau Heidenreich",
+    "owners": [
+      "Gernot Heidenreich"
+    ],
+    "street": "Nebenauerstr. 5",
+    "town": "Wollbach",
+    "telephone": "07626 6502",
+    "fax": "07626 974753",
+    "email": "info@galabau-heidenreich.de",
+    "website": "http://www.galabau-heidenreich.de",
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "Gebrüder Penning GdbR Bauservice",
+    "owners": [
+      "Ingo und Christian Penning"
+    ],
+    "street": "Hofrütteweg 18",
+    "town": "Wollbach",
+    "telephone": "0173 7161124; 0152 29556862",
+    "fax": null,
+    "email": "gebr.penning@gmx.de",
+    "website": null,
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "Holzbau Bernhard Benz GmbH",
+    "owners": [
+      "Bernhard Benz"
+    ],
+    "street": "Im Dörfli 25",
+    "town": "Hammerstein",
+    "telephone": "07626 971641",
+    "fax": "07626 971643",
+    "email": "info@benz-holzbau.de",
+    "website": "http://www.benz-holzbau.de",
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "Schreinerei Enders",
+    "owners": [
+      "Andreas Enders"
+    ],
+    "street": "Baslerstr. 7",
+    "town": "Wollbach",
+    "telephone": "07626 7542",
+    "fax": "07626 60454",
+    "email": "info@schreinerei-enders.de",
+    "website": "http://www.schreinerei-enders.de",
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "Schreinerei Geling",
+    "owners": [
+      "Alfons Geling"
+    ],
+    "street": "Röttler Weg 4/1",
+    "town": "Wollbach",
+    "telephone": "07626 972064",
+    "fax": "07635 826553",
+    "email": "max.geling@gmx.de",
+    "website": "http://www.schreinerei-geling.de",
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "Schreinerei Jenne - Schreinerei + Montagen",
+    "owners": [
+      "Norbert Jenne"
+    ],
+    "street": "Hauptstr. 59",
+    "town": "Kandern",
+    "telephone": "07626 6891",
+    "fax": "07626 977888",
+    "email": "info@schreinerei-jenne.de",
+    "website": "http://schreinerei-jenne.de",
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "SE-Consulting GmbH",
+    "owners": [
+      "Dipl. Ing. Matthias Sodeik",
+      "Dipl. Ing. Clemens Sodeik"
+    ],
+    "street": "Im Dörfle 11",
+    "town": "Hammerstein",
+    "telephone": "07626 6844",
+    "fax": "07626 970544",
+    "email": "info@sw-consulting.de",
+    "website": "http://www.se-consulting.de",
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
+    "name": "BMT-Solutions",
+    "owners": [
+      "Benno Teschke"
+    ],
+    "street": "Auf dem Buck 4/1",
+    "town": "Wollbach",
+    "telephone": "07626 977213",
+    "fax": "07626 977214",
+    "email": "info@bmt-solutions.de",
+    "website": "http://www.bmt-solutions.de",
+    "categories": [
+      "EDV Dienstleistung"
+    ]
+  },
+  {
+    "name": "Markgrafik",
+    "owners": [
+      "Kai Springer"
+    ],
+    "street": "Niedere Hofrütte 3",
+    "town": "Wollbach",
+    "telephone": "07626 9745560",
+    "fax": null,
+    "email": "info@markgrafik.de",
+    "website": "http://www.markgrafik.de",
+    "categories": [
+      "EDV Dienstleistung",
+      "Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten"
+    ]
+  },
+  {
+    "name": "Chinesische Körpermassagen",
+    "owners": [
+      "Ingrid Rogalla"
+    ],
+    "street": "Zielrebenweg 21",
+    "town": "Wollbach",
+    "telephone": "07626 970972",
+    "fax": null,
+    "email": "i.rogalla@chinmassagen.de",
+    "website": "http://www.chinmassagen.de",
+    "categories": [
+      "Dienstleistungen allgemein"
+    ]
+  },
+  {
+    "name": "eventMAX Zeltlogistik",
+    "owners": [
+      "Max Lang",
+      "Nico Lang"
+    ],
+    "street": "Scheideckstraße 1",
+    "town": "Nebenau",
+    "telephone": "07626 2670126",
+    "fax": null,
+    "email": "info@event-max.com",
+    "website": "http://www.event-max.com",
+    "categories": [
+      "Dienstleistungen allgemein"
+    ]
+  },
+  {
+    "name": "Forstarbeiten Michael Schleith",
+    "owners": [
+      "Michael Schleith"
+    ],
+    "street": "Heubergstr. 15",
+    "town": "Egerten",
+    "telephone": "0152 54754600",
+    "fax": null,
+    "email": "bamrung80@gmx.de",
+    "website": "http://www.forstarbeiten-schleith.de",
+    "categories": [
+      "Dienstleistungen allgemein"
+    ]
+  },
+  {
+    "name": "Kern Managementsysteme",
+    "owners": [
+      "Markus Kern"
+    ],
+    "street": "Rebstallweg 1",
+    "town": "Hammerstein",
+    "telephone": "07626 971634",
+    "fax": "07626 971636",
+    "email": "m.kern@kern-ms.de",
+    "website": "http://www.kern-ms.de",
+    "categories": [
+      "Dienstleistungen allgemein"
+    ]
+  },
+  {
+    "name": "Naturheilpraxis Kleinod",
+    "owners": [
+      "Karin Heck",
+      "Manfred Läpple"
+    ],
+    "street": "Wollbacherstr. 1",
+    "town": "Egerten",
+    "telephone": "07626 9744970",
+    "fax": "07626 9744700",
+    "email": "karin.uma@web.de",
+    "website": "http://www.naturheilpraxis-kleinod.de",
+    "categories": [
+      "Dienstleistungen allgemein"
+    ]
+  },
+  {
+    "name": "Naturschallakustik",
+    "owners": [
+      "Rita Prick"
+    ],
+    "street": "Scheideckstr. 7/1",
+    "town": "Nebenau",
+    "telephone": "0176 17684003",
+    "fax": null,
+    "email": "naturschallakustik@googlemail.com",
+    "website": null,
+    "categories": [
+      "Dienstleistungen allgemein"
+    ]
+  },
+  {
+    "name": "Rechtsanwältin",
+    "owners": [
+      "Kirsten Lang"
+    ],
+    "street": "Scheideckstr. 9",
+    "town": "Nebenau",
+    "telephone": "07626 970353",
+    "fax": "07626 970354",
+    "email": "kirsten.u.kurt.lang@t-online.de",
+    "website": null,
+    "categories": [
+      "Dienstleistungen allgemein"
+    ]
+  },
+  {
+    "name": "Spirituelle Begleitung in Lebensfragen & Energiearbeit",
+    "owners": [
+      "Andrea Hartmann"
+    ],
+    "street": "Scheideckstr. 17",
+    "town": "Nebenau",
+    "telephone": "07626 2999686",
+    "fax": null,
+    "email": "info@spirit-ofmymind.de",
+    "website": "http://www.spirit-ofmymind.de",
+    "categories": [
+      "Dienstleistungen allgemein"
+    ]
+  },
+  {
+    "name": "Craniopraxis",
+    "owners": [
+      "Martina Knippschild"
+    ],
+    "street": "Wollbacherstr. 7/1",
+    "town": "Egerten",
+    "telephone": "07626 2670107",
+    "fax": null,
+    "email": "kahlom@web.de",
+    "website": "http://www.craniopraxis.vbweb.de",
+    "categories": [
+      "Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten"
+    ]
+  },
+  {
+    "name": "Heilpädagogische Praxis",
+    "owners": [
+      "Mechthild Frey"
+    ],
+    "street": "Am Neuweg 15",
+    "town": "Egerten",
+    "telephone": "07626 972569",
+    "fax": "07626 972571",
+    "email": "mechthild.frey@gmx.net",
+    "website": "http://mechthildfrey-heilpaedagogischesreiten.de",
+    "categories": [
+      "Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten"
+    ]
+  },
+  {
+    "name": "Keramikwerkstatt",
+    "owners": [
+      "Eleonore Krämer"
+    ],
+    "street": "Nebenauerstr. 42",
+    "town": "Wollbach",
+    "telephone": "07626 977021",
+    "fax": null,
+    "email": null,
+    "website": null,
+    "categories": [
+      "Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten"
+    ]
+  }
+]

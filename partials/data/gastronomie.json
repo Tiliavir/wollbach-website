@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Gasthaus „Alte Krone”",
+    "owners": [
+      "Stefan Sick"
+    ],
+    "street": "Nebenauer Straße 23",
+    "town": "Wollbach",
+    "telephone": "07626 315",
+    "fax": null,
+    "email": "info@altekrone-wollbach.de",
+    "website": "http://www.altekrone-wollbach.de/",
+    "description": "Das Gasthaus Krone (heute \"Alte Krone\") wird seit 1865 als weithin bekannte Dorfgaststätte betrieben."
+  },
+  {
+    "name": "Landgasthaus „Krone”",
+    "owners": [
+      "Thomas Jakobi"
+    ],
+    "street": "Siedlerhöfe 1",
+    "town": "Hammerstein",
+    "telephone": "07626 7175",
+    "fax": null,
+    "email": null,
+    "website": null
+  },
+  {
+    "name": "Rüttehofstube",
+    "owners": [
+      "Karlfrieder Fischer"
+    ],
+    "street": "Rüttehof 1",
+    "town": "Egisholz",
+    "telephone": "07626 8885",
+    "fax": "07626 970649",
+    "email": "info@ruettehof.de",
+    "website": "http://www.ruettehofstube.de"
+  },
+  {
+    "name": "Gasthaus zum Hirschen",
+    "owners": [
+      "Max Geitlinger"
+    ],
+    "street": "Am Neuweg 2",
+    "town": "Egerten",
+    "telephone": "07626 386",
+    "fax": null,
+    "email": "info@hirschen-egerten.de",
+    "website": "http://www.max-wein.de",
+    "_comment": "http://www.hirschen-egerten.de"
+  },
+  {
+    "name": "Restaurant „Jägerhaus”",
+    "owners": [
+      "Jolanda Wermuth"
+    ],
+    "street": "Wollbacher Straße 28",
+    "town": "Egerten",
+    "telephone": "07626 8715",
+    "fax": null,
+    "email": "info@restaurant-jaegerhaus.de",
+    "website": "http://www.restaurant-jaegerhaus.de/"
+  },
+  {
+    "name": "Landgasthaus „Bahnhöfli”",
+    "owners": [
+      "P. Golda",
+      "M. Golda"
+    ],
+    "street": "Holzener Straße 5",
+    "town": "Hammerstein",
+    "telephone": "07626 441",
+    "fax": null,
+    "email": "info@bahnhöfli.de",
+    "website": "http://www.bahnhoefli.de"
+  }
+]
