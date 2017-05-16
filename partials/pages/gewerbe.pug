@@ -20,11 +20,15 @@ mixin gewerbe(name, owner, street, town, telephone, fax, mail, url)
       span(itemprop="addressLocality")= town
       span.hidden(itemprop="addressRegion") Germany
       span.hidden(itemprop="postalCode") 79400
-    .founder(itemprop="founder" itemscope itemtype="http://schema.org/Person")
-      span(itemprop="name")= owner
-    .telephone(itemprop="telephone")= "+49 " + (telephone || "").replace("0", "(0)")
-    .fax-number(itemprop="faxNumber")= "+49 " + (fax || "").replace("0", "(0)")
-    a.email(itemprop="email" href="mailto:" + mail)= mail
+    if owner
+      .founder(itemprop="founder" itemscope itemtype="http://schema.org/Person")
+        span(itemprop="name")= owner
+    if telephone
+      .telephone(itemprop="telephone")= "+49 " + (telephone || "").replace("0", "(0)")
+    if fax
+      .fax-number(itemprop="faxNumber")= "+49 " + (fax || "").replace("0", "(0)")
+    if email
+      a.email(itemprop="email" href="mailto:" + mail)= mail
 
 block pageStyles
   include ../styles/gewerbe.css
@@ -45,7 +49,7 @@ block content
     +gewerbe("Autohaus Krug", "Bernd Krug", "Basler Straße 1", "Wollbach", "07626 914150", "07626 9141516", "krug@mazda-autohaus.de", "http://www.autohauskrug.de")
     +gewerbe("Elektro Ernst", "Ralf Ernst", "Im Maiacker 10", "Wollbach", "07626 1030", "07626 970439", "info@elektro-ernst.com", "http://www.elektro-ernst.com/")
     +gewerbe("Gartenbau Heidenreich", "Gernot Heidenreich", "Nebenauerstr. 5", "Wollbach", "07626 6502", "07626 974753", "info@galabau-heidenreich.de", "http://www.galabau-heidenreich.de")
-    +gewerbe("Gebrüder Penning GdbR Bauservice", "Ingo und Christian Penning", "Hofrütteweg 18", "Wollbach", "0173 7161124; 0152 29556862", null, "gebr.penning@gmx.de", null)
+    +gewerbe("Gebrüder Penning GdbR Bauservice", "Ingo und Christian Penning", "Hofrütteweg 18", "Wollbach", "0173 7161124, +49 (0)152 29556862", null, "gebr.penning@gmx.de", null)
     +gewerbe("Holzbau Bernhard Benz GmbH", "Bernhard Benz", "Im Dörfli 25", "Hammerstein", "07626 971641", "07626 971643", "info@benz-holzbau.de", "http://www.benz-holzbau.de")
     +gewerbe("Schreinerei Enders", "Andreas Enders", "Baslerstr. 7", "Wollbach", "07626 7542", "07626 60454", "info@schreinerei-enders.de", "http://www.schreinerei-enders.de")
     +gewerbe("Schreinerei Geling", "Alfons Geling", "Röttler Weg 4/1", "Wollbach", "07626 972064", "07635 826553", "max.geling@gmx.de", "http://www.schreinerei-geling.de")

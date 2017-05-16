@@ -36,6 +36,16 @@
 
   .telephone {
     margin-top: 5px;
+
+    &::before {
+      content: 'Tel: ';
+    }
+  }
+
+  .fax-number {
+    &::before {
+      content: 'Fax: ';
+    }
   }
 
   .telephone,

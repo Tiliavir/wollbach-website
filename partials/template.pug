@@ -60,7 +60,9 @@ html(lang="de")
       block content
 
     footer.footer
-      include ./footernavigation.pug
+      .footer-container
+        include ./footernavigation.pug
+        .meta= "79400 Kandern - Wollbach"
 
     script(src="/js/jquery.min.js")
     script

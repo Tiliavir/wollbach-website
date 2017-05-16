@@ -6,7 +6,9 @@
     ],
     "street": "Nebenauer Straße 23",
     "town": "Wollbach",
-    "telephone": "07626 315",
+    "telephone": [
+      "07626 315"
+    ],
     "fax": null,
     "email": "info@altekrone-wollbach.de",
     "website": "http://www.altekrone-wollbach.de/",
@@ -19,7 +21,9 @@
     ],
     "street": "Siedlerhöfe 1",
     "town": "Hammerstein",
-    "telephone": "07626 7175",
+    "telephone": [
+      "07626 7175"
+    ],
     "fax": null,
     "email": null,
     "website": null
@@ -31,7 +35,9 @@
     ],
     "street": "Rüttehof 1",
     "town": "Egisholz",
-    "telephone": "07626 8885",
+    "telephone": [
+      "07626 8885"
+    ],
     "fax": "07626 970649",
     "email": "info@ruettehof.de",
     "website": "http://www.ruettehofstube.de"
@@ -43,7 +49,9 @@
     ],
     "street": "Am Neuweg 2",
     "town": "Egerten",
-    "telephone": "07626 386",
+    "telephone": [
+      "07626 386"
+    ],
     "fax": null,
     "email": "info@hirschen-egerten.de",
     "website": "http://www.max-wein.de",
@@ -56,7 +64,9 @@
     ],
     "street": "Wollbacher Straße 28",
     "town": "Egerten",
-    "telephone": "07626 8715",
+    "telephone": [
+      "07626 8715"
+    ],
     "fax": null,
     "email": "info@restaurant-jaegerhaus.de",
     "website": "http://www.restaurant-jaegerhaus.de/"
@@ -69,7 +79,9 @@
     ],
     "street": "Holzener Straße 5",
     "town": "Hammerstein",
-    "telephone": "07626 441",
+    "telephone": [
+      "07626 441"
+    ],
     "fax": null,
     "email": "info@bahnhöfli.de",
     "website": "http://www.bahnhoefli.de"

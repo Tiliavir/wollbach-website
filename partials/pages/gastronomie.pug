@@ -20,11 +20,15 @@ mixin restaurant(name, owner, street, town, telephone, fax, mail, url)
       span(itemprop="addressLocality")= town
       span.hidden(itemprop="addressRegion") Germany
       span.hidden(itemprop="postalCode") 79400
-    .founder(itemprop="founder" itemscope itemtype="http://schema.org/Person")
-      span(itemprop="name")= owner
-    .telephone(itemprop="telephone")= "+49 " + (telephone || "").replace("0", "(0)")
-    .fax-number(itemprop="faxNumber")= "+49 " + (fax || "").replace("0", "(0)")
-    a.email(itemprop="email" href="mailto:" + mail)= mail
+    if owner
+      .founder(itemprop="founder" itemscope itemtype="http://schema.org/Person")
+        span(itemprop="name")= owner
+    if telephone
+      .telephone(itemprop="telephone")= "+49 " + (telephone || "").replace("0", "(0)")
+    if fax
+      .fax-number(itemprop="faxNumber")= "+49 " + (fax || "").replace("0", "(0)")
+    if email
+      a.email(itemprop="email" href="mailto:" + mail)= mail
       
 
 block pageStyles
