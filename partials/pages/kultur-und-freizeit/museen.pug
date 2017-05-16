@@ -10,11 +10,11 @@ extends ../../template.pug
 
 mixin museum(name, street, town, url)
   .museum(itemscope itemtype="http://schema.org/LocalBusiness")
-    if (url)
-      a(href=url itemprop="url" target="_blank")
-        h2.title(itemprop="name")= name
-    else
-      h2.title(itemprop="name")= name
+    h2.title(itemprop="name")
+      if (url)
+        a(href=url itemprop="url" target="_blank")= name
+      else
+        | #{name}
     .address(itemprop="address" itemscope itemtype="http://schema.org/PostalAddress")
       span(itemprop="streetAddress")= street
       span(itemprop="addressLocality")= town

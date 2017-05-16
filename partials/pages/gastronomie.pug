@@ -23,7 +23,7 @@ mixin restaurant(name, owner, street, town, telephone, fax, mail, url)
     .founder(itemprop="founder" itemscope itemtype="http://schema.org/Person")
       span(itemprop="name")= owner
     .telephone(itemprop="telephone")= "+49 " + (telephone || "").replace("0", "(0)")
-    .faxNumber(itemprop="faxNumber")= "+49 " + (fax || "").replace("0", "(0)")
+    .fax-number(itemprop="faxNumber")= "+49 " + (fax || "").replace("0", "(0)")
     a.email(itemprop="email" href="mailto:" + mail)= mail
       
 
@@ -33,15 +33,11 @@ block pageStyles
 block content
   .gastronomie-container
     +restaurant("Gasthaus „Alte Krone”", "Stefan Sick", "Nebenauer Straße 23", "Wollbach", "07626 315", null, "info@altekrone-wollbach.de", "http://www.altekrone-wollbach.de/")
-    :marked
-      Das Gasthaus Krone (heute "Alte Krone") wird seit 1865 als weithin bekannte
-      Dorfgaststätte betrieben.
     +restaurant("Landgasthaus „Krone”", "Thomas Jakobi", "Siedlerhöfe 1", "Hammerstein", "07626 7175", null, null, null)
     +restaurant("Rüttehofstube", "Karlfrieder Fischer", "Rüttehof 1", "Egisholz", "07626 8885", "07626 970649", "info@ruettehof.de", "http://www.ruettehofstube.de")
     +restaurant("Gasthaus zum Hirschen", "Max Geitlinger", "Am Neuweg 2", "Egerten", "07626 386", null, "info@hirschen-egerten.de", "http://www.max-wein.de")
     +restaurant("Restaurant „Jägerhaus”", "Jolanda Wermuth", "Wollbacher Straße 28", "Egerten", "07626 8715", null, "info@restaurant-jaegerhaus.de", "http://www.restaurant-jaegerhaus.de/")
     +restaurant("Landgasthaus „Bahnhöfli”", "P. + M. Golda", "Holzener Straße 5", "Hammerstein", "07626 441", null, "info@bahnhöfli.de", "http://www.bahnhoefli.de")
-
 
   //-
     +restaurant("Gasthaus „Bruckmühle”", "Bruckmühle 1", "Wollbach", "http://gasthof-bruckmuehle-wollbach.de")
