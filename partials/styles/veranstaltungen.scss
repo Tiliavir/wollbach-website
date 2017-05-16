@@ -20,10 +20,44 @@ table {
   padding: 0;
   border-collapse: collapse;
   border-spacing: 0;
+  table-layout: fixed;
+
+  th,
+  td {
+    transition: padding .7s ease;
+    padding: 10px;
+    word-wrap: break-word;
+  }
+
+  th {
+    text-transform: uppercase;
+    font-size: $font-size-base;
+    letter-spacing: 1px;
+    background-color: $color-yellow;
+    text-align: left;
+
+    &.date {
+      width: 125px;
+    }
+
+    &.organizer {
+      width: 250px;
+    }
+  }
+
+  td {
+    &.show-passed {
+      text-align: left;
+      padding: 5px 10px;
+    }
+
+    &.collapsed {
+      padding: 0;
+    }
+  }
 
   tr {
     border: 1px solid $gray-light-border-color;
-    padding: 5px;
 
     &.passed {
       color: $text-color-inactive;
@@ -36,19 +70,6 @@ table {
     &:nth-child(even) {
       background-color: $gray-lightest;
     }
-  }
-
-  th,
-  td {
-    padding: 10px;
-  }
-
-  th {
-    text-transform: uppercase;
-    font-size: $font-size-base;
-    letter-spacing: 1px;
-    background-color: $color-yellow;
-    text-align: center;
   }
 }
 

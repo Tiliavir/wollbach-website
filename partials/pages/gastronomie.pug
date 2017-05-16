@@ -10,7 +10,7 @@ extends ../template.pug
 
 mixin restaurant(name, owner, street, town, telephone, fax, mail, url)
   .restaurant(itemscope itemtype="http://schema.org/Restaurant")
-    h2.title(itemprop="name")
+    h3.title(itemprop="name")
       if (url)
         a(href=url itemprop="url" target="_blank")= name
       else

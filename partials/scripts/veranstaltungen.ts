@@ -5,6 +5,35 @@ module KW.Appointments {
     return result;
   }
 
+  function slideUp(): void {
+    $(".passed")
+      .find("td")
+      .css("padding", "0")
+      .wrapInner("<div/>")
+      .parent()
+      .find("td > div")
+      .slideUp(500, () => {
+        $(".passed")
+          .addClass("collapsed")
+          .find("td > div > *")
+          .unwrap();
+      });
+  }
+
+  function slideDown(): void {
+    $(".passed").removeClass("collapsed");
+
+    $(".passed")
+      .find("td")
+      .css("padding", "10px")
+      .wrapInner("<div style='display: none' />")
+      .parent()
+      .find("td > div")
+      .slideDown(500, () => {
+        $(".passed td > div > *").unwrap();
+      });
+  }
+
   export function init(): void {
     const cutOffDate = addDays(new Date(), -3);
     let hasPassedItems: boolean = false;
@@ -23,7 +52,15 @@ module KW.Appointments {
     if (hasPassedItems) {
       let row = "<tr><td colspan='3' class='show-passed'>vergangene Termine</td></tr>";
       let $showMore: JQuery = $(".appointments tbody").prepend($(row));
-      $showMore.click((e: Event) => $(".passed").toggleClass("collapsed"));
+      (<any> $showMore[0]).isVisible = false;
+      $showMore.click((e: Event) => {
+        if ((<any> e.target).isVisible) {
+          slideUp();
+        } else {
+          slideDown();
+        }
+        (<any> e.target).isVisible = !(<any> e.target).isVisible;
+      });
     }
   }
 }
