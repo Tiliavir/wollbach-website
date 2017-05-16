@@ -20,6 +20,7 @@
 }
 
 .restaurant {
+  flex-grow: 1;
   width: 215px;
   min-height: 150px;
   background: $gray-lightest;
