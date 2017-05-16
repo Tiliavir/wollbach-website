@@ -102,6 +102,21 @@
     ]
   },
   {
+    "name": "Mitbringsel",
+    "owners": [
+      "Martina Gerwig"
+    ],
+    "street": "Röttlerweg 1a",
+    "town": "Wollbach",
+    "telephone": null,
+    "fax": null,
+    "email": "martina.ge@gmx.de",
+    "website": "http://www.mitbringsel-wollbach.de/",
+    "categories": [
+      "Handwerk"
+    ]
+  },
+  {
     "name": "Elektro Ernst",
     "owners": [
       "Ralf Ernst"
