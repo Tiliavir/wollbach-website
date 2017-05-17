@@ -51,7 +51,7 @@ module KW.Appointments {
 
     if (hasPassedItems) {
       let row = "<tr><td colspan='3' class='show-passed'>vergangene Termine</td></tr>";
-      let $showMore: JQuery = $(".appointments tbody").prepend($(row)).find("show-passed");
+      let $showMore: JQuery = $(".appointments tbody").prepend($(row)).find(".show-passed");
       (<any> $showMore[0]).isVisible = false;
       $showMore.click((e: Event) => {
         if ((<any> e.target).isVisible) {
