@@ -8,11 +8,14 @@ navigation: "footer"
 
 extends ../template.pug
 
+block pageStyles
+  include ../styles/impressum.css
+
 block content
   :marked
     # Kontakt
 
-  img(src="/img/fueller.jpg" alt="Füller" style="float:right")
+  img(src="/img/fueller.jpg" alt="Füller" class="pen")
 
   :marked
     Sie können uns gerne [eine e-Mail schicken][ov].

@@ -9,6 +9,8 @@ $(() => {
       $anchor.attr("href", pathname + link);
     }
   });
+
+  $(".content").click(() => $("#navigation-checkbox").prop("checked", false));
 });
 
 function viewFullImage(url: string, alt: string): void {
