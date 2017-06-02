@@ -251,8 +251,13 @@
     },
     {
       "starttime": "2017-10-14",
-      "endtime": "2017-10-15",
-      "title": "Sauserexpress / Herbstfest",
+      "title": "Sauserexpress",
+      "organizer": "Förderverein Blasmusik",
+      "location": { "name": "Kandertalhalle", "address": "Wollbach" }
+    },
+    {
+      "starttime": "2017-10-15",
+      "title": "Herbstfest",
       "organizer": "Musikverein Wollbach",
       "location": { "name": "Kandertalhalle", "address": "Wollbach" }
     },
