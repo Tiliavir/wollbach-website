@@ -1,6 +1,6 @@
-module KW.Appointments {
+namespace KW.Appointments {
   function addDays(date: Date, days: number): Date {
-    let result = new Date(date.getTime());
+    const result = new Date(date.getTime());
     result.setDate(result.getDate() + days);
     return result;
   }
@@ -40,9 +40,9 @@ module KW.Appointments {
 
     $("meta[itemprop=\"startDate\"]").each((i, e) => {
       let $e = $(e);
-      let $endDateString = $e.siblings("meta[itemprop=\"endDate\"]");
+      const $endDateString = $e.siblings("meta[itemprop=\"endDate\"]");
       $e = $endDateString.length === 1 ? $endDateString : $e;
-      let endDate = new Date($e.attr("content"));
+      const endDate = new Date($e.attr("content"));
       if (endDate < cutOffDate) {
         $e.closest("tr").addClass("passed").addClass("collapsed");
         hasPassedItems = true;
@@ -50,16 +50,16 @@ module KW.Appointments {
     });
 
     if (hasPassedItems) {
-      let row = "<tr><td colspan='3' class='show-passed'>vergangene Termine</td></tr>";
-      let $showMore: JQuery = $(".appointments tbody").prepend($(row)).find(".show-passed");
-      (<any> $showMore[0]).isVisible = false;
+      const row = "<tr><td colspan='3' class='show-passed'>vergangene Termine</td></tr>";
+      const $showMore: JQuery = $(".appointments tbody").prepend($(row)).find(".show-passed");
+      ($showMore[0] as any).isVisible = false;
       $showMore.click((e: Event) => {
-        if ((<any> e.target).isVisible) {
+        if ((e.target as any).isVisible) {
           slideUp();
         } else {
           slideDown();
         }
-        (<any> e.target).isVisible = !(<any> e.target).isVisible;
+        (e.target as any).isVisible = !(e.target as any).isVisible;
       });
     }
   }

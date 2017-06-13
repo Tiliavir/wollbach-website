@@ -15,6 +15,20 @@
     "description": "Das Gasthaus Krone (heute \"Alte Krone\") wird seit 1865 als weithin bekannte Dorfgaststätte betrieben."
   },
   {
+    "name": "Gasthaus „Bruckmühle”",
+    "owners": [
+      "Daniel Enderlin"
+    ],
+    "street":"Bruckmühle 1",
+    "town": "Wollbach",
+    "telephone": [
+      "07626 255"
+    ],
+    "fax": "07626 972482",
+    "email": "bruckmuehle-wollbach@t-online.de",
+    "website": "http://gasthof-bruckmuehle-wollbach.de"
+  },
+  {
     "name": "Landgasthaus „Krone”",
     "owners": [
       "Thomas Jakobi"

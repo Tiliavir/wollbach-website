@@ -1,21 +1,21 @@
-module KW.Search {
+namespace KW.Search {
   let index: any;
   let store: any;
 
   function handleSearch(e: JQueryEventObject): void {
-    let query = $("input.mvw-search-field").val();
+    const query = $("input.mvw-search-field").val();
 
-    let result = index.search(query);
+    const result = index.search(`*${query}*`);
 
-    let resultContainer = $(".results");
+    const resultContainer = $(".results");
     if (result.length === 0) {
       resultContainer.hide();
     } else {
       resultContainer.empty();
-      for (let item in result) {
+      for (const item in result) {
         if (result.hasOwnProperty(item)) {
-          let ref = result[item].ref;
-          let i = `
+          const ref = result[item].ref;
+          const i = `
           <li>
             <div>
               <a href="${ref}.html">
@@ -32,10 +32,10 @@ module KW.Search {
   }
 
   function getParameterByName(name: string): string {
-    let url = window.location.href;
+    const url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
-    let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
-    let results = regex.exec(url);
+    const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+    const results = regex.exec(url);
     if (!results) {
       return null;
     }
@@ -48,12 +48,12 @@ module KW.Search {
   }
 
   export function init(): void {
-    $.getJSON("/index.json", data => {
+    $.getJSON("/index.json", (data) => {
       index = lunr.Index.load(data.index);
       store = data.store;
 
-      let query = getParameterByName("query") || getParameterByName("q");
-      let inputField = $("input.mvw-search-field");
+      const query = getParameterByName("query") || getParameterByName("q");
+      const inputField = $("input.mvw-search-field");
       if (query) {
         inputField.val(query);
       }
