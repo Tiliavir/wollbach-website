@@ -1,6 +1,6 @@
 {
   "name": "wollbach",
-  "version": "1.0.170612",
+  "version": "1.0.170729",
   "description": "Website for Wollbach",
   "keywords": [
     "Wollbach",
@@ -22,20 +22,20 @@
   "devDependencies": {
     "@types/gulp": "4.0.4",
     "@types/gulp-load-plugins": "0.0.29",
-    "@types/jquery":"2.0.46",
+    "@types/jquery":"3.2.10",
     "@types/lunr": "0.5.29",
     "@types/marked": "0.0.28",
-    "@types/node": "7.0.31",
+    "@types/node": "8.0.17",
     "@types/vinyl": "2.0.0",
-    "@types/yargs": "6.6.0",
+    "@types/yargs": "8.0.1",
 
-    "autoprefixer": "7.1.1",
+    "autoprefixer": "7.1.2",
     "copyfiles": "1.2.0",
     "node-sass": "4.5.3",
     "postcss-cli": "4.1.0",
     "sass-lint": "1.10.2",
-    "tslint": "5.4.3",
-    "typescript": "2.3.4"
+    "tslint": "5.5.0",
+    "typescript": "2.4.2"
   },
   "dependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
@@ -46,16 +46,16 @@
     "gulp-load-plugins": "1.5.0",
     "gulp-pug": "3.3.0",
     "gulp-rename": "1.2.2",
-    "gulp-replace": "0.5.4",
+    "gulp-replace": "0.6.1",
     "gulp-sitemap": "4.2.0",
 
     "jquery": "3.2.1",
     "jstransformer-marked": "1.0.2",
-    "lunr": "2.1.0",
+    "lunr": "2.1.2",
     "marked": "0.3.6",
     "moment": "2.18.1",
-    "mvw-navigation": "2.0.2",
-    "mvw-search-index": "2.1.1",
+    "mvw-navigation": "2.0.3",
+    "mvw-search-index": "2.1.2",
     "pug": "2.0.0-rc.2"
   },
   "scripts": {

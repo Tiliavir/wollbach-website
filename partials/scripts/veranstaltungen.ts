@@ -53,7 +53,7 @@ namespace KW.Appointments {
       const row = "<tr><td colspan='3' class='show-passed'>vergangene Termine</td></tr>";
       const $showMore: JQuery = $(".appointments tbody").prepend($(row)).find(".show-passed");
       ($showMore[0] as any).isVisible = false;
-      $showMore.click((e: Event) => {
+      $showMore.click((e) => {
         if ((e.target as any).isVisible) {
           slideUp();
         } else {
