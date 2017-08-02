@@ -1,0 +1,7 @@
+{
+  "port": "9876",
+  "codeSync": false,
+  "ghostMode": false,
+  "files": [],
+  "server": { "baseDir": "./build" }
+}

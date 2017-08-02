@@ -4,7 +4,7 @@ mixin image-css(url, alt, title, caption)
     div.img-center.img-responsive(title=title
                                   style=`background-image:url(${url})`
                                   class!=attributes.class
-                                  onclick=`viewFullImage("${url}")`)
+                                  onclick=`MVW.viewFullImage("${url}")`)
     if caption
       figcaption
         p.caption= caption

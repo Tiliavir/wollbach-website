@@ -1,6 +1,6 @@
 {
   "name": "wollbach",
-  "version": "1.0.170729",
+  "version": "1.0.170802",
   "description": "Website for Wollbach",
   "keywords": [
     "Wollbach",
@@ -25,12 +25,14 @@
     "@types/jquery":"3.2.10",
     "@types/lunr": "0.5.29",
     "@types/marked": "0.0.28",
-    "@types/node": "8.0.17",
+    "@types/node": "8.0.19",
+    "@types/photoswipe": "4.0.28",
     "@types/vinyl": "2.0.0",
     "@types/yargs": "8.0.1",
 
     "autoprefixer": "7.1.2",
     "copyfiles": "1.2.0",
+    "lite-server": "2.3.0",
     "node-sass": "4.5.3",
     "postcss-cli": "4.1.0",
     "sass-lint": "1.10.2",
@@ -54,9 +56,11 @@
     "lunr": "2.1.2",
     "marked": "0.3.6",
     "moment": "2.18.1",
-    "mvw-navigation": "2.0.3",
+    "mvw-gallery": "1.0.7",
+    "mvw-navigation": "2.0.4",
     "mvw-search-index": "2.1.2",
-    "pug": "2.0.0-rc.2"
+    "photoswipe": "4.1.2",
+    "pug": "2.0.0-rc.3"
   },
   "scripts": {
     "lint": "sass-lint -c sass-lint.yml -v -q && tslint -c tslint.json \"partials/scripts/**/*.ts\"",
@@ -65,6 +69,7 @@
     "precompile": "npm run clean && mkdir build",
     "compile": "tsc && npm run compile:sass && gulp",
     "compile:sass": "node-sass ./partials/styles/ -o ./partials/styles && postcss ./partials/styles/**/*.css --use autoprefixer -r",
+    "compile:gallery": "mvwGallery ./gallery-source/ ./root/gallery/",
 
     "copy:lib": "copyfiles -u 3 ./node_modules/jquery/dist/jquery.min.js ./build/js/",
     "copy:root": "copyfiles -u 2 ./root/_*/* ./build/ && copyfiles -u 1 -a ./root/[!_]* ./build/ && copyfiles -u 1 ./root/[!_]*/**/* ./build/",
@@ -76,6 +81,7 @@
 
     "copy:todiff": "copyup ./build/**/* ../wollbach-prod/",
 
-    "dev": "npm run compile"
+    "dev": "npm run compile",
+    "serve": "lite-server"
   }
 }

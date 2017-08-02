@@ -1,20 +1,46 @@
-$(() => {
-  const pathname: string = window.location.href;
+namespace MVW {
+  function fixAnchors(): void {
+    const pathname = window.location.href.split("#")[0];
+    $("a[href^='#']").each((i, e) => {
+        const $elem = $(e);
+        $elem.attr("href", pathname + $elem.attr("href"));
+    });
+  }
 
-  $("a").each((i: number, e: HTMLAnchorElement): void => {
-    const $anchor: JQuery = $(e);
-    const link: string = $anchor.attr("href");
+  function activateTabs(): void {
+    function setActive(id: string) {
+      $(".tab-pane").removeClass("active");
+      $(".tab").removeClass("active");
 
-    if (link.charAt(0) === "#") {
-      $anchor.attr("href", pathname + link);
+      $(`.tab-${id}`).addClass("active");
+      $(`#${id}`).addClass("active");
     }
-  });
 
-  $(".content").click(() => $("#navigation-checkbox").prop("checked", false));
-});
+    const url: string = window.location.href;
 
-function viewFullImage(url: string, alt: string): void {
-  const $preview: JQuery = $(`<div class="overlay"><img class="full-view" src="${url}" alt="${alt}" /></div>`);
-  $preview.click((e) => $(e.target).closest(".overlay").remove());
-  $("body").append($preview);
+    const startIndex = url.indexOf("#") + 1;
+    if (startIndex > 0) {
+      setActive(url.substring(startIndex));
+    }
+
+    $(".tab").click((e: JQuery.Event<HTMLAnchorElement>) => {
+      setActive($(e.target).data("tab"));
+      e.stopPropagation();
+    });
+  }
+
+  export function viewFullImage(url: string, alt: string): void {
+    const $preview: JQuery = $(`<div class="overlay"><img class="full-view" src="${url}" alt="${alt}" /></div>`);
+    $preview.click((e) => $(e.target).closest(".overlay").remove());
+    $("body").append($preview);
+  }
+
+  export function inititialize(): void {
+    $(".content").click(() => $("#navigation-checkbox").prop("checked", false));
+
+    fixAnchors();
+    activateTabs();
+  }
+
+  $(() => MVW.inititialize());
 }
