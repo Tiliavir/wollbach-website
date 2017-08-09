@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "module": "none",
     "removeComments": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
@@ -8,10 +9,12 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitThis": true,
     "allowJs": false,
-    "alwaysStrict": true
+    "alwaysStrict": true,
+    "inlineSourceMap": false,
+    "sourceMap": false,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "partials/scripts/**/*.ts",
-    "gulpfile.ts"
+    "partials/scripts/**/*.ts"
   ]
 }

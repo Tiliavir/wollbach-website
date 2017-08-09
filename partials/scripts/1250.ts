@@ -1,5 +1,5 @@
-import * as PhotoSwipe from "photoswipe";
-import * as PhotoSwipeUI_Default from "photoswipe/dist/photoswipe-ui-default";
+/// <reference path="../../node_modules/@types/photoswipe/index.d.ts" />
+/// <reference path="../../node_modules/@types/photoswipe/dist/photoswipe-ui-default/index.d.ts" />
 
 namespace MVW.Gallery {
   let galleries: any;

@@ -24,9 +24,11 @@ block content
 
   -
     var galleries = require("./root/gallery/galleries.json");
-    var years = Object.keys(galleries).sort((a, b) => b - a);
 
-  +renderTabs(years)
+  :marked
+    # Impressionen unseres Jubiläums
+    Folgende Gallerie bietet einen Eindruck unserer Jubiläumsfeier unter anderem mit Besuch aus Wollbach in der Röhn,
+    einem Festbankett, einem Festgottesdienst und einem Festumzug.
 
   .mvw-gallery-overview.tab-content
     - var yearTitles = Object.keys(galleries);

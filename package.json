@@ -67,11 +67,12 @@
     "clean": "rimraf ./build/ ./partials/{styles,scripts}/**/*.{css,js}",
 
     "precompile": "npm run clean && mkdir build",
-    "compile": "tsc && npm run compile:sass && gulp",
+    "compile": "npm run compile:ts && npm run compile:sass && gulp",
+    "compile:ts": "tsc -p tsconfig.gulpfile.json && tsc -p tsconfig.json",
     "compile:sass": "node-sass ./partials/styles/ -o ./partials/styles && postcss ./partials/styles/**/*.css --use autoprefixer -r",
     "compile:gallery": "mvwGallery ./gallery-source/ ./root/gallery/",
 
-    "copy:lib": "copyfiles -u 3 ./node_modules/jquery/dist/jquery.min.js ./build/js/",
+    "copy:lib": "copyfiles -u 3 ./node_modules/jquery/dist/jquery.min.js ./build/js/ && copyfiles -u 4 ./node_modules/photoswipe/dist/default-skin/*.{svg,png,gif} ./build/",
     "copy:root": "copyfiles -u 2 ./root/_*/* ./build/ && copyfiles -u 1 -a ./root/[!_]* ./build/ && copyfiles -u 1 ./root/[!_]*/**/* ./build/",
     "postcompile": "npm run copy:lib && npm run copy:root",
 
