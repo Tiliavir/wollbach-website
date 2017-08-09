@@ -1,6 +1,6 @@
 {
   "name": "wollbach",
-  "version": "1.0.170802",
+  "version": "1.0.170809",
   "description": "Website for Wollbach",
   "keywords": [
     "Wollbach",
@@ -22,13 +22,13 @@
   "devDependencies": {
     "@types/gulp": "4.0.4",
     "@types/gulp-load-plugins": "0.0.29",
-    "@types/jquery":"3.2.10",
+    "@types/jquery":"3.2.11",
     "@types/lunr": "0.5.29",
-    "@types/marked": "0.0.28",
-    "@types/node": "8.0.19",
+    "@types/marked": "0.3.0",
+    "@types/node": "8.0.20",
     "@types/photoswipe": "4.0.28",
     "@types/vinyl": "2.0.0",
-    "@types/yargs": "8.0.1",
+    "@types/yargs": "8.0.2",
 
     "autoprefixer": "7.1.2",
     "copyfiles": "1.2.0",
@@ -36,7 +36,7 @@
     "node-sass": "4.5.3",
     "postcss-cli": "4.1.0",
     "sass-lint": "1.10.2",
-    "tslint": "5.5.0",
+    "tslint": "5.6.0",
     "typescript": "2.4.2"
   },
   "dependencies": {
