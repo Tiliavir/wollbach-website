@@ -1,12 +1,10 @@
----
-title: "Vereine"
-description: "Eine Übersicht über Vereine in Wollbach"
-keywords: "Vereine, Vereinsarbeit, Musik, Gesang, Sport, Engagement, Fastnacht"
-
-navigation: "top"
----
-
 extends ../template.pug
+
+block variables
+  -
+    var title = "Vereine";
+    var description = "Eine Übersicht über Vereine in Wollbach";
+    var keywords = "Vereine, Vereinsarbeit, Musik, Gesang, Sport, Engagement, Fastnacht";
 
 block pageStyles
   include ../styles/vereine.css

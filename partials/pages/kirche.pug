@@ -1,12 +1,10 @@
----
-title: "Kirche"
-description: "Die Kirche und die Kirchengemeinde in Wollbach"
-keywords: "Kirche, Pfarrei, Evangelische Pfarrkirche, Cyriacus und Mauritius, Pfarrhaus"
-
-navigation: "top"
----
-
 extends ../template.pug
+
+block variables
+  -
+    var title = "Kirche";
+    var description = "Die Kirche und die Kirchengemeinde in Wollbach";
+    var keywords = "Kirche, Pfarrei, Evangelische Pfarrkirche, Cyriacus und Mauritius, Pfarrhaus";
 
 block pageStyles
   include ../styles/kirche.css

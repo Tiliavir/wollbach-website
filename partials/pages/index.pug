@@ -1,18 +1,16 @@
----
-title: "Willkommen in Wollbach"
-description: "Die Internetpräsenz der Gemeinde Wollbach im Markgräflerland am Fuße des Schwarzwaldes"
-keywords: "Wollbach, Kandern Wollbach, Gemeinde, Ortsteil, Stadtteil, 79400"
-
-hideBreadcrumb: true
----
-
 extends ../template.pug
+
+block variables
+  -
+    var title = "Willkommen in Wollbach";
+    var description = "Die Internetpräsenz der Gemeinde Wollbach im Markgräflerland am Fuße des Schwarzwaldes";
+    var keywords = "Wollbach, Kandern Wollbach, Gemeinde, Ortsteil, Stadtteil, 79400";
 
 block content
   :marked
     # Grußwort des Ortsvorstehers
 
-  img(class="wappen" src="/img/wappen.png" alt="Wollbach")
+  img.wappen(src="/img/wappen.png" alt="Wollbach")
 
   :marked
     Unser schönes Dorf Wollbach liegt am Fuße des Schwarzwaldes, am Treffpunkt von Wollbach- und

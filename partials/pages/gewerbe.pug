@@ -1,12 +1,10 @@
----
-title: "Gewerbe"
-description: "Eine Übersicht über gewerbliche Einrichtungen in Wollbach"
-keywords: "Gewerbe, Wirtschaft, Unternehmen"
-
-navigation: "top"
----
-
 extends ../template.pug
+
+block variables
+  -
+    var title = "Gewerbe";
+    var description = "Eine Übersicht über gewerbliche Einrichtungen in Wollbach";
+    var keywords = "Gewerbe, Wirtschaft, Unternehmen";
 
 mixin gewerbe(name, owner, street, town, telephone, fax, mail, url)
   .gewerbe(itemscope itemtype="http://schema.org/LocalBusiness")
@@ -24,11 +22,11 @@ mixin gewerbe(name, owner, street, town, telephone, fax, mail, url)
       .founder(itemprop="founder" itemscope itemtype="http://schema.org/Person")
         span(itemprop="name")= owner
     if telephone
-      .telephone(itemprop="telephone")= "+49 " + (telephone || "").replace("0", "(0)")
+      .telephone(itemprop="telephone")= `+49 ${(telephone || "").replace("0", "(0)")}`
     if fax
-      .fax-number(itemprop="faxNumber")= "+49 " + (fax || "").replace("0", "(0)")
+      .fax-number(itemprop="faxNumber")= `+49 ${(fax || "").replace("0", "(0)")}`
     if email
-      a.email(itemprop="email" href="mailto:" + mail)= mail
+      a.email(itemprop="email" href=`mailto:${mail}`)= mail
 
 block pageStyles
   include ../styles/gewerbe.css

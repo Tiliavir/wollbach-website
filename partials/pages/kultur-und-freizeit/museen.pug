@@ -1,12 +1,10 @@
----
-title: "Museen"
-description: "Eine Übersicht über Museen in Wollbach"
-keywords: "Museen, Kultur, Sehenswertes, Freizeit"
-
-navigation: "top"
----
-
 extends ../../template.pug
+
+block variables
+  -
+    var title = "Museen";
+    var description = "Eine Übersicht über Museen in Wollbach";
+    var keywords = "Museen, Kultur, Sehenswertes, Freizeit";
 
 mixin museum(name, street, town, url)
   .museum(itemscope itemtype="http://schema.org/LocalBusiness")
@@ -27,8 +25,6 @@ block pageStyles
 
 block content
   +museum("Kirchturm-Museum", "Rathausstr. 18", "Wollbach")
-    :marked
-       
 
   +museum("Kreiterhof Museum", "Wollbacherstraße 1", "Egerten", "http://www.kreiterhof.de/museum.html")
     :marked

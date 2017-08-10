@@ -1,12 +1,10 @@
----
-title: "Öffentliche Einrichtungen"
-description: "Eine Übersicht über öffentliche Einrichtungen in Wollbach"
-keywords: "Öffentliche Einrichtungen"
-
-navigation: "top"
----
-
 extends ../../template.pug
+
+block variables
+  -
+    var title = "Öffentliche Einrichtungen";
+    var description = "Eine Übersicht über öffentliche Einrichtungen in Wollbach";
+    var keywords = "Öffentliche Einrichtungen";
 
 mixin einrichtung(name, url)
   .einrichtung(itemscope itemtype="http://schema.org/LocalBusiness")

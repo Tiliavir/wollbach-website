@@ -1,12 +1,10 @@
----
-title: "Impressum"
-description: "Das Impressum der Webseite Wollbachs"
-keywords: "Impressum, Kontakt, Übersicht, Webseiteninformationen, Informationen zur Webseite, Rechtiliches, Haftung, Haftungsausschluss, Datenschutz"
-
-navigation: "footer"
----
-
 extends ../template.pug
+
+block variables
+  -
+    var title = "Impressum";
+    var description = "Das Impressum der Webseite Wollbachs";
+    var keywords = "Impressum, Kontakt, Übersicht, Webseiteninformationen, Informationen zur Webseite, Rechtiliches, Haftung, Haftungsausschluss, Datenschutz";
 
 block pageStyles
   include ../styles/impressum.css
@@ -15,7 +13,7 @@ block content
   :marked
     # Kontakt
 
-  img(src="/img/fueller.jpg" alt="Füller" class="pen")
+  img.pen(src="/img/fueller.jpg" alt="Füller")
 
   :marked
     Sie können uns gerne [eine e-Mail schicken][ov].
@@ -42,8 +40,6 @@ block content
     # Validierungen unserer Seite
     [![Valid HTML 5][htm]][htmLink]
     [![Valid CSS!][css]][cssLink]
-
-
 
     [haftung]:  haftung.html
     [privacy]:  datenschutz.html

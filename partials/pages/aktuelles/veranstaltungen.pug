@@ -1,12 +1,10 @@
----
-title: "Veranstaltungskalender"
-description: "Veranstaltungskalender der Gemeinde Wollbach im Kandertal mit einer Übersicht anstehender Termine"
-keywords: "Veranstaltungen, Veranstaltungskalender, Terminkalender, Termine, Kalender"
-
-navigation: "top"
----
-
 extends ../../template.pug
+
+block variables
+  -
+    var title = "Veranstaltungskalender";
+    var description = "Veranstaltungskalender der Gemeinde Wollbach im Kandertal mit einer Übersicht anstehender Termine";
+    var keywords = "Veranstaltungen, Veranstaltungskalender, Terminkalender, Termine, Kalender";
 
 block content
   :marked
@@ -48,7 +46,7 @@ block content
                 | )
 
               if appointment.description
-                div.description(itemprop="description")
+                .description(itemprop="description")
                   != marked(appointment.description)
 
 block pageScripts

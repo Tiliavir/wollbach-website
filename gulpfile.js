@@ -12,6 +12,7 @@ var isRelease = yargs["default"]("release", false).boolean("release").argv.relea
 var baseUrl = isRelease ? "http://www.wollbach.info/" : "http://localhost/";
 var navigation;
 var $ = gulpLoadPlugins();
+var logger = require("gulplog");
 var paths = {
     dest: "./build/"
 };
@@ -31,7 +32,7 @@ var getScope = function (file) {
     };
 };
 gulp.task("sitemap", function () {
-    return gulp.src([paths.dest + "**/*.html", "!**/401.html"], {
+    return gulp.src([paths.dest + "**/*.html", "!**/401.html", "!**/google*"], {
         read: false
     })
         .pipe($.sitemap({
@@ -39,6 +40,18 @@ gulp.task("sitemap", function () {
         changefreq: "monthly"
     }))
         .pipe(gulp.dest(paths.dest));
+});
+gulp.task("lint:pug", function () {
+    var PugLint = require("pug-lint");
+    var linter = new PugLint();
+    linter.configure({ "extends": __dirname + "\\\.pug-lint.json" });
+    return gulp.src("./partials/pages/**/*.pug")
+        .pipe($.data(function (f) {
+        for (var _i = 0, _a = linter.checkPath(f.path); _i < _a.length; _i++) {
+            var error = _a[_i];
+            logger.warn(error.msg + ": " + error.filename + " " + error.line + ":" + (error.column || 0));
+        }
+    }));
 });
 gulp.task("html:writeNavigation", function (done) {
     navigation = new mvw_navigation_1.Navigation(require("./partials/site-structure.json"), "html", {
@@ -54,9 +67,10 @@ gulp.task("html:generatePages", function () {
     return gulp.src("./partials/pages/**/*.pug")
         .pipe($.replace(/^(\s*#+) /gm, "$1# "))
         .pipe($.rename(function (path) { path.ext = ".html"; }))
-        .pipe($.grayMatter())
         .pipe($.data(getScope))
+        .pipe($.data(function (f) { return logger.info("  Starting " + f.relative); }))
         .pipe($.pug())
+        .pipe($.data(function (f) { return logger.info("√ Finished " + f.relative); }))
         .pipe($.flatten())
         .pipe(gulp.dest(paths.dest));
 });

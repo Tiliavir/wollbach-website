@@ -1,12 +1,10 @@
----
-title: "Seiten-Übersicht"
-description": "Eine Übersicht der Inhalte der Webseite Wollbachs"
-keywords": "Eine Übersicht der Inhalte der Webseite des Musikverein Wollbach."
-
-navigation: "top"
----
-
 extends ../template.pug
+
+block variables
+  -
+    var title = "Seiten-Übersicht";
+    var description = "Eine Übersicht der Inhalte der Webseite Wollbachs";
+    var keywords = "Eine Übersicht der Inhalte der Webseite des Musikverein Wollbach.";
 
 block content
   include ../siteOverviewList.pug

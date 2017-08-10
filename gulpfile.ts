@@ -13,8 +13,10 @@ let baseUrl = isRelease ? "http://www.wollbach.info/" : "http://localhost/";
 let navigation: Navigation;
 let $: any = gulpLoadPlugins();
 
+let logger = require("gulplog");
+
 const paths: {dest: string} = {
-  dest: "./build/",
+  dest: "./build/"
 };
 
 var getScope = (file: File) => {
@@ -36,7 +38,7 @@ var getScope = (file: File) => {
 };
 
 gulp.task("sitemap", () => {
-    return gulp.src([paths.dest + "**/*.html", "!**/401.html"], {
+    return gulp.src([paths.dest + "**/*.html", "!**/401.html", "!**/google*"], {
                   read: false
                 })
                .pipe($.sitemap({
@@ -44,6 +46,19 @@ gulp.task("sitemap", () => {
                  changefreq: "monthly"
                }))
                .pipe(gulp.dest(paths.dest));
+});
+
+gulp.task("lint:pug", () => {
+  let PugLint = require("pug-lint");
+  let linter = new PugLint();
+  linter.configure({extends: __dirname + "\\\.pug-lint.json"});
+
+  return gulp.src("./partials/pages/**/*.pug")
+              .pipe($.data((f: File) => {
+                for (let error of linter.checkPath(f.path)) {
+                  logger.warn(`${error.msg}: ${error.filename} ${error.line}:${error.column || 0}`);
+                }
+              }));
 });
 
 gulp.task("html:writeNavigation", (done) => {
@@ -63,9 +78,10 @@ gulp.task("html:generatePages", () => {
   return gulp.src("./partials/pages/**/*.pug")
               .pipe($.replace(/^(\s*#+) /gm, "$1# "))
               .pipe($.rename((path: path.ParsedPath): void => { path.ext = ".html"; }))
-              .pipe($.grayMatter())
               .pipe($.data(getScope))
+              .pipe($.data((f: File) => logger.info("  Starting " + f.relative)))
               .pipe($.pug())
+              .pipe($.data((f: File) => logger.info("√ Finished " + f.relative)))
               .pipe($.flatten())
               .pipe(gulp.dest(paths.dest));
 });
