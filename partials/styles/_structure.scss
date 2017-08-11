@@ -4,6 +4,11 @@
 $footer-shadow-gray: #0c0d0e;
 $footer-border-gray: #e7e7e7;
 
+main {
+  // fix for IE
+  display: block;
+}
+
 .header {
   height: 31.25vh;
   max-height: 500px;
