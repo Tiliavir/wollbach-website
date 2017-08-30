@@ -10,7 +10,7 @@ block content
   :marked
     Hier geht es zum [Wollbacher Sommerferienprogramm](/pdf/17_sommerferien_programm.pdf) des Kinder- und Jugendverein Wollbach e.V.!
 
-  - var appointments = require("./partials/data/veranstaltungen.json");
+  - var appointments = require("partials/data/veranstaltungen.json");
   
   each year in Object.keys(appointments)
     h2 #{year}

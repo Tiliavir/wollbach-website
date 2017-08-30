@@ -12,19 +12,19 @@ html(lang="de")
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
     //- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
 
-    title=(referencedFile === "index" ? "" : title + " | ") + scope.siteTitle
+    title= `${(referencedFile === "index" ? "" : `${title} | `)}${environment.siteTitle}`
 
-    if isRelease
-      base(href=scope.baseUrl)
-    meta(name="author" content=scope.siteTitle)
+    if environment.key === "prod"
+      base(href=environment.baseUrl)
+    meta(name="author" content=environment.siteTitle)
     if description
       meta(name="description" content=description)
     if keywords
       meta(name="keywords" content=keywords)
     meta(property="og:type" content="website")
-    meta(property="og:image" content=scope.baseUrl + "img/logo_color.png")
+    meta(property="og:image" content=path.join(environment.baseUrl, "img/logo_color.png"))
     meta(property="og:locale" content="de_DE")
-    meta(property="og:site_name" content=scope.siteTitle)
+    meta(property="og:site_name" content=environment.siteTitle)
 
     style
       include ./styles/app.css
@@ -39,7 +39,7 @@ html(lang="de")
     link(rel="mask-icon" href="/safari-pinned-tab.svg")
     meta(name="theme-color" content="#ffffff")
 
-  body(itemscope itemtype="http://schema.org/" + (schemaOrg || "WebPage"))
+  body(itemscope itemtype=`http://schema.org/${schemaOrg || "WebPage"}`)
     header.header
       .cover
         a.navigation-brand(href="/")
@@ -53,12 +53,12 @@ html(lang="de")
       .navigation-menu
         include ./topnavigation.pug
 
-    img.print-only(src="/img/wappen.png" alt=scope.siteTitle)
+    img.print-only(src="/img/wappen.png" alt=environment.siteTitle)
 
     main.content(itemprop="mainContentOfPage")
       h1.page-title #{title}
         if subtitle
-            small= " " + subtitle
+          small= ` ${subtitle}`
       | !{breadcrumb}
       block content
 
