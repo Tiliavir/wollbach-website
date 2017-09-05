@@ -59,7 +59,8 @@ html(lang="de")
       h1.page-title #{title}
         if subtitle
           small= ` ${subtitle}`
-      | !{breadcrumb}
+      if referencedFile !== "index"
+        | !{breadcrumb}
       block content
 
     footer.footer
