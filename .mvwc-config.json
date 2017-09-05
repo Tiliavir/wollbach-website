@@ -1,0 +1,25 @@
+{
+  "environment": "prod",
+  "environments": {
+    "base": {
+      "siteTitle": "Wollbach"
+    },
+    "prod": {
+      "key": "prod",
+      "baseUrl": "http://www.wollbach.info/",
+      "isRelease": true
+    },
+    "dev": {
+      "key": "dev",
+      "baseUrl": "http://localhost/"
+    }
+  },
+  "structureJsonPath": "./partials/site-structure.json",
+  "destinationPath": "./build/",
+  "navigationPath": "./partials/",
+  "pugLintPath": "./partials/**/*.pug",
+  "pugPath": "./partials/pages/**/*.pug",
+  "searchIndex": {
+    "bodySelector": "main"
+  }
+}

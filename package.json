@@ -1,6 +1,6 @@
 {
   "name": "wollbach",
-  "version": "1.0.170830",
+  "version": "1.0.170906",
   "description": "Website for Wollbach",
   "keywords": [
     "Wollbach",
@@ -19,31 +19,6 @@
     "Firefox ESR",
     "ie 9-11"
   ],
-  "mvwc": {
-    "environment": "prod",
-    "environments": {
-      "base": {
-        "siteTitle": "Wollbach"
-      },
-      "prod": {
-        "key": "prod",
-        "baseUrl": "http://www.wollbach.info/",
-        "isRelease": true
-      },
-      "dev": {
-        "key": "dev",
-        "baseUrl": "http://localhost/"
-      }
-    },
-    "structureJsonPath": "./partials/site-structure.json",
-    "destinationPath": "./build/",
-    "navigationPath": "./partials/",
-    "pugLintPath": "./partials/**/*.pug",
-    "pugPath": "./partials/pages/**/*.pug",
-    "searchIndex": {
-      "bodySelector": "main"
-    }
-  },
   "devDependencies": {
     "@types/jquery":"3.2.12",
     "@types/lunr": "0.5.29",
@@ -57,12 +32,13 @@
     "postcss-cli": "4.1.0",
     "sass-lint": "1.11.1",
     "tslint": "5.7.0",
-    "typescript": "2.4.2"
+    "typescript": "2.5.2"
   },
   "dependencies": {
     "jquery": "3.2.1",
-    "mvw-gallery": "1.0.7",
-    "mvw-creator": "1.0.9",
+    "lunr": "2.1.3",
+    "mvw-gallery": "1.0.8",
+    "mvw-creator": "1.0.11",
     "photoswipe": "4.1.2"
   },
   "scripts": {
