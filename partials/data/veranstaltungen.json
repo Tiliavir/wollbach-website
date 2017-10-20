@@ -274,6 +274,13 @@
       "location": { "name": "Ev. Kirche", "address": "Wollbach" }
     },
     {
+      "starttime": "2017-11-04",
+      "title": "Bürger-Aktion: 'Rebhüsli'",
+      "description": "Anstrich innen und außen, und Vorplatz-Sanierung (Treppe). Freiwillige können sich via E-Mail <ovwollbach@kandern.de> oder telefonisch (348 od 265) melden.",
+      "organizer": "Ortsverwaltung Wollbach",
+      "location": { "name": "Rebhüsli", "address": "Wollbach" }
+    },
+    {
       "starttime": "2017-11-05",
       "title": "Hubertus-Messe",
       "organizer": "Jagdgesellschaft Graf",
