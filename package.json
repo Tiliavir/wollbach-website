@@ -1,6 +1,6 @@
 {
   "name": "wollbach",
-  "version": "17.10.20",
+  "version": "17.10.31",
   "description": "Website for Wollbach",
   "keywords": [
     "Wollbach",
@@ -20,25 +20,25 @@
     "ie 9-11"
   ],
   "devDependencies": {
-    "@types/jquery":"3.2.15",
-    "@types/lunr": "2.1.2",
-    "@types/node": "8.0.46",
+    "@types/jquery":"3.2.16",
+    "@types/lunr": "2.1.3",
+    "@types/node": "8.0.47",
     "@types/photoswipe": "4.0.28",
 
-    "autoprefixer": "7.1.5",
+    "autoprefixer": "7.1.6",
     "copyfiles": "1.2.0",
     "lite-server": "2.3.0",
     "node-sass": "4.5.3",
     "postcss-cli": "4.1.1",
     "sass-lint": "1.12.1",
-    "tslint": "5.7.0",
-    "typescript": "2.5.3"
+    "tslint": "5.8.0",
+    "typescript": "2.6.1"
   },
   "dependencies": {
     "jquery": "3.2.1",
     "lunr": "2.1.4",
-    "mvw-gallery": "1.0.10",
-    "mvw-creator": "1.1.2",
+    "mvw-gallery": "1.0.11",
+    "mvw-creator": "1.1.3",
     "photoswipe": "4.1.2"
   },
   "scripts": {
