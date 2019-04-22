@@ -23,7 +23,7 @@ namespace MVW {
       setActive(url.substring(startIndex));
     }
 
-    $(".tab").click((e: JQuery.Event<HTMLAnchorElement>) => {
+    $(".tab").click((e: JQuery.ClickEvent) => {
       setActive($(e.target).data("tab"));
       e.stopPropagation();
     });

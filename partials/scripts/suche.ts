@@ -2,7 +2,7 @@ namespace KW.Search {
   let index: any;
   let store: any;
 
-  function handleSearch(e: JQuery.Event<HTMLElement, null>): void {
+  function handleSearch(): void {
     const query = $("input.mvw-search-field").val();
 
     const result = index.search(`*${query}*`);
@@ -58,7 +58,7 @@ namespace KW.Search {
         inputField.val(query);
       }
       inputField.on("keyup", handleSearch);
-      handleSearch(null);
+      handleSearch();
     });
   }
 }
