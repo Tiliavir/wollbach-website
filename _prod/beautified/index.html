@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang=de>
+
+<head>
+    <meta charset=utf-8>
+    <meta content="IE=edge" http-equiv=X-UA-Compatible>
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name=viewport>
+    <title>Wollbach</title>
+    <base href=http://www.wollbach.info/>
+    <meta content=Wollbach name=author>
+    <meta content="Die Internetpräsenz der Gemeinde Wollbach im Markgräflerland am Fuße des Schwarzwaldes" name=description>
+    <meta content="Wollbach, Kandern Wollbach, Gemeinde, Ortsteil, Stadtteil, 79400" name=keywords>
+    <meta content=website property=og:type>
+    <meta content=http:\www.wollbach.info\img\logo_color.png property=og:image>
+    <meta content=de_DE property=og:locale>
+    <meta content=Wollbach property=og:site_name>
+    <style>
+        .navigation {
+            background-color: rgba(255, 255, 255, .5);
+            color: #333;
+            font-size: 14px;
+            font-weight: 700;
+            width: 100%;
+            position: relative;
+            top: -50px;
+            z-index: 1000;
+            margin: 0 auto;
+            height: 50px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        .navigation-header {
+            display: inline-block
+        }
+
+        .navigation-menu {
+            overflow-x: hidden;
+            text-align: left;
+            position: relative;
+            top: 30px;
+            height: 50px;
+            -webkit-box-shadow: 0 10px 15px -10px #000;
+            box-shadow: 0 10px 15px -10px #000
+        }
+
+        .navigation-menu>ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            list-style: none;
+            padding-left: 0;
+            margin: 0
+        }
+
+        .navigation-menu>ul li {
+            height: auto
+        }
+
+        .navigation-menu>ul li a {
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer
+        }
+
+        .navigation-menu>ul li a:focus,
+        .navigation-menu>ul li a:hover {
+            border: 0
+        }
+
+        .navigation-checkbox {
+            display: none
+        }
+
+        .dropdown {
+            position: relative;
+            height: auto
+        }
+
+        .dropdown>ul {
+            color: #333;
+            font-size: 14px;
+            font-weight: 400;
+            display: block;
+            list-style: none;
+            padding: 0
+        }
+
+        .dropdown>ul li a {
+            padding: 5px 10px 5px 30px
+        }
+
+        @media (max-width:767px) {
+            .navigation-menu {
+                background-color: rgba(255, 255, 255, .9);
+                -webkit-box-shadow: 0 5px 10px -2px #000;
+                box-shadow: 0 5px 10px -2px #000
+            }
+            .dropdown:hover>ul {
+                position: relative;
+                display: block;
+                min-width: 100%
+            }
+            .dropdown li.active,
+            .dropdown li:hover {
+                color: #c73123
+            }
+            .navigation-checkbox:not(:checked)~.navigation-menu {
+                max-height: 0;
+                min-height: 0;
+                overflow-y: hidden
+            }
+            .navigation-checkbox:checked~.navigation-menu {
+                max-height: 2000px;
+                height: initial;
+                overflow-y: hidden;
+                -webkit-transition: max-height .8s ease;
+                transition: max-height .8s ease
+            }
+            .navigation-checkbox:checked~.navigation-header .navigation-hamburger span {
+                background-color: transparent
+            }
+            .navigation-checkbox:checked~.navigation-header .navigation-hamburger span::after,
+            .navigation-checkbox:checked~.navigation-header .navigation-hamburger span::before {
+                top: 0
+            }
+            .navigation-checkbox:checked~.navigation-header .navigation-hamburger span::before {
+                -webkit-transform: rotate(225deg);
+                -ms-transform: rotate(225deg);
+                transform: rotate(225deg)
+            }
+            .navigation-checkbox:checked~.navigation-header .navigation-hamburger span::after {
+                -webkit-transform: rotate(-225deg);
+                -ms-transform: rotate(-225deg);
+                transform: rotate(-225deg)
+            }
+            .navigation-checkbox:checked~.navigation-header .navigation-hamburger:hover span {
+                -webkit-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                transform: rotate(90deg)
+            }
+            .navigation-hamburger {
+                position: absolute;
+                top: 9px;
+                right: 10px;
+                margin: 0;
+                padding: 15px;
+                cursor: pointer
+            }
+            .navigation-hamburger span,
+            .navigation-hamburger span::after,
+            .navigation-hamburger span::before {
+                height: 2px;
+                width: 22px;
+                -webkit-transition: -webkit-transform .4s ease;
+                transition: -webkit-transform .4s ease;
+                transition: transform .4s ease;
+                transition: transform .4s ease, -webkit-transform .4s ease;
+                background: #333;
+                z-index: 1
+            }
+            .navigation-hamburger span {
+                position: relative;
+                -webkit-box-flex: 0;
+                -ms-flex: none;
+                flex: none;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center
+            }
+            .navigation-hamburger span::before {
+                content: '';
+                position: absolute;
+                top: -7px;
+                left: 0
+            }
+            .navigation-hamburger span::after {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 0
+            }
+        }
+
+        @media (min-width:768px) {
+            .navigation-header {
+                display: none
+            }
+            .navigation-menu>ul {
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-flow: row;
+                flex-flow: row;
+                width: 100%
+            }
+            .navigation-menu>ul>li {
+                display: inline-block
+            }
+            .navigation-menu>ul>li:focus,
+            .navigation-menu>ul>li:hover {
+                background-color: rgba(54, 81, 108, .4);
+                color: #fbdc27
+            }
+            .navigation-menu>ul>li a {
+                position: relative;
+                padding: 0 15px;
+                display: block;
+                height: 50px;
+                line-height: 50px;
+                font-variant: small-caps
+            }
+            .navigation-menu>ul>li.active {
+                background-color: rgba(20, 30, 40, .7);
+                color: #ebc904
+            }
+            .navigation-checkbox:not(:checked)~.navigation-menu {
+                display: block
+            }
+            .navigation-menu {
+                min-height: 50px;
+                position: relative;
+                top: 0;
+                width: 100%;
+                overflow-x: visible;
+                max-width: 1000px;
+                margin: 0 auto
+            }
+            .dropdown {
+                height: 50px
+            }
+            .dropdown:hover>ul {
+                position: absolute;
+                display: block;
+                left: 0;
+                top: 50px;
+                padding: 0;
+                background-color: #fff
+            }
+            .dropdown>a::after {
+                position: absolute;
+                content: '';
+                right: 4px;
+                top: 23px;
+                border: 3px solid transparent;
+                border-top: 3px solid #333
+            }
+            .dropdown>ul {
+                display: none;
+                -webkit-box-shadow: 0 5px 10px -2px #000;
+                box-shadow: 0 5px 10px -2px #000
+            }
+            .dropdown>ul li {
+                padding: 0
+            }
+            .dropdown>ul li a {
+                white-space: nowrap;
+                display: block;
+                padding: 3px 20px;
+                height: 35px;
+                line-height: 35px;
+                font-weight: 400
+            }
+            .dropdown>ul li a:hover {
+                color: #c73123
+            }
+            .dropdown>ul li.active {
+                color: #c73123
+            }
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent
+        }
+
+        :focus,
+        :hover {
+            outline: 0
+        }
+
+        body {
+            margin: 0;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            font-family: "Open Sans", Arial, sans-serif;
+            font-size: 14px;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.4285;
+            min-height: 100vh
+        }
+
+        button,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit
+        }
+
+        figure {
+            margin: 0
+        }
+
+        img {
+            border: 0;
+            vertical-align: middle
+        }
+
+        svg:not(:root) {
+            overflow: hidden
+        }
+
+        button {
+            overflow: visible
+        }
+
+        table {
+            background-color: transparent;
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        td,
+        th {
+            padding: 0
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: 1.1;
+            font-weight: 400
+        }
+
+        h1 small,
+        h2 small,
+        h3 small,
+        h4 small,
+        h5 small,
+        h6 small {
+            font-weight: 400;
+            line-height: 1;
+            color: #999
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 5px;
+            font-variant: small-caps
+        }
+
+        h1 small,
+        h2 small,
+        h3 small {
+            font-size: 65%
+        }
+
+        h4,
+        h5,
+        h6 {
+            margin-top: 10px;
+            margin-bottom: 5px
+        }
+
+        h4 small,
+        h5 small,
+        h6 small {
+            font-size: 75%
+        }
+
+        h1 {
+            font-weight: 300;
+            font-size: 23.94px;
+            color: #c73123;
+            letter-spacing: 1px
+        }
+
+        h2 {
+            font-size: 18px
+        }
+
+        h3 {
+            font-size: 14px;
+            font-weight: 500
+        }
+
+        h4 {
+            font-size: 13px
+        }
+
+        h5 {
+            font-size: 12px
+        }
+
+        h6 {
+            font-size: 11px
+        }
+
+        p {
+            margin: 10px 0;
+            text-align: justify;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto
+        }
+
+        ol,
+        ul {
+            margin-top: 0;
+            margin-bottom: 10px
+        }
+
+        ol ol,
+        ol ul,
+        ul ol,
+        ul ul {
+            margin-bottom: 0
+        }
+
+        .small,
+        small {
+            font-size: 85%
+        }
+
+        a {
+            color: #c73123;
+            text-decoration: none
+        }
+
+        a:focus,
+        a:hover {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #c73123
+        }
+
+        a[href*='//']:not([href*='wollbach.info'])::after {
+            background-image: url(/img/external.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            content: '';
+            display: inline-block;
+            width: .8em;
+            height: .8em;
+            margin-left: 5px;
+            padding-right: 5px
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .overlay {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, .4);
+            overflow-x: hidden;
+            -webkit-transition: .5s;
+            transition: .5s;
+            cursor: pointer
+        }
+
+        @media (max-width:599px) {
+            p {
+                text-align: left
+            }
+        }
+
+        .breadcrumb {
+            padding: 8px 0;
+            margin-bottom: 20px;
+            list-style: none
+        }
+
+        .breadcrumb>li {
+            display: inline-block
+        }
+
+        .breadcrumb>li.active {
+            color: #c73123
+        }
+
+        .breadcrumb>li+li::before {
+            content: '\00a0>';
+            padding: 0 3px
+        }
+
+        .img-responsive {
+            display: block;
+            height: auto;
+            max-height: calc(75vh - 250px);
+            max-width: 100%
+        }
+
+        .img-center {
+            margin: 0 auto
+        }
+
+        .img-circle {
+            border-radius: 50%
+        }
+
+        .img>[onclick] {
+            cursor: pointer
+        }
+
+        .full-view {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%) translateY(-50%);
+            -ms-transform: translate(-50%) translateY(-50%);
+            transform: translate(-50%) translateY(-50%);
+            max-height: 100%;
+            max-width: 100%
+        }
+
+        main {
+            display: block
+        }
+
+        .header {
+            height: 31.25vh;
+            max-height: 500px;
+            min-height: 200px;
+            width: 100%;
+            background-color: #dcdcdc
+        }
+
+        @media (orientation:portrait) {
+            .header {
+                max-height: 30vh
+            }
+        }
+
+        .cover {
+            margin: 0 auto;
+            background: url(/img/top.jpg) no-repeat center center;
+            background-size: cover;
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+            position: relative
+        }
+
+        .navigation-brand {
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 140px;
+            max-height: 20vh;
+            min-height: 30px
+        }
+
+        .navigation-brand:hover {
+            border-bottom: 0
+        }
+
+        .navigation-brand img {
+            height: 140px;
+            max-height: 20vh;
+            min-height: 30px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        @media (orientation:portrait) {
+            .navigation-brand {
+                height: initial;
+                max-height: initial;
+                min-height: initial;
+                max-width: 15vw;
+                min-width: 30px
+            }
+            .navigation-brand img {
+                height: initial;
+                max-height: initial;
+                min-height: initial;
+                max-width: 15vw;
+                min-width: 30px
+            }
+        }
+
+        .content,
+        .footer-container {
+            width: 80vw;
+            max-width: 800px;
+            margin: 0 auto
+        }
+
+        .content {
+            min-height: 200px;
+            margin-top: -50px
+        }
+
+        .footer-container {
+            position: relative
+        }
+
+        @media (max-width:766px) {
+            .content,
+            .footer-container {
+                width: initial;
+                padding: 0 5px
+            }
+            .footer ul {
+                width: 100%
+            }
+            .footer .meta {
+                display: none
+            }
+        }
+
+        .page-title {
+            margin-top: 40px
+        }
+
+        .footer {
+            background-color: #f5f5f5;
+            height: 40px;
+            margin: 30px 0 20px;
+            border-color: #e7e7e7;
+            -webkit-box-shadow: 0 1px 0 rgba(12, 13, 14, .1), 0 1px 3px rgba(12, 13, 14, .1), 0 4px 20px rgba(12, 13, 14, .035), 0 1px 1px rgba(12, 13, 14, .025);
+            box-shadow: 0 1px 0 rgba(12, 13, 14, .1), 0 1px 3px rgba(12, 13, 14, .1), 0 4px 20px rgba(12, 13, 14, .035), 0 1px 1px rgba(12, 13, 14, .025)
+        }
+
+        .footer ul {
+            width: calc(100% - 160px);
+            list-style: none;
+            padding-left: 0;
+            margin: 0
+        }
+
+        .footer li {
+            display: inline-block;
+            padding: 0 10px;
+            line-height: 40px;
+            height: 40px
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #9c9c9c
+        }
+
+        .footer a:hover {
+            color: #767676;
+            text-decoration: none
+        }
+
+        .footer .meta {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 12px;
+            color: #9c9c9c;
+            text-align: right
+        }
+
+        .print-only {
+            display: none
+        }
+
+        @media print {
+            a {
+                text-decoration: underline
+            }
+            a:visited {
+                text-decoration: underline
+            }
+            a[href]::after {
+                content: " (" attr(href) ")"
+            }
+            a[href^='#']::after,
+            a[href^='javascript:']::after {
+                content: ''
+            }
+            blockquote,
+            img,
+            pre,
+            tr {
+                page-break-inside: avoid
+            }
+            blockquote,
+            pre {
+                border: 1px solid #999
+            }
+            thead {
+                display: table-header-group
+            }
+            img {
+                max-width: 100%
+            }
+            h2,
+            h3,
+            p {
+                orphans: 3;
+                widows: 3
+            }
+            h2,
+            h3 {
+                page-break-after: avoid
+            }
+            .flx-global-navigation {
+                display: none
+            }
+            .label {
+                border: 1px solid #333
+            }
+            .print-only {
+                display: block;
+                margin: 0 auto
+            }
+            .footer,
+            .header,
+            .navigation {
+                display: none
+            }
+            body,
+            html {
+                background: 0 0;
+                font-family: Georgia, 'Times New Roman', serif;
+                font-size: 12pt;
+                padding-top: 0
+            }
+            .navbar,
+            header {
+                display: none
+            }
+            h1 {
+                font-size: 18pt
+            }
+            h2 {
+                font-size: 16pt
+            }
+            h3 {
+                font-size: 14pt
+            }
+            .img-responsive {
+                max-height: 45vh
+            }
+            img,
+            table,
+            td,
+            tr {
+                page-break-inside: avoid
+            }
+            .breadcrumb {
+                color: #000;
+                font-size: 8pt
+            }
+            .breadcrumb a::after {
+                display: none
+            }
+        }
+
+        .navigation-brand {
+            display: none
+        }
+
+        .wappen {
+            float: left;
+            margin: 6px 20px 5px
+        }
+
+        .max-suetterlin {
+            max-width: 200px
+        }
+
+        @media (max-width:766px) {
+            .max-suetterlin {
+                width: 100%;
+                max-width: initial;
+                max-height: initial
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;amp;subset=latin-ext" rel=stylesheet>
+    <link href=/apple-touch-icon.png rel=apple-touch-icon sizes=180x180>
+    <link href=/favicon-32x32.png rel=icon sizes=32x32 type=image/png>
+    <link href=/favicon-16x16.png rel=icon sizes=16x16 type=image/png>
+    <link href=/manifest.json rel=manifest>
+    <link href=/safari-pinned-tab.svg rel=mask-icon>
+    <meta content=#ffffff name=theme-color>
+</head>
+
+<body itemscope itemtype=http://schema.org/WebPage>
+    <header class=header>
+        <div class=cover><a href=/ class=navigation-brand><img alt=Wollbach src=/img/wappen.png></a></div>
+    </header>
+    <nav class=navigation><input class=navigation-checkbox id=navigation-checkbox type=checkbox>
+        <div class=navigation-header><label class=navigation-hamburger for=navigation-checkbox><span></span></label></div>
+        <div class=navigation-menu>
+            <ul>
+                <li class=dropdown><a href=#>Aktuelles</a>
+                    <ul>
+                        <li><a href=1250-jahrfeier.html>1250 Jahrfeier</a></li>
+                        <li><a href=veranstaltungen.html>Veranstaltungen</a></li>
+                    </ul>
+                </li>
+                <li class=dropdown><a href=#>Unser Dorf</a>
+                    <ul>
+                        <li><a href=ortsverwaltung.html>Ortsverwaltung</a></li>
+                        <li><a href=chronik.html>Chronik</a></li>
+                        <li><a href=ueber-wollbach.html>Über Wollbach</a></li>
+                        <li><a href=oeffentliche-einrichtungen.html>Öffentliche Einrichtungen</a></li>
+                    </ul>
+                </li>
+                <li class=dropdown><a href=#>Kultur und Freizeit</a>
+                    <ul>
+                        <li><a href=themen-und-wanderwege.html>Themen- und Wanderwege</a></li>
+                        <li><a href=museen.html>Museen</a></li>
+                    </ul>
+                </li>
+                <li><a href=vereine.html>Vereine</a></li>
+                <li><a href=gastronomie.html>Gastronomie</a></li>
+                <li><a href=gewerbe.html>Gewerbe</a></li>
+                <li><a href=kirche.html>Kirche</a></li>
+            </ul>
+        </div>
+    </nav><img alt=Wollbach src=/img/wappen.png class=print-only>
+    <main class=content itemprop=mainContentOfPage>
+        <h1 class=page-title>Willkommen in Wollbach</h1>
+        <h2 id=gru-wort-des-ortsvorstehers>Grußwort des Ortsvorstehers</h2> <img alt=Wollbach src=/img/wappen.png class=wappen>
+        <p>Unser schönes Dorf Wollbach liegt am Fuße des Schwarzwaldes, am Treffpunkt von Wollbach- und Kandertal im Markgräflerland, zwischen Oberrheinischer Tiefebene und dem Südschwarzwald.</p>
+        <p>Wollbach wurde im Jahr 767 erstmals urkundlich erwähnt – feiert also im Jahr 2017 das 1250-jährige Jubiläum. Das ist auch der Grund, mit dieser Homepage im Internet aufzutreten.</p>
+        <p>Zur ehemals selbständigen Gemeinde gehören die Ortsteile Egerten, Egisholz, Hammerstein und Nebenau. Am 01. März 1974 erfolgte die Eingemeindung zur Stadt Kandern – mit einer Gemarkungsfläche von 1860 ha ist Wollbach der größte Stadtteil Kanderns
+            und zählt aktuell 1350 Einwohner. Die überwiegende Zahl der Bevölkerung bekennt sich zur evangelischen Konfession – in der evangelischen Kirche in Wollbach wird jeden Sonntag ein Gottesdienst abgehalten, die katholischen Gläubigen besuchen
+            die Messe in Kandern.</p>
+        <p>Immer weniger Einwohner sind im einstigen Bauerndorf hauptberuflich in der Land- und Forstwirtschaft tätig. Die meisten üben im Großraum Lörrach – Basel einen Beruf aus, einige sind selbständig oder angestellt in den Handwerksbetrieben: Elektro,
+            Fliesenleger, Frisör, Ingenieurbüros, Mühle, Schreinereien, Selbstvermarkter, Zimmerei u.a..</p>
+        <p>Wollbach ist nicht nur landschaftlich interessant – es liegt 303m über dem Meeresspiegel, hat ca. 1100 ha Wald, 600ha landwirtschaftliche Nutzfläche, 14ha Reben und ein 30km langes Wegenetz - , sondern auch in sportlicher und kultureller Hinsicht.
+            Der Planetenweg im schönen Seitental, das Museum im Kirchturm, das Max-Böhlen- Museum und das &quot;Kreiterhofmuseum&quot; laden ebenso ein zum Besuch wie der Kalkofenpfad, der Naturerlebnis-/Kulturweg, aber auch die historischen Mühlen, von
+            denen die Hofmühle noch betrieben wird.</p>
+        <p>Mit den Stationen an der Kandern-Basel- Verbindung ist man auch infrastrukturell attraktiv – am Wochenende kann man in den Sommermonaten die Station an der historischen Kandertalbahn nutzen – und hat mit der &quot;Schatzkiste&quot; vor Ort einen
+            zweigruppigen Kindergarten und eine Kinderkrippe. Im 1965 eingeweihten Schulgebäude ist derzeit eine evangelische Grundschule, eine 1978 erbaute Mehrzweckhalle mit &quot;Kandertalstüble&quot; bietet vor allem den sport- und kulturtreibenden
+            Vereinen Übungs- und Festräume.</p>
+        <p>Ein sehr vielfältiges Veranstaltungsprogramm der über 10 Vereine zeugen vom intakten Dorfleben, die 11 Gastronomiebetriebe von der vorbildlichen Gastfreundschaft.</p>
+        <p><strong>Wir freuen uns auf Ihren Besuch.</strong></p>
+        <p>Im Namen der Ortsverwaltung und des Ortschaftsrates Wollbach</p>
+        <p>Max Sütterlin, Ortsvorsteher</p>
+        <figure class=img><img alt="Max Sütterlin" src=/img/suetterlin.jpg class="img-center img-responsive max-suetterlin" title="Max Sütterlin"></figure>
+    </main>
+    <footer class=footer>
+        <div class=footer-container>
+            <ul>
+                <li><a href=impressum.html>Impressum</a></li>
+                <li><a href=suche.html>Suche</a></li>
+            </ul>
+            <div class=meta>79400 Kandern - Wollbach</div>
+        </div>
+    </footer>
+    <script src=/js/jquery.min.js></script>
+    <script>
+        "use strict";
+        var MVW;
+        ! function(t) {
+            function a() {
+                var t = window.location.href.split("#")[0];
+                $("a[href^='#']").each(function(a, i) {
+                    var n = $(i);
+                    n.attr("href", t + n.attr("href"))
+                })
+            }
+
+            function i() {
+                function t(t) {
+                    $(".tab-pane").removeClass("active"), $(".tab").removeClass("active"), $(".tab-" + t).addClass("active"), $("#" + t).addClass("active")
+                }
+                var a = window.location.href,
+                    i = a.indexOf("#") + 1;
+                i > 0 && t(a.substring(i)), $(".tab").click(function(a) {
+                    t($(a.target).data("tab")), a.stopPropagation()
+                })
+            }
+            t.viewFullImage = function(t, a) {
+                var i = $('<div class="overlay"><img class="full-view" src="' + t + '" alt="' + a + '" /></div>');
+                i.click(function(t) {
+                    return $(t.target).closest(".overlay").remove()
+                }), $("body").append(i)
+            }, t.inititialize = function() {
+                $(".content").click(function() {
+                    return $("#navigation-checkbox").prop("checked", !1)
+                }), a(), i()
+            }, $(function() {
+                return t.inititialize()
+            })
+        }(MVW || (MVW = {}))
+    </script>
+    <script></script>
+</body>
+
+</html>
