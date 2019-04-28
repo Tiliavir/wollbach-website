@@ -2201,7 +2201,7 @@
                   u = de.y;
                 Le(r);
                 var c = function(e) {
-                  de.y = 1 === e ? (y = t, de.x = r.x, r.y) : (y = (t - l) * e + l, de.x = (r.x - s) * e + s, (r.y - u) * e + u), i && i(e), _e(1 === e)
+                  1 === e ? (y = t, de.x = r.x, de.y = r.y) : (y = (t - l) * e + l, de.x = (r.x - s) * e + s, de.y = (r.y - u) * e + u), i && i(e), _e(1 === e)
                 };
                 n ? $e("customZoomTo", 0, 1, n, o || f.easing.sine.inOut, c) : c(1)
               }
@@ -2485,7 +2485,7 @@
                     i = y,
                     a = re,
                     e = function(e) {
-                      de.y = 1 === e ? (y = t, de.x = s.x, s.y - Z) : (y = (t - i) * e + i, de.x = (s.x - n) * e + n, (s.y - Z - o) * e + o), _e(), c ? m.style.opacity = 1 - e : De(a - e * a)
+                      1 === e ? (y = t, de.x = s.x, de.y = s.y - Z) : (y = (t - i) * e + i, de.x = (s.x - n) * e + n, de.y = (s.y - Z - o) * e + o), _e(), c ? m.style.opacity = 1 - e : De(a - e * a)
                     };
                   u ? $e("initialZoom", 0, 1, d, f.easing.cubic.out, e, p) : (e(1), Pt = setTimeout(p, d + 20))
                 } else y = r.initialZoomLevel, Re(de, r.initialPosition), _e(), De(1), c ? m.style.opacity = 1 : De(1), Pt = setTimeout(p, d + 20)
@@ -3128,7 +3128,7 @@
           a.listen("beforeResize", function() {
             o = a.viewportSize.x * window.devicePixelRatio, r && o < 750 ? i = !(r = !1) : !r && 750 <= o && (i = r = !0), i && !l && a.invalidateCurrItems(), l && (l = !1), i = !1
           }), a.listen("gettingData", function(e, t) {
-            t.h = r ? (t.src = "/gallery/" + (t.b + t.f), t.w = t.o.w, t.o.h) : (t.src = "/gallery/" + t.b + "m/" + t.f, t.w = t.m.w, t.m.h), 0 < t.t.indexOf(" ") && (t.title = t.t)
+            r ? (t.src = "/gallery/" + (t.b + t.f), t.w = t.o.w, t.h = t.o.h) : (t.src = "/gallery/" + t.b + "m/" + t.f, t.w = t.m.w, t.h = t.m.h), 0 < t.t.indexOf(" ") && (t.title = t.t)
           }), a.init()
         }, t.initialize = function() {
           u = document.querySelectorAll(".pswp")[0], $(".mvw-gallery img").hover(function(e) {
