@@ -6,7 +6,7 @@ block variables
     var description = "Eine Übersicht über gewerbliche Einrichtungen in Wollbach";
     var keywords = "Gewerbe, Wirtschaft, Unternehmen";
 
-mixin gewerbe(name, owner, street, town, telephone, fax, mail, url)
+mixin gewerbe(name, owners, street, town, telephones, fax, mail, url)
   .gewerbe(itemscope itemtype="http://schema.org/LocalBusiness")
     h3.title(itemprop="name")
       if (url)
@@ -18,11 +18,13 @@ mixin gewerbe(name, owner, street, town, telephone, fax, mail, url)
       span(itemprop="addressLocality")= town
       span.hidden(itemprop="addressRegion") Germany
       span.hidden(itemprop="postalCode") 79400
-    if owner
-      .founder(itemprop="founder" itemscope itemtype="http://schema.org/Person")
-        span(itemprop="name")= owner
-    if telephone
-      .telephone(itemprop="telephone")= `+49 ${(telephone || "").replace("0", "(0)")}`
+    if owners
+      each owner in owners
+        .founder(itemprop="founder" itemscope itemtype="http://schema.org/Person")
+          span(itemprop="name")= owner
+    if telephones
+      each telephone in telephones
+        .telephone(itemprop="telephone")= `+49 ${(telephone || "").replace("0", "(0)")}`
     if fax
       .fax-number(itemprop="faxNumber")= `+49 ${(fax || "").replace("0", "(0)")}`
     if email
@@ -32,61 +34,25 @@ block pageStyles
   include ../styles/gewerbe.css
 
 block content
-  :marked
-    # Einzelhandel
-  .gewerbe-container
-    +gewerbe("Antiquitäten Graf", "Karlfrieder Graf", "Basler Str. 16", "Wollbach", "07626 7404", "07626 6160", "graf-kandern@onlinehome.de", null)
-    +gewerbe("Familie Probst", "Brigitte und Gerhard Probst", "Rathausstrasse 1", "Wollbach", "07626 7398", "07626 973895", "probst.wollbach@web.de", "http://www.direktvermarkter-landkreis-lörrach.de/anbieter/probst-gerhard.html")
-    +gewerbe("Hofgut Rüttehof", "Karlfrieder Fischer", "Rüttehof 1", "Egisholz", "07626 8885", "07626 970649", "info@ruettehof.de", "http://www.ruettehof.de")
+  -
+    var gewerbe = require("partials/data/gewerbe.json");
 
-  :marked
-    # Handwerk
-  .gewerbe-container
-    +gewerbe("Anton Neumeier Hofmühle", "Anton Neumeier", "Maugenharderstr. 10", "Wollbach", "07626 286", "07626 1317", null, null)
-    +gewerbe("Autohaus Hess Kandertal-Garage e.K.", "Christian Hess", "Kandertalstraße 4", "Hammerstein", "07626 7018", "07626 7028", "info@kandertalgarage.de", "http://www.kandertalgarage.de")
-    +gewerbe("Autohaus Krug", "Bernd Krug", "Basler Straße 1", "Wollbach", "07626 914150", "07626 9141516", "krug@mazda-autohaus.de", "http://www.autohauskrug.de")
-    +gewerbe("Elektro Ernst", "Ralf Ernst", "Im Maiacker 10", "Wollbach", "07626 1030", "07626 970439", "info@elektro-ernst.com", "http://www.elektro-ernst.com/")
-    +gewerbe("Gartenbau Heidenreich", "Gernot Heidenreich", "Nebenauerstr. 5", "Wollbach", "07626 6502", "07626 974753", "info@galabau-heidenreich.de", "http://www.galabau-heidenreich.de")
-    +gewerbe("Gebrüder Penning GdbR Bauservice", "Ingo und Christian Penning", "Hofrütteweg 18", "Wollbach", "0173 7161124, +49 (0)152 29556862", null, "gebr.penning@gmx.de", null)
-    +gewerbe("Holzbau Bernhard Benz GmbH", "Bernhard Benz", "Im Dörfli 25", "Hammerstein", "07626 971641", "07626 971643", "info@benz-holzbau.de", "http://www.benz-holzbau.de")
-    +gewerbe("Mitbringsel", "Martina Gerwig", "Röttlerweg 1a", "Wollbach", null, null, "martina.ge@gmx.de", "http://www.mitbringsel-wollbach.de/")
-    +gewerbe("Schreinerei Enders", "Andreas Enders", "Baslerstr. 7", "Wollbach", "07626 7542", "07626 60454", "info@schreinerei-enders.de", "http://www.schreinerei-enders.de")
-    +gewerbe("Schreinerei Geling", "Alfons Geling", "Röttler Weg 4/1", "Wollbach", "07626 972064", "07635 826553", "max.geling@gmx.de", "http://www.schreinerei-geling.de")
-    +gewerbe("Schreinerei Jenne - Schreinerei + Montagen", "Norbert Jenne", "Hauptstr. 59", "Kandern", "07626 6891", "07626 977888", "info@schreinerei-jenne.de", "http://schreinerei-jenne.de")
-    +gewerbe("SE-Consulting GmbH", "Dipl. Ing. Matthias und Clemens Sodeik", "Im Dörfle 11", "Hammerstein", "07626 6844", "07626 970544", "info@sw-consulting.de", "http://www.se-consulting.de")
+    function groupBy(array , f)
+    {
+      var groups = {};
+      array.forEach((o) => {
+        f(o).forEach(itemGroup => {
+          groups[itemGroup] = groups[itemGroup] || [];
+          groups[itemGroup].push(o);
+        });
+      });
+      return groups;
+    }
 
-  :marked
-    # EDV Dienstleistung
-  .gewerbe-container
-    +gewerbe("BMT-Solutions", "Benno Tesche", "Auf dem Buck 4/1", "Wollbach", "07626 977213", "07626 977214", "info@bmt-solutions.de", "http://www.bmt-solutions.de")
-    +gewerbe("Markgrafik", "Kai Springer", "Niedere Hofrütte 3", "Wollbach", "07626 9745560", null, "info@markgrafik.de", "http://www.markgrafik.de")
+    var groupedByCategory = groupBy(gewerbe, (gewerbe) => gewerbe.categories);
 
-  :marked
-    # Dienstleistungen allgemein
-  .gewerbe-container
-    +gewerbe("Chinesische Körpermassagen", "Ingrid Rogalla", "Zielrebenweg 21", "Wollbach", "07626 970972", null, "i.rogalla@chinmassagen.de", "http://www.chinmassagen.de")
-    +gewerbe("eventMAX Zeltlogistik", "Max und Nico Lang", "Scheideckstraße 1", "Nebenau", "07626 2670126", null, "info@event-max.com", "http://www.event-max.com")
-    +gewerbe("Forstarbeiten Michael Schleith", "Michael Schleith", "Heubergstr. 15", "Egerten", "0152 54754600", null, "bamrung80@gmx.de", "http://www.forstarbeiten-schleith.de")
-    +gewerbe("Kern Managementsysteme", "Markus Kern", "Rebstallweg 1", "Hammerstein", "07626 971634", "07626 971636", "m.kern@kern-ms.de", "http://www.kern-ms.de")
-    +gewerbe("Naturheilpraxis Kleinod", "Karin Heck, Manfred Läpple", "Wollbacherstr. 1", "Egerten", "07626 9744970", "07626 9744700", "karin.uma@web.de", "http://www.naturheilpraxis-kleinod.de")
-    +gewerbe("Naturschallakustik", "Rita Prick", "Scheideckstr. 7/1", "Nebenau", "0176 17684003", null, "naturschallakustik@googlemail.com", null)
-    +gewerbe("Rechtsanwältin", "Kirsten Lang", "Scheideckstr. 9", "Nebenau", "07626 970353", "07626 970354", "kirsten.u.kurt.lang@t-online.de", null)
-    +gewerbe("Spirituelle Begleitung in Lebensfragen & Energiearbeit", "Andrea Hartmann", "Scheideckstr. 17", "Nebenau", "07626 2999686", null, "info@spirit-ofmymind.de", "http://www.spirit-ofmymind.de")
-
-  :marked
-    # Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten
-  .gewerbe-container
-    +gewerbe("Craniopraxis", "Martina Knippschild", "Wollbacherstr. 7/1", "Egerten", "07626 2670107", null, "kahlom@web.de", "http://www.craniopraxis.vbweb.de")
-    +gewerbe("Heilpädagogische Praxis", "Mechthild Frey", "Am Neuweg 15", "Egerten", "07626 972569", "07626 972571", "mechthild.frey@gmx.net", "http://mechthildfrey-heilpaedagogischesreiten.de")
-    +gewerbe("Keramikwerkstatt", "Eleonore Krämer", "Nebenauerstr. 42", "Wollbach", "07626 977021", null, null, null)
-
-//-
-  +gewerbe("Bauelemente Schäfer", "Lindenstraße 5", "Egisholz", "http://www.schaefer-bauelemente.de")
-  +gewerbe("CcK Event Management GbR", "Am Neuweg 2", "Wollbach", "http://cck-events.com/")
-  +gewerbe("EVS Thomas Wussow", "Zielrebenweg 30/1", "Wollbach", "http://www.evsnet.de")
-  +gewerbe("Friseursalon Nadine -Ihre Friseurmeisterin-", "Nebenauerstr. 26", "Wollbach")
-  +gewerbe("Hofladen Pfaffenkeller / Senf- und Marmeladen Manufaktur Pfaffenkeller", "Rathausstraße 9", "Wollbach", "http://www.pfaffenkeller.de")
-  +gewerbe("IT - Dienstleistung & Handel Bartsch und Wussow", "Zielrebenweg 30/1", "Wollbach", "http://www.it-dh.de")
-  +gewerbe("Malerbetrieb Cudajewicz", "Egerten Str. 22", "Wollbach")
-  +gewerbe("Malergeschäft Becker", "Zielrebenweg 22", "Wollbach", "http://www.meistermaler-becker.de")
-  +gewerbe("TipTop", "Nebenauerstraße 21", "Wollbach", "http://www.tiptop-naturfriseur.de")
+  each category in Object.keys(groupedByCategory).sort()
+    h2 #{category}
+    .gewerbe-container
+      each g in groupedByCategory[category].sort((a, b) => (a.name > b.name) ? 1 : -1)
+        +gewerbe(g.name, g.owners, g.street, g.town, g.telephone, g.fax, g.email, g.website)

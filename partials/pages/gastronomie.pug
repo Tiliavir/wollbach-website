@@ -6,7 +6,7 @@ block variables
     var description = "Eine kleine Übersicht über das kulinarische Angebot unseres Ortes";
     var keywords = "Kulinarik, Gastronomie, Kulinarisches Angebot";
 
-mixin restaurant(name, owner, street, town, telephone, fax, mail, url)
+mixin restaurant(name, owners, street, town, telephones, fax, mail, url)
   .restaurant(itemscope itemtype="http://schema.org/Restaurant")
     h3.title(itemprop="name")
       if (url)
@@ -18,11 +18,13 @@ mixin restaurant(name, owner, street, town, telephone, fax, mail, url)
       span(itemprop="addressLocality")= town
       span.hidden(itemprop="addressRegion") Germany
       span.hidden(itemprop="postalCode") 79400
-    if owner
-      .founder(itemprop="founder" itemscope itemtype="http://schema.org/Person")
-        span(itemprop="name")= owner
-    if telephone
-      .telephone(itemprop="telephone")= `+49 ${(telephone || "").replace("0", "(0)")}`
+    if owners
+      each owner in owners
+        .founder(itemprop="founder" itemscope itemtype="http://schema.org/Person")
+          span(itemprop="name")= owner
+    if telephones
+      each telephone in telephones
+        .telephone(itemprop="telephone")= `+49 ${(telephone || "").replace("0", "(0)")}`
     if fax
       .fax-number(itemprop="faxNumber")= `+49 ${(fax || "").replace("0", "(0)")}`
     if email
@@ -32,25 +34,7 @@ block pageStyles
   include ../styles/gastronomie.css
 
 block content
+  - var gastronomie = require("partials/data/gastronomie.json").sort((a, b) => (a.name > b.name) ? 1 : -1);
   .gastronomie-container
-    +restaurant("Gasthaus „Alte Krone”", "Stefan Sick", "Nebenauer Straße 23", "Wollbach", "07626 315", null, "info@altekrone-wollbach.de", "http://www.altekrone-wollbach.de/")
-    +restaurant("Landgasthaus „Bahnhöfli”", "P. + M. Golda", "Holzener Straße 5", "Hammerstein", "07626 441", null, "info@bahnhöfli.de", "http://www.bahnhoefli.de")
-    +restaurant("Gasthaus „Bruckmühle”", "Daniel Enderlin", "Bruckmühle 1", "Wollbach", "07626 255", "07626 972482", "bruckmuehle-wollbach@t-online.de", "http://gasthof-bruckmuehle-wollbach.de")
-    +restaurant("Gasthaus zum Hirschen", "Max Geitlinger", "Am Neuweg 2", "Egerten", "07626 386", null, "info@hirschen-egerten.de", "http://www.max-wein.de")
-    +restaurant("Restaurant „Jägerhaus”", "Jolanda Wermuth", "Wollbacher Straße 28", "Egerten", "07626 8715", null, "info@restaurant-jaegerhaus.de", "http://www.restaurant-jaegerhaus.de/")
-    +restaurant("Landgasthaus „Krone”", "Thomas Jakobi", "Siedlerhöfe 1", "Hammerstein", "07626 7175", null, null, null)
-    +restaurant("Rüttehofstube", "Karlfrieder Fischer", "Rüttehof 1", "Egisholz", "07626 8885", "07626 970649", "info@ruettehof.de", "http://www.ruettehofstube.de")
-
-  //-
-    :marked
-      Die Bruckmühle ist urkundlich erstmals 1365 belegt. Als Getreidemühle wurde
-      sie bis 1970 betrieben. Seit 1996 befindet sich im ehemaligen Mühlentrakt
-      eine idyllische Gaststätte.
-    +restaurant("Gasthaus „Zur Blume”", "Basler Straße 8", "Wollbach", "http://blumewollbach.de/")
-    :marked
-      Das Gasthaus Blume stand ursprünglich an der heutigen Oberen Dorfstraße.
-      Anno 1868 wurde an der damals neuen Basler Straße (heute alte Basler
-      Straße) der Neubau errichtet.
-    +restaurant("„Sportgaststätte” SV Wollbach", "Maugenharder Straße 11", "Wollbach")
-    +restaurant("Hotel Restaurant „Pfaffenkeller”", "Rathausstraße 9", "Wollbach", "http://www.pfaffenkeller.de")
-    +restaurant("Kreiterhof Weinschenke", "Wollbacher Straße 1", "Egerten", "http://www.kreiterhof.de")
+    each r in gastronomie
+      +restaurant(r.name, r.owners, r.street, r.town, r.telephone, r.fax, r.email, r.website)
