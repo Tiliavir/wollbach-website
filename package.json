@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/jquery": "3.3.31",
     "@types/lunr": "2.3.2",
-    "@types/node": "12.12.7",
+    "@types/node": "12.12.8",
     "@types/photoswipe": "4.0.29",
     "autoprefixer": "9.7.1",
     "copyfiles": "2.1.1",
