@@ -22,9 +22,9 @@
   "devDependencies": {
     "@types/jquery": "3.3.31",
     "@types/lunr": "2.3.2",
-    "@types/node": "12.12.12",
+    "@types/node": "12.12.14",
     "@types/photoswipe": "4.0.29",
-    "autoprefixer": "9.7.2",
+    "autoprefixer": "9.7.3",
     "copyfiles": "2.1.1",
     "lite-server": "2.5.4",
     "node-sass": "4.13.0",
