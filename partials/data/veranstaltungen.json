@@ -25,6 +25,13 @@
       "location": {"name": "Ev. Kirche", "address": "Wollbach"}
     },
     {
+      "starttime": "2020-01-25",
+      "endtime": "2020-01-26“,
+      "title": "Jugendturnier",
+      "organizer": "Sportverein Wollbach",
+      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
+    },
+    {
       "starttime": "2020-01-31",
       "endtime": "2020-02-01",
       "title": "Jahreskonzert",
@@ -36,18 +43,6 @@
       "title": "Generalversammlung",
       "organizer": "Gesangverein Wollbach",
       "location": {"name": "Kandertalstübli", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-02-08",
-      "title": "Jugendturnier",
-      "organizer": "Sportverein Wollbach",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-02-09",
-      "title": "Jugendturnier",
-      "organizer": "Sportverein Wollbach",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
     },
     {
       "starttime": "2020-02-13",
