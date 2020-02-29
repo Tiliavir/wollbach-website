@@ -20,9 +20,9 @@
     "ie 9-11"
   ],
   "devDependencies": {
-    "@types/jquery": "3.3.32",
+    "@types/jquery": "3.3.33",
     "@types/lunr": "2.3.2",
-    "@types/node": "13.7.4",
+    "@types/node": "13.7.7",
     "@types/photoswipe": "4.1.0",
     "autoprefixer": "9.7.4",
     "copyfiles": "2.2.0",
@@ -31,7 +31,7 @@
     "postcss-cli": "7.1.0",
     "sass-lint": "1.13.1",
     "tslint": "6.0.0",
-    "typescript": "3.8.2"
+    "typescript": "3.8.3"
   },
   "dependencies": {
     "jquery": "3.4.1",
