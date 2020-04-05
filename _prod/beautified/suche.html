@@ -970,7 +970,7 @@
           var t = new z.Builder;
           return t.pipeline.add(z.trimmer, z.stopWordFilter, z.stemmer), t.searchPipeline.add(z.stemmer), e.call(t, t), t.build()
         };
-        z.version = "2.3.6", z.utils = {}, z.utils.warn = (t = this, function(e) {
+        z.version = "2.3.8", z.utils = {}, z.utils.warn = (t = this, function(e) {
           t.console && console.warn && console.warn(e)
         }), z.utils.asString = function(e) {
           return null == e ? "" : e.toString()
@@ -1055,7 +1055,7 @@
           if (Array.isArray(e)) return e.map(function(e) {
             return new z.Token(z.utils.asString(e).toLowerCase(), z.utils.clone(t))
           });
-          for (var r = e.toString().trim().toLowerCase(), i = r.length, n = [], s = 0, o = 0; s <= i; s++) {
+          for (var r = e.toString().toLowerCase(), i = r.length, n = [], s = 0, o = 0; s <= i; s++) {
             var a = s - o;
             if (r.charAt(s).match(z.tokenizer.separator) || s == i) {
               if (0 < a) {
@@ -1099,7 +1099,7 @@
           for (var t = this._stack.length, r = 0; r < t; r++) {
             for (var i = this._stack[r], n = [], s = 0; s < e.length; s++) {
               var o = i(e[s], s, e);
-              if (void 0 !== o && "" !== o)
+              if (null != o && "" !== o)
                 if (Array.isArray(o))
                   for (var a = 0; a < o.length; a++) n.push(o[a]);
                 else n.push(o)
