@@ -118,6 +118,12 @@
       "navigation": "footer"
     },
     {
+      "title": "GitHub",
+      "isExternal": true,
+      "reference": "https://github.com/Tiliavir/wollbach-website/",
+      "navigation": "footer"
+    },
+    {
       "reference": "404",
       "navigation": "none",
       "title": "Seite nicht gefunden!"
