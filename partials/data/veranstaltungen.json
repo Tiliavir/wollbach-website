@@ -1,122 +1,6 @@
 {
   "2020": [
     {
-      "starttime": "2020-01-05",
-      "title": "Abteilungsversammlung",
-      "organizer": "Feuerwehr-Abt. Wollbach",
-      "location": {"name": "Kandertalstübli", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-01-06",
-      "title": "Neujahrsempfang",
-      "organizer": "Ortsverwaltung Wollbach",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-01-11",
-      "title": "2000er-Party",
-      "organizer": "Füürdeufel Wollbach",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-01-12",
-      "title": "Gottesdienst mit Kirchengemeinderatswechsel",
-      "organizer": "Kirchengemeinde Wollbach-Holzen",
-      "location": {"name": "Ev. Kirche", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-01-25",
-      "endtime": "2020-01-26",
-      "title": "Jugendturnier",
-      "organizer": "Sportverein Wollbach",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-01-31",
-      "endtime": "2020-02-01",
-      "title": "Jahreskonzert",
-      "organizer": "Musikverein Wollbach",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-02-08",
-      "title": "Generalversammlung",
-      "organizer": "Gesangverein Wollbach",
-      "location": {"name": "Kandertalstübli", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-02-13",
-      "title": "Generalversammlung",
-      "organizer": "Musikverein Wollbach",
-      "location": {"name": "Kandertalstübli", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-02-15",
-      "title": "Hexenball",
-      "organizer": "Chanderner Hexen",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-02-17",
-      "title": "Blutspende",
-      "organizer": "DRK-Ortsverein Wollbach",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-02-20",
-      "title": "Hemdglunki-Ball",
-      "organizer": "Chochlöffel Wollbach",
-      "location": {"name": "Kandertalstübli", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-02-29",
-      "title": "Kinderfasnacht",
-      "organizer": "Stachelbieschter",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-03-06",
-      "title": "Weltgebetstag",
-      "organizer": "Kirchengemeinde Wollbach-Holzen",
-      "location": {"name": "Wartburg", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-03-07",
-      "title": "Fasnachtsfeuer",
-      "organizer": "Musikverein Wollbach",
-      "location": {"name": "Buchhole", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-03-17",
-      "title": "Start Projekt-Chor",
-      "organizer": "Gesangverein Wollbach",
-      "location": {"name": "Kandertalstübli", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-03-21",
-      "title": "Generalversammlung",
-      "organizer": "Gesamt-Feuerwehr Kandern",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-03-27",
-      "title": "Generalversammlung",
-      "organizer": "Sportverein Wollbach",
-      "location": {"name": "Sportheim", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-03-29",
-      "title": "Konfirmationsjubiläum",
-      "organizer": "Kirchengemeinde Wollbach-Holzen",
-      "location": {"name": "Ev. Kirche", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-04-26",
-      "title": "Soireé",
-      "organizer": "Gesangverein Wollbach",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
-    },
-    {
       "starttime": "2020-05-01",
       "title": "Schänke am Bach",
       "organizer": "Feuerwehr-Abteilung Wollbach",
@@ -145,12 +29,6 @@
       "title": "Ufert-Gottesdienst",
       "organizer": "Kirchengemeinde Wollbach-Holzen",
       "location": {"name": "Ev. Kirche", "address": "Wollbach"}
-    },
-    {
-      "starttime": "2020-05-09",
-      "title": "Barbershop-Konzert",
-      "organizer": "Gesangverein Wollbach",
-      "location": {"name": "Kandertalhalle", "address": "Wollbach"}
     },
     {
       "starttime": "2020-05-10",
