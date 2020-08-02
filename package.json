@@ -20,17 +20,17 @@
     "ie 9-11"
   ],
   "devDependencies": {
-    "@types/jquery": "3.5.0",
+    "@types/jquery": "3.5.1",
     "@types/lunr": "2.3.3",
-    "@types/node": "14.0.26",
+    "@types/node": "14.0.27",
     "@types/photoswipe": "4.1.0",
-    "autoprefixer": "9.8.5",
+    "autoprefixer": "9.8.6",
     "copyfiles": "2.3.0",
     "lite-server": "2.5.4",
     "node-sass": "4.14.1",
     "postcss-cli": "7.1.1",
     "sass-lint": "1.13.1",
-    "tslint": "6.1.2",
+    "tslint": "6.1.3",
     "typescript": "3.9.7"
   },
   "dependencies": {
