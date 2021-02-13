@@ -42,12 +42,12 @@ jobs:
           CLEAN: true
           COMMIT_MESSAGE: Release ${{ env.TAG_NAME }}
       - name: 🎉 Deploy
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           server: hosting.telekom.de
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_password }}
-          protocol: ftps
+          protocol: sftp
           local-dir: ./public/
           server-dir: /public_html/
           security: strict
