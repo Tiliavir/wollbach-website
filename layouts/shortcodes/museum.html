@@ -1,0 +1,18 @@
+<div class="museum" itemscope itemtype="http://schema.org/LocalBusiness">
+    <h2 class="title" itemprop="name">
+        {{- if .Get "url" -}}
+        <a href="{{ .Get "url" }}" itemprop="url" target="_blank">
+            {{- .Get "name" -}}
+        </a>
+        {{- else -}}
+          {{- .Get "name" -}}
+        {{- end -}}
+    </h2>
+    <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">{{ .Get "street" }}</span><!--
+        --><span itemprop="addressLocality">{{ .Get "town" }}</span>
+        <span class="hidden" itemprop="addressRegion">Germany</span>
+        <span class="hidden" itemprop="postalCode">79400</span>
+    </div>
+    {{ .Inner | markdownify }}
+</div>

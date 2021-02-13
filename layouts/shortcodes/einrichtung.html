@@ -1,0 +1,15 @@
+{{ $url := .Get "url"}}
+{{ $name := .Get "name"}}
+
+<div class="einrichtung" itemscope itemtype="http://schema.org/LocalBusiness">
+    <h2 class="title" itemprop="name">
+        {{- if $url -}}
+        <a href="{{ $url }}" itemprop="url" target="_blank">
+            {{- $name -}}
+        </a>
+        {{- else -}}
+        {{- $name -}}
+        {{- end -}}
+    </h2>
+    {{ .Inner | markdownify }}
+</div>

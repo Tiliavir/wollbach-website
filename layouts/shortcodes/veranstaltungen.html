@@ -1,0 +1,53 @@
+{{ with $.Site.Data.veranstaltungen}}
+{{ range $year, $value := . }}
+<h2>{{ $year }}</h2>
+<table class="appointments">
+  <thead>
+  <tr>
+      <th class="date">Datum</th>
+      <th class="organizer">Veranstalter</th>
+      <th class="title">Veranstaltung</th>
+  </tr>
+  </thead>
+    <tbody>
+    {{ range $value }}
+          <tr itemscope itemtype="http://schema.org/Event">
+            <td>
+                {{ partial "timespan" (dict "start" .starttime "end" .endtime "schema" true) }}
+            </td>
+            <td itemprop="organizer">
+              <span itemscope itemtype="http://schema.org/Organization" itemprop="name">
+                  {{ .organizer }}
+              </span>
+            </td>
+            <td>
+              <span itemprop="name">
+                  {{ .title }}
+              </span>
+              {{ with .location }}
+                &nbsp;(
+                  <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+                      {{ with .name }}
+                        <span itemprop="name">{{ . }}</span>
+                      {{ end }}
+                      {{ if and .name .address}}
+                        ,&nbsp;
+                      {{ end }}
+                      {{ with .address }}
+                        <span itemprop="address">{{ . }}</span>
+                      {{ end }}
+                  </span>
+                )
+              {{ end }}
+              {{ with .description }}
+                <div class="description" itemprop="description">
+                    {{ . | markdownify }}
+                </div>
+              {{ end }}
+            </td>
+          </tr>
+    {{ end }}
+    </tbody>
+</table>
+{{ end }}
+{{ end }}

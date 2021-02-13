@@ -1,0 +1,63 @@
+@import 'themes/wollbach/assets/scss/global-variables';
+@import 'themes/wollbach/assets/scss/mixins/breakpoint';
+
+.address {
+  span {
+    &:not(:first-of-type) {
+      &::before {
+        content: ', ';
+        display: inline;
+      }
+    }
+  }
+}
+
+.gastronomie-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.restaurant {
+  flex-grow: 1;
+  width: 215px;
+  min-height: 150px;
+  background: $gray-lightest;
+  float: left;
+  margin: 10px;
+  padding: 10px 20px;
+
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $gray-lighter;
+  }
+
+  .telephone {
+    margin-top: 5px;
+
+    &::before {
+      content: 'Tel: ';
+    }
+  }
+
+  .fax-number {
+    &::before {
+      content: 'Fax: ';
+    }
+  }
+
+  .telephone,
+  .fax-number,
+  .email {
+    font-size: .8rem;
+  }
+}
+
+@include breakpoint(0, 580px) {
+  .restaurant {
+    width: 100%;
+  }
+}

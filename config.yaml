@@ -1,0 +1,65 @@
+title: Wollbach
+theme: wollbach
+defaultContentLanguage: de
+languageCode: de-de
+baseURL: https://www.wollbach.info/
+canonifyURLs: true
+pluralizeListTitles: false
+
+disableKinds:
+  - "taxonomy"
+  - "term"
+  - "RSS"
+  - "section"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+enableGitInfo: true
+
+menu:
+  main:
+    - identifier: aktuelles
+      name: Aktuelles
+      title: Aktuelles
+      weight: 100
+      url: #
+    - identifier: unser-dorf
+      name: Unser Dorf
+      title: Unser Dorf
+      weight: 200
+      url: #
+    - identifier: kultur-und-freizeit
+      name: Kultur und Freizeit
+      title: Kultur und Freizeit
+      weight: 300
+      url: #
+  footer:
+    - identifier: github
+      name: GitHub
+      title: GitHub
+      url: https://github.com/Tiliavir/wollbach-website/
+      weight: 300
+
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    simple: true
+  twitter:
+    enableDNT: true
+    simple: true
+  vimeo:
+    enableDNT: true
+    simple: false
+  youtube:
+    privacyEnhanced: true

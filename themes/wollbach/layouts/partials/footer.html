@@ -1,0 +1,33 @@
+<footer class="footer">
+  <div class="footer-container">
+      <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.footer }}
+        <li>
+          <a href="{{ .URL }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+      <div class="meta">79400 Kandern - Wollbach</div>
+
+      <script src="{{ "/js/jquery.min.js" | urlize | relURL }}"></script>
+
+      {{ range .Page.Params.CustomExternalJs -}}
+        <script defer src="{{ . }}"></script>
+      {{- end }}
+
+      {{ with resources.Get "ts/app.ts" | js.Build | minify }}
+        <script>{{ .Content | safeJS }}</script>
+      {{ end }}
+
+      <script>
+      {{ range .Page.Params.CustomJs -}}
+        {{ with resources.Get . | js.Build | minify }}
+          {{ .Content | safeJS }}
+        {{ end }}
+      {{- end }}
+      </script>
+  </div>
+</footer>

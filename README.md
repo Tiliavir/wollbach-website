@@ -1,15 +1,19 @@
 # Initial Build
 
-[![Build State](https://github.com/Tiliavir/wollbach-website/workflows/Node%20CI/badge.svg)](https://github.com/Tiliavir/wollbach-website/actions)
+
+# Website: Musikverein Wollbach
+[![Build State](https://github.com/Tiliavir/wollbach-website/workflows/CI/badge.svg)](https://github.com/Tiliavir/wollbach-website/actions)
 
 ## Prerequisites
+[Install the extended / SCSS version of Hugo](https://gohugo.io/getting-started/installing/).
 
-```powershell
-npm install
+If you are on Ubuntu, download and install from [gohugoio releases on GitHub](https://github.com/gohugoio/hugo/releases/).
+Take the latest `hugo_extended_*_Linux-64bit.deb` package.
+
+## Debug / Test Build
+```bash
+hugo serve
 ```
 
-## Build and release
-
-```powershell
-npm run release
-```
+## Deploy
+Deployment happens automatically on tag on master.

@@ -1,0 +1,56 @@
+{{ with $.Site.Data.gewerbe }}
+
+{{ $categories := slice }}
+{{ range . }}
+  {{ $categories = $categories | append .categories | uniq }}
+{{ end }}
+
+{{ $gewerbe := . }}
+{{ range sort $categories }}
+<h2>{{ . }}</h2>
+<div class="gewerbe-container">
+    {{ range sort (where $gewerbe "categories" "intersect" (slice .)) "name" }}
+    <div class="gewerbe" itemscope itemtype="http://schema.org/LocalBusiness">
+        <h3 class="title" itemprop="name">
+            {{- if .website -}}
+            <a href="{{ .website }}" itemprop="url" target="_blank">
+                {{- .name -}}
+            </a>
+            {{- else -}}
+              {{- .name -}}
+            {{- end -}}
+        </h3>
+        <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="streetAddress">{{- .street -}}</span><!--
+            --><span itemprop="addressLocality">{{- .town -}}</span>
+            <span class="hidden" itemprop="addressRegion">Germany</span>
+            <span class="hidden" itemprop="postalCode">79400</span>
+        </div>
+        {{ range .owners }}
+          <div class="founder" itemprop="founder" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">
+                  {{ . }}
+              </span>
+          </div>
+        {{ end }}
+        {{ range .telephone }}
+          <div class="telephone" itemprop="telephone">
+              +49 {{ replace (or . "") "0" "(0)" 1 }}
+          </div>
+        {{ end }}
+        {{ with .fax }}
+            <div class="fax-number" itemprop="faxNumber">
+                +49 {{ replace (or . "") "0" "(0)" 1 }}
+            </div>
+        {{ end }}
+        {{ with .email }}
+            <a class="email" itemprop="email" href="mailto:{{ . }}">
+                {{ . }}
+            </a>
+        {{ end }}
+        {{ .Inner }}
+    </div>
+    {{ end }}
+</div>
+{{ end }}
+{{ end }}

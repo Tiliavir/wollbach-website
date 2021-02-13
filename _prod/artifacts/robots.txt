@@ -1,5 +1,0 @@
-User-agent: *
-
-Allow: /
-
-Sitemap: http://www.wollbach.info/sitemap.xml

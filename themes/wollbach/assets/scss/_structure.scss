@@ -1,0 +1,156 @@
+@import 'mixins/breakpoint';
+@import 'global-variables';
+
+$footer-shadow-gray: #0c0d0e;
+$footer-border-gray: #e7e7e7;
+
+main {
+  // fix for IE
+  display: block;
+}
+
+.header {
+  height: 31.25vh;
+  max-height: 500px;
+  min-height: 200px;
+  width: 100%;
+  background-color: darken($gray-lightest, 10%);
+}
+
+@media (orientation: portrait) {
+  .header {
+    max-height: 30vh;
+  }
+}
+
+.cover {
+  margin: 0 auto;
+  background: url('/img/top.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  max-width: $header-max-width;
+  height: 100%;
+  position: relative;
+}
+
+.navigation-brand {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 140px;
+  max-height: 20vh;
+  min-height: 30px;
+
+  &:hover {
+    border-bottom: 0;
+  }
+
+  img {
+    height: 140px;
+    max-height: 20vh;
+    min-height: 30px;
+    user-select: none;
+  }
+
+  @media (orientation: portrait) {
+    height: initial;
+    max-height: initial;
+    min-height: initial;
+    max-width: 15vw;
+    min-width: 30px;
+
+    img {
+      height: initial;
+      max-height: initial;
+      min-height: initial;
+      max-width: 15vw;
+      min-width: 30px;
+    }
+  }
+}
+
+%content-width-behavior {
+  width: 80vw;
+  max-width: $content-max-width;
+  margin: 0 auto;
+}
+
+.content {
+  @extend %content-width-behavior;
+  min-height: 200px;
+  margin-top: -$top-nav-height;
+}
+
+.footer-container {
+  @extend %content-width-behavior;
+  position: relative;
+}
+
+@include breakpoint(0, 767px) {
+  .footer-container,
+  .content {
+    width: initial;
+    padding: 0 5px;
+  }
+
+  .footer {
+    ul {
+      width: 100%;
+    }
+
+    .meta {
+      display: none;
+    }
+  }
+}
+
+.page-title {
+  margin-top: 40px;
+}
+
+.footer {
+  $footer-height: 40px;
+
+  background-color: $gray-lightest;
+  height: $footer-height;
+  margin: 30px 0 20px;
+  border-color: $footer-border-gray;
+  box-shadow: 0 1px 0 transparentize($footer-shadow-gray, .9), 0 1px 3px transparentize($footer-shadow-gray, .9), 0 4px 20px transparentize($footer-shadow-gray, .965), 0 1px 1px transparentize($footer-shadow-gray, .975);
+
+  ul {
+    width: calc(100% - 160px);
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: $footer-height;
+    height: $footer-height;
+  }
+
+  a {
+    text-decoration: none;
+    color: darken($gray-lightest, 35%);
+
+    &:hover {
+      color: darken($gray-lightest, 50%);
+      text-decoration: none;
+    }
+  }
+
+  .meta {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: $footer-height;
+    line-height: $footer-height;
+    font-size: $font-size-small;
+    color: darken($gray-lightest, 35%);
+    text-align: right;
+  }
+}
