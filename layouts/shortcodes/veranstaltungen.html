@@ -1,12 +1,12 @@
 {{ with $.Site.Data.veranstaltungen}}
 {{ range $year, $value := . }}
 <h2>{{ $year }}</h2>
-<table class="appointments">
+<table class="appointments" aria-label="Veranstaltungen">
   <thead>
   <tr>
-      <th class="date">Datum</th>
-      <th class="organizer">Veranstalter</th>
-      <th class="title">Veranstaltung</th>
+      <th class="date" scope="col">Datum</th>
+      <th class="organizer" scope="col">Veranstalter</th>
+      <th class="title" scope="col">Veranstaltung</th>
   </tr>
   </thead>
     <tbody>
