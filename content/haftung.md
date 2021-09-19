@@ -1,7 +1,7 @@
 ---
 title: Haftungsausschluss
 description: Das Impressum der Webseite Wollbachs
-keywords: Impressum, Kontakt, Übersicht, Webseiteninformationen, Informationen zur Webseite, Rechtliches, Haftung, Haftungsausschluss, Datenschutz
+keywords: [Impressum, Kontakt, Übersicht, Webseiteninformationen, Informationen zur Webseite, Rechtliches, Haftung, Haftungsausschluss, Datenschutz]
 ---
 
 ## Inhalt des Onlineangebotes

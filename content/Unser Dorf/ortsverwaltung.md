@@ -1,7 +1,7 @@
 ---
 title: Ortsverwaltung
 description: Die Ortsverwaltung Wollbachs mit Öffnungszeiten
-keywords: Ortsverwaltung, Gemeinderat, Ortsvorsteher, Politik, Repräsentanten
+keywords: [Ortsverwaltung, Gemeinderat, Ortsvorsteher, Politik, Repräsentanten]
 menu:
   main:
     parent: unser-dorf

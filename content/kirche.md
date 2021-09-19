@@ -1,7 +1,7 @@
 ---
 title: Kirche
 description: Die Kirche und die Kirchengemeinde in Wollbach
-keywords: Kirche, Pfarrei, Evangelische Pfarrkirche, Cyriacus und Mauritius, Pfarrhaus
+keywords: [Kirche, Pfarrei, Evangelische Pfarrkirche, Cyriacus und Mauritius, Pfarrhaus]
 customCss:
   - scss/kirche.scss 
 menu:

@@ -1,7 +1,7 @@
 ---
 title: Öffentliche Einrichtungen
 description: Eine Übersicht über öffentliche Einrichtungen in Wollbach
-keywords: Öffentliche Einrichtungen
+keywords: [Öffentliche Einrichtungen]
 customCss:
   - scss/oeffentliche-einrichtungen.scss
 menu:

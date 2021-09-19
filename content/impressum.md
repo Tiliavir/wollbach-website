@@ -1,7 +1,7 @@
 ---
 title: Impressum
 description: Das Impressum der Webseite Wollbachs
-keywords: Impressum, Kontakt, Übersicht, Webseiteninformationen, Informationen zur Webseite, Rechtiliches, Haftung, Haftungsausschluss, Datenschutz
+keywords: [Impressum, Kontakt, Übersicht, Webseiteninformationen, Informationen zur Webseite, Rechtiliches, Haftung, Haftungsausschluss, Datenschutz]
 customCss:
   - scss/impressum.scss 
 menu:

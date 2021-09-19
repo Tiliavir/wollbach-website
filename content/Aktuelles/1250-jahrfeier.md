@@ -1,7 +1,7 @@
 ---
 title: 1250 Jahre Wollbach
 description: Informationen rund um das Jubiläum und die Veranstaltungen zur 1250 Jahrfeier Wollbachs
-keywords: Jubiläum, 1250 Jahre, Wollbach, Kandern
+keywords: [Jubiläum, 1250 Jahre, Wollbach, Kandern]
 schemaOrg: ImageGallery
 menu:
   main:

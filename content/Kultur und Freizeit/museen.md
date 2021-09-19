@@ -1,7 +1,7 @@
 ---
 title: Museen
 description: Eine Übersicht über Museen in Wollbach
-keywords: Museen, Kultur, Sehenswertes, Freizeit
+keywords: [Museen, Kultur, Sehenswertes, Freizeit]
 customCss:
   - scss/museen.scss
 menu:

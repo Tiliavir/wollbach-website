@@ -1,7 +1,7 @@
 ---
 title: Themen- und Wanderwege
 description: Themen- und Wanderwege um Wollbach im Kandertal
-keywords: Wanderwege, Wanderangebot, Wandern, Natur, Freizeit, Naherholung
+keywords: [Wanderwege, Wanderangebot, Wandern, Natur, Freizeit, Naherholung]
 menu:
   main:
     parent: kultur-und-freizeit

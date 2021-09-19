@@ -1,7 +1,7 @@
 ---
 title: Über Wollbach
 description: Karten von Wollbach mit seinen Nebenorten Egerten, Egisholz, Hammerstein und Nebenau
-keywords: Nebenorte, Geographie, Egisholz, Nebenau, Egerten, Hammerstein
+keywords: [Nebenorte, Geographie, Egisholz, Nebenau, Egerten, Hammerstein]
 menu:
   main:
     parent: unser-dorf
