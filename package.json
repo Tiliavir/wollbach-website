@@ -1,6 +1,6 @@
 {
   "name": "wollbach",
-  "version": "21.02.14",
+  "version": "21.12.06",
   "description": "Website for Wollbach",
   "keywords": [
     "Wollbach",
@@ -33,9 +33,10 @@
     "mvw-search-index": "2.2.9",
     "postcss": "8.4.4",
     "postcss-cli": "9.0.2",
-    "sass-lint": "1.13.1",
+    "stylelint": "14.1.0",
+    "stylelint-config-recommended-scss": "5.0.2",
     "typescript": "4.5.2",
-    "w3cjs": "0.4.0"
+    "w3c-html-validator": "0.8.1"
   },
   "dependencies": {
     "jquery": "3.6.0",
@@ -44,8 +45,8 @@
   },
   "scripts": {
     "validate": "node validate.js",
-    "lint": "sass-lint -c sass-lint.yml -v -q && npx eslint . --ext .ts",
-    "build": "hugo --minify",
+    "lint": "stylelint '**/*.scss' && npx eslint . --ext .ts",
+    "build": "hugo --minify && npm run validate",
     "index": "mvw-search-index './public/**/*.html' './public/suche/index.json' 'main'",
     "update:lib:jquery": "copyfiles -u 3 ./node_modules/jquery/dist/jquery.min.js ./static/js/",
     "update:lib:photoswipe": "copyfiles -u 4 ./node_modules/photoswipe/dist/default-skin/*.{svg,png,gif} ./static/1250-jahrfeier/",
