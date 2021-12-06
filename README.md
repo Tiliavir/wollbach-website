@@ -1,4 +1,4 @@
-# Website: Musikverein Wollbach
+# Website: Wollbach
 [![Build State](https://github.com/Tiliavir/wollbach-website/workflows/CI/badge.svg)](https://github.com/Tiliavir/wollbach-website/actions)
 
 ## Prerequisites
