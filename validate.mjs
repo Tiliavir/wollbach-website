@@ -1,7 +1,8 @@
 'use strict';
 
-const glob = require('glob-all');
-const {w3cHtmlValidator} = require('w3c-html-validator');
+import glob from "glob-all";
+import {w3cHtmlValidator} from "w3c-html-validator";
+
 
 glob([
       'public/**/*.html',
