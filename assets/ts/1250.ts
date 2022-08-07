@@ -1,5 +1,4 @@
 import PhotoSwipe from "photoswipe";
-import PhotoSwipeUI_Default from "photoswipe/dist/photoswipe-ui-default";
 
 interface GalleryImage extends PhotoSwipe.Item {
   t?: string;
