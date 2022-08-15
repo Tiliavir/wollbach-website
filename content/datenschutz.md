@@ -77,21 +77,6 @@ optional. Die von Ihnen gemachten Angaben werden zum Zwecke der Bearbeitung der 
 sowie für mögliche Anschlussfragen gespeichert. Nach Erledigung der von Ihnen gestellten
 Anfrage werden personenbezogene Daten automatisch gelöscht.
 
-## Verwendung von Scriptbibliotheken (Google Webfonts)
-Um unsere Inhalte browserübergreifend korrekt und grafisch ansprechend darzustellen,
-verwenden wir auf dieser Website Scriptbibliotheken und Schriftbibliotheken wie z. B.
-Google Webfonts (https://www.google.com/webfonts/). Google Webfonts werden zur Vermeidung
-mehrfachen Ladens in den Cache Ihres Browsers übertragen. Falls der Browser die Google
-Webfonts nicht unterstützt oder den Zugriff unterbindet, werden Inhalte in einer
-Standardschrift angezeigt.
-
-Der Aufruf von Scriptbibliotheken oder Schriftbibliotheken löst automatisch
-eine Verbindung zum Betreiber der Bibliothek aus. Dabei ist es theoretisch
-möglich – aktuell allerdings auch unklar ob und ggf. zu welchen Zwecken – dass
-Betreiber entsprechender Bibliotheken Daten erheben.
-
-Die Datenschutzrichtlinie des Bibliothekbetreibers Google finden Sie hier: https://www.google.com/policies/privacy/
-
 ## Änderung unserer Datenschutzbestimmungen
 Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den
 aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer
