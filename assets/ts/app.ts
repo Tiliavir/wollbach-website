@@ -41,6 +41,10 @@ class App {
   }
 
   public static initialize(): void {
+    if (location.protocol !== 'https:') {
+      location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    }
+
     $(".content").on("click", () => $("#navigation-checkbox").prop("checked", false));
 
     App.fixAnchors();
