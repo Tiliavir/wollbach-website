@@ -27,7 +27,7 @@ Gemeindesekretärin: Susanne Strohmeier
   - Ralf Ernst
   - Max Geling
   - Hanspeter Krey
-  - Elisabeth Kurtenbach-Sepp
+  - Franziska Serazio
   - Max Sütterlin
   - Rüdiger Sütterlin
   - Alexander van Linn
