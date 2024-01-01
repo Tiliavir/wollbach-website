@@ -1,4 +1,405 @@
 {
+  "2024": [
+    {
+      "starttime": "2024-01-05",
+      "title": "Generalversammlung",
+      "organizer": "Feuerwehr-Abt. Wollbach",
+      "location": {
+        "name": "Kandertalstübli",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-01-06",
+      "title": "Neujahrsempfang",
+      "organizer": "Ortsverwaltung Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-01-26",
+      "endtime": "2024-01-27",
+      "title": "Jahreskonzert",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-02-03",
+      "title": "Hexenball",
+      "organizer": "Kanderner Hexen",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-02-05",
+      "title": "Blutspende-Termin I",
+      "organizer": "DRK Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-02-08",
+      "title": "Hemdglunki",
+      "organizer": "Chochlöffel Wollbach",
+      "location": {
+        "name": "Kandertalstübli",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-02-17",
+      "title": "Kinderfasnacht",
+      "organizer": "Fasnachts-Vereine",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-02-22",
+      "title": "Generalversammlung",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalstübli",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-02-24",
+      "title": "Fasnachtsfeuer",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Baselblick",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-02-24",
+      "title": "Soccer-Jugend-Turnier",
+      "organizer": "SV Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-02-25",
+      "title": "Soccer-Jugend-Turnier",
+      "organizer": "SV Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-02-27",
+      "title": "Generalversammlung",
+      "organizer": "Gesangverein Wollbach",
+      "location": {
+        "name": "Kandertalstübli",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-02-26",
+      "endtime": "2024-04-30",
+      "title": "Sanierung Kandertalhalle (ELR-Projekt) 2. Bauabschnitt (Foyer)",
+      "organizer": "",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-03-01",
+      "title": "Weltgebetstag",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": {
+        "name": "Wartburg",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-03-17",
+      "title": "Konfirmationsjubiläum",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": {
+        "name": "Ev. Kirche",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-03-18",
+      "title": "Generalversammlung",
+      "organizer": "Sportverein Wollbach",
+      "location": {
+        "name": "Sportheim Wollbach",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-04-13",
+      "title": "Generalversammlung",
+      "organizer": "Gesamt-Feuerwehr Kandern",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-04-21",
+      "title": "Konfirmation",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": {
+        "name": "Ev. Kirche",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-05-01",
+      "title": "Schänke am Bach",
+      "organizer": "Feuerwehr-Abt. Wollbach",
+      "location": {
+        "name": "",
+        "address": "Hammerstein"
+      }
+    },
+    {
+      "starttime": "2024-05-01",
+      "title": "Andechs-Hock",
+      "organizer": "Gesangverein Wollbach",
+      "location": {
+        "name": "Erichs Schopf",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-05-01",
+      "title": "Maischänke",
+      "organizer": "Chochlöffel Wollbach",
+      "location": {
+        "name": "Schmidt's Schüüre",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-05-04",
+      "title": "Jugend-Konzert",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-05-05",
+      "title": "Instrumenten-Vorstellung",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-05-09",
+      "title": "Vatertags-Schänke",
+      "organizer": "Wiigeischter Wollbach",
+      "location": {
+        "name": "Erichs Schopf",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-05-25",
+      "title": "Runden-Abschluss",
+      "organizer": "Sportverein Wollbach",
+      "location": {
+        "name": "Sportplatz",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-06-09",
+      "title": "Kommunalwahl",
+      "organizer": "Politische Gemeinde",
+      "location": {
+        "name": "Kandertalstübli/-halle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-06-09",
+      "title": "Familien-Sporttag",
+      "organizer": "Sportverein Wollbach",
+      "location": {
+        "name": "Sportplatz",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-06-21",
+      "title": "Jugend-Vorspiel",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "vor der Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-07-06",
+      "title": "Open-Air-Festival",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Halle und Schulhof",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-07-21",
+      "title": "Gottesdienst + Kirchplatzhock",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": {
+        "name": "Kirchplatz",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-07-21",
+      "title": "integriert: Schubertiade",
+      "organizer": "Gesangverein Wollbach",
+      "location": {
+        "name": "Kirche",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-08-17",
+      "title": "Knascht-Brueder-Konzert",
+      "organizer": "Gesangverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle und Schulhof",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-08-18",
+      "title": "Strübli-Fest",
+      "organizer": "Feuerwehr und Gesangverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle und Schulhof",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-09-07",
+      "endtime": "2024-09-09",
+      "title": "Budenfest Kandern",
+      "organizer": "div. Vereine",
+      "location": {
+        "name": "Blumenplatz",
+        "address": "Kandern"
+      }
+    },
+    {
+      "starttime": "2024-10-06",
+      "title": "Erntedankfest",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": {
+        "name": "Ev. Kirche",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-10-12",
+      "title": "Abschluss Sauserexpress",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-10-13",
+      "title": "Marschmusik",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "verschiedene Ortsteile",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-11-11",
+      "title": "Laternenumzug",
+      "organizer": "Kinder- und Jugendtreff, Kindergarten",
+      "location": {
+        "name": "Kindergarten, Rathaus",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-11-16",
+      "title": "Fasnachtsauftakt",
+      "organizer": "Füürdeufel Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-11-17",
+      "title": "Gedenkfeier Volkstrauertag",
+      "organizer": "Ortsverwaltung Wollbach",
+      "location": {
+        "name": "Kirche, Ehrenmal",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-11-29",
+      "title": "Adventszauber",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Hof Schultheiss",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-12-01",
+      "title": "Wartburgfest",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-12-13",
+      "title": "Blutspende-Termin II",
+      "organizer": "DRK Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": "Wollbach"
+      }
+    },
+    {
+      "starttime": "2024-12-24",
+      "title": "Heiligabend-Krippenspiel",
+      "organizer": "Kirchengemeinde Wollbach-Holzen",
+      "location": {
+        "name": "Ev. Kirche",
+        "address": "Wollbach"
+      }
+    }
+  ],
   "2020": [
     {
       "starttime": "2020-05-01",
