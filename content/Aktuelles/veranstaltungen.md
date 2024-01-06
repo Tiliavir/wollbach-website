@@ -11,6 +11,4 @@ menu:
     parent: aktuelles
 ---
 
-Hier geht es zum [Wollbacher Sommerferienprogramm](/pdf/20_sommerferien_programm.pdf) des Kinder- und Jugendverein Wollbach e.V.!
-
 {{< veranstaltungen >}}
