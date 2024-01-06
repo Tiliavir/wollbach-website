@@ -10,12 +10,12 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
       - name: ↧ Install Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: 16.x
       - name: ↧ npm ci
@@ -32,7 +32,7 @@ jobs:
       - name: 🏷️ Get tag name
         run: echo "TAG_NAME=$(echo ${GITHUB_REF#refs/*/} | tr / -)" >> $GITHUB_ENV
       - name: 📂 Archive
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: release-diff
@@ -40,7 +40,7 @@ jobs:
           CLEAN: true
           COMMIT_MESSAGE: Release ${{ env.TAG_NAME }}
       - name: 🎉 Deploy
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
           ftp-server: ${{ secrets.ftp_server }}
           ftp-username: ${{ secrets.ftp_user }}
