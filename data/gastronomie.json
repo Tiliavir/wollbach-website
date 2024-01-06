@@ -1,32 +1,17 @@
 [
   {
-    "name": "Gasthaus „Alte Krone”",
-    "owners": [
-      "Stefan Sick"
-    ],
-    "street": "Nebenauer Straße 23",
-    "town": "Wollbach",
-    "telephone": [
-      "07626 315"
-    ],
-    "fax": null,
-    "email": "info@altekrone-wollbach.de",
-    "website": "http://www.altekrone-wollbach.de/",
-    "description": "Das Gasthaus Krone (heute \"Alte Krone\") wird seit 1865 als weithin bekannte Dorfgaststätte betrieben."
-  },
-  {
     "name": "Gasthaus „Bruckmühle”",
     "owners": [
-      "Daniel Enderlin"
+      "Barbara Schneider"
     ],
     "street":"Bruckmühle 1",
     "town": "Wollbach",
     "telephone": [
       "07626 255"
     ],
-    "fax": "07626 972482",
-    "email": "bruckmuehle-wollbach@t-online.de",
-    "website": "http://gasthof-bruckmuehle-wollbach.de"
+    "fax": null,
+    "email": "barbara62schneider@gmail.com",
+    "website": "http://www.gasthaus-bruckmuehle.de/"
   },
   {
     "name": "Landgasthaus „Krone”",
@@ -43,6 +28,36 @@
     "website": null
   },
   {
+    "name": "Sportgaststätte SV Wollbach: Pizzeria-Restaurant Wollbach",
+    "owners": [
+      "Vito Tirendi",
+      "Vincenzo Russo"
+    ],
+    "street": "Maugenharder Str. 11",
+    "town": "Wollbach",
+    "telephone": [
+      "07626 8684"
+    ],
+    "fax": null,
+    "email": null,
+    "website": "https://svwollbach.de/sportgastst%C3%A4tte"
+  },
+  {
+    "name": "Vegan zur Blume",
+    "owners": [
+      "Susanne Vogt",
+      "Reimund Vogt"
+    ],
+    "street": "Basler Str. 8",
+    "town": "Wollbach",
+    "telephone": [
+      "07626 973255"
+    ],
+    "fax": null,
+    "email": "blume.wollbach@gmail.com",
+    "website": "http://blumewollbach.de/"
+  },
+  {
     "name": "Rüttehofstube",
     "owners": [
       "Karlfrieder Fischer"
@@ -54,7 +69,7 @@
     ],
     "fax": "07626 970649",
     "email": "info@ruettehof.de",
-    "website": "http://www.ruettehofstube.de"
+    "website": "https://www.ruettehof.de/"
   },
   {
     "name": "Gasthaus „zum Hirschen”",
@@ -86,18 +101,17 @@
     "website": "http://www.restaurant-jaegerhaus.de/"
   },
   {
-    "name": "Landgasthaus „Bahnhöfli”",
+    "name": "Kreiterhof Weinschenke",
     "owners": [
-      "P. Golda",
-      "M. Golda"
+      "Armin Kreiter"
     ],
-    "street": "Holzener Straße 5",
-    "town": "Hammerstein",
+    "street": "Wollbacher Str. 1",
+    "town": "Egerten",
     "telephone": [
-      "07626 441"
+      "07626 591"
     ],
-    "fax": null,
-    "email": "info@bahnhöfli.de",
-    "website": "http://www.bahnhoefli.de"
+    "fax": "07626 591",
+    "email": "info@kreiterhof.de",
+    "website": "http://www.kreiterhof.de/"
   }
 ]
