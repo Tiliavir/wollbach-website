@@ -9,7 +9,7 @@ menu:
     parent: kultur-und-freizeit
 ---
 
-{{< museum name="Kirchturm-Museum" street="Rathausstr. 18" town="Wollbach" >}}
+{{< museum name="Kirchturm-Museum" street="Rathausstr. 18" town="Wollbach" />}}
 
 {{< museum name="Kreiterhof Museum" street="Wollbacherstraße 1" town="Egerten" url="http://www.kreiterhof.de/museum.html" >}}
   Das am 3. Oktober 2009 eröffnete Kreiterhof Museum stellt vornehmlich

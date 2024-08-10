@@ -16,23 +16,23 @@ Obere Dorfstr. 11/1
 - oder nach Vereinbarung
 
 ## Ortsvorsteher
-Max Sütterlin (seit dem 1. September 2012)
+Werner Brugger (seit dem 22. Juli 2024)
 
 Gemeindesekretärin: Susanne Strohmeier
 
 ## Ortschaftsrat
   - Matthias Braun
-  - Werner Brugger
+  - Werner Brugger (Ortsvorsteher)
   - Andreas Enders
-  - Ralf Ernst
+  - Ralf Ernst (Stellvertreter)
+  - Max Geitlinger
   - Max Geling
+  - Jonas Greßlin
   - Hanspeter Krey
-  - Franziska Serazio
-  - Max Sütterlin
-  - Rüdiger Sütterlin
+  - Sabine Strohmeier
   - Alexander van Linn
 
 ## Gemeinderat
-  - Max Sütterlin (CDU)
-  - Max Geling (FW)
-  - Pablo Wagner (Grüne)
+  - Werner Brugger (CDU/Unabhängige)
+  - Max Geling (Freie Wähler)
+  - Pablo Wagner (Bündnis 90/Die Grünen)

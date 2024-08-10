@@ -9,4 +9,4 @@ menu:
     weight: 600
 ---
 
-{{< gewerbe >}}
+{{< gewerbe />}}
