@@ -1,4 +1,4 @@
-<div class="museum" itemscope itemtype="http://schema.org/LocalBusiness">
+<div class="museum" itemscope itemtype="https://schema.org/LocalBusiness">
     <h2 class="title" itemprop="name">
         {{- if .Get "url" -}}
         <a href="{{ .Get "url" }}" itemprop="url" target="_blank">
@@ -8,7 +8,7 @@
           {{- .Get "name" -}}
         {{- end -}}
     </h2>
-    <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <div class="address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <span itemprop="streetAddress">{{ .Get "street" }}</span><!--
         --><span itemprop="addressLocality">{{ .Get "town" }}</span>
         <span class="hidden" itemprop="addressRegion">Germany</span>

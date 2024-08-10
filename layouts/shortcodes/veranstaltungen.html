@@ -11,12 +11,12 @@
   </thead>
     <tbody>
     {{ range $value }}
-          <tr itemscope itemtype="http://schema.org/Event">
+          <tr itemscope itemtype="https://schema.org/Event">
             <td>
                 {{ partial "timespan" (dict "start" .starttime "end" .endtime "schema" true) }}
             </td>
             <td itemprop="organizer">
-              <span itemscope itemtype="http://schema.org/Organization" itemprop="name">
+              <span itemscope itemtype="https://schema.org/Organization" itemprop="name">
                   {{ .organizer }}
               </span>
             </td>
@@ -26,7 +26,7 @@
               </span>
               {{ with .location }}
                 &nbsp;(
-                  <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+                  <span itemprop="location" itemscope itemtype="https://schema.org/Place">
                       {{ with .name }}
                         <span itemprop="name">{{ . }}</span>
                       {{ end }}

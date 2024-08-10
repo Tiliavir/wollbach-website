@@ -10,7 +10,7 @@
 <h2>{{ . }}</h2>
 <div class="gewerbe-container">
     {{ range sort (where $gewerbe "categories" "intersect" (slice .)) "name" }}
-    <div class="gewerbe" itemscope itemtype="http://schema.org/LocalBusiness">
+    <div class="gewerbe" itemscope itemtype="https://schema.org/LocalBusiness">
         <h3 class="title" itemprop="name">
             {{- if .website -}}
             <a href="{{ .website }}" itemprop="url" target="_blank">
@@ -20,14 +20,14 @@
               {{- .name -}}
             {{- end -}}
         </h3>
-        <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <div class="address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
             <span itemprop="streetAddress">{{- .street -}}</span><!--
             --><span itemprop="addressLocality">{{- .town -}}</span>
             <span class="hidden" itemprop="addressRegion">Germany</span>
             <span class="hidden" itemprop="postalCode">79400</span>
         </div>
         {{ range .owners }}
-          <div class="founder" itemprop="founder" itemscope itemtype="http://schema.org/Person">
+          <div class="founder" itemprop="founder" itemscope itemtype="https://schema.org/Person">
               <span itemprop="name">
                   {{ . }}
               </span>
