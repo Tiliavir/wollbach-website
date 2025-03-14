@@ -25,19 +25,19 @@
                   {{ .title }}
               </span>
               {{ with .location }}
-                &nbsp;(
-                  <span itemprop="location" itemscope itemtype="https://schema.org/Place">
-                      {{ with .name }}
-                        <span itemprop="name">{{ . }}</span>
-                      {{ end }}
-                      {{ if and .name .address}}
-                        ,&nbsp;
-                      {{ end }}
-                      {{ with .address }}
-                        <span itemprop="address">{{ . }}</span>
-                      {{ end }}
-                  </span>
-                )
+                &nbsp;(<!--
+                  --><span itemprop="location" itemscope itemtype="https://schema.org/Place"><!--
+                      -->{{ with .name }}<!--
+                        --><span itemprop="name">{{ . }}</span><!--
+                      -->{{ end }}<!--
+                      -->{{ if and .name .address}}<!--
+                        -->,&nbsp;<!--
+                      -->{{ end }}<!--
+                      -->{{ with .address }}<!--
+                        --><span itemprop="address">{{ . }}</span><!--
+                      -->{{ end }}<!--
+                  --></span><!--
+                -->)
               {{ end }}
               {{ with .description }}
                 <div class="description" itemprop="description">

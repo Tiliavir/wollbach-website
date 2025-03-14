@@ -1,0 +1,9 @@
+{{ $title := .Get "title" }}
+{{ $chronik := .Inner }}
+
+<div class="timeline-item" itemscope itemtype="https://schema.org/Event">
+    <h2 itemprop="name">{{ $title }}</h2>
+    <p>
+        {{ $chronik | markdownify }}
+    </p>
+</div>

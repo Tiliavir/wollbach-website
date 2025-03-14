@@ -1,0 +1,89 @@
+@import 'themes/wollbach/assets/scss/global-variables';
+@import 'themes/wollbach/assets/scss/mixins/breakpoint';
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    background: $color-yellow;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    &:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    &:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 42px;
+      width: 15px;
+      height: 15px;
+      background: $color-red;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      left: calc(100% - 10px);
+    }
+
+    &:nth-child(even)::before {
+      left: -10px;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: $color-red;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@include breakpoint(0, 768px) {
+  .timeline {
+    &::before {
+      left: 20px;
+    }
+
+    .timeline-item {
+      width: 100%;
+      left: 0 !important;
+      text-align: left;
+      padding-left: 40px;
+
+      &:nth-child(odd) {
+        text-align: left;
+      }
+
+      &::before {
+        left: 10px !important;
+      }
+    }
+  }
+}
