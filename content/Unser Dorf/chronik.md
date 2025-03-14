@@ -10,7 +10,7 @@ menu:
     parent: unser-dorf
 ---
 
-<div class="timeline" itemtype="https://schema.org/EventSeries">
+<div class="timeline" itemscope itemtype="https://schema.org/EventSeries">
 {{< chronik title="767" >}}Erste urkundliche Erwähnung des Dorfes in einem Schenkungsdokument an das Kloster St. Denis.{{< /chronik >}}
 {{< chronik title="1215" >}}Erster dokumentierter Nachweis eines Geistlichen im Dorf (Leutpriester Wernherus), was darauf schließen lässt, dass bereits eine Kirche bestand.{{< /chronik >}}
 {{< chronik title="1275" >}}Urkundliche Ersterwähnung der Kirche St. Cyriakus und St. Mauritius.{{< /chronik >}}
