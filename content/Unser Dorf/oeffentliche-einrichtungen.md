@@ -53,7 +53,7 @@ menu:
   für Grillfeste von Familien, Vereinen und sonstigen Gruppen genutzt. 
 {{< /einrichtung >}}
 
-{{< einrichtung name="Feuerwehr Abteilung Wollbach" url="http://www.feuerwehr-kandern.de" >}}
+{{< einrichtung name="Feuerwehr Abteilung Wollbach" url="https://www.feuerwehr-kandern.de" >}}
 {{< figure-css "/img/feuerwehr.jpg" >}}
 {{< /einrichtung >}}
 
