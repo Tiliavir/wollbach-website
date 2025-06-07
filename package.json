@@ -1,6 +1,6 @@
 {
   "name": "wollbach",
-  "version": "25.04.27",
+  "version": "25.06.07",
   "description": "Website for Wollbach",
   "keywords": [
     "Wollbach",
@@ -14,18 +14,18 @@
     "url": "https://github.com/Tiliavir/wollbach-website.git"
   },
   "browserslist": [
+    "last 1 version",
     "> 1%",
-    "last 2 versions",
-    "Firefox ESR",
-    "ie 11"
+    "maintained node versions",
+    "not dead"
   ],
   "devDependencies": {
     "@types/grecaptcha": "3.0.9",
     "@types/jquery": "3.5.32",
     "@types/lunr": "2.3.7",
     "@types/photoswipe": "4.1.6",
-    "@typescript-eslint/eslint-plugin": "8.32.1",
-    "@typescript-eslint/parser": "8.32.1",
+    "@typescript-eslint/eslint-plugin": "8.33.1",
+    "@typescript-eslint/parser": "8.33.1",
     "autoprefixer": "10.4.21",
     "copyfiles": "2.4.1",
     "eslint": "9.26.0",
