@@ -30,7 +30,7 @@ $breadcrumb-print-color: #000;
   blockquote,
   tr,
   img {
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   pre,
@@ -55,7 +55,7 @@ $breadcrumb-print-color: #000;
 
   h2,
   h3 {
-    page-break-after: avoid;
+    break-after: avoid;
   }
 
   .flx-global-navigation {
@@ -110,7 +110,7 @@ $breadcrumb-print-color: #000;
   tr,
   td,
   table {
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .breadcrumb {

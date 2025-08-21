@@ -26,7 +26,7 @@ table {
   td {
     transition: padding .7s ease;
     padding: 10px;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   th {

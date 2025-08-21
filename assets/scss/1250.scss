@@ -2,7 +2,6 @@
 $pswp__assets-path: '1250-jahrfeier/';
 
 @import 'themes/wollbach/assets/scss/mixins/breakpoint';
-@import 'mixins/aspect-ratio';
 
 
 $overlay-bg-color: #333;
@@ -38,10 +37,25 @@ $gallery-bg-color: #ccc;
   }
 
   .mvw-gallery {
-    @include aspect-ratio(4.5, 3);
+    position: relative;
     background-color: $gallery-bg-color;
     cursor: pointer;
     overflow: hidden;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: (4.5 / 3) * 100%;
+      width: 100%;
+    }
+
+    > .ratio-content {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
   }
 
   .preview {
@@ -70,7 +84,7 @@ $gallery-bg-color: #ccc;
     &:hover {
       text-overflow: initial;
       white-space: normal;
-      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
   }
 }
