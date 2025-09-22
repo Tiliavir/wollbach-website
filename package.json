@@ -23,7 +23,7 @@
     "@types/grecaptcha": "3.0.9",
     "@types/jquery": "3.5.33",
     "@types/lunr": "2.3.7",
-    "@typescript-eslint/eslint-plugin": "8.41.0",
+    "@typescript-eslint/eslint-plugin": "8.43.0",
     "@typescript-eslint/parser": "8.43.0",
     "autoprefixer": "10.4.21",
     "copyfiles": "2.4.1",
