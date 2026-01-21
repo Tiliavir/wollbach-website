@@ -1,7 +1,88 @@
 {
-  "2025": [
+  "2026": [
     {
-      "starttime": "2025-03-08",
+      "starttime": "2026-01-05",
+      "title": "Abteilungsversammlung",
+      "organizer": "Feuerwehr-Abt. Wollbach",
+      "location": {
+        "name": "Kandertalstübli",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-01-06",
+      "title": "Neujahrsempfang",
+      "organizer": "Ortsverwaltung Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-01-23",
+      "title": "Jahreskonzert I",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-01-24",
+      "title": "Jahreskonzert II",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-01-30",
+      "title": "Jahreskonzert III",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-01-31",
+      "title": "Jahreskonzert IV",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-02-07",
+      "title": "Hexenball",
+      "organizer": "Chanderner Hexen",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-02-12",
+      "title": "Hemdglunki",
+      "organizer": "Chochlöffel Wollbach",
+      "location": {
+        "name": "Kandertalstübli",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-02-19",
+      "title": "Generalversammlung",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalstübli",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-02-21",
       "title": "Kinderfasnacht",
       "organizer": "Füürdeufel Wollbach",
       "location": {
@@ -10,7 +91,7 @@
       }
     },
     {
-      "starttime": "2025-03-15",
+      "starttime": "2026-02-28",
       "title": "Fasnachtsfeuer",
       "organizer": "Musikverein Wollbach",
       "location": {
@@ -19,16 +100,43 @@
       }
     },
     {
-      "starttime": "2025-03-17",
-      "title": "Versammlung",
-      "organizer": "Obstbauverband",
+      "starttime": "2026-02-28",
+      "title": "Soccer-Jugend-Turnier",
+      "organizer": "SV Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-03-01",
+      "title": "Soccer-Jugend-Turnier",
+      "organizer": "SV Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-03-02",
+      "title": "Blutspende-Termin I",
+      "organizer": "DRK Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-03-08",
+      "title": "Landtagswahlen",
+      "organizer": "Politische Gemeinde",
       "location": {
         "name": "Kandertalstübli",
         "address": ""
       }
     },
     {
-      "starttime": "2025-03-18",
+      "starttime": "2026-03-10",
       "title": "Generalversammlung",
       "organizer": "Gesangverein Wollbach",
       "location": {
@@ -37,7 +145,34 @@
       }
     },
     {
-      "starttime": "2025-05-01",
+      "starttime": "2026-03-21",
+      "title": "Hauptversammlung",
+      "organizer": "Feuerwehr Kandern",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-03-23",
+      "title": "Generalversammlung",
+      "organizer": "SV Wollbach",
+      "location": {
+        "name": "Sportheim",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-03-29",
+      "title": "Auflösungsversammlung",
+      "organizer": "Dilettanten",
+      "location": {
+        "name": "Kandertalstübli",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-05-01",
       "title": "Mai-Schänke Andechs-Hock",
       "organizer": "Gesangverein Wollbach",
       "location": {
@@ -46,16 +181,7 @@
       }
     },
     {
-      "starttime": "2025-05-01",
-      "title": "Mai-Schänke",
-      "organizer": "Chochlöffel Wollbach",
-      "location": {
-        "name": "Schmidt`s Schüüre",
-        "address": ""
-      }
-    },
-    {
-      "starttime": "2025-05-01",
+      "starttime": "2026-05-01",
       "title": "Schänke am Bach",
       "organizer": "Freiw. Feuerwehr Wollbach",
       "location": {
@@ -64,25 +190,7 @@
       }
     },
     {
-      "starttime": "2025-05-24",
-      "title": "Jugendkonzert",
-      "organizer": "Musikverein Wollbach",
-      "location": {
-        "name": "Kandertalhalle",
-        "address": ""
-      }
-    },
-    {
-      "starttime": "2025-05-25",
-      "title": "Instrumentenvorstellung",
-      "organizer": "Musikverein Wollbach",
-      "location": {
-        "name": "Kandertalhalle",
-        "address": ""
-      }
-    },
-    {
-      "starttime": "2025-05-29",
+      "starttime": "2026-05-14",
       "title": "Vatertags-Schänke",
       "organizer": "Wiigeischter Wollbach",
       "location": {
@@ -91,16 +199,25 @@
       }
     },
     {
-      "starttime": "2025-06-18",
-      "title": "Ortsbegehung",
-      "organizer": "Schwarzwaldverein",
+      "starttime": "2026-06-20",
+      "title": "Jugendkonzert",
+      "organizer": "Musikverein Wollbach",
       "location": {
-        "name": "im Ort",
+        "name": "Kandertalhalle",
         "address": ""
       }
     },
     {
-      "starttime": "2025-06-29",
+      "starttime": "2026-06-21",
+      "title": "Instrumentenvorstellung",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-06-28",
       "title": "Familiensporttag",
       "organizer": "SV Wollbach",
       "location": {
@@ -109,7 +226,7 @@
       }
     },
     {
-      "starttime": "2025-07-05",
+      "starttime": "2026-07-04",
       "title": "Open-Air-Festival",
       "organizer": "Musikverein Wollbach",
       "location": {
@@ -118,26 +235,7 @@
       }
     },
     {
-      "starttime": "2025-07-11",
-      "title": "Jugendvorspiel",
-      "organizer": "Musikverein Wollbach",
-      "location": {
-        "name": "Kandertalhalle",
-        "address": ""
-      }
-    },
-    {
-      "starttime": "2025-07-18",
-      "endtime": "2025-07-20",
-      "title": "Jubiläum 100 Jahre",
-      "organizer": "Feuerwehr Abt. Wollbach",
-      "location": {
-        "name": "Kandertalhalle",
-        "address": ""
-      }
-    },
-    {
-      "starttime": "2025-07-27",
+      "starttime": "2026-07-26",
       "title": "Kirchplatzhock",
       "organizer": "Kirchengemeinde Wollbach-Holzen",
       "location": {
@@ -146,17 +244,34 @@
       }
     },
     {
-      "starttime": "2025-10-04",
-      "endtime": "2025-10-05",
-      "title": "Jubiläum 180 Jahre",
-      "organizer": "Gesangverein Wollbach",
+      "starttime": "2026-08-03",
+      "title": "St. Pauli Camp",
+      "organizer": "SV Wollbach",
       "location": {
-        "name": "Kandertalhalle",
+        "name": "Sportplatz",
         "address": ""
       }
     },
     {
-      "starttime": "2025-10-11",
+      "starttime": "2026-08-16",
+      "title": "Strübli Fest",
+      "organizer": "Gesangverein Wollbach",
+      "location": {
+        "name": "Schulhof",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-09-05",
+      "title": "Dorfflohmarkt",
+      "organizer": "Förderverein Dorfgemeinschaft Wollbach",
+      "location": {
+        "name": "Ortskern Wollbach",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-10-10",
       "title": "Sauserbummel",
       "organizer": "Musikverein Wollbach",
       "location": {
@@ -165,7 +280,16 @@
       }
     },
     {
-      "starttime": "2025-11-11",
+      "starttime": "2026-10-11",
+      "title": "Marschmusik",
+      "organizer": "Musikverein Wollbach",
+      "location": {
+        "name": "Dorf und Nebenorte",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-11-11",
       "title": "Laternenumzug",
       "organizer": "Kinder- u. Jugendtreff",
       "location": {
@@ -174,17 +298,7 @@
       }
     },
     {
-      "starttime": "2025-11-16",
-      "title": "Gedenkfeier Volkstrauertag",
-      "organizer": "Ortsverwaltung Wollbach",
-      "location": {
-        "name": "Ehrenmal Wollbach",
-        "address": ""
-      }
-    },
-    {
-      "starttime": "2025-11-21",
-      "endtime": "2025-11-22",
+      "starttime": "2026-11-14",
       "title": "Fasnachtsauftakt",
       "organizer": "Füürdeufel Wollbach",
       "location": {
@@ -193,16 +307,16 @@
       }
     },
     {
-      "starttime": "2025-11-28",
-      "title": "Adventszauber",
-      "organizer": "Musikverein Wollbach",
+      "starttime": "2026-11-15",
+      "title": "Gedenkfeier Volkstrauertag",
+      "organizer": "Ortsverwaltung Wollbach",
       "location": {
-        "name": "Hof Schultheiss Wollb.",
+        "name": "Ehrenmal Wollbach",
         "address": ""
       }
     },
     {
-      "starttime": "2025-11-30",
+      "starttime": "2026-11-29",
       "title": "Wartburgfest",
       "organizer": "Kirchengemeinde Wollbach-Holzen",
       "location": {
@@ -211,16 +325,16 @@
       }
     },
     {
-      "starttime": "2025-12-06",
-      "title": "Weihnachtsfeier",
+      "starttime": "2026-12-13",
+      "title": "Konzert Kirche",
       "organizer": "Musikverein Wollbach",
       "location": {
-        "name": "Kandertalhalle",
+        "name": "Kirche",
         "address": ""
       }
     },
     {
-      "starttime": "2025-12-08",
+      "starttime": "2026-12-14",
       "title": "Blutspende-Termin II",
       "organizer": "DRK Wollbach",
       "location": {
@@ -229,7 +343,7 @@
       }
     },
     {
-      "starttime": "2025-12-24",
+      "starttime": "2026-12-24",
       "title": "Heiligabend-Krippenspiel",
       "organizer": "Kirchengemeinde Wollbach-Holzen",
       "location": {
