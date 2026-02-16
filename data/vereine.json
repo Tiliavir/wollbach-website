@@ -1,100 +1,47 @@
 [
   {
-    "name": "Dilettantenmusik",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "Dilettantenmusik"
   },
   {
-    "name": "DRK Ortsverein Wollbach",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "DRK Ortsverein Wollbach"
   },
   {
-    "name": "Frauenverein",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "Frauenverein"
   },
   {
-    "name": "Füürdeufel",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "Füürdeufel"
   },
   {
-    "name": "Kinder- und Jugendtreff Wollbach",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "Kinder- und Jugendtreff Wollbach"
   },
   {
-    "name": "Kirchenchor",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "Kirchenchor"
   },
   {
-    "name": "Männergesangverein",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "Männergesangverein"
   },
   {
     "name": "Musikverein Wollbach 1866 e.V.",
-    "website": "https://www.mv-wollbach.de",
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "website": "https://www.mv-wollbach.de"
   },
   {
-    "name": "Sportverein Wollbach",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "Sportverein Wollbach"
   },
   {
-    "name": "Schützenverein Wollbach",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "Schützenverein Wollbach"
   },
   {
-    "name": "Stachelbieschter",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "Stachelbieschter"
   },
   {
     "name": "Tennisclub Wollbach",
-    "website": "http://www.tc-wollbach.de",
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "website": "http://www.tc-wollbach.de"
   },
   {
-    "name": "Wiigeischter",
-    "website": null,
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "name": "Wiigeischter"
   },
   {
     "name": "Wollbacher Chochlöffel e.V.",
-    "website": "https://www.wollbacher-chochloeffel.de/",
-    "ansprechpartner": null,
-    "telephone": null,
-    "email": null
+    "website": "https://www.wollbacher-chochloeffel.de/"
   }
 ]
