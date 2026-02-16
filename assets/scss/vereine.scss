@@ -1,10 +1,55 @@
-.address {
-  span {
-    &:not(:first-of-type) {
-      &::before {
-        content: ', ';
-        display: inline;
-      }
+@import 'themes/wollbach/assets/scss/global-variables';
+@import 'themes/wollbach/assets/scss/mixins/breakpoint';
+
+.vereine-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.verein {
+  flex-grow: 1;
+  width: 250px;
+  min-height: 150px;
+  background: $gray-lightest;
+  float: left;
+  margin: 10px;
+  padding: 10px 20px;
+
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $gray-lighter;
+  }
+
+  .contact-person {
+    margin-top: 5px;
+    font-size: .8rem;
+
+    .label {
+      font-weight: bold;
+      display: block;
     }
+  }
+
+  .telephone {
+    margin-top: 5px;
+
+    &::before {
+      content: 'Tel: ';
+    }
+  }
+
+  .telephone,
+  .email {
+    font-size: .8rem;
+  }
+}
+
+@include breakpoint(0, 580px) {
+  .verein {
+    width: 100%;
   }
 }
