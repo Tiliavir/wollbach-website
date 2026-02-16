@@ -1,0 +1,37 @@
+{{ with $.Site.Data.vereine }}
+
+<div class="vereine-container">
+    {{ range sort . "name" }}
+    <div class="verein" itemscope itemtype="https://schema.org/Organization">
+        <h3 class="title" itemprop="name">
+            {{- if .website -}}
+            <a href="{{ .website }}" itemprop="url" target="_blank">
+                {{- .name -}}
+            </a>
+            {{- else -}}
+              {{- .name -}}
+            {{- end -}}
+        </h3>
+        {{ with .ansprechpartner }}
+          <div class="contact-person">
+              <span class="label">Ansprechpartner:</span>
+              <span itemprop="employee" itemscope itemtype="https://schema.org/Person">
+                  <span itemprop="name">{{ . }}</span>
+              </span>
+          </div>
+        {{ end }}
+        {{ with .telephone }}
+          <div class="telephone" itemprop="telephone">
+              {{ . }}
+          </div>
+        {{ end }}
+        {{ with .email }}
+            <a class="email" itemprop="email" href="mailto:{{ . }}">
+                {{ . }}
+            </a>
+        {{ end }}
+        {{ .Inner }}
+    </div>
+    {{ end }}
+</div>
+{{ end }}
