@@ -12,20 +12,28 @@
     "name": "Füürdeufel"
   },
   {
-    "name": "Kinder- und Jugendtreff Wollbach"
+    "name": "Kinder- und Jugendtreff Wollbach",
+    "website": "https://www.kandern.de/verzeichnis/visitenkarte.php?mandat=192660",
+    "email": "kinder-jugend-wollbach@web.de"
   },
   {
     "name": "Kirchenchor"
   },
   {
-    "name": "Männergesangverein"
+    "name": "Männergesangverein",
+    "website": "https://gesangverein-wollbach.de/"
   },
   {
     "name": "Musikverein Wollbach 1866 e.V.",
-    "website": "https://www.mv-wollbach.de"
+    "website": "https://www.mv-wollbach.de",
+    "vorstand": "Annette Krey",
+    "email": "info@mv-wollbach.de"
   },
   {
-    "name": "Sportverein Wollbach"
+    "name": "Sportverein Wollbach",
+    "vorstand": "Benjamin Schörlin",
+    "website": "https://www.svwollbach.de/",
+    "email": "info@svwollbach.de"
   },
   {
     "name": "Schützenverein Wollbach"
@@ -35,13 +43,15 @@
   },
   {
     "name": "Tennisclub Wollbach",
-    "website": "http://www.tc-wollbach.de"
+    "website": "https://www.kandern.de/verzeichnis/mandat.php?mandat=201639&kategorie=171"
   },
   {
     "name": "Wiigeischter"
   },
   {
     "name": "Wollbacher Chochlöffel e.V.",
-    "website": "https://www.wollbacher-chochloeffel.de/"
+    "website": "https://www.wollbacher-chochloeffel.de/",
+    "vorstand": "Julia Cordes",
+    "email": "kontakt@wollbacher-chochloeffel.de"
   }
 ]
