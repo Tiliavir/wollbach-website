@@ -21,7 +21,7 @@
   ],
   "devDependencies": {
     "@types/grecaptcha": "3.0.9",
-    "@types/jquery": "3.5.33",
+    "@types/jquery": "4.0.0",
     "@types/lunr": "2.3.7",
     "@typescript-eslint/eslint-plugin": "8.56.0",
     "@typescript-eslint/parser": "8.56.0",
