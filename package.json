@@ -27,7 +27,7 @@
     "@typescript-eslint/parser": "8.56.1",
     "autoprefixer": "10.4.27",
     "copyfiles": "2.4.1",
-    "eslint": "10.0.2",
+    "eslint": "10.0.3",
     "glob-all": "3.3.1",
     "mvw-search-index": "2.3.6",
     "postcss": "8.5.8",
