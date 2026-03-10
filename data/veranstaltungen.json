@@ -5,7 +5,7 @@
       "title": "Abteilungsversammlung",
       "organizer": "Feuerwehr-Abt. Wollbach",
       "location": {
-        "name": "Kandertalstübli",
+        "name": "Kandertalhalle",
         "address": ""
       }
     },
@@ -101,16 +101,7 @@
     },
     {
       "starttime": "2026-02-28",
-      "title": "Soccer-Jugend-Turnier",
-      "organizer": "SV Wollbach",
-      "location": {
-        "name": "Kandertalhalle",
-        "address": ""
-      }
-    },
-    {
-      "starttime": "2026-03-01",
-      "title": "Soccer-Jugend-Turnier",
+      "title": "EJugend-Turnier",
       "organizer": "SV Wollbach",
       "location": {
         "name": "Kandertalhalle",
@@ -163,6 +154,24 @@
       }
     },
     {
+      "starttime": "2026-03-27",
+      "title": "Theateraufführung",
+      "organizer": "Brezelstädter Laienbühne",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
+      "starttime": "2026-03-28",
+      "title": "Theateraufführung",
+      "organizer": "Brezelstädter Laienbühne",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
       "starttime": "2026-03-29",
       "title": "Auflösungsversammlung",
       "organizer": "Dilettanten",
@@ -182,10 +191,10 @@
     },
     {
       "starttime": "2026-05-01",
-      "title": "Schänke am Bach",
+      "title": "Mai-Schänke",
       "organizer": "Freiw. Feuerwehr Wollbach",
       "location": {
-        "name": "Hammerstein Radweg",
+        "name": "Feuerwehrhof Wollbach",
         "address": ""
       }
     },
@@ -235,6 +244,15 @@
       }
     },
     {
+      "starttime": "2026-07-12",
+      "title": "Imkertag",
+      "organizer": "Imkerverein",
+      "location": {
+        "name": "Kandertalhalle",
+        "address": ""
+      }
+    },
+    {
       "starttime": "2026-07-26",
       "title": "Kirchplatzhock",
       "organizer": "Kirchengemeinde Wollbach-Holzen",
@@ -245,6 +263,7 @@
     },
     {
       "starttime": "2026-08-03",
+      "endtime": "2026-08-07",
       "title": "St. Pauli Camp",
       "organizer": "SV Wollbach",
       "location": {
