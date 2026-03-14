@@ -24,7 +24,7 @@ Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der
 EU-Datenschutzgrundverordnung (DSGVO), ist die Stadt Kandern vertreten
 durch den Ortsvorsteher Wollbachs:
 
-Max Sütterlin<br />
+Werner Brugger<br />
 Obere Dorfstraße 11/1<br />
 79400 Kandern
 
