@@ -7,7 +7,7 @@
 {{ $activeYear := (index (last 1 $years) 0) }}
 
 <script>
-  galleries = {{- . -}};
+  window.galleries = {{- . -}};
 </script>
 
 <div class="mvw-gallery-overview tab-content">
