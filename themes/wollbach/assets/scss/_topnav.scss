@@ -1,18 +1,17 @@
 @import 'global-variables';
 
-$padding: 21px 20px;
-$background-color: $body-bg;
-$active-bg-no-transparency: #141e28;
-$background-color-active: transparentize($active-bg-no-transparency, .3);
-$background-color-hover-and-focus: lighten($background-color-active, 20%);
-$color-active: #ebc904;
-$color-hover-and-focus: lighten($color-active, 10%);
+$nav-bg-light: $body-bg;
+$nav-bg-dark: $color-primary;
+$nav-text-light: $text-color;
+$nav-text-hover: $color-accent;
+$nav-bg-hover: $gray-lightest;
+$nav-separator: $gray-lighter;
 
 .navigation {
-  background-color: transparentize($background-color, .5);
-  color: $text-color;
+  background-color: $nav-bg-light;
+  color: $nav-text-light;
   font-size: $font-size-base;
-  font-weight: 700;
+  font-weight: 500;
   width: 100%;
   position: relative;
   top: -$top-nav-height;
@@ -20,6 +19,8 @@ $color-hover-and-focus: lighten($color-active, 10%);
   margin: 0 auto;
   height: $top-nav-height;
   user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 3px solid $color-accent;
 }
 
 .navigation-header {
@@ -30,9 +31,9 @@ $color-hover-and-focus: lighten($color-active, 10%);
   overflow-x: hidden;
   text-align: left;
   position: relative;
-  top: 30px;
-  height: $top-nav-height;
-  box-shadow: 0 10px 15px -10px $black;
+  top: 35px;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .navigation-menu > ul {
@@ -46,15 +47,23 @@ $color-hover-and-focus: lighten($color-active, 10%);
     height: auto;
 
     a {
-      padding: 10px 15px;
+      padding: 15px 20px;
       display: block;
       text-decoration: none;
-      color: inherit;
+      color: $text-color;
       cursor: pointer;
+      border-left: 4px solid transparent;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
 
-      &:hover,
+      &:hover {
+        background-color: $nav-bg-hover;
+        border-left-color: $color-accent;
+        color: $color-primary;
+      }
+
       &:focus {
-        border: 0;
+        outline: 2px solid $color-accent;
+        outline-offset: -2px;
       }
     }
   }
@@ -69,16 +78,36 @@ $color-hover-and-focus: lighten($color-active, 10%);
   height: auto;
 
   & > ul {
-    color: $text-color;
+    color: $nav-text-light;
     font-size: $font-size-base;
     font-weight: 400;
     display: block;
     list-style: none;
     padding: 0;
+    background-color: $gray-lightest;
 
     li {
       a {
-        padding: 5px 10px 5px 30px;
+        padding: 12px 20px 12px 40px;
+        border-left: 4px solid transparent;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: $nav-bg-hover;
+          border-left-color: $color-accent;
+          color: $color-primary;
+        }
+
+        &:focus {
+          outline: 2px solid $color-accent;
+          outline-offset: -2px;
+        }
+      }
+
+      &.active a {
+        border-left-color: $color-accent;
+        color: $color-primary;
+        font-weight: 500;
       }
     }
   }
@@ -86,8 +115,8 @@ $color-hover-and-focus: lighten($color-active, 10%);
 
 @media (max-width: 767px) {
   .navigation-menu {
-    background-color: transparentize($background-color, .1);
-    box-shadow: 0 5px 10px -2px $black;
+    background-color: $body-bg;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .dropdown {
@@ -100,7 +129,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
     li {
       &:hover,
       &.active {
-        color: $color-red;
+        color: $color-primary;
       }
     }
   }
@@ -151,17 +180,17 @@ $color-hover-and-focus: lighten($color-active, 10%);
 
   .navigation-hamburger {
     position: absolute;
-    top: 9px;
+    top: 12px;
     right: 10px;
     margin: 0;
     padding: 15px;
     cursor: pointer;
 
     %burger-slice-style {
-      height: 2px;
-      width: 22px;
+      height: 3px;
+      width: 24px;
       transition: transform .4s ease;
-      background: $text-color;
+      background: $color-primary;
       z-index: 1;
     }
 
@@ -177,7 +206,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
         @extend %burger-slice-style;
         content: '';
         position: absolute;
-        top: -7px;
+        top: -8px;
         left: 0;
       }
 
@@ -185,7 +214,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
         @extend %burger-slice-style;
         content: '';
         position: absolute;
-        top: 7px;
+        top: 8px;
         left: 0;
       }
     }
@@ -204,30 +233,39 @@ $color-hover-and-focus: lighten($color-active, 10%);
     & > li {
       display: inline-block;
 
-      &:hover,
-      &:focus {
-        background-color: transparentize($background-color-hover-and-focus, .3);
-        color: $color-hover-and-focus;
-      }
-
       a {
         position: relative;
-        padding: 0 15px;
+        padding: 0 20px;
         display: block;
         height: $top-nav-height;
         line-height: $top-nav-height;
-        font-variant: small-caps;
+        font-weight: 500;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        color: $text-color;
+        border-left: none;
+
+        &:hover {
+          color: $color-primary;
+          background-color: $gray-lightest;
+        }
+
+        &:focus {
+          outline: 2px solid $color-accent;
+          outline-offset: -2px;
+        }
       }
 
-      &.active {
-        background-color: $background-color-active;
-        color: $color-active;
+      &.active a {
+        color: $color-accent;
+        border-bottom: 4px solid $color-accent;
+        border-left: none;
+        padding-bottom: 0;
       }
     }
   }
 
   .navigation-checkbox {
-    &:not(:checked)~.navigation-menu {
+    &:not(:checked) ~ .navigation-menu {
       display: block;
     }
   }
@@ -240,6 +278,7 @@ $color-hover-and-focus: lighten($color-active, 10%);
     overflow-x: visible;
     max-width: $header-max-width;
     margin: 0 auto;
+    box-shadow: none;
   }
 
   .dropdown {
@@ -252,6 +291,8 @@ $color-hover-and-focus: lighten($color-active, 10%);
       top: $top-nav-height;
       padding: 0;
       background-color: $body-bg;
+      min-width: 200px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     & > a {
@@ -259,16 +300,20 @@ $color-hover-and-focus: lighten($color-active, 10%);
         $expand-arrow-height: 3px;
         position: absolute;
         content: '';
-        right: 4px;
+        right: 8px;
         top: $top-nav-height / 2 - $expand-arrow-height + 1px;
         border: $expand-arrow-height solid transparent;
         border-top: $expand-arrow-height solid $text-color;
+        transition: transform 0.2s ease;
       }
+    }
+
+    &:hover > a::after {
+      border-top-color: $color-primary;
     }
 
     & > ul {
       display: none;
-      box-shadow: 0 5px 10px -2px $black;
 
       li {
         padding: 0;
@@ -276,18 +321,31 @@ $color-hover-and-focus: lighten($color-active, 10%);
         a {
           white-space: nowrap;
           display: block;
-          padding: 3px 20px;
-          height: 35px;
-          line-height: 35px;
+          padding: 12px 20px;
+          height: auto;
+          line-height: 1.4;
           font-weight: 400;
+          color: $text-color;
+          transition: background-color 0.2s ease, border-color 0.2s ease, padding-left 0.2s ease;
 
           &:hover {
-            color: $color-red;
+            color: $color-primary;
+            background-color: $gray-lightest;
+            border-left: 4px solid $color-accent;
+            padding-left: 16px;
+          }
+
+          &:focus {
+            outline: 2px solid $color-accent;
+            outline-offset: -2px;
           }
         }
 
-        &.active {
-          color: $color-red;
+        &.active a {
+          color: $color-primary;
+          border-left: 4px solid $color-accent;
+          padding-left: 16px;
+          font-weight: 500;
         }
       }
     }

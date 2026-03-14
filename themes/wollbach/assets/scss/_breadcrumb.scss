@@ -1,20 +1,42 @@
+@import 'global-variables';
+
 .breadcrumb {
-  padding: 8px 0;
-  margin-bottom: 20px;
+  padding: 12px 0;
+  margin-bottom: 25px;
   list-style: none;
+  font-size: $font-size-small;
 
   &>li {
     display: inline-block;
+    color: $text-color-secondary;
+
+    a {
+      color: $color-primary;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $color-accent-dark;
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid $color-accent;
+        outline-offset: 2px;
+      }
+    }
 
     &.active {
-      color: $color-red;
+      color: $text-color;
+      font-weight: 500;
     }
   }
 
   &>li+li {
     &::before {
-      content: '\00a0>';
-      padding: 0 3px;
+      content: '\00a0/\00a0';
+      padding: 0 5px;
+      color: $gray-lighter;
     }
   }
 }

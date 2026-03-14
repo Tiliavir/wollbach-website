@@ -3,15 +3,7 @@
 <div class="vereine-container">
     {{ range sort . "name" }}
     <div class="verein" itemscope itemtype="https://schema.org/Organization">
-        <h2 class="title" itemprop="name">
-            {{- if .website -}}
-            <a href="{{ .website }}" itemprop="url" target="_blank">
-                {{- .name -}}
-            </a>
-            {{- else -}}
-              {{- .name -}}
-            {{- end -}}
-        </h2>
+        <h2 class="title" itemprop="name">{{- .name -}}</h2>
         {{ with .vorstand }}
           <div class="contact-person">
               <span class="label">Vorstand:</span>
@@ -29,6 +21,9 @@
             <a class="email" itemprop="email" href="mailto:{{ . }}">
                 {{ . }}
             </a>
+        {{ end }}
+        {{ with .website }}
+            <a class="website" itemprop="url" href="{{ . }}" target="_blank" rel="noopener">Webseite</a>
         {{ end }}
         {{ .Inner }}
     </div>

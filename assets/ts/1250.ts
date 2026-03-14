@@ -10,131 +10,122 @@ interface GalleryImage extends PhotoSwipe.Item {
   s: { w: number, h: number };
 }
 
-class HTMLElementWithItems extends HTMLElement {
-  items: PhotoSwipe.Item[];
+// bilder.json is inlined in bilder shortcode as window.galleries
+declare global {
+  interface Window {
+    galleries: { [year: string]: { [title: string]: GalleryImage[] } };
+  }
 }
-
-class HTMLElementWithImage extends HTMLElement {
-  images: GalleryImage[];
-}
-
-// bilder.json is inlined in bilder shortcode!
-declare let galleries: { [year: string]: { [title: string]: GalleryImage[] } };
 
 export class Gallery {
   private static galleries: { [year: string]: { [title: string]: GalleryImage[] } };
-  private static pswpElement: HTMLElement;
 
-  public static openGallery(e: HTMLElement): void {
-    let items = (<HTMLElementWithItems>e).items;
-    if (!items) {
-      const preview = $(e).find(".preview");
-      items = (<HTMLElementWithItems>e).items = Gallery.galleries[preview.data("year")][preview.data("gallery")];
-    }
+  public static openGallery(galleryContainer: HTMLElement): void {
+    const previewImg = galleryContainer.querySelector<HTMLImageElement>(".preview");
+    if (!previewImg) return;
 
-    const options = {
-      getThumbBoundsFn(): {w: number, x: number, y: number} {
-        const pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
-        const rect = e.getBoundingClientRect();
-        return { w: rect.width, x: rect.left, y: rect.top + pageYScroll };
-      }
-    };
-    const gallery = new PhotoSwipe<PhotoSwipeUI_Default.Options>(Gallery.pswpElement, PhotoSwipeUI_Default, items, options);
+    const year = previewImg.dataset.year;
+    const galleryTitle = previewImg.dataset.gallery;
 
-    // create variable that will store real size of viewport
-    let realViewportWidth: number;
-    let useLargeImages = false;
-    let firstResize = true;
-    let isImageSourceChanged: boolean;
+    if (!year || !galleryTitle) return;
 
-    // beforeResize event fires each time size of gallery viewport updates
-    gallery.listen("beforeResize", () => {
-      // gallery.viewportSize.x - width of PhotoSwipe viewport
-      // gallery.viewportSize.y - height of PhotoSwipe viewport
-      // window.devicePixelRatio - ratio between physical pixels and device independent pixels (Number)
-      //                          1 (regular display), 2 (@2x, retina) ...
+    const items = Gallery.galleries[year]?.[galleryTitle] || [];
+    if (items.length === 0) return;
 
-      // calculate real pixels when size changes
-      realViewportWidth = gallery.viewportSize.x * window.devicePixelRatio;
+    // Determine image size based on viewport
+    const realViewportWidth = window.innerWidth * window.devicePixelRatio;
+    const useLargeImages = realViewportWidth >= 750;
 
-      // code below is needed if you want image to switch dynamically on window.resize
+    // Map items to PhotoSwipe format with correct image sources
+    // Originals are at: /gallery/{b}{f}  (e.g. /gallery/2017/001/00000.jpg)
+    // Medium at:        /gallery/{b}m/{f} (e.g. /gallery/2017/001/m/00000.jpg)
+    const psItems = items.map(item => ({
+      src: useLargeImages ? `/gallery/${item.b}${item.f}` : `/gallery/${item.b}m/${item.f}`,
+      width: useLargeImages ? item.o.w : item.m.w,
+      height: useLargeImages ? item.o.h : item.m.h,
+      title: item.t || item.title,
+      msrc: `/gallery/${item.b}m/${item.f}`,
+    }));
 
-      // find out if current images need to be changed
-      if (useLargeImages && realViewportWidth < 750) {
-        useLargeImages = false;
-        isImageSourceChanged = true;
-      } else if (!useLargeImages && realViewportWidth >= 750) {
-        useLargeImages = true;
-        isImageSourceChanged = true;
-      }
-
-      // invalidate items only when source is changed and when it's not the first update
-      if (isImageSourceChanged && !firstResize) {
-        // invalidateCurrItems sets a flag on slides that are in DOM,
-        // which will force update of content (image) on window.resize.
-        gallery.invalidateCurrItems();
-      }
-
-      if (firstResize) {
-        firstResize = false;
-      }
-
-      isImageSourceChanged = false;
-    });
-
-    // gettingData event fires each time PhotoSwipe retrieves image source & size
-    gallery.listen("gettingData", (index: number, item: GalleryImage) => {
-      // set image source & size based on real viewport width
-      if (useLargeImages) {
-        item.src = `/gallery/${item.b + item.f}`;
-        item.w = item.o.w;
-        item.h = item.o.h;
-      } else {
-        item.src = `/gallery/${item.b}m/${item.f}`;
-        item.w = item.m.w;
-        item.h = item.m.h;
-      }
-      if (item.t.indexOf(" ") > 0) {
-        item.title = item.t;
-      }
-
-      // it doesn't really matter what will you do here,
-      // as long as item.src, item.w and item.h have valid values.
-      //
-      // just avoid http requests in this listener, as it fires quite often
-    });
-
-    gallery.init();
+    // PhotoSwipe v5: dataSource must be a plain array, not { items: [] }
+    const pswp = new PhotoSwipe({
+      dataSource: psItems as any,
+      index: 0,
+      wheelToZoom: true,
+      preloaderDelay: 0,
+    } as PhotoSwipe.Options);
+    pswp.init();
   }
 
   private static shufflePreview(): void {
-    const previews = $(".preview:visible");
-    const e: JQuery<HTMLElement> = $(previews[Math.floor(Math.random() * previews.length)]);
-    const g = (<HTMLElementWithImage>e[0]).images || ((<HTMLElementWithImage>e[0]).images = galleries[e.data("year")][e.data("gallery")]
-                                           .filter((i: GalleryImage) => (i.s.w === 200))
-                                           || galleries[e.data("year")][e.data("gallery")]);
-
-    e.fadeOut(400, () => {
-      const i = g[Math.floor(Math.random() * g.length)];
-      e.attr("src", `/gallery/${i.b}m/${i.f}`);
+    const allPreviews = Array.from(document.querySelectorAll<HTMLImageElement>(".preview"));
+    const visiblePreviews = allPreviews.filter(p => {
+      const style = window.getComputedStyle(p);
+      return style.display !== 'none' && style.visibility !== 'hidden';
     });
-    e.fadeIn(400);
+
+    if (visiblePreviews.length === 0) {
+      setTimeout(() => Gallery.shufflePreview(), 10000);
+      return;
+    }
+
+    const randomPreview = visiblePreviews[Math.floor(Math.random() * visiblePreviews.length)];
+    const year = randomPreview.dataset.year;
+    const galleryTitle = randomPreview.dataset.gallery;
+
+    if (!year || !galleryTitle) {
+      setTimeout(() => Gallery.shufflePreview(), 10000);
+      return;
+    }
+
+    const items = Gallery.galleries[year]?.[galleryTitle];
+    if (!items || items.length === 0) {
+      setTimeout(() => Gallery.shufflePreview(), 10000);
+      return;
+    }
+
+    const smallImages = items.filter((i: GalleryImage) => i.s.w === 200);
+    const imageList = smallImages.length > 0 ? smallImages : items;
+    const randomImage = imageList[Math.floor(Math.random() * imageList.length)];
+
+    randomPreview.style.opacity = "0";
+    randomPreview.style.transition = "opacity 0.4s ease";
+
+    setTimeout(() => {
+      randomPreview.src = `/gallery/${randomImage.b}m/${randomImage.f}`;
+      randomPreview.style.opacity = "1";
+    }, 400);
 
     setTimeout(() => Gallery.shufflePreview(), 10000);
   }
 
   public static initialize(): void {
-    Gallery.pswpElement = <HTMLElement> document.querySelectorAll(".pswp")[0];
-    $(".mvw-gallery img").on("hover", (e) => {
-      const $e = $(e.target);
-      $e.attr("src", $e.attr("src").replace("/s/", "/m/"));
+    Gallery.galleries = window.galleries;
+
+    // Add click handlers to gallery containers
+    const galleryContainers = document.querySelectorAll<HTMLElement>(".mvw-gallery");
+    galleryContainers.forEach(gallery => {
+      gallery.addEventListener("click", (e) => {
+        e.preventDefault();
+        Gallery.openGallery(gallery);
+      });
     });
-    Gallery.galleries = galleries;
-    $(".mvw-gallery").on("click", (e) => Gallery.openGallery(e.currentTarget));
+
     Gallery.shufflePreview();
   }
 }
 
-$(() => {
+document.addEventListener("DOMContentLoaded", () => {
   Gallery.initialize();
 });
+
+
+
+
+
+
+
+
+
+
+

@@ -7,7 +7,7 @@ menu:
     parent: kultur-und-freizeit
 ---
 
-## [Westweg <small>Von Pforzheim bis Basel</small>](http://www.schwarzwaldverein.de/wege/fernwanderwege/westweg.html)
+## Westweg <small>Von Pforzheim bis Basel</small>
 Der Westweg wurde im Jahr 1900 vom Schwarzwaldverein ausgeschildert und ist
 damit der älteste Fernwanderweg Deutschlands. Ab Pforzheim ersteigt der Westweg
 die Höhen zwischen Enz und Murg, durchquert das tiefeingeschnittene Murgtal und
@@ -19,6 +19,8 @@ Europäische Wasserscheide zwischen Rhein und Donau.
 Eine aussichtsreiche Höhenwanderung führt über den Belchen und durchs
 Markgräflerland, vorbei an Kandern, Hammerstein und Wollbach, nach Basel am
 Rheinknie, im schweizer-deutsch-französischen Dreiländereck.
+
+[Weitere Informationen beim Schwarzwaldverein](http://www.schwarzwaldverein.de/wege/fernwanderwege/westweg.html)
 
 ## Kreiterhof Kulturland-Weg
 Der Kreiterhof-Kulturland-Weg kann auf einem bequemen Rundkurs über drei

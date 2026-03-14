@@ -24,7 +24,7 @@ gerne Ihre Fragen!
 79400 Kandern - Wollbach
 
 ### Vertreten durch:
-Ortsvorsteher Max Sütterlin.
+Ortsvorsteher Werner Brugger.
 
 ## Datenschutz und Haftungsauschluss
 - [Haftungsausschluss][haftung]

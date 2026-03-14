@@ -10,7 +10,7 @@
     position: absolute;
     left: 50%;
     width: 4px;
-    background: $color-yellow;
+    background: $color-accent;
     top: 0;
     bottom: 0;
     transform: translateX(-50%);
@@ -38,7 +38,7 @@
       top: 42px;
       width: 15px;
       height: 15px;
-      background: $color-red;
+      background: $color-primary;
       border-radius: 50%;
       border: 3px solid white;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -51,7 +51,7 @@
 
     h2 {
       font-size: 1.8em;
-      color: $color-red;
+      color: $color-primary;
       margin-bottom: 10px;
     }
 

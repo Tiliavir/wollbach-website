@@ -33,8 +33,10 @@ table {
     text-transform: uppercase;
     font-size: $font-size-base;
     letter-spacing: 1px;
-    background-color: $color-yellow;
+    background-color: $color-accent;
     text-align: left;
+    color: $gray-base;
+    font-weight: 600;
 
     &.date {
       width: 125px;
@@ -60,7 +62,8 @@ table {
     border: 1px solid $gray-light-border-color;
 
     &.passed {
-      color: $text-color-inactive;
+      color: $text-color-secondary;
+      opacity: 0.6;
     }
 
     &.collapsed {

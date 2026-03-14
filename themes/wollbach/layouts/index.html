@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+{{- partial "header.html" . -}}
+<body itemscope itemtype="https://schema.org/{{- .Page.Params.schemaorg | default "WebPage" -}}">
+  <header class="header">
+    <div class="cover">
+      <a class="navigation-brand" href="/">
+        <img src="/img/wappen.png" alt="Wollbach" />
+      </a>
+    </div>
+  </header>
+  {{- partial "navigation.html" . -}}
+  <main class="content" itemprop="mainContentOfPage">
+    <div class="homepage-hero">
+      <h1>{{- .Title -}}</h1>
+    </div>
+
+    {{ .Content }}
+  </main>
+  {{- partial "footer.html" . -}}
+</body>
+</html>
+

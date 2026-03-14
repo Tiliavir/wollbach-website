@@ -2,14 +2,9 @@
 {{ $name := .Get "name"}}
 
 <div class="einrichtung" itemscope itemtype="https://schema.org/LocalBusiness">
-    <h2 class="title" itemprop="name">
-        {{- if $url -}}
-        <a href="{{ $url }}" itemprop="url" target="_blank">
-            {{- $name -}}
-        </a>
-        {{- else -}}
-        {{- $name -}}
-        {{- end -}}
-    </h2>
+    <h2 class="title" itemprop="name">{{- $name -}}</h2>
     {{ .Inner | markdownify }}
+    {{- if $url -}}
+    <p><a href="{{ $url }}" itemprop="url" target="_blank" rel="noopener">Webseite</a></p>
+    {{- end -}}
 </div>
