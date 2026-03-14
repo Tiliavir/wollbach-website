@@ -10,6 +10,8 @@ $gallery-bg-color: #ccc;
 
 .logo-1250 {
   max-width: 200px;
+  display: block;
+  margin: 20px auto;
 }
 
 @include breakpoint(0, 767px) {
@@ -45,7 +47,7 @@ $gallery-bg-color: #ccc;
     &::before {
       content: '';
       display: block;
-      padding-top: (4.5 / 3) * 100%;
+      padding-top: 75%; /* 4:3 ratio */
       width: 100%;
     }
 

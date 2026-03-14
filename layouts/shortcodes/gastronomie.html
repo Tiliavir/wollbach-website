@@ -1,15 +1,7 @@
 {{ with $.Site.Data.gastronomie }}
 {{ range sort . "name" "asc" }}
 <div class="restaurant" itemscope itemtype="https://schema.org/Restaurant">
-    <h2 class="title" itemprop="name">
-        {{- if .website -}}
-        <a href="{{ .website }}" itemprop="url" target="_blank">
-            {{- .name -}}
-        </a>
-        {{- else -}}
-            {{- .name -}}
-        {{- end -}}
-    </h2>
+    <h2 class="title" itemprop="name">{{- .name -}}</h2>
     <div class="address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <span itemprop="streetAddress">{{- .street -}}</span><!--
         --><span itemprop="addressLocality">{{- .town -}}</span>
@@ -37,6 +29,9 @@
         <a class="email" itemprop="email" href="mailto:{{ . }}">
             {{ . }}
         </a>
+    {{ end }}
+    {{ with .website }}
+        <a class="website" itemprop="url" href="{{ . }}" target="_blank" rel="noopener">Webseite</a>
     {{ end }}
 </div>
 {{ end }}

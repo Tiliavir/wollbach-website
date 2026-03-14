@@ -25,11 +25,11 @@
 
   .contact-person {
     margin-top: 5px;
-    font-size: .8rem;
+    font-size: .9rem;
 
     .label {
       font-weight: bold;
-      display: block;
+      display: inline;
     }
   }
 
@@ -42,8 +42,9 @@
   }
 
   .telephone,
-  .email {
-    font-size: .8rem;
+  .email,
+  .website {
+    font-size: .9rem;
   }
 }
 

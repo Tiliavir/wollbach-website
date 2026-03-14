@@ -1,4 +1,8 @@
+@import 'global-variables';
+
 figure {
+  margin: 25px 0;
+
   img,
   .img {
     display: block;
@@ -6,10 +10,63 @@ figure {
     max-height: calc(75vh - #{$top-nav-height + $header-min-height});
     max-width: 100%;
     margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  figcaption {
+    margin-top: 12px;
+    font-size: $font-size-small;
+    color: $text-color-secondary;
+    text-align: center;
+    line-height: 1.4;
   }
 
   & > [onclick] {
     cursor: pointer;
+  }
+}
+
+// Photo-led blocks with fallback treatment (blur + overlay)
+.photo-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  min-height: 250px;
+  background-color: $gray-lightest;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &.low-quality {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(212, 175, 55, 0.15));
+      backdrop-filter: blur(3px);
+      z-index: 2;
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: white;
+      padding: 20px;
+      z-index: 3;
+      text-align: center;
+    }
   }
 }
 
