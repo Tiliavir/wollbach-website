@@ -7,11 +7,6 @@ class App {
     });
   }
 
-  public static initializeImageEnlarger(): void {
-    const $img = $("figure .img");
-    $img.on("click", () => App.viewFullImage($img.data("src")))
-  }
-
   public static activateTabs(): void {
     function setActive(id: string) {
       $(".tab-pane").removeClass("active");
@@ -34,12 +29,6 @@ class App {
     });
   }
 
-  public static viewFullImage(url: string, alt?: string): void {
-    const $preview: JQuery = $(`<div class="overlay"><img class="full-view" src="${url}" alt="${alt}" /></div>`);
-    $preview.on("click", (e) => $(e.target).closest(".overlay").remove());
-    $("body").append($preview);
-  }
-
   public static initialize(): void {
     if (location.protocol !== 'https:') {
       location.replace(`https:${location.href.substring(location.protocol.length)}`);
@@ -49,7 +38,6 @@ class App {
 
     App.fixAnchors();
     App.activateTabs();
-    App.initializeImageEnlarger();
   }
 }
 
