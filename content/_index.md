@@ -48,8 +48,8 @@ die 11 Gastronomiebetriebe von der vorbildlichen Gastfreundschaft.
 
 Im Namen der Ortsverwaltung und des Ortschaftsrates Wollbach
 
-Max Sütterlin, Ortsvorsteher
+Werner Brugger, Ortsvorsteher
 
-{{< figure src="/img/suetterlin.jpg"
-           alt="Max Sütterlin"
-           class="max-suetterlin" >}}
+{{< figure src="/img/brugger.webp"
+           alt="Werner Brugger"
+           class="ortsvorsteher" >}}

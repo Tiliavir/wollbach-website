@@ -24,7 +24,8 @@ menu:
 
   Kindergartenleitung:
   - 01.01.1993 bis 31.05.2020 Gabriela Maurer
-  - ab 01.04.2020	Anne Joachimi
+  - 01.04.2020 bis 2024 Anne Joachimi
+  - ab 2024 Sarah Wenk
 {{< /einrichtung >}}
 
 {{< einrichtung name="Schule" >}}
