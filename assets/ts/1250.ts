@@ -1,6 +1,6 @@
-import PhotoSwipe from "photoswipe";
+import PhotoSwipe, {type SlideData} from "photoswipe";
 
-interface GalleryImage extends PhotoSwipe.Item {
+interface GalleryImage {
   t?: string;
   title: string,
   f: string;
@@ -39,7 +39,7 @@ export class Gallery {
     // Map items to PhotoSwipe format with correct image sources
     // Originals are at: /gallery/{b}{f}  (e.g. /gallery/2017/001/00000.jpg)
     // Medium at:        /gallery/{b}m/{f} (e.g. /gallery/2017/001/m/00000.jpg)
-    const psItems = items.map(item => ({
+    const psItems: SlideData[] = items.map(item => ({
       src: useLargeImages ? `/gallery/${item.b}${item.f}` : `/gallery/${item.b}m/${item.f}`,
       width: useLargeImages ? item.o.w : item.m.w,
       height: useLargeImages ? item.o.h : item.m.h,
@@ -49,11 +49,11 @@ export class Gallery {
 
     // PhotoSwipe v5: dataSource must be a plain array, not { items: [] }
     const pswp = new PhotoSwipe({
-      dataSource: psItems as any,
+      dataSource: psItems,
       index: 0,
       wheelToZoom: true,
       preloaderDelay: 0,
-    } as PhotoSwipe.Options);
+    });
     pswp.init();
   }
 
