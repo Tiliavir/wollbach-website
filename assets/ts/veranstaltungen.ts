@@ -4,7 +4,7 @@ interface HTMLElementWithVisibility extends HTMLElement {
 
 class Appointments {
   public static addDays(date: Date, days: number): Date {
-    const result = new Date(date.getTime());
+    const result = new Date(date);
     result.setDate(result.getDate() + days);
     return result;
   }
