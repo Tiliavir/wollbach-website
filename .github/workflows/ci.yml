@@ -21,7 +21,11 @@ jobs:
         with:
           node-version: 24.x
       - name: npm ci
-        run: npm ci
+        # Dependency lifecycle scripts are not executed (supply-chain hardening).
+        # Our own postinstall (copy jQuery, lint) is run explicitly instead.
+        run: |
+          npm ci --ignore-scripts
+          npm run postinstall
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:

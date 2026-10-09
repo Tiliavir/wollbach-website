@@ -1,11 +1,5 @@
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-  <title>{{- .Title -}}{{ cond (eq .Title "") "" " | " }}{{- .Site.Title -}}</title>
-
+{{- /* Remaining <head> content. The <head> element itself, the leading meta tags
+       and <title> live in the page layouts so they are visible to static analysis. */ -}}
   <base href="{{- .Site.BaseURL -}}"/>
 
   <meta name="author" content="{{- .Site.Title -}}"/>
@@ -47,4 +41,3 @@
   <meta name="msapplication-TileColor" content="#4a4a4a"/>
   <meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
   <meta name="theme-color" content="#4a4a4a"/>
-</head>
