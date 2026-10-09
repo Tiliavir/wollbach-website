@@ -20,21 +20,22 @@
     "not dead"
   ],
   "devDependencies": {
+    "@eslint/js": "10.0.1",
     "@types/grecaptcha": "3.0.9",
     "@types/jquery": "4.0.1",
     "@types/lunr": "2.3.7",
-    "@typescript-eslint/eslint-plugin": "8.71.0",
-    "@typescript-eslint/parser": "8.71.0",
     "autoprefixer": "10.6.1",
     "copyfiles": "2.4.1",
     "eslint": "10.12.0",
     "glob-all": "3.3.1",
+    "globals": "17.13.0",
     "mvw-search-index": "github:Tiliavir/mvw-search-index#3f3a236946b0f273382eaef7e14b871b1888b60d",
     "postcss": "8.5.28",
     "postcss-cli": "12.0.0",
     "stylelint": "17.16.0",
     "stylelint-config-recommended-scss": "17.0.1",
     "typescript": "6.0.3",
+    "typescript-eslint": "8.71.0",
     "vnu-jar": "26.10.2"
   },
   "dependencies": {
