@@ -20,7 +20,7 @@ jobs:
           node-version: 24.x
       - name: ↧ npm ci
         # Dependency lifecycle scripts are not executed (supply-chain hardening).
-        # Our own postinstall (copy vendored libs, lint) is run explicitly instead.
+        # Our own postinstall (copy jQuery, lint) is run explicitly instead.
         run: |
           npm ci --ignore-scripts
           npm run postinstall
