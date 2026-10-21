@@ -41,7 +41,7 @@
   "dependencies": {
     "jquery": "4.0.0",
     "lunr": "2.3.9",
-    "lunr-languages": "1.22.0",
+    "lunr-languages": "1.23.0",
     "photoswipe": "5.4.4"
   },
   "scripts": {
