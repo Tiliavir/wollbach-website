@@ -130,6 +130,7 @@
 }
 
 .stat-value {
+  font-variant-numeric: lining-nums;
   font-family: $font-family-display;
   font-size: 1.25rem;
   font-weight: 700;
@@ -245,6 +246,7 @@
 }
 
 .event-day {
+  font-variant-numeric: lining-nums;
   display: block;
   font-family: $font-family-display;
   font-size: 1.3rem;

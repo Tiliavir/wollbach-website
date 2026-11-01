@@ -30,11 +30,12 @@ $radius: 12px;
 $radius-lg: 16px;
 $shadow-card: 0 1px 2px rgba(60, 40, 20, 0.06), 0 4px 16px rgba(60, 40, 20, 0.07);
 $shadow-card-hover: 0 2px 4px rgba(60, 40, 20, 0.08), 0 10px 28px rgba(60, 40, 20, 0.12);
-$hero-overlay: linear-gradient(180deg, rgba(40, 22, 10, 0.35) 0%, rgba(40, 22, 10, 0.55) 60%, rgba(40, 22, 10, 0.7) 100%);
+// neutral, slightly cool overlay - a warm/brown one adds a yellow cast to the photo
+$hero-overlay: linear-gradient(180deg, rgba(10, 22, 18, 0.3) 0%, rgba(10, 22, 18, 0.45) 55%, rgba(10, 22, 18, 0.62) 100%);
 
 // fonts - self-hosted Open Sans; display font is a single token so it can be swapped
 $font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-$font-family-display: $font-family;
+$font-family-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 $font-size-large: 20px;
 $font-size-base: 16px;
 $font-size-small: 14px;

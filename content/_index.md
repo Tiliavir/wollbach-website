@@ -2,6 +2,7 @@
 title: Willkommen in Wollbach
 description: Die Internetpräsenz der Gemeinde Wollbach im Markgräflerland am Fuße des Schwarzwaldes
 keywords: [Wollbach, Kandern Wollbach, Gemeinde, Ortsteil, Stadtteil, 79400]
+heroImage: /img/top-hero.jpg
 tagline: Am Fuße des Schwarzwaldes, im Markgräflerland
 # Kennzahlen: nur Werte, die auch im Grußwort unten stehen
 stats:
