@@ -2,8 +2,8 @@
 title: Gewerbe
 description: Eine Übersicht über gewerbliche Einrichtungen in Wollbach
 keywords: [Gewerbe, Wirtschaft, Unternehmen]
-customCss:
-  - scss/gewerbe.scss
+icon: briefcase
+lead: Handwerk, Dienstleistungen und mehr aus Wollbach
 menu:
   main:
     weight: 600

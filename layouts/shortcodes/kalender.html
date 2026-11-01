@@ -1,0 +1,40 @@
+{{- /*
+  Month-grid calendar + "Kommende Termine", fed from data/veranstaltungen.json.
+  The grid is rendered client-side by assets/ts/kalender.ts and stays hidden
+  without JavaScript; the upcoming list and the full table below work without it.
+*/ -}}
+{{- $events := slice -}}
+{{- range $year, $list := site.Data.veranstaltungen }}{{ $events = $events | append $list }}{{ end -}}
+{{- $out := slice -}}
+{{- range sort $events "starttime" }}
+  {{- $out = $out | append (dict
+      "start" .starttime
+      "end" (default .starttime .endtime)
+      "title" .title
+      "organizer" (.organizer | default "")
+      "location" (.location.name | default "")
+      "description" (.description | default "")) -}}
+{{- end }}
+<div class="calendar-layout">
+  <section class="card calendar" data-calendar hidden aria-labelledby="calendar-title">
+    <div class="calendar-head">
+      <button type="button" class="calendar-nav" data-calendar-prev>{{ partial "icon.html" (dict "name" "chevron-left" "size" 20) }}<span class="visually-hidden">Vorheriger Monat</span></button>
+      <h2 id="calendar-title" class="calendar-title" aria-live="polite">Monatsansicht</h2>
+      <button type="button" class="calendar-nav" data-calendar-next>{{ partial "icon.html" (dict "name" "chevron-right" "size" 20) }}<span class="visually-hidden">Nächster Monat</span></button>
+    </div>
+    <button type="button" class="calendar-today" data-calendar-today>Heute</button>
+    <div class="calendar-weekdays" aria-hidden="true">
+      <span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span>
+    </div>
+    <div class="calendar-grid" data-calendar-grid></div>
+    <div class="calendar-detail" data-calendar-detail aria-live="polite"></div>
+    <script type="application/json" data-calendar-events>{{ $out | jsonify | safeJS }}</script>
+  </section>
+
+  <aside class="card calendar-upcoming" aria-labelledby="upcoming-title">
+    <h2 id="upcoming-title" class="aside-title">{{ partial "icon.html" (dict "name" "calendar" "size" 20) }} Kommende Termine</h2>
+    {{ partial "upcoming-events.html" (dict "limit" 8) }}
+    <a class="card-link" href="#alle-termine">Alle Termine</a>
+  </aside>
+</div>
+{{- .Inner -}}

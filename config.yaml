@@ -21,11 +21,6 @@ enableGitInfo: true
 
 menu:
   main:
-    - identifier: aktuelles
-      name: Aktuelles
-      title: Aktuelles
-      weight: 100
-      url: #
     - identifier: unser-dorf
       name: Unser Dorf
       title: Unser Dorf

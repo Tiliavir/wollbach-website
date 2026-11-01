@@ -1,0 +1,103 @@
+@import 'global-variables';
+@import 'mixins/breakpoint';
+
+// Card rows for Vereine, Gastronomie and Gewerbe (layouts/partials/contact-card.html)
+
+.contact-list {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.contact-group {
+  margin: 40px 0 16px;
+  font-size: 1.3rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 18px 24px;
+  background-color: $card-bg;
+  border-radius: $radius;
+  box-shadow: $shadow-card;
+
+  @include breakpoint(0, 640px) {
+    flex-direction: column;
+    padding: 16px 18px;
+  }
+}
+
+.contact-main {
+  min-width: 0;
+}
+
+.contact-name {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.35;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: $text-color;
+    border-bottom: 0;
+
+    .icon {
+      color: $color-primary;
+    }
+
+    &:hover {
+      color: $color-primary;
+      border-bottom: 0;
+    }
+  }
+}
+
+.contact-sub,
+.contact-address {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact-sub {
+  color: $text-color-secondary;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: none;
+  font-size: 0.9rem;
+
+  @include breakpoint(640px) {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+  color: $text-color;
+  overflow-wrap: anywhere;
+
+  .icon {
+    color: $color-primary;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.contact-fax {
+  color: $text-color-secondary;
+}

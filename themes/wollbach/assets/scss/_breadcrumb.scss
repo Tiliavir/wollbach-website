@@ -1,8 +1,9 @@
 @import 'global-variables';
 
 .breadcrumb {
-  padding: 12px 0;
-  margin-bottom: 25px;
+  padding: 0;
+  margin: 0 0 8px;
+  text-align: center;
   list-style: none;
   font-size: $font-size-small;
 
@@ -36,7 +37,7 @@
     &::before {
       content: '\00a0/\00a0';
       padding: 0 5px;
-      color: $gray-lighter;
+      color: $gray-border-color;
     }
   }
 }

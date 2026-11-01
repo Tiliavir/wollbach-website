@@ -2,6 +2,11 @@
 title: Ortsverwaltung
 description: Die Ortsverwaltung Wollbachs mit Öffnungszeiten
 keywords: [Ortsverwaltung, Gemeinderat, Ortsvorsteher, Politik, Repräsentanten]
+# Kurzinfo für die Startseite - bei Änderungen auch die Liste unten anpassen
+kurzinfo:
+  adresse: Rathaus, Obere Dorfstr. 11/1
+  zeiten: [Di 10–12 Uhr, Do 17–19 Uhr]
+  zusatz: oder nach Vereinbarung
 menu:
   main:
     parent: unser-dorf

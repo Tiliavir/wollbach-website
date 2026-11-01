@@ -1,7 +1,7 @@
 {{ with $.Site.Data.veranstaltungen}}
 {{ range $year, $value := . }}
-<h2>{{ $year }}</h2>
-<table class="appointments" aria-label="Veranstaltungen">
+<h3 class="events-year">{{ $year }}</h3>
+<table class="appointments" aria-label="Alle Veranstaltungen {{ $year }}">
   <thead>
   <tr>
       <th class="date" scope="col">Datum</th>

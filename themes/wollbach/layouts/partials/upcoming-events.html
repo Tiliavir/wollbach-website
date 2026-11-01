@@ -1,0 +1,36 @@
+{{- /*
+  Upcoming events from data/veranstaltungen.json.
+  Rendered at build time (events ending today or later); app.ts re-filters on
+  the client so the list stays correct between deployments.
+  Params: limit (int, 0 = all)
+*/ -}}
+{{- $limit := .limit | default 0 -}}
+{{- $months := slice "Jan." "Feb." "März" "Apr." "Mai" "Juni" "Juli" "Aug." "Sep." "Okt." "Nov." "Dez." -}}
+{{- $events := slice -}}
+{{- range $year, $list := site.Data.veranstaltungen }}{{ $events = $events | append $list }}{{ end -}}
+{{- $events = sort $events "starttime" -}}
+{{- $today := time (now.Format "2006-01-02") -}}
+{{- $shown := 0 -}}
+<ol class="upcoming-events" data-limit="{{ $limit }}">
+  {{- range $events }}
+    {{- $start := time .starttime -}}
+    {{- $end := time (default .starttime .endtime) -}}
+    {{- if ge $end.Unix $today.Unix }}
+    {{- $shown = add $shown 1 }}
+  <li class="upcoming-event{{ if and (gt $limit 0) (gt $shown $limit) }} is-extra{{ end }}" data-end="{{ $end.Format "2006-01-02" }}">
+    <span class="event-date" aria-hidden="true">
+      <span class="event-day">{{ $start.Day }}</span>
+      <span class="event-month">{{ index $months (sub (int $start.Month) 1) }}</span>
+    </span>
+    <span class="event-body">
+      <span class="event-title">{{ .title }}</span>
+      <span class="event-meta">
+        <span class="visually-hidden">{{ partial "timespan" (dict "start" .starttime "end" .endtime) }} · </span>
+        {{- with .organizer }}{{ . }}{{ end }}{{ with .location.name }} · {{ . }}{{ end -}}
+      </span>
+    </span>
+  </li>
+    {{- end }}
+  {{- end }}
+  <li class="upcoming-empty"{{ if gt $shown 0 }} hidden{{ end }}>Aktuell sind keine Termine eingetragen.</li>
+</ol>

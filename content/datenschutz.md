@@ -1,6 +1,6 @@
 ---
 title: Datenschutz
-description: Das Impressum der Webseite des Musikvereins Wollbach.
+description: Die Datenschutzerklärung der Webseite Wollbachs.
 keywords: [Impressum, Kontakt, Übersicht, Webseiteninformationen, Informationen zur Webseite, Rechtliches, Haftung, Haftungsausschluss, Datenschutz]
 ---
 
@@ -67,6 +67,14 @@ der hier genannten Zwecke erforderlich ist oder wie es die vom Gesetzgeber
 vorgesehenen vielfältigen Speicherfristen vorsehen. Nach Fortfall des jeweiligen
 Zweckes bzw. Ablauf dieser Fristen werden die entsprechenden Daten routinemäßig
 und entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht.
+
+## WhatsApp-Kanal (Schwarzes Brett)
+Auf der Seite „Schwarzes Brett“ verlinken wir auf einen WhatsApp-Kanal. Beim
+Aufruf unserer Webseite werden dabei keine Daten an WhatsApp übertragen. Erst
+wenn Sie den Link anklicken, verlassen Sie unsere Webseite und werden zu
+WhatsApp (WhatsApp Ireland Limited, Dublin, Irland) weitergeleitet. Für die
+Datenverarbeitung durch WhatsApp gelten die
+[Datenschutzbestimmungen von WhatsApp](https://www.whatsapp.com/legal/privacy-policy-eea).
 
 ## Kontakt
 Treten Sie bzgl. Fragen jeglicher Art per E-Mail mit uns in Kontakt,

@@ -1,23 +1,11 @@
-@import 'themes/wollbach/assets/scss/mixins/breakpoint';
-
-.navigation-brand {
-  display: none;
-}
-
-.wappen {
-  float: left;
-  margin: 6px 20px 5px;
-}
+@import 'themes/wollbach/assets/scss/global-variables';
 
 .ortsvorsteher {
-  max-width: 200px;
-  margin: 0 auto;
-}
+  margin: 24px 0 0;
 
-@include breakpoint(0, 767px) {
-  .ortsvorsteher {
-    width: 100%;
-    max-width: initial;
-    max-height: initial;
+  img {
+    max-width: 200px;
+    margin: 0;
+    border-radius: $radius;
   }
 }

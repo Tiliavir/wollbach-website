@@ -1,0 +1,67 @@
+@import 'themes/wollbach/assets/scss/global-variables';
+
+.channel-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px;
+
+  h2 {
+    margin: 0 0 16px;
+    font-size: 1.3rem;
+  }
+}
+
+.channel-points {
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 22px;
+    line-height: 1.55;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $color-primary;
+    }
+  }
+}
+
+.channel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: $radius-sm;
+  background-color: $color-whatsapp;
+  color: $white;
+  font-weight: 600;
+  border-bottom: 0;
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-whatsapp-dark;
+    color: $white;
+    border-bottom: 0;
+  }
+}
+
+.channel-note {
+  margin: 14px 0 0;
+  text-align: center;
+  font-size: $font-size-small;
+  color: $text-color-secondary;
+  line-height: 1.5;
+  hyphens: manual;
+}

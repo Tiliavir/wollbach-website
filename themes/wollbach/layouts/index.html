@@ -1,7 +1,63 @@
-{{ define "main" }}
-    <div class="homepage-hero">
-      <h1>{{- .Title -}}</h1>
+{{ define "hero" }}
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-image" src="{{ .Params.heroImage | default "/img/top.jpg" }}" alt="" fetchpriority="high"/>
+    <div class="hero-inner">
+      <img class="hero-wappen" src="/img/wappen.png" alt="Wappen von Wollbach" width="80" height="80"/>
+      <h1 id="hero-title">{{- .Title -}}</h1>
+      {{- with .Params.tagline }}
+      <p class="hero-tagline">{{ . }}</p>
+      {{- end }}
     </div>
+  </section>
 
-    {{ .Content }}
+  {{- with .Params.stats }}
+  <section class="stats" aria-label="Wollbach in Zahlen">
+    <ul class="stats-grid">
+      {{- range . }}
+      <li class="stat-card">
+        {{ partial "icon.html" (dict "name" .icon "size" 28 "class" "stat-icon") }}
+        <span class="stat-value">{{ .value }}</span>
+        <span class="stat-label">{{ .label }}</span>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+{{ end }}
+
+{{ define "main" }}
+  <div class="home-layout">
+    <article class="home-main">
+      {{ .Content }}
+    </article>
+
+    <aside class="home-aside" aria-label="Aktuelles">
+      {{- with site.GetPage "/aktuelles/veranstaltungen" }}
+      <section class="card aside-card">
+        <h2 class="aside-title">{{ partial "icon.html" (dict "name" "calendar" "size" 20) }} Nächste Termine</h2>
+        {{ partial "upcoming-events.html" (dict "limit" 4) }}
+        <a class="card-link" href="{{ .RelPermalink }}">Zum Kalender</a>
+      </section>
+      {{- end }}
+
+      {{- with site.GetPage "/aktuelles/schwarzes-brett" }}
+      <section class="card aside-card">
+        <h2 class="aside-title">{{ partial "icon.html" (dict "name" "message" "size" 20) }} Schwarzes Brett</h2>
+        <p>{{ .Params.lead }}</p>
+        <a class="card-link" href="{{ .RelPermalink }}">Mehr erfahren</a>
+      </section>
+      {{- end }}
+
+      {{- with site.GetPage "/unser-dorf/ortsverwaltung" }}
+      <section class="card aside-card">
+        <h2 class="aside-title">{{ partial "icon.html" (dict "name" "landmark" "size" 20) }} Ortsverwaltung</h2>
+        {{- with .Params.kurzinfo }}
+        <p>{{ .adresse }}</p>
+        <p class="aside-meta">{{ partial "icon.html" (dict "name" "clock" "size" 16) }}<span>{{ delimit .zeiten " · " }}{{ with .zusatz }}<br/>{{ . }}{{ end }}</span></p>
+        {{- end }}
+        <a class="card-link" href="{{ .RelPermalink }}">Zur Ortsverwaltung</a>
+      </section>
+      {{- end }}
+    </aside>
+  </div>
 {{ end }}

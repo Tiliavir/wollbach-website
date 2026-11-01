@@ -1,200 +1,187 @@
 @import 'global-variables';
 
-$nav-bg-light: $body-bg;
-$nav-bg-dark: $color-primary;
-$nav-text-light: $text-color;
-$nav-text-hover: $color-accent;
-$nav-bg-hover: $gray-lightest;
-$nav-separator: $gray-lighter;
+// Sticky, translucent top bar: Wappen + name left, pill menu right.
+// Below $nav-breakpoint the menu collapses into a CSS-only hamburger panel.
 
 .navigation {
-  background-color: $nav-bg-light;
-  color: $nav-text-light;
-  font-size: $font-size-base;
-  font-weight: 500;
-  width: 100%;
-  position: relative;
-  top: -$top-nav-height;
+  position: sticky;
+  top: 0;
   z-index: 1000;
-  margin: 0 auto;
-  height: $top-nav-height;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(160%) blur(10px);
+  border-bottom: 1px solid $gray-light-border-color;
   user-select: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-bottom: 3px solid $color-accent;
 }
 
-.navigation-header {
-  display: inline-block;
-}
-
-.navigation-menu {
-  overflow-x: hidden;
-  text-align: left;
-  position: relative;
-  top: 35px;
-  height: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.navigation-menu > ul {
+.navigation-bar {
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+  max-width: $header-max-width;
+  height: $top-nav-height;
+  margin: 0 auto;
+  padding: 0 16px;
+}
 
-  li {
-    height: auto;
+.navigation-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: $text-color;
+  font-family: $font-family-display;
+  font-size: 1.25rem;
+  font-variant-numeric: lining-nums;
+  font-weight: 700;
+  border-bottom: 0;
 
-    a {
-      padding: 15px 20px;
-      display: block;
-      text-decoration: none;
-      color: $text-color;
-      cursor: pointer;
-      border-left: 4px solid transparent;
-      transition: background-color 0.2s ease, border-color 0.2s ease;
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
 
-      &:hover {
-        background-color: $nav-bg-hover;
-        border-left-color: $color-accent;
-        color: $color-primary;
-      }
-
-      &:focus {
-        outline: 2px solid $color-accent;
-        outline-offset: -2px;
-      }
-    }
+  &:hover {
+    color: $color-primary;
+    border-bottom: 0;
   }
 }
 
 .navigation-checkbox {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.dropdown {
-  position: relative;
-  height: auto;
-
-  & > ul {
-    color: $nav-text-light;
-    font-size: $font-size-base;
-    font-weight: 400;
-    display: block;
+.navigation-menu {
+  ul {
     list-style: none;
+    margin: 0;
     padding: 0;
-    background-color: $gray-lightest;
+  }
 
-    li {
-      a {
-        padding: 12px 20px 12px 40px;
-        border-left: 4px solid transparent;
-        transition: all 0.2s ease;
+  a,
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: $radius-sm;
+    background: none;
+    color: $text-color-secondary;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
 
-        &:hover {
-          background-color: $nav-bg-hover;
-          border-left-color: $color-accent;
-          color: $color-primary;
-        }
-
-        &:focus {
-          outline: 2px solid $color-accent;
-          outline-offset: -2px;
-        }
-      }
-
-      &.active a {
-        border-left-color: $color-accent;
-        color: $color-primary;
-        font-weight: 500;
-      }
+    &:hover {
+      color: $text-color;
+      background-color: $color-primary-soft;
+      border-bottom: 0;
     }
+  }
+
+  // current page: filled pill
+  li.active > a,
+  li.active > .dropdown-toggle {
+    background-color: $color-primary;
+    color: $white;
+  }
+
+  .sub-menu li.active > a {
+    background-color: $color-primary-soft;
+    color: $color-primary;
   }
 }
 
-@media (max-width: 767px) {
-  .navigation-menu {
-    background-color: $body-bg;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.dropdown-arrow {
+  flex: none;
+  transition: transform 0.2s ease;
+}
+
+// ---------- desktop ----------
+@media (min-width: $nav-breakpoint) {
+  .navigation-hamburger {
+    display: none;
+  }
+
+  .navigation-menu > ul {
+    display: flex;
+    align-items: center;
+    gap: 2px;
   }
 
   .dropdown {
-    &:hover > ul {
-      position: relative;
-      display: block;
-      min-width: 100%;
+    position: relative;
+
+    .sub-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      min-width: 220px;
+      padding: 6px;
+      background-color: $card-bg;
+      border-radius: $radius;
+      box-shadow: $shadow-card-hover;
+
+      // hover bridge so the menu doesn't close in the gap
+      &::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 0;
+        right: 0;
+        height: 8px;
+      }
+
+      a {
+        color: $text-color;
+        font-weight: 500;
+      }
     }
 
-    li {
-      &:hover,
-      &.active {
-        color: $color-primary;
+    &:hover,
+    &:focus-within,
+    &.open {
+      .sub-menu {
+        display: block;
+      }
+
+      .dropdown-arrow {
+        transform: rotate(180deg);
       }
     }
   }
+}
 
-  .navigation-checkbox {
-    &:not(:checked) ~ .navigation-menu {
-      max-height: 0;
-      min-height: 0;
-      overflow-y: hidden;
-    }
-
-    &:checked {
-      & ~ .navigation-menu {
-        max-height: 2000px;
-        height: initial;
-        overflow-y: hidden;
-        transition: max-height .8s ease;
-      }
-
-      & ~ .navigation-header {
-        .navigation-hamburger {
-          span {
-            background-color: transparent;
-
-            &::before,
-            &::after {
-              top: 0;
-            }
-
-            &::before {
-              transform: rotate(225deg);
-            }
-
-            &::after {
-              transform: rotate(-225deg);
-            }
-          }
-
-          &:hover {
-            span {
-              transform: rotate(90deg);
-            }
-          }
-        }
-      }
-    }
-  }
-
+// ---------- mobile / tablet ----------
+@media (max-width: $nav-breakpoint - 1) {
   .navigation-hamburger {
-    position: absolute;
-    top: 12px;
-    right: 10px;
-    margin: 0;
-    padding: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-right: -6px;
+    border-radius: $radius-sm;
     cursor: pointer;
 
     %burger-slice-style {
-      height: 3px;
-      width: 24px;
-      transition: transform .4s ease;
-      background: $color-primary;
-      z-index: 1;
+      height: 2px;
+      width: 22px;
+      border-radius: 2px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      background: $text-color;
     }
 
-    // Accessible name for the hamburger toggle, visible to screen readers only
+    // accessible name, visible to screen readers only
     .navigation-label {
       position: absolute;
       width: 1px;
@@ -205,168 +192,108 @@ $nav-separator: $gray-lighter;
       clip-path: inset(50%);
       white-space: nowrap;
       border: 0;
-      background: none;
-      transform: none;
+    }
+
+    span:first-child {
+      @extend %burger-slice-style;
+      position: relative;
 
       &::before,
       &::after {
-        content: none;
-      }
-    }
-
-    span {
-      @extend %burger-slice-style;
-      position: relative;
-      flex: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &::before {
         @extend %burger-slice-style;
         content: '';
         position: absolute;
-        top: -8px;
         left: 0;
+      }
+
+      &::before {
+        top: -7px;
       }
 
       &::after {
-        @extend %burger-slice-style;
-        content: '';
-        position: absolute;
-        top: 8px;
-        left: 0;
-      }
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .navigation-header {
-    display: none;
-  }
-
-  .navigation-menu > ul {
-    flex-flow: row;
-    width: 100%;
-
-    & > li {
-      display: inline-block;
-
-      a {
-        position: relative;
-        padding: 0 20px;
-        display: block;
-        height: $top-nav-height;
-        line-height: $top-nav-height;
-        font-weight: 500;
-        transition: background-color 0.2s ease, color 0.2s ease;
-        color: $text-color;
-        border-left: none;
-
-        &:hover {
-          color: $color-primary;
-          background-color: $gray-lightest;
-        }
-
-        &:focus {
-          outline: 2px solid $color-accent;
-          outline-offset: -2px;
-        }
-      }
-
-      &.active a {
-        color: $color-accent;
-        border-bottom: 4px solid $color-accent;
-        border-left: none;
-        padding-bottom: 0;
+        top: 7px;
       }
     }
   }
 
-  .navigation-checkbox {
-    &:not(:checked) ~ .navigation-menu {
-      display: block;
+  .navigation-checkbox:focus-visible ~ .navigation-hamburger {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+
+  .navigation-checkbox:checked ~ .navigation-hamburger span:first-child {
+    background-color: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-45deg);
     }
   }
 
   .navigation-menu {
-    min-height: $top-nav-height;
-    position: relative;
-    top: 0;
-    width: 100%;
-    overflow-x: visible;
-    max-width: $header-max-width;
-    margin: 0 auto;
-    box-shadow: none;
-  }
+    position: absolute;
+    top: $top-nav-height;
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    background-color: $card-bg;
+    box-shadow: 0 12px 24px rgba(60, 40, 20, 0.12);
+    transition: max-height 0.35s ease;
 
-  .dropdown {
-    height: $top-nav-height;
-
-    &:hover > ul {
-      position: absolute;
-      display: block;
-      left: 0;
-      top: $top-nav-height;
-      padding: 0;
-      background-color: $body-bg;
-      min-width: 200px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    > ul {
+      padding: 8px 16px 16px;
     }
 
-    & > a {
-      &::after {
-        $expand-arrow-height: 3px;
-        position: absolute;
-        content: '';
-        right: 8px;
-        top: $top-nav-height / 2 - $expand-arrow-height + 1px;
-        border: $expand-arrow-height solid transparent;
-        border-top: $expand-arrow-height solid $text-color;
-        transition: transform 0.2s ease;
+    a,
+    .dropdown-toggle {
+      padding: 12px;
+      font-size: 1rem;
+    }
+  }
+
+  .navigation-checkbox:checked ~ .navigation-menu {
+    max-height: calc(100vh - #{$top-nav-height});
+    overflow-y: auto;
+    border-bottom: 1px solid $gray-light-border-color;
+  }
+
+  // section headings on mobile: submenus are always expanded
+  .dropdown {
+    > .dropdown-toggle {
+      cursor: default;
+      color: $text-color-secondary;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding-top: 16px;
+      padding-bottom: 4px;
+
+      &:hover {
+        background: none;
+      }
+
+      .dropdown-arrow {
+        display: none;
       }
     }
 
-    &:hover > a::after {
-      border-top-color: $color-primary;
+    &.active > .dropdown-toggle {
+      background: none;
+      color: $color-primary;
     }
 
-    & > ul {
-      display: none;
+    .sub-menu {
+      padding-left: 8px;
 
-      li {
-        padding: 0;
-
-        a {
-          white-space: nowrap;
-          display: block;
-          padding: 12px 20px;
-          height: auto;
-          line-height: 1.4;
-          font-weight: 400;
-          color: $text-color;
-          transition: background-color 0.2s ease, border-color 0.2s ease, padding-left 0.2s ease;
-
-          &:hover {
-            color: $color-primary;
-            background-color: $gray-lightest;
-            border-left: 4px solid $color-accent;
-            padding-left: 16px;
-          }
-
-          &:focus {
-            outline: 2px solid $color-accent;
-            outline-offset: -2px;
-          }
-        }
-
-        &.active a {
-          color: $color-primary;
-          border-left: 4px solid $color-accent;
-          padding-left: 16px;
-          font-weight: 500;
-        }
+      a {
+        color: $text-color;
+        font-weight: 500;
       }
     }
   }

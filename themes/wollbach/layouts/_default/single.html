@@ -1,5 +1,13 @@
 {{ define "main" }}
-    <h1 class="page-title">{{- .Title -}}{{if .Page.Params.Subtitle}}&nbsp;<small>{{.Page.Params.Subtitle -}}</small>{{- end}}</h1>
     {{- partial "breadcrumb.html" . -}}
+    <header class="page-header{{ with .Params.accent }} page-header--accent{{ end }}">
+      {{- with .Params.icon }}
+      <div class="page-icon">{{ partial "icon.html" (dict "name" . "size" 36) }}</div>
+      {{- end }}
+      <h1 class="page-title">{{- .Title -}}{{if .Page.Params.Subtitle}}&nbsp;<small>{{.Page.Params.Subtitle -}}</small>{{- end}}</h1>
+      {{- with .Params.lead }}
+      <p class="page-lead">{{ . }}</p>
+      {{- end }}
+    </header>
     {{ .Content }}
 {{ end }}
