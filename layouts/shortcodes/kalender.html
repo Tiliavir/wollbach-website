@@ -18,15 +18,15 @@
 <div class="calendar-layout">
   <section class="card calendar" data-calendar hidden aria-labelledby="calendar-title">
     <div class="calendar-head">
-      <button type="button" class="calendar-nav" data-calendar-prev aria-label="Vorheriger Monat">{{ partial "icon.html" (dict "name" "chevron-left" "size" 20) }}</button>
-      <h2 id="calendar-title" class="calendar-title" aria-live="polite"></h2>
-      <button type="button" class="calendar-nav" data-calendar-next aria-label="Nächster Monat">{{ partial "icon.html" (dict "name" "chevron-right" "size" 20) }}</button>
+      <button type="button" class="calendar-nav" data-calendar-prev>{{ partial "icon.html" (dict "name" "chevron-left" "size" 20) }}<span class="visually-hidden">Vorheriger Monat</span></button>
+      <h2 id="calendar-title" class="calendar-title" aria-live="polite">Monatsansicht</h2>
+      <button type="button" class="calendar-nav" data-calendar-next>{{ partial "icon.html" (dict "name" "chevron-right" "size" 20) }}<span class="visually-hidden">Nächster Monat</span></button>
     </div>
     <button type="button" class="calendar-today" data-calendar-today>Heute</button>
     <div class="calendar-weekdays" aria-hidden="true">
       <span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span>
     </div>
-    <div class="calendar-grid" data-calendar-grid role="group" aria-label="Tage des Monats"></div>
+    <div class="calendar-grid" data-calendar-grid></div>
     <div class="calendar-detail" data-calendar-detail aria-live="polite"></div>
     <script type="application/json" data-calendar-events>{{ $out | jsonify | safeJS }}</script>
   </section>

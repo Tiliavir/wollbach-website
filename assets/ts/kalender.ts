@@ -50,6 +50,43 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, t
   return node;
 }
 
+// ", 2 Termine" / ", 1 Termin" / "" - appended to a day's accessible name
+function eventCountLabel(count: number): string {
+  if (!count) {
+    return "";
+  }
+  const noun = count === 1 ? "Termin" : "Termine";
+  return `, ${count} ${noun}`;
+}
+
+function outsideCell(date: Date): HTMLElement {
+  const filler = el("div", "calendar-day is-outside");
+  filler.setAttribute("aria-hidden", "true");
+  filler.appendChild(el("span", "calendar-num", String(date.getDate())));
+  return filler;
+}
+
+// desktop: up to MAX_CHIPS titles plus "+n weitere"
+function eventChips(events: CalendarEvent[]): HTMLElement {
+  const chips = el("span", "calendar-chips");
+  chips.setAttribute("aria-hidden", "true");
+  events.slice(0, MAX_CHIPS).forEach((ev) => chips.appendChild(el("span", "calendar-chip", ev.title)));
+  if (events.length > MAX_CHIPS) {
+    chips.appendChild(el("span", "calendar-more", `+${events.length - MAX_CHIPS} weitere`));
+  }
+  return chips;
+}
+
+// phones: up to three dots
+function eventDots(count: number): HTMLElement {
+  const dots = el("span", "calendar-dots");
+  dots.setAttribute("aria-hidden", "true");
+  for (let i = 0; i < Math.min(count, 3); i++) {
+    dots.appendChild(el("span", "calendar-dot"));
+  }
+  return dots;
+}
+
 class Calendar {
   private readonly byDay = new Map<string, CalendarEvent[]>();
   private readonly title: HTMLElement;
@@ -150,54 +187,39 @@ class Calendar {
 
     for (let i = 0; i < cells; i++) {
       const date = new Date(this.year, this.month, i - offset + 1);
-      const key = isoDate(date);
-      const inMonth = date.getMonth() === this.month;
-      const events = this.byDay.get(key) || [];
-
-      if (!inMonth) {
-        const filler = el("div", "calendar-day is-outside");
-        filler.setAttribute("aria-hidden", "true");
-        filler.appendChild(el("span", "calendar-num", `${date.getDate()}`));
-        this.grid.appendChild(filler);
-        continue;
-      }
-
-      const cell = el("button", "calendar-day");
-      cell.type = "button";
-      cell.dataset.date = key;
-      cell.tabIndex = key === this.selected ? 0 : -1;
-      cell.setAttribute("aria-pressed", key === this.selected ? "true" : "false");
-      cell.setAttribute("aria-label", `${longDate(date)}${events.length ? `, ${events.length} ${events.length === 1 ? "Termin" : "Termine"}` : ""}`);
-      if (key === todayKey) {
-        cell.classList.add("is-today");
-        cell.setAttribute("aria-current", "date");
-      }
-      if (events.length) {
-        cell.classList.add("has-events");
-      }
-
-      cell.appendChild(el("span", "calendar-num", `${date.getDate()}`));
-
-      if (events.length) {
-        const chips = el("span", "calendar-chips");
-        chips.setAttribute("aria-hidden", "true");
-        events.slice(0, MAX_CHIPS).forEach((ev) => chips.appendChild(el("span", "calendar-chip", ev.title)));
-        if (events.length > MAX_CHIPS) {
-          chips.appendChild(el("span", "calendar-more", `+${events.length - MAX_CHIPS} weitere`));
-        }
-        cell.appendChild(chips);
-
-        const dots = el("span", "calendar-dots");
-        dots.setAttribute("aria-hidden", "true");
-        events.slice(0, 3).forEach(() => dots.appendChild(el("span", "calendar-dot")));
-        cell.appendChild(dots);
-      }
-
-      cell.addEventListener("click", () => this.select(key, false));
+      const cell = date.getMonth() === this.month ? this.dayCell(date, todayKey) : outsideCell(date);
       this.grid.appendChild(cell);
     }
 
     this.renderDetail();
+  }
+
+  private dayCell(date: Date, todayKey: string): HTMLButtonElement {
+    const key = isoDate(date);
+    const events = this.byDay.get(key) || [];
+    const isSelected = key === this.selected;
+
+    const cell = el("button", "calendar-day");
+    cell.type = "button";
+    cell.dataset.date = key;
+    cell.tabIndex = isSelected ? 0 : -1;
+    cell.setAttribute("aria-pressed", String(isSelected));
+    cell.setAttribute("aria-label", longDate(date) + eventCountLabel(events.length));
+    if (key === todayKey) {
+      cell.classList.add("is-today");
+      cell.setAttribute("aria-current", "date");
+    }
+
+    cell.appendChild(el("span", "calendar-num", String(date.getDate())));
+    if (events.length) {
+      cell.classList.add("has-events");
+      cell.appendChild(eventChips(events));
+      cell.appendChild(eventDots(events.length));
+    }
+
+    // re-rendering replaces the button, so restore focus for keyboard use
+    cell.addEventListener("click", () => this.select(key, true));
+    return cell;
   }
 
   private renderDetail(): void {
@@ -249,7 +271,7 @@ class Calendar {
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.querySelector("[data-calendar]") as HTMLElement | null;
   const data = document.querySelector("[data-calendar-events]");
-  if (!root || !data || !data.textContent) {
+  if (!root || !data?.textContent) {
     return;
   }
   try {
