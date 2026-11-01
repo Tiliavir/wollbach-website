@@ -1,0 +1,47 @@
+{{- /*
+  Card row for an entry from data/vereine.json, gastronomie.json or gewerbe.json.
+  Params: item (map), type (schema.org type), level (heading level, default 2)
+*/ -}}
+{{- $i := .item -}}
+{{- $level := .level | default 2 -}}
+{{- $tels := slice -}}
+{{- with $i.telephone }}{{ if reflect.IsSlice . }}{{ $tels = . }}{{ else }}{{ $tels = slice . }}{{ end }}{{ end -}}
+<article class="contact-card" itemscope itemtype="https://schema.org/{{ .type }}">
+  <div class="contact-main">
+    <h{{ $level }} class="contact-name">
+      {{- with $i.website -}}
+      <a class="no-ext" href="{{ . }}" itemprop="url" target="_blank" rel="noopener"><span itemprop="name">{{ $i.name }}</span>{{ partial "icon.html" (dict "name" "external" "size" 16) }}<span class="visually-hidden"> (Webseite, öffnet in neuem Tab)</span></a>
+      {{- else -}}
+      <span itemprop="name">{{ $i.name }}</span>
+      {{- end -}}
+    </h{{ $level }}>
+    {{- with $i.vorstand }}
+    <p class="contact-sub">Vorstand: <span itemprop="employee" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{{ . }}</span></span></p>
+    {{- end }}
+    {{- with $i.owners }}
+    <p class="contact-sub">
+      {{- range $k, $o := . }}{{ if $k }} · {{ end }}<span itemprop="founder" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{{ $o }}</span></span>{{ end -}}
+    </p>
+    {{- end }}
+    {{- with $i.street }}
+    <p class="contact-address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+      <span itemprop="streetAddress">{{ . }}</span>, <span itemprop="addressLocality">{{ $i.town }}</span>
+      <meta itemprop="postalCode" content="79400"/>
+      <meta itemprop="addressCountry" content="DE"/>
+    </p>
+    {{- end }}
+  </div>
+  {{- if or $tels $i.fax $i.email }}
+  <div class="contact-actions">
+    {{- range $tels }}
+    <a class="contact-link no-ext" href="tel:+49{{ substr (replace . " " "") 1 }}">{{ partial "icon.html" (dict "name" "phone" "size" 15) }}<span itemprop="telephone">+49 {{ replace . "0" "(0)" 1 }}</span></a>
+    {{- end }}
+    {{- with $i.fax }}
+    <span class="contact-link contact-fax">Fax <span itemprop="faxNumber">+49 {{ replace . "0" "(0)" 1 }}</span></span>
+    {{- end }}
+    {{- with $i.email }}
+    <a class="contact-link no-ext" href="mailto:{{ . }}">{{ partial "icon.html" (dict "name" "mail" "size" 15) }}<span itemprop="email">{{ . }}</span></a>
+    {{- end }}
+  </div>
+  {{- end }}
+</article>

@@ -7,16 +7,11 @@
   <title>{{- .Title -}}{{ cond (eq .Title "") "" " | " }}{{- .Site.Title -}}</title>
   {{- partial "header.html" . }}
 </head>
-<body itemscope itemtype="https://schema.org/{{- .Page.Params.schemaorg | default "WebPage" -}}">
-  <header class="header">
-    <div class="cover">
-      <a class="navigation-brand" href="/">
-        <img src="/img/wappen.png" alt="Wollbach" />
-      </a>
-    </div>
-  </header>
+<body class="{{ if .IsHome }}is-home{{ else }}is-page{{ end }}" itemscope itemtype="https://schema.org/{{- .Page.Params.schemaorg | default "WebPage" -}}">
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
   {{- partial "navigation.html" . -}}
-  <main class="content" itemprop="mainContentOfPage">
+  {{- block "hero" . }}{{ end }}
+  <main id="inhalt" class="content{{ if .Params.wide }} content--wide{{ end }}" itemprop="mainContentOfPage">
     {{- block "main" . }}{{ end }}
   </main>
   {{- partial "footer.html" . -}}

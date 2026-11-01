@@ -2,18 +2,23 @@
 title: Willkommen in Wollbach
 description: Die Internetpräsenz der Gemeinde Wollbach im Markgräflerland am Fuße des Schwarzwaldes
 keywords: [Wollbach, Kandern Wollbach, Gemeinde, Ortsteil, Stadtteil, 79400]
+tagline: Am Fuße des Schwarzwaldes, im Markgräflerland
+# Kennzahlen: nur Werte, die auch im Grußwort unten stehen
+stats:
+  - { icon: mountain, value: "303 m", label: "Höhe über NN" }
+  - { icon: map-pin, value: "1.860 ha", label: "Gemarkung" }
+  - { icon: trees, value: "ca. 1.100 ha", label: "Wald" }
+  - { icon: scroll, value: "767", label: "Ersterwähnung" }
 customCss:
   - scss/index.scss
 ---
 
 ## Grußwort des Ortsvorstehers
-<img class="wappen" src="/img/wappen.png" alt="Wollbach" />
 
 Unser schönes Dorf Wollbach liegt am Fuße des Schwarzwaldes, am Treffpunkt von Wollbach- und
 Kandertal im Markgräflerland, zwischen Oberrheinischer Tiefebene und dem Südschwarzwald.
 
-Wollbach wurde im Jahr 767 erstmals urkundlich erwähnt – feiert also im Jahr 2017 das 1250-jährige
-Jubiläum. Das ist auch der Grund, mit dieser Homepage im Internet aufzutreten.
+Wollbach wurde im Jahr 767 erstmals urkundlich erwähnt.
 
 Zur ehemals selbständigen Gemeinde gehören die Ortsteile Egerten, Egisholz, Hammerstein und
 Nebenau. Am 01. März 1974 erfolgte die Eingemeindung zur Stadt Kandern – mit einer

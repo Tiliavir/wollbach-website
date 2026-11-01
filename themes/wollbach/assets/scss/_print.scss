@@ -85,8 +85,12 @@ $breadcrumb-print-color: #000;
     padding-top: 0;
   }
 
-  header,
-  .navbar {
+  .navbar,
+  .hero,
+  .stats,
+  .skip-link,
+  .page-icon,
+  .home-aside {
     display: none;
   }
 
