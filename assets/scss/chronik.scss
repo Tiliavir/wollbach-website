@@ -22,14 +22,18 @@
     padding: 20px;
     box-sizing: border-box;
 
-    &:nth-child(odd) {
-      left: 0;
-      text-align: right;
-    }
+    @include breakpoint(768px) {
+      &:nth-child(odd) {
+        text-align: right;
+      }
 
-    &:nth-child(even) {
-      left: 50%;
-      text-align: left;
+      &:nth-child(even) {
+        left: 50%;
+      }
+
+      &:nth-child(even)::before {
+        left: -10px;
+      }
     }
 
     &::before {
@@ -43,10 +47,6 @@
       border: 3px solid white;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       left: calc(100% - 10px);
-    }
-
-    &:nth-child(even)::before {
-      left: -10px;
     }
 
     h2 {
@@ -73,16 +73,10 @@
 
     .timeline-item {
       width: 100%;
-      left: 0 !important;
-      text-align: left;
       padding-left: 40px;
 
-      &:nth-child(odd) {
-        text-align: left;
-      }
-
       &::before {
-        left: 10px !important;
+        left: 10px;
       }
     }
   }

@@ -205,7 +205,7 @@ a {
   top: 0;
   background-color: transparentize($black, .6);
   overflow-x: hidden;
-  transition: .5s;
+  transition: opacity .5s;
   cursor: pointer;
 }
 

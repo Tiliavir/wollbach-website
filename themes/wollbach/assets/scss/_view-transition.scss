@@ -55,10 +55,8 @@
 
 // Reduced motion preference - disable view transitions
 @media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+  @view-transition {
+    navigation: none;
   }
 }
 
