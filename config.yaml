@@ -31,12 +31,6 @@ menu:
       title: Kultur und Freizeit
       weight: 300
       url: #
-  footer:
-    - identifier: github
-      name: GitHub
-      title: GitHub
-      url: https://github.com/Tiliavir/wollbach-website/
-      weight: 300
 
 sitemap:
   changefreq: monthly
