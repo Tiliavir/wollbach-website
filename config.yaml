@@ -19,6 +19,9 @@ markup:
 
 enableGitInfo: true
 
+params:
+  repository: https://github.com/Tiliavir/wollbach-website.git
+
 menu:
   main:
     - identifier: unser-dorf
