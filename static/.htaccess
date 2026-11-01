@@ -11,3 +11,9 @@
   </IfModule>
 </FilesMatch>
 # This site needs no PHP, so nothing is allowed.
+
+# 1250-Jahrfeier (2017) und Bildergalerie wurden entfernt
+<IfModule mod_alias.c>
+  RedirectMatch 301 ^/aktuelles/1250-jahrfeier/?$ /unser-dorf/chronik/
+  RedirectMatch 410 ^/gallery/
+</IfModule>

@@ -7,28 +7,6 @@ class App {
     });
   }
 
-  public static activateTabs(): void {
-    function setActive(id: string) {
-      $(".tab-pane").removeClass("active");
-      $(".tab").removeClass("active");
-
-      $(`.tab-${id}`).addClass("active");
-      $(`#${id}`).addClass("active");
-    }
-
-    const url: string = window.location.href;
-
-    const startIndex = url.indexOf("#") + 1;
-    if (startIndex > 0) {
-      setActive(url.substring(startIndex));
-    }
-
-    $(".tab").on("click", (e: JQuery.ClickEvent) => {
-      setActive($(e.target).data("tab"));
-      e.stopPropagation();
-    });
-  }
-
   public static initialize(): void {
     if (location.protocol !== 'https:' && !["localhost", "127.0.0.1"].includes(location.hostname)) {
       location.replace(`https:${location.href.substring(location.protocol.length)}`);
@@ -37,7 +15,6 @@ class App {
     $(".content").on("click", () => $("#navigation-checkbox").prop("checked", false));
 
     App.fixAnchors();
-    App.activateTabs();
     App.initDropdowns();
     App.refreshUpcoming();
   }
