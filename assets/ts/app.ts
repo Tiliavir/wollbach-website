@@ -2,13 +2,13 @@ class App {
   public static fixAnchors(): void {
     const pathname = window.location.href.split("#")[0];
     $("a[href^='#']").each((_i, e) => {
-        const $elem = $(e);
-        $elem.attr("href", pathname + $elem.attr("href"));
+      const $elem = $(e);
+      $elem.attr("href", pathname + $elem.attr("href"));
     });
   }
 
   public static initialize(): void {
-    if (location.protocol !== 'https:' && !["localhost", "127.0.0.1"].includes(location.hostname)) {
+    if (location.protocol !== "https:" && !["localhost", "127.0.0.1"].includes(location.hostname)) {
       location.replace(`https:${location.href.substring(location.protocol.length)}`);
     }
 
@@ -83,4 +83,6 @@ class App {
   }
 }
 
-$(() => { App.initialize(); });
+$(() => {
+  App.initialize();
+});
