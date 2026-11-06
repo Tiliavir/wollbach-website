@@ -42,11 +42,11 @@ class Appointments {
     const cutOffDate = Appointments.addDays(new Date(), -3);
     let hasPassedItems = false;
 
-    $("meta[itemprop=\"startDate\"]").each((i, e) => {
+    $("meta[itemprop=\"startDate\"]").each((_i, e) => {
       let $e = $(e);
       const $endDateString = $e.siblings("meta[itemprop=\"endDate\"]");
       $e = $endDateString.length === 1 ? $endDateString : $e;
-      const endDate = new Date($e.attr("content"));
+      const endDate = new Date($e.attr("content") ?? "");
       if (endDate < cutOffDate) {
         $e.closest("tr").addClass("passed").addClass("collapsed");
         hasPassedItems = true;

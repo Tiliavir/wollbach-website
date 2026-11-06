@@ -97,7 +97,7 @@ class Calendar {
   private month: number;
   private selected: string;
 
-  constructor(private readonly root: HTMLElement, events: CalendarEvent[]) {
+  constructor(root: HTMLElement, events: CalendarEvent[]) {
     this.title = root.querySelector("#calendar-title") as HTMLElement;
     this.grid = root.querySelector("[data-calendar-grid]") as HTMLElement;
     this.detail = root.querySelector("[data-calendar-detail]") as HTMLElement;

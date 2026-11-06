@@ -1,7 +1,7 @@
 class App {
   public static fixAnchors(): void {
     const pathname = window.location.href.split("#")[0];
-    $("a[href^='#']").each((i, e) => {
+    $("a[href^='#']").each((_i, e) => {
         const $elem = $(e);
         $elem.attr("href", pathname + $elem.attr("href"));
     });
