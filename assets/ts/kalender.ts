@@ -12,8 +12,20 @@ interface CalendarEvent {
   description: string;
 }
 
-const MONTHS = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli",
-  "August", "September", "Oktober", "November", "Dezember"];
+const MONTHS = [
+  "Januar",
+  "Februar",
+  "März",
+  "April",
+  "Mai",
+  "Juni",
+  "Juli",
+  "August",
+  "September",
+  "Oktober",
+  "November",
+  "Dezember",
+];
 const WEEKDAYS = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
 const MAX_CHIPS = 2;
 
@@ -39,7 +51,11 @@ function longDate(d: Date): string {
   return `${WEEKDAYS[d.getDay()]}, ${d.getDate()}. ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
 }
 
-function el<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, text?: string): HTMLElementTagNameMap[K] {
+function el<K extends keyof HTMLElementTagNameMap>(
+  tag: K,
+  className?: string,
+  text?: string,
+): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag);
   if (className) {
     node.className = className;
@@ -97,7 +113,7 @@ class Calendar {
   private month: number;
   private selected: string;
 
-  constructor(private readonly root: HTMLElement, events: CalendarEvent[]) {
+  constructor(root: HTMLElement, events: CalendarEvent[]) {
     this.title = root.querySelector("#calendar-title") as HTMLElement;
     this.grid = root.querySelector("[data-calendar-grid]") as HTMLElement;
     this.detail = root.querySelector("[data-calendar-detail]") as HTMLElement;
