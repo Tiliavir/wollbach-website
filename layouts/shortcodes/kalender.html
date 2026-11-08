@@ -4,7 +4,7 @@
   without JavaScript; the upcoming list and the full table below work without it.
 */ -}}
 {{- $events := slice -}}
-{{- range $year, $list := site.Data.veranstaltungen }}{{ $events = $events | append $list }}{{ end -}}
+{{- range $year, $list := hugo.Data.veranstaltungen }}{{ $events = $events | append $list }}{{ end -}}
 {{- $out := slice -}}
 {{- range sort $events "starttime" }}
   {{- $out = $out | append (dict
