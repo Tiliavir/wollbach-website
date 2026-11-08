@@ -1,5 +1,5 @@
-@import 'themes/wollbach/assets/scss/global-variables';
-@import 'themes/wollbach/assets/scss/mixins/breakpoint';
+@use 'themes/wollbach/assets/scss/global-variables';
+@use 'themes/wollbach/assets/scss/mixins/breakpoint';
 
 // ---------- layout: month grid + upcoming ----------
 .calendar-layout {
@@ -9,7 +9,7 @@
   align-items: start;
   margin-bottom: 48px;
 
-  @include breakpoint(0, 1024px) {
+  @include breakpoint.breakpoint(0, 1024px) {
     grid-template-columns: minmax(0, 1fr);
   }
 }
@@ -18,7 +18,7 @@
   position: relative;
   padding: 24px;
 
-  @include breakpoint(0, 640px) {
+  @include breakpoint.breakpoint(0, 640px) {
     padding: 16px 12px;
   }
 }
@@ -43,14 +43,14 @@
   align-items: center;
   justify-content: center;
   border: 0;
-  border-radius: $radius-sm;
+  border-radius: global-variables.$radius-sm;
   background: none;
-  color: $text-color;
+  color: global-variables.$text-color;
   cursor: pointer;
   transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: $color-primary-soft;
+    background-color: global-variables.$color-primary-soft;
   }
 }
 
@@ -63,9 +63,9 @@
   display: block;
   margin: -4px auto 12px;
   padding: 4px 12px;
-  font-size: $font-size-small;
+  font-size: global-variables.$font-size-small;
   font-weight: 600;
-  color: $color-primary;
+  color: global-variables.$color-primary;
 }
 
 .calendar-weekdays,
@@ -83,7 +83,7 @@
     text-align: center;
     font-size: 0.75rem;
     font-weight: 600;
-    color: $text-color-secondary;
+    color: global-variables.$text-color-secondary;
   }
 }
 
@@ -98,16 +98,16 @@
   min-height: 92px;
   padding: 6px;
   border: 1px solid transparent;
-  border-radius: $radius-sm;
+  border-radius: global-variables.$radius-sm;
   background: none;
-  color: $text-color;
+  color: global-variables.$text-color;
   font: inherit;
   text-align: left;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease;
 
   &:hover {
-    background-color: $gray-lightest;
+    background-color: global-variables.$gray-lightest;
   }
 
   &.has-events {
@@ -115,18 +115,18 @@
   }
 
   &.is-today .calendar-num {
-    background-color: $color-primary;
-    color: $white;
+    background-color: global-variables.$color-primary;
+    color: global-variables.$white;
   }
 
   &[aria-pressed='true'] {
-    border-color: $color-primary;
-    box-shadow: inset 0 0 0 1px $color-primary;
+    border-color: global-variables.$color-primary;
+    box-shadow: inset 0 0 0 1px global-variables.$color-primary;
   }
 
   &.is-outside {
     cursor: default;
-    color: $gray-border-color;
+    color: global-variables.$gray-border-color;
 
     &:hover {
       background: none;
@@ -157,8 +157,8 @@
   overflow: hidden;
   padding: 1px 6px;
   border-radius: 4px;
-  background-color: $color-primary-soft;
-  color: $color-primary-dark;
+  background-color: global-variables.$color-primary-soft;
+  color: global-variables.$color-primary-dark;
   font-size: 0.72rem;
   font-weight: 600;
   line-height: 1.35;
@@ -172,7 +172,7 @@
 .calendar-more {
   padding: 0 6px;
   font-size: 0.7rem;
-  color: $text-color-secondary;
+  color: global-variables.$text-color-secondary;
 }
 
 .calendar-dots {
@@ -185,11 +185,11 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: $color-primary;
+  background-color: global-variables.$color-primary;
 }
 
 // small screens: number + dots only, details listed below the grid
-@include breakpoint(0, 768px) {
+@include breakpoint.breakpoint(0, 768px) {
   .calendar-weekdays,
   .calendar-grid {
     gap: 2px;
@@ -218,7 +218,7 @@
 .calendar-detail {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid $gray-light-border-color;
+  border-top: 1px solid global-variables.$gray-light-border-color;
 
   &:empty {
     display: none;
@@ -232,8 +232,8 @@
 
 .calendar-detail-empty {
   margin: 0;
-  color: $text-color-secondary;
-  font-size: $font-size-small;
+  color: global-variables.$text-color-secondary;
+  font-size: global-variables.$font-size-small;
 }
 
 .calendar-detail-list {
@@ -246,7 +246,7 @@
   display: flex;
   flex-direction: column;
   padding: 8px 0 8px 12px;
-  border-left: 3px solid $color-primary;
+  border-left: 3px solid global-variables.$color-primary;
 
   & + & {
     margin-top: 8px;
@@ -256,16 +256,16 @@
 .calendar-upcoming {
   padding: 20px;
 
-  @include breakpoint(1024px) {
+  @include breakpoint.breakpoint(1024px) {
     position: sticky;
-    top: $top-nav-height + 24px;
+    top: global-variables.$top-nav-height + 24px;
   }
 }
 
 // ---------- full table ("Alle Termine") ----------
 .events-year {
   margin: 8px 0 12px;
-  color: $text-color-secondary;
+  color: global-variables.$text-color-secondary;
 }
 
 .description {
@@ -274,9 +274,9 @@
 }
 
 .show-passed {
-  font-size: $font-size-small;
+  font-size: global-variables.$font-size-small;
   font-style: italic;
-  color: $text-color-secondary;
+  color: global-variables.$text-color-secondary;
   cursor: pointer;
 }
 
@@ -287,9 +287,9 @@ table.appointments {
   border-spacing: 0;
   table-layout: fixed;
   overflow: hidden;
-  background-color: $card-bg;
-  border-radius: $radius;
-  box-shadow: $shadow-card;
+  background-color: global-variables.$card-bg;
+  border-radius: global-variables.$radius;
+  box-shadow: global-variables.$shadow-card;
 
   th,
   td {
@@ -301,9 +301,9 @@ table.appointments {
   }
 
   th {
-    background-color: $color-primary-soft;
-    color: $text-color;
-    font-size: $font-size-small;
+    background-color: global-variables.$color-primary-soft;
+    color: global-variables.$text-color;
+    font-size: global-variables.$font-size-small;
     font-weight: 700;
 
     &.date {
@@ -316,7 +316,7 @@ table.appointments {
   }
 
   td {
-    border-top: 1px solid $gray-light-border-color;
+    border-top: 1px solid global-variables.$gray-light-border-color;
 
     &.show-passed {
       padding: 8px 16px;
@@ -329,7 +329,7 @@ table.appointments {
 
   tr {
     &.passed {
-      color: $text-color-secondary;
+      color: global-variables.$text-color-secondary;
       opacity: 0.7;
     }
 
@@ -339,7 +339,7 @@ table.appointments {
   }
 }
 
-@include breakpoint(0, 768px) {
+@include breakpoint.breakpoint(0, 768px) {
   table.appointments {
     thead {
       display: none;
@@ -348,7 +348,7 @@ table.appointments {
     tr {
       display: flex;
       flex-direction: column;
-      border-top: 1px solid $gray-light-border-color;
+      border-top: 1px solid global-variables.$gray-light-border-color;
 
       &:first-child {
         border-top: 0;
@@ -368,14 +368,14 @@ table.appointments {
       &:first-child {
         padding-top: 12px;
         font-weight: 700;
-        color: $color-primary;
+        color: global-variables.$color-primary;
       }
 
       &:nth-child(2) {
         order: 3;
         padding-bottom: 12px;
-        font-size: $font-size-small;
-        color: $text-color-secondary;
+        font-size: global-variables.$font-size-small;
+        color: global-variables.$text-color-secondary;
       }
 
       &:nth-child(3) {

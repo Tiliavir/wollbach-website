@@ -1,34 +1,34 @@
-@import 'global-variables';
+@use 'global-variables';
 
 .breadcrumb {
   padding: 0;
   margin: 0 0 8px;
   text-align: center;
   list-style: none;
-  font-size: $font-size-small;
+  font-size: global-variables.$font-size-small;
 
   &>li {
     display: inline-block;
-    color: $text-color-secondary;
+    color: global-variables.$text-color-secondary;
 
     a {
-      color: $color-primary;
+      color: global-variables.$color-primary;
       text-decoration: none;
       transition: color 0.2s ease;
 
       &:hover {
-        color: $color-accent-dark;
+        color: global-variables.$color-accent-dark;
         text-decoration: underline;
       }
 
       &:focus {
-        outline: 2px solid $color-accent;
+        outline: 2px solid global-variables.$color-accent;
         outline-offset: 2px;
       }
     }
 
     &.active {
-      color: $text-color;
+      color: global-variables.$text-color;
       font-weight: 500;
     }
   }
@@ -37,7 +37,7 @@
     &::before {
       content: '\00a0/\00a0';
       padding: 0 5px;
-      color: $gray-border-color;
+      color: global-variables.$gray-border-color;
     }
   }
 }

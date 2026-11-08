@@ -1,4 +1,4 @@
-@import 'global-variables';
+@use 'global-variables';
 
 figure {
   margin: 25px 0;
@@ -7,7 +7,7 @@ figure {
   .img {
     display: block;
     height: auto;
-    max-height: calc(75vh - #{$top-nav-height + $header-min-height});
+    max-height: calc(75vh - #{global-variables.$top-nav-height + global-variables.$header-min-height});
     max-width: 100%;
     margin: 0 auto;
     border-radius: 4px;
@@ -16,8 +16,8 @@ figure {
 
   figcaption {
     margin-top: 12px;
-    font-size: $font-size-small;
-    color: $text-color-secondary;
+    font-size: global-variables.$font-size-small;
+    color: global-variables.$text-color-secondary;
     text-align: center;
     line-height: 1.4;
   }
@@ -33,7 +33,7 @@ figure {
   overflow: hidden;
   border-radius: 6px;
   min-height: 250px;
-  background-color: $gray-lightest;
+  background-color: global-variables.$gray-lightest;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   img {

@@ -1,4 +1,4 @@
-@import 'global-variables';
+@use 'global-variables';
 
 // Sticky, translucent top bar: Wappen + name left, pill menu right.
 // Below $nav-breakpoint the menu collapses into a CSS-only hamburger panel.
@@ -9,7 +9,7 @@
   z-index: 1000;
   background-color: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(160%) blur(10px);
-  border-bottom: 1px solid $gray-light-border-color;
+  border-bottom: 1px solid global-variables.$gray-light-border-color;
   user-select: none;
 }
 
@@ -18,8 +18,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: $header-max-width;
-  height: $top-nav-height;
+  max-width: global-variables.$header-max-width;
+  height: global-variables.$top-nav-height;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -28,8 +28,8 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: $text-color;
-  font-family: $font-family-display;
+  color: global-variables.$text-color;
+  font-family: global-variables.$font-family-display;
   font-size: 1.25rem;
   font-variant-numeric: lining-nums;
   font-weight: 700;
@@ -42,7 +42,7 @@
   }
 
   &:hover {
-    color: $color-primary;
+    color: global-variables.$color-primary;
     border-bottom: 0;
   }
 }
@@ -69,9 +69,9 @@
     width: 100%;
     padding: 8px 12px;
     border: 0;
-    border-radius: $radius-sm;
+    border-radius: global-variables.$radius-sm;
     background: none;
-    color: $text-color-secondary;
+    color: global-variables.$text-color-secondary;
     font-size: 0.95rem;
     font-weight: 600;
     text-align: left;
@@ -80,8 +80,8 @@
     transition: background-color 0.2s ease, color 0.2s ease;
 
     &:hover {
-      color: $text-color;
-      background-color: $color-primary-soft;
+      color: global-variables.$text-color;
+      background-color: global-variables.$color-primary-soft;
       border-bottom: 0;
     }
   }
@@ -89,13 +89,13 @@
   // current page: filled pill
   li.active > a,
   li.active > .dropdown-toggle {
-    background-color: $color-primary;
-    color: $white;
+    background-color: global-variables.$color-primary;
+    color: global-variables.$white;
   }
 
   .sub-menu li.active > a {
-    background-color: $color-primary-soft;
-    color: $color-primary;
+    background-color: global-variables.$color-primary-soft;
+    color: global-variables.$color-primary;
   }
 }
 
@@ -105,7 +105,7 @@
 }
 
 // ---------- desktop ----------
-@media (min-width: $nav-breakpoint) {
+@media (min-width: global-variables.$nav-breakpoint) {
   .navigation-hamburger {
     display: none;
   }
@@ -126,9 +126,9 @@
       left: 0;
       min-width: 220px;
       padding: 6px;
-      background-color: $card-bg;
-      border-radius: $radius;
-      box-shadow: $shadow-card-hover;
+      background-color: global-variables.$card-bg;
+      border-radius: global-variables.$radius;
+      box-shadow: global-variables.$shadow-card-hover;
 
       // hover bridge so the menu doesn't close in the gap
       &::before {
@@ -141,7 +141,7 @@
       }
 
       a {
-        color: $text-color;
+        color: global-variables.$text-color;
         font-weight: 500;
       }
     }
@@ -161,7 +161,7 @@
 }
 
 // ---------- mobile / tablet ----------
-@media (max-width: $nav-breakpoint - 1) {
+@media (max-width: global-variables.$nav-breakpoint - 1) {
   .navigation-hamburger {
     position: relative;
     display: flex;
@@ -170,7 +170,7 @@
     width: 44px;
     height: 44px;
     margin-right: -6px;
-    border-radius: $radius-sm;
+    border-radius: global-variables.$radius-sm;
     cursor: pointer;
 
     %burger-slice-style {
@@ -178,7 +178,7 @@
       width: 22px;
       border-radius: 2px;
       transition: transform 0.3s ease, background-color 0.3s ease;
-      background: $text-color;
+      background: global-variables.$text-color;
     }
 
     // accessible name, visible to screen readers only
@@ -217,7 +217,7 @@
   }
 
   .navigation-checkbox:focus-visible ~ .navigation-hamburger {
-    outline: 2px solid $color-primary;
+    outline: 2px solid global-variables.$color-primary;
     outline-offset: 2px;
   }
 
@@ -237,12 +237,12 @@
 
   .navigation-menu {
     position: absolute;
-    top: $top-nav-height;
+    top: global-variables.$top-nav-height;
     left: 0;
     right: 0;
     max-height: 0;
     overflow: hidden;
-    background-color: $card-bg;
+    background-color: global-variables.$card-bg;
     box-shadow: 0 12px 24px rgba(60, 40, 20, 0.12);
     transition: max-height 0.35s ease;
 
@@ -258,16 +258,16 @@
   }
 
   .navigation-checkbox:checked ~ .navigation-menu {
-    max-height: calc(100vh - #{$top-nav-height});
+    max-height: calc(100vh - #{global-variables.$top-nav-height});
     overflow-y: auto;
-    border-bottom: 1px solid $gray-light-border-color;
+    border-bottom: 1px solid global-variables.$gray-light-border-color;
   }
 
   // section headings on mobile: submenus are always expanded
   .dropdown {
     > .dropdown-toggle {
       cursor: default;
-      color: $text-color-secondary;
+      color: global-variables.$text-color-secondary;
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -285,14 +285,14 @@
 
     &.active > .dropdown-toggle {
       background: none;
-      color: $color-primary;
+      color: global-variables.$color-primary;
     }
 
     .sub-menu {
       padding-left: 8px;
 
       a {
-        color: $text-color;
+        color: global-variables.$text-color;
         font-weight: 500;
       }
     }
