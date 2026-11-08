@@ -1,4 +1,4 @@
-@import 'themes/wollbach/assets/scss/global-variables';
+@use 'themes/wollbach/assets/scss/global-variables';
 
 .ortsvorsteher {
   margin: 24px 0 0;
@@ -6,6 +6,6 @@
   img {
     max-width: 200px;
     margin: 0;
-    border-radius: $radius;
+    border-radius: global-variables.$radius;
   }
 }

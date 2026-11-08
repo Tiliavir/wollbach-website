@@ -1,5 +1,5 @@
-@import 'global-variables';
-@import 'mixins/breakpoint';
+@use 'global-variables';
+@use 'mixins/breakpoint';
 
 $tap-highlight: rgba(0, 0, 0, 0);
 
@@ -7,7 +7,7 @@ $tap-highlight: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: $tap-highlight;
 
   &:focus-visible {
-    outline: 2px solid $color-primary;
+    outline: 2px solid global-variables.$color-primary;
     outline-offset: 2px;
   }
 }
@@ -16,10 +16,10 @@ body {
   margin: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  font-family: $font-family;
-  font-size: $font-size-base;
-  background-color: $body-bg;
-  color: $text-color;
+  font-family: global-variables.$font-family;
+  font-size: global-variables.$font-size-base;
+  background-color: global-variables.$body-bg;
+  color: global-variables.$text-color;
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -77,14 +77,14 @@ h5,
 h6 {
   line-height: 1.2;
   font-weight: 600;
-  font-family: $font-family-display;
+  font-family: global-variables.$font-family-display;
   font-variant-numeric: lining-nums;
-  color: $text-color;
+  color: global-variables.$text-color;
 
   small {
     font-weight: 400;
     line-height: 1;
-    color: $text-color-secondary;
+    color: global-variables.$text-color-secondary;
   }
 }
 
@@ -162,14 +162,14 @@ small,
 }
 
 a {
-  color: $color-primary;
+  color: global-variables.$color-primary;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
 
   &:hover {
-    color: $color-accent-dark;
-    border-bottom-color: $color-accent-dark;
+    color: global-variables.$color-accent-dark;
+    border-bottom-color: global-variables.$color-accent-dark;
     text-decoration: none;
   }
 
@@ -203,13 +203,13 @@ a {
   z-index: 2000;
   left: 0;
   top: 0;
-  background-color: rgba($black, 0.4);
+  background-color: rgba(global-variables.$black, 0.4);
   overflow-x: hidden;
   transition: opacity .5s;
   cursor: pointer;
 }
 
-@include breakpoint(0, 600px) {
+@include breakpoint.breakpoint(0, 600px) {
   p {
     text-align: left;
   }

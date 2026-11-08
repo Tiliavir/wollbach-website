@@ -1,3 +1,5 @@
+@use 'global-variables';
+
 $breadcrumb-print-color: #000;
 
 .print-only {
@@ -35,7 +37,7 @@ $breadcrumb-print-color: #000;
 
   pre,
   blockquote {
-    border: 1px solid $gray-light;
+    border: 1px solid global-variables.$gray-light;
   }
 
   thead {
@@ -63,7 +65,7 @@ $breadcrumb-print-color: #000;
   }
 
   .label {
-    border: 1px solid $text-color;
+    border: 1px solid global-variables.$text-color;
   }
 
   .print-only {

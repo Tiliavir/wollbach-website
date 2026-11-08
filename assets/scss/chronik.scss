@@ -1,5 +1,5 @@
-@import 'themes/wollbach/assets/scss/global-variables';
-@import 'themes/wollbach/assets/scss/mixins/breakpoint';
+@use 'themes/wollbach/assets/scss/global-variables';
+@use 'themes/wollbach/assets/scss/mixins/breakpoint';
 
 .timeline {
   position: relative;
@@ -10,7 +10,7 @@
     position: absolute;
     left: 50%;
     width: 4px;
-    background: $color-accent;
+    background: global-variables.$color-accent;
     top: 0;
     bottom: 0;
     transform: translateX(-50%);
@@ -22,7 +22,7 @@
     padding: 20px;
     box-sizing: border-box;
 
-    @include breakpoint(768px) {
+    @include breakpoint.breakpoint(768px) {
       &:nth-child(odd) {
         text-align: right;
       }
@@ -42,7 +42,7 @@
       top: 42px;
       width: 15px;
       height: 15px;
-      background: $color-primary;
+      background: global-variables.$color-primary;
       border-radius: 50%;
       border: 3px solid white;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -51,7 +51,7 @@
 
     h2 {
       font-size: 1.8em;
-      color: $color-primary;
+      color: global-variables.$color-primary;
       margin-bottom: 10px;
     }
 
@@ -65,7 +65,7 @@
   }
 }
 
-@include breakpoint(0, 768px) {
+@include breakpoint.breakpoint(0, 768px) {
   .timeline {
     &::before {
       left: 20px;

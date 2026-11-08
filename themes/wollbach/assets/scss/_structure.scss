@@ -1,5 +1,5 @@
-@import 'mixins/breakpoint';
-@import 'global-variables';
+@use 'mixins/breakpoint';
+@use 'global-variables';
 
 main {
   display: block;
@@ -9,13 +9,13 @@ main {
 .content {
   box-sizing: border-box;
   width: 100%;
-  max-width: $content-max-width + 32px;
+  max-width: global-variables.$content-max-width + 32px;
   min-height: 250px;
   margin: 0 auto;
   padding: 24px 16px 48px;
 
   &--wide {
-    max-width: $wide-max-width + 32px;
+    max-width: global-variables.$wide-max-width + 32px;
   }
 }
 
@@ -32,7 +32,7 @@ main {
     margin: 0 auto;
     max-width: 36em;
     text-align: center;
-    color: $text-color-secondary;
+    color: global-variables.$text-color-secondary;
     font-size: 1.05rem;
     line-height: 1.6;
     hyphens: manual;
@@ -47,21 +47,21 @@ main {
   height: 80px;
   margin-bottom: 20px;
   border-radius: 50%;
-  background-color: $color-primary-soft;
-  color: $color-primary;
+  background-color: global-variables.$color-primary-soft;
+  color: global-variables.$color-primary;
 
   .page-header--accent & {
-    background-color: $color-accent-soft;
-    color: $color-accent-dark;
+    background-color: global-variables.$color-accent-soft;
+    color: global-variables.$color-accent-dark;
   }
 }
 
 // ---------- cards ----------
 .card {
   box-sizing: border-box;
-  background-color: $card-bg;
-  border-radius: $radius;
-  box-shadow: $shadow-card;
+  background-color: global-variables.$card-bg;
+  border-radius: global-variables.$radius;
+  box-shadow: global-variables.$shadow-card;
   padding: 24px;
 
   > :first-child {
@@ -103,13 +103,13 @@ main {
   top: -100px;
   z-index: 2000;
   padding: 8px 16px;
-  border-radius: $radius-sm;
-  background-color: $color-primary;
-  color: $white;
+  border-radius: global-variables.$radius-sm;
+  background-color: global-variables.$color-primary;
+  color: global-variables.$white;
 
   &:focus {
     top: 8px;
-    color: $white;
+    color: global-variables.$white;
   }
 }
 
@@ -122,11 +122,11 @@ main {
 .footer {
   margin-top: 48px;
   padding: 32px 16px;
-  background-color: $card-bg;
-  border-top: 1px solid $gray-light-border-color;
+  background-color: global-variables.$card-bg;
+  border-top: 1px solid global-variables.$gray-light-border-color;
   text-align: center;
-  font-size: $font-size-small;
-  color: $text-color-secondary;
+  font-size: global-variables.$font-size-small;
+  color: global-variables.$text-color-secondary;
 
   ul {
     display: flex;
@@ -139,12 +139,12 @@ main {
   }
 
   a {
-    color: $text-color-secondary;
+    color: global-variables.$text-color-secondary;
     font-weight: 600;
 
     &:hover {
-      color: $color-primary;
-      border-bottom-color: $color-primary;
+      color: global-variables.$color-primary;
+      border-bottom-color: global-variables.$color-primary;
     }
   }
 
@@ -154,6 +154,6 @@ main {
 }
 
 .footer-container {
-  max-width: $content-max-width;
+  max-width: global-variables.$content-max-width;
   margin: 0 auto;
 }

@@ -1,5 +1,5 @@
-@import 'global-variables';
-@import 'mixins/breakpoint';
+@use 'global-variables';
+@use 'mixins/breakpoint';
 
 // ---------- hero ----------
 .hero {
@@ -11,15 +11,15 @@
   min-height: 420px;
   max-height: 720px;
   overflow: hidden;
-  background-color: $color-primary-dark;
-  color: $white;
+  background-color: global-variables.$color-primary-dark;
+  color: global-variables.$white;
   text-align: center;
 
   &::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: $hero-overlay;
+    background: global-variables.$hero-overlay;
   }
 }
 
@@ -39,7 +39,7 @@
 
   h1 {
     margin: 0 0 12px;
-    color: $white;
+    color: global-variables.$white;
     font-size: clamp(2.25rem, 7vw, 3.75rem);
     letter-spacing: -0.01em;
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
@@ -94,7 +94,7 @@
   position: relative;
   z-index: 2;
   box-sizing: border-box;
-  max-width: $wide-max-width + 32px;
+  max-width: global-variables.$wide-max-width + 32px;
   margin: -64px auto 0;
   padding: 0 16px;
 }
@@ -107,7 +107,7 @@
   padding: 0;
   list-style: none;
 
-  @include breakpoint(0, 768px) {
+  @include breakpoint.breakpoint(0, 768px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
@@ -118,33 +118,33 @@
   flex-direction: column;
   align-items: center;
   padding: 20px 12px;
-  background-color: $card-bg;
-  border-radius: $radius;
-  box-shadow: $shadow-card;
+  background-color: global-variables.$card-bg;
+  border-radius: global-variables.$radius;
+  box-shadow: global-variables.$shadow-card;
   text-align: center;
 }
 
 .stat-icon {
   margin-bottom: 8px;
-  color: $color-primary;
+  color: global-variables.$color-primary;
 }
 
 .stat-value {
   font-variant-numeric: lining-nums;
-  font-family: $font-family-display;
+  font-family: global-variables.$font-family-display;
   font-size: 1.25rem;
   font-weight: 700;
-  color: $text-color;
+  color: global-variables.$text-color;
 }
 
 .stat-label {
-  font-size: $font-size-small;
-  color: $text-color-secondary;
+  font-size: global-variables.$font-size-small;
+  color: global-variables.$text-color-secondary;
 }
 
 // ---------- home layout: greeting + aside ----------
 .is-home .content {
-  max-width: $wide-max-width + 32px;
+  max-width: global-variables.$wide-max-width + 32px;
   padding-top: 48px;
 }
 
@@ -154,7 +154,7 @@
   gap: 48px;
   align-items: start;
 
-  @include breakpoint(0, 1024px) {
+  @include breakpoint.breakpoint(0, 1024px) {
     grid-template-columns: minmax(0, 1fr);
     gap: 32px;
   }
@@ -167,7 +167,7 @@
 
   .ortsvorsteher img {
     max-width: 200px;
-    border-radius: $radius;
+    border-radius: global-variables.$radius;
   }
 }
 
@@ -176,9 +176,9 @@
   flex-direction: column;
   gap: 20px;
 
-  @include breakpoint(1024px) {
+  @include breakpoint.breakpoint(1024px) {
     position: sticky;
-    top: $top-nav-height + 24px;
+    top: global-variables.$top-nav-height + 24px;
   }
 }
 
@@ -190,10 +190,10 @@
   padding: 0;
   border: 0;
   font-size: 1.1rem;
-  color: $text-color;
+  color: global-variables.$text-color;
 
   .icon {
-    color: $color-primary;
+    color: global-variables.$color-primary;
   }
 }
 
@@ -206,8 +206,8 @@
   display: flex;
   gap: 8px;
   align-items: flex-start;
-  font-size: $font-size-small;
-  color: $text-color-secondary;
+  font-size: global-variables.$font-size-small;
+  color: global-variables.$text-color-secondary;
 
   .icon {
     margin-top: 2px;
@@ -231,7 +231,7 @@
   gap: 12px;
   align-items: flex-start;
   padding: 10px 0;
-  border-bottom: 1px solid $gray-light-border-color;
+  border-bottom: 1px solid global-variables.$gray-light-border-color;
 
   &:last-of-type {
     border-bottom: 0;
@@ -248,10 +248,10 @@
 .event-day {
   font-variant-numeric: lining-nums;
   display: block;
-  font-family: $font-family-display;
+  font-family: global-variables.$font-family-display;
   font-size: 1.3rem;
   font-weight: 700;
-  color: $color-primary;
+  color: global-variables.$color-primary;
 }
 
 .event-month {
@@ -260,7 +260,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: $text-color-secondary;
+  color: global-variables.$text-color-secondary;
 }
 
 .event-body {
@@ -276,11 +276,11 @@
 
 .event-meta {
   font-size: 0.85rem;
-  color: $text-color-secondary;
+  color: global-variables.$text-color-secondary;
   line-height: 1.4;
 }
 
 .upcoming-empty {
-  color: $text-color-secondary;
+  color: global-variables.$text-color-secondary;
   font-style: italic;
 }
