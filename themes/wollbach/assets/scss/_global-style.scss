@@ -203,7 +203,7 @@ a {
   z-index: 2000;
   left: 0;
   top: 0;
-  background-color: transparentize($black, .6);
+  background-color: rgba($black, 0.4);
   overflow-x: hidden;
   transition: opacity .5s;
   cursor: pointer;

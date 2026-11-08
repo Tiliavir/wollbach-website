@@ -1,4 +1,4 @@
-{{ with $.Site.Data.gastronomie }}
+{{ with hugo.Data.gastronomie }}
 <div class="contact-list">
     {{ range sort . "name" "asc" }}
       {{ partial "contact-card.html" (dict "item" . "type" "Restaurant" "level" 2) }}

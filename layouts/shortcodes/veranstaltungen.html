@@ -1,4 +1,4 @@
-{{ with $.Site.Data.veranstaltungen}}
+{{ with hugo.Data.veranstaltungen}}
 {{ range $year, $value := . }}
 <h3 class="events-year">{{ $year }}</h3>
 <table class="appointments" aria-label="Alle Veranstaltungen {{ $year }}">

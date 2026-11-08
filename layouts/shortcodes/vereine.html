@@ -1,4 +1,4 @@
-{{ with $.Site.Data.vereine }}
+{{ with hugo.Data.vereine }}
 <div class="contact-list">
     {{ range sort . "name" }}
       {{ partial "contact-card.html" (dict "item" . "type" "Organization" "level" 2) }}

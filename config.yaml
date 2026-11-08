@@ -1,7 +1,7 @@
 title: Wollbach
 theme: wollbach
 defaultContentLanguage: de
-languageCode: de-de
+locale: de-de
 baseURL: https://www.wollbach.info/
 canonifyURLs: true
 pluralizeListTitles: false

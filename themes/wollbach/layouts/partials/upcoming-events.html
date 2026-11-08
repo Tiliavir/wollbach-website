@@ -7,7 +7,7 @@
 {{- $limit := .limit | default 0 -}}
 {{- $months := slice "Jan." "Feb." "März" "Apr." "Mai" "Juni" "Juli" "Aug." "Sep." "Okt." "Nov." "Dez." -}}
 {{- $events := slice -}}
-{{- range $year, $list := site.Data.veranstaltungen }}{{ $events = $events | append $list }}{{ end -}}
+{{- range $year, $list := hugo.Data.veranstaltungen }}{{ $events = $events | append $list }}{{ end -}}
 {{- $events = sort $events "starttime" -}}
 {{- $today := time (now.Format "2006-01-02") -}}
 {{- $shown := 0 -}}
