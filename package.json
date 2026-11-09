@@ -48,5 +48,13 @@
     "update:lib:jquery": "copyfiles -u 3 ./node_modules/jquery/dist/jquery.min.js ./static/js/",
     "postinstall": "npm run update:lib:jquery && npm run lint",
     "format": "biome check --write ."
+  },
+  "overrides": {
+    "stylelint-config-recommended-scss": {
+      "stylelint": "$stylelint"
+    },
+    "stylelint-scss": {
+      "stylelint": "$stylelint"
+    }
   }
 }
