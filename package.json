@@ -20,7 +20,7 @@
     "not dead"
   ],
   "devDependencies": {
-    "@biomejs/biome": "2.6.5",
+    "@biomejs/biome": "2.6.6",
     "@types/grecaptcha": "3.0.9",
     "@types/jquery": "4.0.1",
     "@types/lunr": "2.3.7",
