@@ -7,7 +7,7 @@ return [
     'owner' => 'Tiliavir',
     'repo' => 'public-feedback',
     'source' => 'wollbach.info',
-    'labels' => ['ungeprüft'],
+    'labels' => ['feedback', 'ungeprüft'],
     'allowed_origins' => ['https://www.wollbach.info', 'https://wollbach.info'],
     'success_url' => 'https://www.wollbach.info/feedback/danke/',
     'error_url' => 'https://www.wollbach.info/feedback/fehler/',

@@ -2,7 +2,7 @@
 
 Visitors answer a few guided questions on `/feedback/` (footer link, no popup). The form posts
 to `feedback-endpoint/feedback.php` at Alfahosting, which creates an issue in the private
-repository `Tiliavir/public-feedback`, labelled `ungeprüft` and with its source (`wollbach.info`).
+repository `Tiliavir/public-feedback`, labelled `feedback`, `ungeprüft` and its source (`wollbach.info`).
 Other feedback sources use the same repository with their own source label. The site itself stays static.
 
 ## Endpoint
@@ -19,7 +19,7 @@ Other feedback sources use the same repository with their own source label. The 
 
 1. Fine-grained token: resource owner `Tiliavir`, only repository `public-feedback`,
    permission *Issues: Read and write*, nothing else. Set an expiry and renew it.
-2. Labels `ungeprüft` and `wollbach.info` exist in `public-feedback`.
+2. Labels `feedback`, `ungeprüft` and `wollbach.info` exist in `public-feedback`.
 3. Upload `feedback-endpoint/feedback.php` and `feedback-endpoint/.htaccess` into a web root at
    Alfahosting. Put `feedback-config.php` (from `feedback-config.example.php`) one directory above
    that web root, plus a writable `feedback-data/` directory next to it.
