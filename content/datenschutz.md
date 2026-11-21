@@ -76,6 +76,20 @@ WhatsApp (WhatsApp Ireland Limited, Dublin, Irland) weitergeleitet. Für die
 Datenverarbeitung durch WhatsApp gelten die
 [Datenschutzbestimmungen von WhatsApp](https://www.whatsapp.com/legal/privacy-policy-eea).
 
+## Feedback-Formular
+Über das [Feedback-Formular](/feedback/) können Sie uns freiwillig Rückmeldung zur Webseite geben. Ihre
+Antworten werden an ein Skript bei unserem Hosting-Anbieter Alfahosting GmbH (Ankerstraße 3b,
+06108 Halle (Saale)) gesendet und von dort als öffentlich einsehbarer Eintrag („Issue“) im Projekt
+dieser Webseite auf GitHub gespeichert (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco,
+CA 94107, USA). Dabei können Daten in die USA übermittelt werden. Es gelten die
+[Datenschutzbestimmungen von GitHub](https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement).
+Bitte geben Sie im Formular keine personenbezogenen Daten an.
+
+Zum Schutz vor Missbrauch wird Ihre IP-Adresse nur in Form eines nicht umkehrbaren Prüfwerts
+(Hash) bis zu 24 Stunden gespeichert, um die Zahl der Einsendungen zu begrenzen. Die IP-Adresse
+selbst wird nicht an GitHub weitergegeben. Rechtsgrundlage ist unser berechtigtes Interesse an
+einer funktionierenden, missbrauchsgeschützten Webseite (Art. 6 Abs. 1 lit. f DSGVO).
+
 ## Kontakt
 Treten Sie bzgl. Fragen jeglicher Art per E-Mail mit uns in Kontakt,
 erteilen Sie uns zum Zwecke der Kontaktaufnahme Ihre freiwillige Einwilligung. Hierfür
