@@ -21,6 +21,9 @@ enableGitInfo: true
 
 params:
   repository: https://github.com/Tiliavir/wollbach-website.git
+  feedback:
+    # URL of feedback-endpoint/feedback.php; empty = form is not shown
+    endpoint: ""
 
 menu:
   main:

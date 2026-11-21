@@ -1,0 +1,16 @@
+# Feedback endpoint: everything denied, only feedback.php is reachable.
+Options -Indexes
+
+<IfModule mod_authz_core.c>
+  Require all denied
+  <Files "feedback.php">
+    Require all granted
+  </Files>
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order Allow,Deny
+  Deny from all
+  <Files "feedback.php">
+    Allow from all
+  </Files>
+</IfModule>

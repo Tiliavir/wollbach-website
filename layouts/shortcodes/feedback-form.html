@@ -1,0 +1,49 @@
+{{- with site.Params.feedback.endpoint }}
+<form class="feedback-form" method="post" action="{{ . }}">
+  <p class="feedback-hint">
+    Alle Fragen sind freiwillig. Über dieses Formular können wir nicht antworten – wenn Sie eine Antwort möchten,
+    schreiben Sie uns bitte eine <a href="mailto:wollbach.tray380@passfwd.com">E-Mail</a>.
+  </p>
+
+  <label for="feedback-anlass">Wofür haben Sie die Seite zuletzt genutzt?</label>
+  <select id="feedback-anlass" name="anlass">
+    <option value="">Bitte wählen</option>
+    <option value="termine">Veranstaltungen und Termine</option>
+    <option value="schwarzes-brett">Schwarzes Brett</option>
+    <option value="vereine">Vereine</option>
+    <option value="gastronomie-gewerbe">Gastronomie und Gewerbe</option>
+    <option value="verwaltung">Ortsverwaltung und öffentliche Einrichtungen</option>
+    <option value="chronik">Chronik und Geschichte</option>
+    <option value="freizeit">Museen und Wanderwege</option>
+    <option value="anderes">Etwas anderes</option>
+  </select>
+
+  <fieldset>
+    <legend>Haben Sie gefunden, was Sie gesucht haben?</legend>
+    <label class="feedback-choice"><input type="radio" name="gefunden" value="ja"/> Ja</label>
+    <label class="feedback-choice"><input type="radio" name="gefunden" value="teilweise"/> Teilweise</label>
+    <label class="feedback-choice"><input type="radio" name="gefunden" value="nein"/> Nein</label>
+  </fieldset>
+
+  <label for="feedback-umstaendlich">Was war dabei umständlich?</label>
+  <textarea id="feedback-umstaendlich" name="umstaendlich" rows="3" maxlength="2000"></textarea>
+
+  <label for="feedback-falsch">Ist Ihnen etwas aufgefallen, das veraltet oder falsch ist?</label>
+  <textarea id="feedback-falsch" name="falsch" rows="3" maxlength="2000" placeholder="z. B. ein Termin, Öffnungszeiten, ein Ansprechpartner"></textarea>
+
+  <label for="feedback-fehlt">Was fehlt Ihnen auf der Seite?</label>
+  <textarea id="feedback-fehlt" name="fehlt" rows="3" maxlength="2000"></textarea>
+
+  <div class="feedback-hp">
+    <label for="feedback-website">Bitte leer lassen</label>
+    <input id="feedback-website" type="text" name="website" tabindex="-1" autocomplete="off"/>
+  </div>
+
+  <button type="submit">Feedback senden</button>
+</form>
+{{- else }}
+<p>
+  Das Feedback-Formular ist noch nicht freigeschaltet. Schreiben Sie uns gerne eine
+  <a href="mailto:wollbach.tray380@passfwd.com">E-Mail</a>.
+</p>
+{{- end }}
