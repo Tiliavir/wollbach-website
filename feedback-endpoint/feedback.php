@@ -31,7 +31,11 @@ final class FeedbackRejected extends RuntimeException
 {
 }
 
-function feedback_clean_text(mixed $value): string
+final class FeedbackFailed extends RuntimeException
+{
+}
+
+function feedbackCleanText(mixed $value): string
 {
     if (!is_string($value)) {
         return '';
@@ -52,7 +56,7 @@ function feedback_clean_text(mixed $value): string
  * @param array<string, mixed> $post
  * @return array{topic: ?string, found: ?string, answers: array<string, string>}
  */
-function feedback_parse(array $post): array
+function feedbackParse(array $post): array
 {
     $topic = $post['anlass'] ?? '';
     $found = $post['gefunden'] ?? '';
@@ -65,7 +69,7 @@ function feedback_parse(array $post): array
 
     $answers = [];
     foreach (array_keys(FEEDBACK_QUESTIONS) as $key) {
-        $text = feedback_clean_text($post[$key] ?? '');
+        $text = feedbackCleanText($post[$key] ?? '');
         if ($text !== '') {
             $answers[$key] = $text;
         }
@@ -81,7 +85,7 @@ function feedback_parse(array $post): array
     ];
 }
 
-function feedback_fence(string $text): string
+function feedbackFence(string $text): string
 {
     preg_match_all('/`+/', $text, $runs);
     $longest = max([0, ...array_map('strlen', $runs[0])]);
@@ -93,7 +97,7 @@ function feedback_fence(string $text): string
  * @param array{topic: ?string, found: ?string, answers: array<string, string>} $feedback
  * @return array{title: string, body: string}
  */
-function feedback_issue(array $feedback, DateTimeImmutable $now): array
+function feedbackIssue(array $feedback, DateTimeImmutable $now): array
 {
     $topic = $feedback['topic'] === null ? 'Allgemein' : FEEDBACK_TOPICS[$feedback['topic']];
     $lines = [
@@ -107,7 +111,7 @@ function feedback_issue(array $feedback, DateTimeImmutable $now): array
         $lines[] = '';
         $lines[] = '### ' . FEEDBACK_QUESTIONS[$key];
         $lines[] = '';
-        $lines[] = feedback_fence($text);
+        $lines[] = feedbackFence($text);
     }
 
     return [
@@ -120,15 +124,15 @@ function feedback_issue(array $feedback, DateTimeImmutable $now): array
  * Sliding-window limit per client and a global daily cap. Clients are stored
  * only as salted hashes and dropped after 24 hours.
  */
-function feedback_rate_limit_ok(string $file, string $clientHash, int $now, int $perClientPerHour, int $perDay): bool
+function feedbackRateLimitOk(string $file, string $clientHash, int $now, int $perClientPerHour, int $perDay): bool
 {
     $handle = fopen($file, 'c+');
     if ($handle === false) {
-        throw new RuntimeException('rate limit storage not writable');
+        throw new FeedbackFailed('rate limit storage not writable');
     }
     try {
         if (!flock($handle, LOCK_EX)) {
-            throw new RuntimeException('rate limit storage not lockable');
+            throw new FeedbackFailed('rate limit storage not lockable');
         }
         $raw = stream_get_contents($handle);
         $state = $raw === '' || $raw === false ? [] : json_decode($raw, true, 4);
@@ -173,7 +177,7 @@ function feedback_rate_limit_ok(string $file, string $clientHash, int $now, int 
  * @param array{title: string, body: string} $issue
  * @param array<string, mixed> $config
  */
-function feedback_create_issue(array $issue, array $config): void
+function feedbackCreateIssue(array $issue, array $config): void
 {
     $url = sprintf('https://api.github.com/repos/%s/%s/issues', rawurlencode($config['owner']), rawurlencode($config['repo']));
     $payload = json_encode([
@@ -202,17 +206,17 @@ function feedback_create_issue(array $issue, array $config): void
     curl_close($curl);
 
     if ($response === false || $status !== 201) {
-        throw new RuntimeException(sprintf('GitHub API failed: status %d %s', $status, $error));
+        throw new FeedbackFailed(sprintf('GitHub API failed: status %d %s', $status, $error));
     }
 }
 
-function feedback_redirect(string $url): never
+function feedbackRedirect(string $url): never
 {
     header('Location: ' . $url, true, 303);
     exit;
 }
 
-function feedback_main(): void
+function feedbackMain(): void
 {
     header('Cache-Control: no-store');
     header('X-Content-Type-Options: nosniff');
@@ -222,7 +226,7 @@ function feedback_main(): void
         exit;
     }
 
-    $config = require dirname(__DIR__) . '/feedback-config.php';
+    $config = require_once dirname(__DIR__) . '/feedback-config.php';
 
     $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
     if (!in_array($origin, $config['allowed_origins'], true)) {
@@ -231,27 +235,27 @@ function feedback_main(): void
     }
 
     if (($_POST['website'] ?? '') !== '') {
-        feedback_redirect($config['success_url']);
+        feedbackRedirect($config['success_url']);
     }
 
     try {
-        $feedback = feedback_parse($_POST);
+        $feedback = feedbackParse($_POST);
         $clientHash = hash_hmac('sha256', (string) ($_SERVER['REMOTE_ADDR'] ?? ''), $config['salt']);
         $file = rtrim($config['storage_dir'], '/') . '/rate-limit.json';
-        if (!feedback_rate_limit_ok($file, $clientHash, time(), $config['limit_per_client_per_hour'], $config['limit_per_day'])) {
-            feedback_redirect($config['error_url']);
+        if (!feedbackRateLimitOk($file, $clientHash, time(), $config['limit_per_client_per_hour'], $config['limit_per_day'])) {
+            feedbackRedirect($config['error_url']);
         }
-        feedback_create_issue(feedback_issue($feedback, new DateTimeImmutable('now', new DateTimeZone('Europe/Berlin'))), $config);
+        feedbackCreateIssue(feedbackIssue($feedback, new DateTimeImmutable('now', new DateTimeZone('Europe/Berlin'))), $config);
     } catch (FeedbackRejected) {
-        feedback_redirect($config['error_url']);
+        feedbackRedirect($config['error_url']);
     } catch (Throwable $e) {
         error_log('feedback: ' . $e->getMessage());
-        feedback_redirect($config['error_url']);
+        feedbackRedirect($config['error_url']);
     }
 
-    feedback_redirect($config['success_url']);
+    feedbackRedirect($config['success_url']);
 }
 
 if (PHP_SAPI !== 'cli') {
-    feedback_main();
+    feedbackMain();
 }
