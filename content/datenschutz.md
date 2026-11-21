@@ -79,8 +79,8 @@ Datenverarbeitung durch WhatsApp gelten die
 ## Feedback-Formular
 Über das [Feedback-Formular](/feedback/) können Sie uns freiwillig Rückmeldung zur Webseite geben. Ihre
 Antworten werden an ein Skript bei unserem Hosting-Anbieter Alfahosting GmbH (Ankerstraße 3b,
-06108 Halle (Saale)) gesendet und von dort als öffentlich einsehbarer Eintrag („Issue“) im Projekt
-dieser Webseite auf GitHub gespeichert (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco,
+06108 Halle (Saale)) gesendet und von dort als Eintrag („Issue“) in einem nicht öffentlichen Projekt
+auf GitHub gespeichert (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco,
 CA 94107, USA). Dabei können Daten in die USA übermittelt werden. Es gelten die
 [Datenschutzbestimmungen von GitHub](https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement).
 Bitte geben Sie im Formular keine personenbezogenen Daten an.

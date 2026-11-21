@@ -5,8 +5,9 @@
 return [
     'token' => 'github_pat_…',
     'owner' => 'Tiliavir',
-    'repo' => 'wollbach-website',
-    'labels' => ['feedback', 'ungeprüft'],
+    'repo' => 'public-feedback',
+    'source' => 'wollbach.info',
+    'labels' => ['ungeprüft'],
     'allowed_origins' => ['https://www.wollbach.info', 'https://wollbach.info'],
     'success_url' => 'https://www.wollbach.info/feedback/danke/',
     'error_url' => 'https://www.wollbach.info/feedback/fehler/',
