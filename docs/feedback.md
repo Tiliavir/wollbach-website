@@ -10,9 +10,8 @@ tests: README of `Tiliavir/public-feedback`.
 - **Form:** `layouts/shortcodes/feedback-form.html` sends `source=wollbach.info`, the question
   texts (`questions[<key>]`) and the answers (`answers[<key>]`, option labels for choices),
   plus the honeypot `website`.
-- **Switch:** `params.feedback.endpoint` in `config.yaml`. While it is empty, the page shows an
-  e-mail hint instead of the form. Live value once the endpoint is deployed:
-  `https://www.mv-wollbach.de/feedback.php` (with `www.`).
+- **Switch:** `params.feedback.endpoint` in `config.yaml`, live `https://www.mv-wollbach.de/feedback.php`
+  (with `www.`). While it is empty, the page shows an e-mail hint instead of the form.
 
 ## Review
 
