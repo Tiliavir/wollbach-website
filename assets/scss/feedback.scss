@@ -1,0 +1,82 @@
+@use 'themes/wollbach/assets/scss/global-variables';
+
+.feedback-form {
+  display: grid;
+  gap: 8px;
+  max-width: 640px;
+
+  label,
+  legend {
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+  select,
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid global-variables.$gray-border-color;
+    border-radius: global-variables.$radius-sm;
+    background-color: global-variables.$card-bg;
+    color: global-variables.$text-color;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  legend {
+    padding: 0;
+  }
+
+  .feedback-choice {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 8px 24px 0 0;
+    font-weight: 400;
+  }
+
+  input[type='radio'] {
+    width: 20px;
+    height: 20px;
+    accent-color: global-variables.$color-primary;
+  }
+
+  button {
+    justify-self: start;
+    margin-top: 24px;
+    padding: 12px 24px;
+    border: 0;
+    border-radius: global-variables.$radius-sm;
+    background-color: global-variables.$color-primary;
+    color: global-variables.$white;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      background-color: global-variables.$color-primary-dark;
+    }
+  }
+}
+
+.feedback-hint {
+  margin: 0;
+  color: global-variables.$text-color-secondary;
+  font-size: global-variables.$font-size-small;
+}
+
+.feedback-hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
