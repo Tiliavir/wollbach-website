@@ -16,10 +16,6 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-      - name: Test feedback endpoint
-        run: |
-          php -l feedback-endpoint/feedback.php
-          php feedback-endpoint/tests/feedback_test.php
       - name: Install Node.js
         uses: actions/setup-node@v7
         with:

@@ -1,32 +1,18 @@
 # Feedback
 
-Visitors answer a few guided questions on `/feedback/` (footer link, no popup). The form posts
-to `feedback-endpoint/feedback.php` at Alfahosting, which creates an issue in the private
-repository `Tiliavir/public-feedback`, labelled `feedback`, `ungeprüft` and its source (`wollbach.info`).
-Other feedback sources use the same repository with their own source label. The site itself stays static.
+Visitors answer a few guided questions on `/feedback/` (footer link, no popup). The plain HTML
+form posts to the shared feedback endpoint of the private repository `Tiliavir/public-feedback`
+(one PHP script at Alfahosting for all of Markus's sites and apps), which creates an issue there
+labelled `feedback`, `ungeprüft` and `wollbach.info` and redirects (303) to `/feedback/danke/` or
+`/feedback/fehler/`. The site itself stays static. Endpoint, spam protection, server setup and
+tests: README of `Tiliavir/public-feedback`.
 
-## Endpoint
-
-- Only `POST` from the origins in the config; anything else gets 405/403.
-- Honeypot field `website`: filled → pretend success, nothing is created.
-- Rate limit: per client (salted IP hash, kept 24 h) per hour and a global daily cap.
-- Only whitelisted choice values; free text max 2000 characters, control characters removed.
-- User text goes into the issue body only, inside a code fence longer than any backtick run in
-  it, so it cannot render mentions, links, images or headings. The title never contains user text.
-- Success and failure both redirect (303) back to `/feedback/danke/` or `/feedback/fehler/`.
-
-## Setup
-
-1. Fine-grained token: resource owner `Tiliavir`, only repository `public-feedback`,
-   permission *Issues: Read and write*, nothing else. Set an expiry and renew it.
-2. Labels `feedback`, `ungeprüft` and `wollbach.info` exist in `public-feedback`.
-3. Upload `feedback-endpoint/feedback.php` and `feedback-endpoint/.htaccess` into a web root at
-   Alfahosting. Put `feedback-config.php` (from `feedback-config.example.php`) one directory above
-   that web root, plus a writable `feedback-data/` directory next to it.
-4. Set `params.feedback.endpoint` in `config.yaml` to the URL of `feedback.php`. While it is empty,
-   the page shows an e-mail hint instead of the form.
-
-Tests: `php feedback-endpoint/tests/feedback_test.php` (runs in CI).
+- **Form:** `layouts/shortcodes/feedback-form.html` sends `source=wollbach.info`, the question
+  texts (`questions[<key>]`) and the answers (`answers[<key>]`, option labels for choices),
+  plus the honeypot `website`.
+- **Switch:** `params.feedback.endpoint` in `config.yaml`. While it is empty, the page shows an
+  e-mail hint instead of the form. Live value once the endpoint is deployed:
+  `https://www.mv-wollbach.de/feedback.php` (with `www.`).
 
 ## Review
 

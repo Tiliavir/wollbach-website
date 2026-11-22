@@ -1,38 +1,45 @@
 {{- with site.Params.feedback.endpoint }}
+{{- /* Posts to the shared feedback endpoint of Tiliavir/public-feedback (docs/feedback.md). */ -}}
 <form class="feedback-form" method="post" action="{{ . }}">
+  <input type="hidden" name="source" value="wollbach.info"/>
   <p class="feedback-hint">
     Alle Fragen sind freiwillig. Über dieses Formular können wir nicht antworten – wenn Sie eine Antwort möchten,
     schreiben Sie uns bitte eine <a href="mailto:wollbach.tray380@passfwd.com">E-Mail</a>.
   </p>
 
+  <input type="hidden" name="questions[anlass]" value="Wofür haben Sie die Seite zuletzt genutzt?"/>
   <label for="feedback-anlass">Wofür haben Sie die Seite zuletzt genutzt?</label>
-  <select id="feedback-anlass" name="anlass">
+  <select id="feedback-anlass" name="answers[anlass]">
     <option value="">Bitte wählen</option>
-    <option value="termine">Veranstaltungen und Termine</option>
-    <option value="schwarzes-brett">Schwarzes Brett</option>
-    <option value="vereine">Vereine</option>
-    <option value="gastronomie-gewerbe">Gastronomie und Gewerbe</option>
-    <option value="verwaltung">Ortsverwaltung und öffentliche Einrichtungen</option>
-    <option value="chronik">Chronik und Geschichte</option>
-    <option value="freizeit">Museen und Wanderwege</option>
-    <option value="anderes">Etwas anderes</option>
+    <option value="Veranstaltungen und Termine">Veranstaltungen und Termine</option>
+    <option value="Schwarzes Brett">Schwarzes Brett</option>
+    <option value="Vereine">Vereine</option>
+    <option value="Gastronomie und Gewerbe">Gastronomie und Gewerbe</option>
+    <option value="Ortsverwaltung und öffentliche Einrichtungen">Ortsverwaltung und öffentliche Einrichtungen</option>
+    <option value="Chronik und Geschichte">Chronik und Geschichte</option>
+    <option value="Museen und Wanderwege">Museen und Wanderwege</option>
+    <option value="Etwas anderes">Etwas anderes</option>
   </select>
 
+  <input type="hidden" name="questions[gefunden]" value="Haben Sie gefunden, was Sie gesucht haben?"/>
   <fieldset>
     <legend>Haben Sie gefunden, was Sie gesucht haben?</legend>
-    <label class="feedback-choice"><input type="radio" name="gefunden" value="ja"/> Ja</label>
-    <label class="feedback-choice"><input type="radio" name="gefunden" value="teilweise"/> Teilweise</label>
-    <label class="feedback-choice"><input type="radio" name="gefunden" value="nein"/> Nein</label>
+    <label class="feedback-choice"><input type="radio" name="answers[gefunden]" value="Ja"/> Ja</label>
+    <label class="feedback-choice"><input type="radio" name="answers[gefunden]" value="Teilweise"/> Teilweise</label>
+    <label class="feedback-choice"><input type="radio" name="answers[gefunden]" value="Nein"/> Nein</label>
   </fieldset>
 
+  <input type="hidden" name="questions[umstaendlich]" value="Was war dabei umständlich?"/>
   <label for="feedback-umstaendlich">Was war dabei umständlich?</label>
-  <textarea id="feedback-umstaendlich" name="umstaendlich" rows="3" maxlength="2000"></textarea>
+  <textarea id="feedback-umstaendlich" name="answers[umstaendlich]" rows="3" maxlength="2000"></textarea>
 
+  <input type="hidden" name="questions[falsch]" value="Ist Ihnen etwas aufgefallen, das veraltet oder falsch ist?"/>
   <label for="feedback-falsch">Ist Ihnen etwas aufgefallen, das veraltet oder falsch ist?</label>
-  <textarea id="feedback-falsch" name="falsch" rows="3" maxlength="2000" placeholder="z. B. ein Termin, Öffnungszeiten, ein Ansprechpartner"></textarea>
+  <textarea id="feedback-falsch" name="answers[falsch]" rows="3" maxlength="2000" placeholder="z. B. ein Termin, Öffnungszeiten, ein Ansprechpartner"></textarea>
 
+  <input type="hidden" name="questions[fehlt]" value="Was fehlt Ihnen auf der Seite?"/>
   <label for="feedback-fehlt">Was fehlt Ihnen auf der Seite?</label>
-  <textarea id="feedback-fehlt" name="fehlt" rows="3" maxlength="2000"></textarea>
+  <textarea id="feedback-fehlt" name="answers[fehlt]" rows="3" maxlength="2000"></textarea>
 
   <div class="feedback-hp">
     <label for="feedback-website">Bitte leer lassen</label>

@@ -22,7 +22,7 @@ enableGitInfo: true
 params:
   repository: https://github.com/Tiliavir/wollbach-website.git
   feedback:
-    # URL of feedback-endpoint/feedback.php; empty = form is not shown
+    # URL of the shared feedback endpoint (Tiliavir/public-feedback, docs/feedback.md); empty = form is not shown
     endpoint: ""
 
 menu:
