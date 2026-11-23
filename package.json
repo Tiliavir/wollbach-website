@@ -24,7 +24,7 @@
     "@types/grecaptcha": "3.0.9",
     "@types/jquery": "4.0.1",
     "@types/lunr": "2.3.7",
-    "autoprefixer": "10.6.2",
+    "autoprefixer": "10.7.0",
     "copyfiles": "2.4.1",
     "glob-all": "3.3.1",
     "mvw-search-index": "3.0.3",
@@ -33,10 +33,10 @@
     "stylelint": "18.0.0",
     "stylelint-config-recommended-scss": "18.0.0",
     "typescript": "7.0.2",
-    "vnu-jar": "26.11.14"
+    "vnu-jar": "26.11.19"
   },
   "dependencies": {
-    "jquery": "4.0.0",
+    "jquery": "4.1.0",
     "lunr": "2.3.9",
     "lunr-languages": "1.24.0"
   },
