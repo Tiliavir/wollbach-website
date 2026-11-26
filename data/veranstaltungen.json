@@ -391,6 +391,11 @@
       }
     },
     {
+      "starttime": "2027-01-19T19:30:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
+    },
+    {
       "starttime": "2027-01-22",
       "title": "Jahreskonzert I",
       "organizer": "Musikverein Wollbach",
@@ -445,6 +450,11 @@
       }
     },
     {
+      "starttime": "2027-02-16T19:30:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
+    },
+    {
       "starttime": "2027-02-18",
       "title": "Generalversammlung",
       "organizer": "Musikverein Wollbach",
@@ -491,6 +501,11 @@
       }
     },
     {
+      "starttime": "2027-03-16T19:30:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
+    },
+    {
       "starttime": "2027-03-20",
       "title": "Hauptversammlung",
       "organizer": "Freiwillige Feuerwehr Kandern",
@@ -498,6 +513,11 @@
         "name": "Kandertalhalle",
         "address": ""
       }
+    },
+    {
+      "starttime": "2027-04-13T20:00:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
     },
     {
       "starttime": "2027-04-17",
@@ -527,6 +547,11 @@
       }
     },
     {
+      "starttime": "2027-05-18T20:00:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
+    },
+    {
       "starttime": "2027-06-06",
       "title": "Familiensporttag",
       "organizer": "Sportverein Wollbach",
@@ -554,6 +579,11 @@
       }
     },
     {
+      "starttime": "2027-06-15T20:00:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
+    },
+    {
       "starttime": "2027-07-03",
       "title": "Open-Air-Festival",
       "organizer": "Musikverein Wollbach",
@@ -561,6 +591,11 @@
         "name": "Halle und Schulhof",
         "address": ""
       }
+    },
+    {
+      "starttime": "2027-07-13T20:00:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
     },
     {
       "starttime": "2027-07-25",
@@ -572,6 +607,16 @@
       }
     },
     {
+      "starttime": "2027-08-17T20:00:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
+    },
+    {
+      "starttime": "2027-09-14T20:00:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
+    },
+    {
       "starttime": "2027-10-09",
       "title": "Sauserbummel",
       "organizer": "Musikverein Wollbach",
@@ -579,6 +624,16 @@
         "name": "Kandertalhalle",
         "address": ""
       }
+    },
+    {
+      "starttime": "2027-10-12T20:00:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
+    },
+    {
+      "starttime": "2027-11-09T19:30:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
     },
     {
       "starttime": "2027-11-11",
@@ -615,6 +670,11 @@
         "name": "Ev. Kirche Wollbach",
         "address": ""
       }
+    },
+    {
+      "starttime": "2027-12-07T19:30:00",
+      "title": "Ortschaftsratssitzung",
+      "organizer": "Ortschaftsrat Wollbach"
     },
     {
       "starttime": "2027-12-13",
