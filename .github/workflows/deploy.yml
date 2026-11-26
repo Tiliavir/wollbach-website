@@ -1,13 +1,39 @@
-name: 🚀 Deploy website on tag
+name: 🚀 Deploy website on new version
+# Runs on every push to main. Deploys and tags only when the version in
+# package.json has no tag yet, so bumping the version in a PR deploys on merge.
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - main
+
+permissions:
+  contents: read
 
 jobs:
-  build:
-    if: github.event.base_ref == 'refs/heads/main'
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.check.outputs.version }}
+      release: ${{ steps.check.outputs.release }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: 🔎 Check for untagged version
+        id: check
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          if git ls-remote --exit-code --tags origin "refs/tags/$VERSION" > /dev/null; then
+            echo "Version $VERSION is already tagged - nothing to deploy."
+            echo "release=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "release=true" >> "$GITHUB_OUTPUT"
+          fi
 
+  build:
+    needs: version
+    if: needs.version.outputs.release == 'true'
+    permissions:
+      contents: write   # push release-diff branch and release tag
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -40,7 +66,9 @@ jobs:
       - name: 𝍖 Create Index
         run: npm run index
       - name: 🏷️ Get tag name
-        run: echo "TAG_NAME=$(echo ${GITHUB_REF#refs/*/} | tr / -)" >> $GITHUB_ENV
+        env:
+          VERSION: ${{ needs.version.outputs.version }}
+        run: echo "TAG_NAME=$VERSION" >> "$GITHUB_ENV"
       - name: 📂 Archive
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -61,3 +89,7 @@ jobs:
           ignore: |
             *.git
             */**/*git*
+      - name: 🏷️ Tag release
+        run: |
+          git tag "$TAG_NAME"
+          git push origin "refs/tags/$TAG_NAME"
